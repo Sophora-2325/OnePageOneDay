@@ -1,0 +1,435 @@
+{
+  "day": 6,
+  "date": "2026-11-05",
+  "week": 1,
+  "theme": "创造与好奇",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Myth of the Solo Genius",
+      "wordCount": 414,
+      "paragraphs": [
+        "From Newton to Einstein, scientific history is often told as a series of lonely breakthroughs. A brilliant individual, the story goes, sees what no one else can see and changes the world. This narrative is appealing because it makes discovery seem like a matter of personal genius. Yet historians of science have repeatedly shown that major advances rarely emerge from a single mind working in isolation. They grow out of networks of people, instruments, institutions and arguments. The lone-genius story also obscures the role of luck and timing.",
+        "Consider the discovery of the structure of DNA. James Watson and Francis Crick are usually credited with the double helix, but their work depended on X-ray images produced by Rosalind Franklin and Maurice Wilkins, on chemical knowledge developed by others, and on a wider community that tested and debated the model. Without those contributions, the famous paper might never have existed. The same pattern appears in mathematics, medicine and engineering: the named discoverer is often the visible tip of a much larger collaboration.",
+        "The myth of the solo genius is not merely inaccurate; it can be harmful. When institutions reward individual stars, they may undervalue the technicians, research assistants and colleagues who make the work possible. Young researchers learn to protect their ideas rather than share them, even though the evidence suggests that the most productive teams combine diverse skills and allow disagreement. A culture that celebrates lone brilliance can make people less willing to ask for help at exactly the moment they need it. This is not only a matter of fairness; it also affects the quality of the work.",
+        "None of this means that individual talent is irrelevant. Some people do have unusual insight, persistence or courage, and their contributions should be recognised. The point is that talent develops in a social environment. Mentors, rivals, critics and collaborators shape the questions a person asks and the standards they accept. Even the most original thinker depends on a community that provides tools, training and a sense of what is worth investigating.",
+        "A more accurate story of discovery would therefore be less heroic but more useful. It would show how ideas travel, how credit is distributed, and how institutions can either encourage or suppress collaboration. If we want more breakthroughs, we should stop waiting for a lone genius and start building the conditions in which many people can contribute. The question is not who deserves the spotlight, but what kind of community makes the spotlight possible."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Scientific breakthroughs are mainly the product of individual genius.",
+            "Major discoveries depend on collaboration, so the lone-genius story is misleading.",
+            "Historical accounts of science should focus only on famous names.",
+            "Institutions should reward individual stars more generously."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The question is not who deserves the spotlight, but what kind of community makes the spotlight possible."
+          },
+          "explain": "主旨题。文章先指出「孤独天才」叙事很常见，再用 DNA 等例子说明重大发现依赖网络、工具、机构和争论，最后把结论落在「什么样的共同体造就了聚光灯」。B 项最完整。A 项与全文相反；C 项与「更准确的故事应展示思想如何流动、功劳如何分配」相反；D 项与第三段批评「只奖励明星」矛盾。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What does the DNA example show?",
+          "options": [
+            "Watson and Crick worked entirely alone.",
+            "Scientific credit is always shared equally.",
+            "Major discoveries often depend on many contributors.",
+            "X-ray images were unimportant to the discovery."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Without those contributions, the famous paper might never have existed."
+          },
+          "explain": "细节题。第二段说 Watson 和 Crick 的工作依赖 Franklin 和 Wilkins 的 X 射线图像、其他人的化学知识以及更大学术群体的检验和争论，没有这些贡献，那篇著名论文可能根本不存在。C 项是概括。A 项与原文相反；B 项无中生有：原文说功劳常被归于命名者，不是说总是平均分配；D 项与 depended on X-ray images 相反。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why can the myth of the solo genius be harmful?",
+          "options": [
+            "It makes scientists less interested in winning prizes.",
+            "It discourages institutions from hiring enough staff.",
+            "It causes researchers to publish too many papers.",
+            "It can lead people to undervalue support work and avoid asking for help."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "A culture that celebrates lone brilliance can make people less willing to ask for help at exactly the moment they need it."
+          },
+          "explain": "推断题。第三段说，只奖励个人明星会低估技术员、研究助理和同事的贡献；年轻研究者会学着保护想法而不是分享；崇拜孤独天才的文化还会让人在需要帮助时更不愿意开口。D 项把「低估支持性工作」和「不愿求助」都概括进去。A 项与奖项无关；B 项把机构责任窄化为招聘；C 项无中生有：文章没有说论文数量。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"tip\" in Paragraph 2 is closest in meaning to ______.",
+          "options": [
+            "the small exposed part of something larger",
+            "a piece of advice",
+            "the highest point of a mountain",
+            "a payment for service"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "The same pattern appears in mathematics, medicine and engineering: the named discoverer is often the visible tip of a much larger collaboration."
+          },
+          "explain": "词义题。句中说「被命名的发现者往往只是更大合作中可见的 tip」，与「冰山一角」的意象一致，指露在外面的小部分。A 项最接近。B 项建议、C 项山顶、D 项小费都是 tip 的其他义项，但不符合这里的「更大合作」语境。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward individual talent?",
+          "options": [
+            "Individual talent is completely irrelevant to discovery.",
+            "Individual talent matters, but it develops within a social environment.",
+            "Collaboration always produces better results than individual work.",
+            "Credit should be given only to teams, never to individuals."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "The point is that talent develops in a social environment."
+          },
+          "explain": "态度题。第四段开头明确说这并不意味着个人才能无关紧要，有些人确实有非凡洞察力、毅力或勇气；但作者强调才能在社会环境中发展，导师、对手、批评者和合作者塑造了一个人提出的问题和接受的标准。B 项最准确。A 项、D 项绝对化；C 项过度概括：作者没有说合作永远优于个人，只说重大发现依赖合作条件。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What does the lone-genius story tend to hide besides collaboration?",
+          "options": [
+            "The importance of publishing papers quickly.",
+            "The part played by luck and timing.",
+            "The cost of every scientific instrument.",
+            "The exact age of a discoverer."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "The lone-genius story also obscures the role of luck and timing."
+          },
+          "explain": "B 正确：孤独天才叙事还遮蔽了运气和时机。A 的发表速度、C 的每件仪器价格、D 的发现者年龄，都不是原句指出的遗漏因素。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What feature does the speaker associate with highly productive research teams?",
+          "options": [
+            "Every member has exactly the same training.",
+            "Members protect their ideas from all discussion.",
+            "The team avoids all differences of opinion.",
+            "Members contribute different skills and allow disagreement."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Young researchers learn to protect their ideas rather than share them, even though the evidence suggests that the most productive teams combine diverse skills and allow disagreement."
+          },
+          "explain": "D 正确：高产团队结合多样技能并允许分歧。A 把多样改成一致；B 把受批评的封闭行为当作好做法；C 又排除原文强调的不同意见。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What does even a highly original thinker still need from a community?",
+          "options": [
+            "Tools, training and a sense of worthwhile questions.",
+            "A guarantee that nobody will criticise an idea.",
+            "Permission to avoid learning from other people.",
+            "A rule assigning all discoveries to one famous person."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Even the most original thinker depends on a community that provides tools, training and a sense of what is worth investigating."
+          },
+          "explain": "A 正确：再有原创性的人也依赖共同体提供工具、训练和研究方向。B 排除批评，C 排除向他人学习，D 强行规定单人功劳，都不符合文章的社会环境观点。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What should a more useful account of scientific discovery explain?",
+          "options": [
+            "Why every successful scientist prefers working alone.",
+            "Why technical support should receive less recognition.",
+            "How ideas and credit move through communities and institutions.",
+            "How to identify one exceptional person before any research starts."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "It would show how ideas travel, how credit is distributed, and how institutions can either encourage or suppress collaboration."
+          },
+          "explain": "C 正确：更有用的叙事说明思想流动、功劳分配和制度如何影响合作。A、B 延续文章批评的孤立与低估支持工作；D 将重点又变成预先寻找单个天才。"
+        }
+      ],
+      "translation": [
+        "从牛顿到爱因斯坦，科学史常常被讲述成一连串孤独的突破。故事里说，一个才华出众的人看到了别人看不到的东西，于是改变了世界。这种叙述很有吸引力，因为它让发现看起来像是个人天才的事。然而科学史研究者一再表明，重大进展很少出自一个孤立工作的头脑。它们生长于由人、仪器、机构和争论构成的网络之中。孤独天才的叙事也遮蔽了运气和时机的作用。",
+        "以 DNA 结构的发现为例。人们通常把双螺旋的功劳归于 James Watson 和 Francis Crick，但他们的工作依赖 Rosalind Franklin 和 Maurice Wilkins 拍摄的 X 射线图像、其他人积累起来的化学知识，以及一个更广泛的、对模型进行检验和争论的学术群体。没有这些贡献，那篇著名的论文也许根本不会存在。同样的模式也出现在数学、医学和工程领域：被命名的发现者，往往只是更大规模合作中露在外面的那一角。",
+        "「孤独天才」的神话不只是不准确，它还可能有害。当机构奖励的是个人明星时，它们可能低估了那些让工作得以实现的技术员、研究助理和同事。年轻研究者学会保护自己的想法而不是分享，尽管证据表明，最高产的团队往往把多样的技能结合起来，并允许分歧存在。一种赞美孤独才华的文化，会让人恰恰在最需要帮助的时刻更不愿意开口求助。这不仅关乎公平，也影响工作的质量。",
+        "这一切并不意味着个人才能无关紧要。有些人确实拥有非凡的洞察力、毅力或勇气，他们的贡献应当得到承认。问题在于，才能是在社会环境中发展起来的。导师、对手、批评者和合作者，塑造了一个人提出的问题以及他所接受的标准。即使是最具原创性的思想家，也依赖一个为其提供工具、训练以及「什么值得研究」这一判断的共同体。",
+        "因此，一个更准确的发现故事会少一些英雄色彩，但更有用。它会展示思想如何流动、功劳如何分配，以及机构如何能够鼓励或压制合作。如果我们想要更多的突破，就应当停止等待某位孤独的天才，转而创造条件，让许多人都有可能做出贡献。问题不在于谁配得上聚光灯，而在于什么样的共同体让聚光灯成为可能。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The Science of Awe",
+      "wordCount": 414,
+      "paragraphs": [
+        "Awe is the feeling we get when we encounter something vast, unexpected or difficult to explain: a mountain range, a clear night sky, a piece of music that seems larger than the room. Psychologists once treated awe as a pleasant but minor emotion. In recent years, however, studies have suggested that it can change how people think about themselves and their place in the world.",
+        "One consistent finding is that awe makes people feel smaller. This is not necessarily a bad thing. A sense of being part of something larger can reduce the importance people attach to their own worries and social status. In experiments, participants who watched awe-inspiring videos were more likely to help others and less likely to feel that their problems were overwhelming. Researchers describe this as a shift from a narrow, self-focused perspective to a broader one. The effect appears even when the experience is virtual, such as a video or a virtual-reality scene.",
+        "Awe may also affect thinking. When we encounter something we cannot fully explain, we tend to become more curious and more open to new information. This can make us less certain of our existing beliefs, which is uncomfortable but potentially valuable. People who experience awe more often report greater satisfaction with life and stronger feelings of connection to others. Some studies even link awe to reduced inflammation and better health, though the mechanisms are still unclear. The findings are correlational, so it is too early to say that awe causes better health.",
+        "Not all awe is positive. The same emotion can be triggered by a natural disaster, a terrifying storm or a powerful leader, and it can make people more willing to follow authority or accept simple explanations. This is why researchers distinguish between awe that expands a person's sense of possibility and awe that shrinks it. The difference may lie in whether the experience feels threatening or welcoming, and in the meaning people make of it afterwards. The same experience can inspire one person and intimidate another.",
+        "For a society that often values control and productivity, awe is a reminder that not everything important can be measured or managed. A walk under a starry sky, a visit to a museum or a piece of music can interrupt the narrow focus of daily life. The point is not to chase extraordinary experiences, but to remain open to the possibility that the world is larger than our current understanding of it. That is a lesson worth keeping."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Awe is a minor emotion that has little effect on behaviour.",
+            "Awe should be avoided because it can be manipulated.",
+            "Awe can broaden people's perspective, though it is not always positive.",
+            "Awe can replace scientific understanding of the natural world."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "The point is not to chase extraordinary experiences, but to remain open to the possibility that the world is larger than our current understanding of it."
+          },
+          "explain": "主旨题。文章介绍敬畏如何让人感到自己更小、减少对自身烦恼和地位的执着、促进好奇和开放，也指出敬畏可能被灾难或权力利用；最后强调保持对「世界比我们理解得更大」的开放。C 项最完整。A 项与全文相反；B 项绝对化，作者没有主张回避敬畏；D 项与科学理解的关系相反。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What did experiments find about people who watched awe-inspiring videos?",
+          "options": [
+            "They became more focused on their social status.",
+            "They were more willing to help others and felt less overwhelmed.",
+            "They became less curious about new information.",
+            "They were more likely to follow authority without question."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "In experiments, participants who watched awe-inspiring videos were more likely to help others and less likely to feel that their problems were overwhelming."
+          },
+          "explain": "细节题。原文说观看令人敬畏的视频后，参与者更愿意帮助别人，也更不容易觉得自己的问题压得人喘不过气。B 项是原句的同义改写。A 项与「减少对地位的执着」相反；C 项与第三段「更开放、更好奇」相反；D 项是第四段提到的负面敬畏的可能后果，不是这些实验的发现。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why does the author call the effect of awe on beliefs \"uncomfortable but potentially valuable\"?",
+          "options": [
+            "It makes people abandon all their beliefs immediately.",
+            "It prevents people from learning new information.",
+            "It makes people more certain that their current views are correct.",
+            "It challenges existing beliefs and can open the mind to new information."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "This can make us less certain of our existing beliefs, which is uncomfortable but potentially valuable."
+          },
+          "explain": "推断题。前文说遇到无法完全解释的事物时，人会更好奇、更愿意接受新信息；后一句说这会让原有信念变得不那么确定，因此「不舒服但可能很有价值」。D 项准确。A 项绝对化：不是立刻抛弃所有信念；B 项与「更开放」相反；C 项与 less certain 相反。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"mechanisms\" in Paragraph 3 is closest in meaning to ______.",
+          "options": [
+            "the processes by which something happens",
+            "the machines used in a laboratory",
+            "the people who conduct research",
+            "the costs of a medical treatment"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "Some studies even link awe to reduced inflammation and better health, though the mechanisms are still unclear."
+          },
+          "explain": "词义题。句子说研究把敬畏与炎症减轻、健康改善联系起来，但 mechanisms 仍不清楚——这里指「产生这种效果的过程/机理」，不是实验室机器。A 项最接近。B 项机器、C 项研究人员、D 项治疗费用都不符合语境。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward awe?",
+          "options": [
+            "Awe is a minor emotion with little practical value.",
+            "Awe should be avoided because it can be manipulated.",
+            "Awe is valuable, but it is not always positive.",
+            "Awe can replace scientific understanding."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "Not all awe is positive."
+          },
+          "explain": "态度题。作者用大量研究说明敬畏的积极影响，但第四段明确说「并非所有敬畏都是正面的」，并区分扩展可能性与压缩可能性的敬畏。C 项「有价值但不总是正面」最准确。A 项与全文相反；B 项绝对化，作者没有主张回避；D 项与文章把敬畏和科学理解并列的态度不符。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What does the speaker say about experiencing awe through a video?",
+          "options": [
+            "It cannot affect how a person views their own concerns.",
+            "It produces a response only in people who have visited the place.",
+            "It always has a stronger effect than a real experience.",
+            "It can still produce a shift towards a broader perspective."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "The effect appears even when the experience is virtual, such as a video or a virtual-reality scene."
+          },
+          "explain": "D 正确：即使体验来自视频或虚拟现实，也可能发生视角转变。A 否认作用；B 加入实地经历前提；C 比较虚拟与真实的强弱，原文没有该结论。"
+        },
+        {
+          "id": "l2",
+          "type": "推断题",
+          "stem": "Why is the speaker cautious about the reported link between awe and health?",
+          "options": [
+            "All the studies measured only physical strength.",
+            "Researchers have already ruled out every other influence.",
+            "An association does not yet establish that awe causes better health.",
+            "The studies found that awe always worsens inflammation."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "The findings are correlational, so it is too early to say that awe causes better health."
+          },
+          "explain": "C 正确：相关性证据尚不能确立因果关系。A 编造研究测量对象；B 误称已排除其他影响；D 把相关方向反转并加上 always，均无依据。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "What may help determine whether awe expands or restricts a person's sense of possibility?",
+          "options": [
+            "Whether the experience feels threatening or welcoming, and how it is interpreted.",
+            "Whether every observer gives the experience exactly the same explanation.",
+            "Whether the experience happens only inside a museum.",
+            "Whether the person can immediately measure its effect on productivity."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "The difference may lie in whether the experience feels threatening or welcoming, and in the meaning people make of it afterwards."
+          },
+          "explain": "A 正确：体验是否有威胁感以及之后怎样赋予意义，会影响敬畏的方向。B 要求所有人同解，与个体差异相反；C 限定博物馆，D 限定生产力测量，均无依据。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What everyday attitude does the speaker ultimately encourage?",
+          "options": [
+            "Trying to control every surprising experience.",
+            "Remaining open to a world beyond one's present understanding.",
+            "Travelling constantly in search of the most extreme experiences.",
+            "Judging the value of all activities only by their measurable output."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The point is not to chase extraordinary experiences, but to remain open to the possibility that the world is larger than our current understanding of it."
+          },
+          "explain": "B 正确：结尾鼓励对超出当前理解的世界保持开放。A 与放下过度控制相反；C 误把目标说成不断追求非凡体验；D 把价值限制为可测产出，也偏离主旨。"
+        }
+      ],
+      "translation": [
+        "敬畏是我们遇到某种浩瀚、出乎意料或难以解释的事物时所产生的感受：一片山脉，一个清朗的夜空，一段仿佛比房间更大的音乐。心理学家曾把敬畏当作一种令人愉快但次要的情绪。然而近年来，研究表明它可以改变人们如何看待自己，以及如何看待自己在世界中的位置。",
+        "一个一贯的发现是，敬畏让人感到自己更渺小。这未必是坏事。感到自己是某种更大事物的一部分，可以降低人们对自己烦恼和社会地位的看重程度。在实验中，观看令人敬畏的视频的参与者更愿意帮助别人，也更不容易觉得自己的问题压得人喘不过气。研究者把这描述为从狭隘的、以自我为中心的视角转向更宽广的视角。即使体验是虚拟的，比如视频或虚拟现实场景，这种效果似乎也会出现。",
+        "敬畏还可能影响思维。当我们遇到无法完全解释的事物时，往往会变得更好奇，也更愿意接受新信息。这会让我们对已有的信念不那么确定，而这种不确定让人不舒服，却可能很有价值。经常体验到敬畏的人报告说，他们对生活更满意，与他人的连接感也更强。一些研究甚至把敬畏与炎症减轻、健康状况改善联系起来，尽管其中的机制仍不清楚。这些发现只是相关性的，因此断言敬畏带来更好的健康还为时过早。",
+        "并非所有敬畏都是正面的。同一种情绪也可能由自然灾害、可怕的风暴或一位有权势的领导人引发，而它可能让人更愿意追随权威，或者接受简单的解释。这就是研究者要区分「扩展一个人对可能性之感」的敬畏与「压缩这种感受」的敬畏的原因。差别也许在于这段体验让人感到威胁还是欢迎，以及人们事后为它赋予了什么样的意义。同样的体验可以让一个人受到鼓舞，也可以让另一个人感到畏惧。",
+        "对于一个常常看重掌控与效率的社会来说，敬畏提醒我们：并非所有重要的东西都能被测量或管理。在星空下走一走，去一次博物馆，或者听一段音乐，都能打断日常生活那种狭隘的专注。重点不是去追逐非凡的体验，而是对「世界比我们目前的理解更大」这一可能性保持开放。这是值得记住的一课。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "中医是中国传统医学的重要组成部分，已有数千年的历史。中医强调人与自然的和谐，认为人体各部位相互联系、相互影响。医生通过望、闻、问、切四种方法了解病情，再根据病人的具体情况制定治疗方案。中药多取自植物、动物和矿物，讲究配伍和剂量。针灸、推拿等疗法也广泛应用于临床。如今，中医不仅在中国得到传承，也逐渐走向世界，受到越来越多人的关注。许多外国患者在接受中医治疗后，对其独特的疗效产生兴趣。一些国家还建立了中医培训机构。",
+    "hints": [
+      "traditional Chinese medicine",
+      "harmony between humans and nature",
+      "diagnosis",
+      "Chinese medicine",
+      "acupuncture"
+    ],
+    "reference": "Traditional Chinese medicine (TCM) is an important part of China's traditional medical heritage and has a history of thousands of years. TCM emphasises harmony between humans and nature and holds that the various parts of the body are connected and influence one another. Doctors learn about a patient's condition through the four methods of observation, listening, questioning and pulse-taking, and then make a treatment plan based on the patient's specific situation. Chinese medicines are mostly made from plants, animals and minerals, with careful attention to combinations and dosage. Therapies such as acupuncture and massage are also widely used in clinical practice. Today, TCM is not only passed down in China but is also gradually spreading around the world and attracting increasing attention. Many foreign patients become interested in its distinctive effects after receiving TCM treatment, and some countries have set up TCM training institutions.",
+    "scoringPoints": [
+      {
+        "zh": "重要组成部分；数千年历史",
+        "en": "an important part of ...; a history of thousands of years"
+      },
+      {
+        "zh": "人与自然的和谐；相互联系、相互影响",
+        "en": "harmony between humans and nature; connected and influence one another"
+      },
+      {
+        "zh": "望、闻、问、切；制定治疗方案",
+        "en": "observation, listening, questioning and pulse-taking; make a treatment plan"
+      },
+      {
+        "zh": "中药取自植物、动物和矿物；配伍和剂量",
+        "en": "Chinese medicines made from plants, animals and minerals; combinations and dosage"
+      },
+      {
+        "zh": "针灸、推拿；广泛应用于临床",
+        "en": "acupuncture and massage; widely used in clinical practice"
+      },
+      {
+        "zh": "传承；走向世界；中医培训机构",
+        "en": "be passed down; spread around the world; TCM training institutions"
+      }
+    ],
+    "highlights": [
+      "an important part of ...",
+      "has a history of ...",
+      "hold that ...",
+      "with careful attention to ...",
+      "be passed down",
+      "become interested in ..."
+    ]
+  },
+  "writing": {
+    "topic": "The Value of Curiosity",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the value of curiosity. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: thesis → learning and listening → focused curiosity"
+    ],
+    "outlineHints": [
+      "开头：好奇心常被当成小孩子的事，但它是一种很有价值的能力。",
+      "中间：好奇心驱动学习；追问公式、追问别人的经历，会让人理解更深、听得更好。",
+      "结尾：好奇心不是收集零碎事实，而是持续追问；在快速给答案的世界里，留住问题是一种勇气。"
+    ],
+    "modelEssay": "Curiosity is often treated as a charming but minor quality, something children have and adults are expected to outgrow. Yet the desire to understand how things work is one of the most valuable habits a person can develop.\n\nCuriosity drives learning. A student who asks why a formula works is more likely to remember it than one who simply memorises the result. In science, the most important questions often begin with a simple \"What if?\" Curiosity also makes people better listeners, because it encourages them to ask about experiences different from their own. The habit is not limited to school: it shapes how adults approach problems at work and in daily life.\n\nCuriosity is not the same as collecting random facts. It becomes valuable when it is focused and persistent: when we follow a question far enough to discover something we did not expect. In a world that rewards quick answers, the willingness to stay with a question is a form of courage. The most interesting lives are not those with the most answers, but those with the best questions.",
+    "structure": [
+      "第一段：论点。好奇心常被当成小孩的事，但理解事物如何运作的愿望是很有价值的能力。",
+      "第二段：好奇心驱动学习；追问公式让人记得更牢，追问别人的经历让人更会倾听。",
+      "第三段：好奇心不是收集零碎事实，而是持续追问；在快速给答案的世界里，留住问题是一种勇气。"
+    ],
+    "expressions": [
+      "a charming but minor quality",
+      "outgrow",
+      "drives learning",
+      "a simple \"What if?\"",
+      "different from their own",
+      "focused and persistent",
+      "stay with a question"
+    ],
+    "translation": "好奇心常常被当成一种可爱但次要的品质，是孩子才有、而大人被期望长大后就不再有的东西。然而，想要理解事物如何运作的愿望，是一个人所能养成的最有价值的习惯之一。\n\n好奇心驱动学习。一个会问「这个公式为什么成立」的学生，比一个只把结果背下来的学生更可能记住它。在科学中，最重要的问题常常始于一句简单的「如果……会怎样？」。好奇心还让人更善于倾听，因为它鼓励人们去问与自己不同的经历。这种习惯不限于学校：它塑造成年人在工作和日常生活中处理问题的方式。\n\n好奇心并不等同于收集零散的事实。当它专注而持久时才有价值：当我们把一个追问追到足够远，从而发现原本没有预料到的东西。在一个奖励快速给出答案的世界里，愿意与一个问题待在一起，是一种勇气。最有趣的人生不是拥有最多答案的人生，而是拥有最好问题的人生。"
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "day": 2,
+  "date": "2026-11-01",
+  "week": 1,
+  "theme": "修复与休息",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Repair Café Movement",
+      "wordCount": 386,
+      "paragraphs": [
+        "In many towns, a quiet answer to the throwaway economy has emerged: the repair café. Typically held once a month in a community hall or library, it brings together volunteers with practical skills and residents with broken items. Visitors bring kettles, lamps, bicycles, toys and clothes, and volunteers help them diagnose and fix the problem. The service is usually free, though donations are welcome. The atmosphere is closer to a neighbourhood gathering than a repair shop.",
+        "The idea began in the Netherlands in 2009 and has since spread to thousands of locations around the world. Its appeal is partly financial: repairing a device can be cheaper than replacing it, especially for well-made items. But the deeper attraction is social. In an age when many products are designed to be discarded, the repair café offers people a chance to learn how things work, to share skills across generations, and to meet neighbours they might otherwise never speak to.",
+        "Supporters argue that the movement also has an environmental value. Every item that is repaired rather than replaced saves the energy and materials used to make a new one, and keeps useful objects out of landfill. The savings per kettle may seem small, but multiplied across a community they add up. Local councils have begun to support such events, recognising that prevention is cheaper than waste collection. Repair cafés also challenge a culture in which convenience is often valued more highly than durability.",
+        "The movement faces real limits, however. Not every product can be repaired: sealed batteries, glued cases and software locks can make a device impossible to open without damaging it. Volunteers are not always available, and some repairs require parts that are expensive or hard to find. Critics point out that repair cafés cannot replace systematic changes in how products are designed and sold. They can, at best, complement them.",
+        "Still, the cafés have changed the way many people think about ownership. A repaired object carries a story; it is no longer just a thing to be used and thrown away. The repair café is not a solution to the throwaway economy, but it shows how practical help, community and environmental care can fit together. In a world that produces more than it can absorb, that shift in attitude may be as valuable as the repairs themselves."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Repair cafés are a profitable business model that has spread worldwide.",
+            "Repair cafés combine practical help, community and environmental care, but are not a complete solution.",
+            "Repair cafés have replaced traditional repair shops in many towns.",
+            "Repair cafés are mainly a way for volunteers to earn money."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The repair café is not a solution to the throwaway economy, but it shows how practical help, community and environmental care can fit together."
+          },
+          "explain": "主旨题。末段这句话把全文两条线收在一起：一方面承认修理咖啡馆不是「万能解药」，另一方面肯定它把实用帮助、社区和环境关怀结合起来。B 项最完整。A 项把免费/捐赠为主的社区活动说成 profitable business，原文没有依据。C 项绝对化：原文只说它提供一种补充，没说取代传统修理店。D 项无中生有：志愿者是来分享技能，不是来赚钱。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to the passage, what attracts many people to repair cafés besides saving money?",
+          "options": [
+            "They can buy new products at a discount.",
+            "They can meet government officials.",
+            "They can learn skills, share knowledge and meet neighbours.",
+            "They can have their items repaired by professionals for free."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "the repair café offers people a chance to learn how things work, to share skills across generations, and to meet neighbours they might otherwise never speak to."
+          },
+          "explain": "细节题。原文在「省钱」之外给出了更深层的吸引力：学习物品如何运作、跨代分享技能、认识原本不会交谈的邻居。C 项是这三点的概括。A 项无中生有：原文没有打折买新产品。B 项无中生有：没有提到政府官员。D 项偷换概念：帮忙的人是 volunteers，不是 professionals；服务通常免费，但这不是「专业人员免费修理」。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What can be inferred about some modern products from Paragraph 4?",
+          "options": [
+            "They are always repaired successfully at repair cafés.",
+            "They are designed in ways that make repair difficult.",
+            "They are more durable than older products.",
+            "They are only sold in the Netherlands."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "Not every product can be repaired: sealed batteries, glued cases and software locks can make a device impossible to open without damaging it."
+          },
+          "explain": "推断题。原文列举了密封电池、胶合外壳和软件锁，这些设计会让设备「一打开就损坏」，因此可以推断有些现代产品在设计上就不利于维修。B 项是合理推断。A 项与 Not every product can be repaired 矛盾。C 项与原文相反：这些设计恰恰降低了可维修性，原文也没有说更耐用。D 项无中生有：荷兰是运动起源地，不是唯一销售地。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"durability\" in Paragraph 3 is closest in meaning to ______.",
+          "options": [
+            "the ability to last a long time",
+            "the cost of production",
+            "the speed of delivery",
+            "the quality of customer service"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "Repair cafés also challenge a culture in which convenience is often valued more highly than durability."
+          },
+          "explain": "词义题。durability 与 convenience 形成对比：前者指物品「耐用、能用很久」，后者指「方便、省事」。A 项最接近。B 项生产成本、C 项送货速度、D 项客服质量都不是这个词的意思，也无法与 convenience 构成原文中的对比。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward the repair café movement?",
+          "options": [
+            "Uncritically enthusiastic.",
+            "Entirely dismissive.",
+            "Indifferent to its environmental value.",
+            "Supportive but aware of its limitations."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "The movement faces real limits, however."
+          },
+          "explain": "态度题。第四段开头主动指出「这场运动面临真实限制」，说明作者不是盲目乐观；但第二、三段又肯定了它的社会和环境价值，末段也给出积极评价。D 项「支持但清楚局限」最准确。A 项忽略第四段的保留；B 项忽略前三段的肯定；C 项与第三段明确讨论环境价值矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Where is a typical repair café held?",
+          "options": [
+            "In a manufacturer's private laboratory.",
+            "In a community hall or library.",
+            "At a large shopping centre every evening.",
+            "Inside a factory that makes replacement parts."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "Typically held once a month in a community hall or library, it brings together volunteers with practical skills and residents with broken items."
+          },
+          "explain": "B 正确：活动通常在社区大厅或图书馆举行。A 和 D 把社区活动改成制造商场地；C 的大型商场与每晚频率也都没有原文支持。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "Why have some local councils started supporting repair events?",
+          "options": [
+            "They expect volunteers to replace all municipal workers.",
+            "They want residents to buy new appliances more frequently.",
+            "They see preventing waste as cheaper than collecting it.",
+            "They earn most of their income from repair charges."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "Local councils have begun to support such events, recognising that prevention is cheaper than waste collection."
+          },
+          "explain": "C 正确：地方政府认识到预防废物产生比回收清运成本更低。A 夸大志愿者作用；B 与延长物品寿命相反；D 编造依靠维修收费获利的动机。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "Which feature can prevent volunteers from repairing a modern device?",
+          "options": [
+            "A sealed battery or a software lock.",
+            "A clear instruction manual.",
+            "A replaceable outer case.",
+            "A standard part that is easy to obtain."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Not every product can be repaired: sealed batteries, glued cases and software locks can make a device impossible to open without damaging it."
+          },
+          "explain": "A 正确：密封电池、胶封外壳和软件锁都会阻碍维修。B 的清晰说明以及 C、D 的易拆换、易购零件通常便于维修，原文没有把它们列为障碍。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What wider change does the speaker associate with the repair café movement?",
+          "options": [
+            "A rule requiring all goods to be repaired for free.",
+            "The disappearance of commercial repair shops.",
+            "A belief that product design no longer needs to change.",
+            "A more caring attitude towards objects and ownership."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 5,
+            "quote": "Still, the cafés have changed the way many people think about ownership."
+          },
+          "explain": "D 正确：维修活动改变对拥有物品的理解，让物品不再只是用完即弃。A 和 B 都是原文没有的制度或结果；C 与仍需系统改变产品设计的观点相反。"
+        }
+      ],
+      "translation": [
+        "在许多城镇，一种对“用完即弃”经济的安静回应已经出现：修理咖啡馆。它通常每月在一个社区活动室或图书馆举办一次，把有实用技能的志愿者和有坏物品的居民聚到一起。来访者带来水壶、台灯、自行车、玩具和衣服，志愿者帮他们诊断并修好问题。这项服务通常免费，不过欢迎自愿捐款。那里的气氛更接近邻里聚会，而不是修理店。",
+        "这个想法 2009 年起源于荷兰，此后已传播到世界各地数千个地点。它的吸引力一部分是经济上的：修理一件设备可能比换新的更便宜，对那些做工扎实的物品尤其如此。但更深层的吸引力在于社交。在一个许多产品被设计成用完就扔的时代，修理咖啡馆给人们提供了一个机会：了解东西是怎么运作的，跨代分享手艺，认识那些原本可能一辈子都不会说上话的邻居。",
+        "支持者认为，这场运动还有环境价值。每一件被修好而不是被替换的物品，都省下了制造新产品所耗费的能源和材料，也让有用的东西不进垃圾填埋场。每只水壶省下的量也许微不足道，但放到整个社区来乘，就会积少成多。地方议会已经开始支持这类活动，因为他们认识到预防比垃圾清运更便宜。修理咖啡馆也在挑战一种文化——在这种文化里，便利往往比耐用更受看重。",
+        "然而这场运动面临实实在在的限制。并非每件产品都能修：密封电池、胶合外壳和软件锁，都可能让一台设备一打开就损坏。志愿者也不总是有空，有些修理还需要昂贵或难以找到的零件。批评者指出，修理咖啡馆无法取代产品设计与销售方式上的系统性变革。它们最多只能起到补充作用。",
+        "尽管如此，这些咖啡馆已经改变了许多人对“拥有”的看法。一件被修好的物品带着一段故事；它不再只是一件用过就扔的东西。修理咖啡馆不是“用完即弃”经济的解决方案，但它展示了实用的帮助、社区与环境关怀如何结合在一起。在一个生产超过自身消化能力的世界里，这种态度的转变也许和修理本身一样有价值。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "What Sleep Does for Memory",
+      "wordCount": 383,
+      "paragraphs": [
+        "Students often sacrifice sleep before an exam, assuming that more hours of study will mean better results. Research on memory suggests the opposite. Sleep is not simply a period of rest; it is an active stage in which the brain sorts, strengthens and reorganises what it has learned. Cutting sleep to make room for revision can therefore undermine the very learning it is meant to support.",
+        "The process begins during the day, when new information is first encoded. But it is during sleep that this fragile trace is consolidated. In deep sleep, the brain replays patterns of activity associated with recent experiences, strengthening the connections between neurons. In REM sleep, it appears to integrate new knowledge with existing memories, helping us see connections and solve problems. A night of sleep, in other words, is not a pause in learning but part of it.",
+        "Studies support this view. In one classic experiment, participants who slept after learning a list of words remembered more of them than those who stayed awake for the same period. Other studies have found that sleep improves procedural skills, such as playing a musical instrument or hitting a tennis serve. The effect is not limited to children; adults and older people benefit as well. The size of the benefit varies, but the direction is consistent.",
+        "Sleep also affects the emotional meaning of memories. After a disturbing experience, a good night's sleep can help people process the event without being overwhelmed by it. In this sense, sleep acts as a kind of overnight therapy. It does not erase painful memories, but it may make them easier to live with. Researchers are still debating exactly how this works, but the evidence points to sleep as an important part of emotional recovery. The process is not conscious, but it seems to continue long after the event.",
+        "For students, the practical lesson is simple: a regular sleep schedule is part of studying, not a luxury that can be sacrificed. Cramming through the night may produce a temporary feeling of progress, but it often leaves the brain less able to retain what was learned. The best revision plan includes both focused work and enough sleep to make that work stick. A short nap can help, but it is no substitute for a full night's rest."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Students should study all night before exams.",
+            "Sleep only helps children and older people.",
+            "Sleep is an active part of learning and memory, not a pause.",
+            "Sleep erases disturbing memories completely."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "Sleep is not simply a period of rest; it is an active stage in which the brain sorts, strengthens and reorganises what it has learned."
+          },
+          "explain": "主旨题。首段直接给出全文核心：睡眠不是单纯的休息，而是大脑整理、巩固和重组所学内容的活跃阶段。C 项是这句话的同义概括。A 项与全文相反，作者明确反对熬夜复习。B 项以偏概全：原文说儿童、成年人和老年人都受益。D 项绝对化：第四段明确说睡眠 does not erase painful memories。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to the passage, what happens during deep sleep?",
+          "options": [
+            "The brain stops processing new information.",
+            "The brain replays patterns and strengthens neural connections.",
+            "The brain erases all memories from the day.",
+            "The brain focuses only on emotional events."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "In deep sleep, the brain replays patterns of activity associated with recent experiences, strengthening the connections between neurons."
+          },
+          "explain": "细节题。原文说深睡时大脑会重放与近期经历有关的活动模式，并加强神经元之间的连接。B 项是原句的同义改写。A 项与「睡眠是学习的一部分」相反；C 项无中生有，原文没有说清空当天记忆；D 项以偏概全，情绪记忆只是第四段讨论的一类。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What does the phrase \"overnight therapy\" in Paragraph 4 suggest?",
+          "options": [
+            "Sleep can cure serious mental illness.",
+            "Sleep replaces professional therapy.",
+            "Sleep makes people forget painful events.",
+            "Sleep helps people process disturbing experiences emotionally."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "After a disturbing experience, a good night's sleep can help people process the event without being overwhelmed by it. In this sense, sleep acts as a kind of overnight therapy."
+          },
+          "explain": "推断题。原文说睡一觉能帮助人处理令人不安的经历，不至于被情绪淹没，作者才用「一夜疗法」作比喻。D 项是合理推断。A 项过度推断：原文没有说治愈严重精神疾病。B 项绝对化：a kind of 表示「一种类似的东西」，不是替代专业治疗。C 项与 It does not erase painful memories 矛盾。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"consolidated\" in Paragraph 2 is closest in meaning to ______.",
+          "options": [
+            "strengthened and made stable",
+            "divided into smaller parts",
+            "forgotten quickly",
+            "recorded in writing"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "But it is during sleep that this fragile trace is consolidated."
+          },
+          "explain": "词义题。前文说记忆痕迹是 fragile（脆弱的），睡眠时它被 consolidated，后文紧接着说神经元连接被 strengthening，因此 consolidated 指「巩固、变得稳定」。A 项最接近。B 项意思相反；C 项与全文「睡眠帮助记忆」相反；D 项把心理过程误解为书面记录。"
+        },
+        {
+          "id": "q5",
+          "type": "目的题",
+          "stem": "What is the author's main purpose in writing the passage?",
+          "options": [
+            "To explain how to cure sleeping disorders.",
+            "To argue that sleep is part of effective learning.",
+            "To compare sleep patterns in different countries.",
+            "To criticize students for being lazy."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The best revision plan includes both focused work and enough sleep to make that work stick."
+          },
+          "explain": "目的题。全文从记忆巩固、情绪处理和复习计划三个角度说明睡眠不是学习的对立面，而是学习的一部分；末句直接落到「最好的复习计划包括睡眠」。B 项最准确。A 项无中生有：文章不讨论睡眠障碍的治疗。C 项无中生有：没有跨国比较。D 项曲解作者意图：作者是在纠正「熬夜更努力」的误区，不是在指责学生懒惰。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What does the speaker say the brain appears to do during REM sleep?",
+          "options": [
+            "Stop processing all recently learned information.",
+            "Connect new knowledge with existing memories.",
+            "Erase every upsetting experience from memory.",
+            "Repeat only the physical movements made during the day."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "In REM sleep, it appears to integrate new knowledge with existing memories, helping us see connections and solve problems."
+          },
+          "explain": "B 正确：REM 睡眠把新知识与已有记忆整合。A 与主动加工相反；C 把情绪处理误说成抹除记忆；D 用 only 将作用不当地限制为动作重复。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "Which improvement is mentioned as another benefit of sleep?",
+          "options": [
+            "Learning a new skill without any practice.",
+            "Avoiding all mistakes in examinations.",
+            "Needing fewer hours of sleep with age.",
+            "Performing skills such as playing an instrument better."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Other studies have found that sleep improves procedural skills, such as playing a musical instrument or hitting a tennis serve."
+          },
+          "explain": "D 正确：文章列举乐器演奏和网球发球等程序性技能。A 把巩固已有练习说成无需练习；B 的考试零失误与 C 的年龄决定睡眠需求均未提及。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What should a student infer from the speaker's comment about naps?",
+          "options": [
+            "A nap may help, but cannot fully replace a night's sleep.",
+            "Several short naps always work better than sleeping at night.",
+            "A nap has no possible value for learning.",
+            "Naps make a regular sleep schedule unnecessary."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 5,
+            "quote": "A short nap can help, but it is no substitute for a full night's rest."
+          },
+          "explain": "A 正确：小睡有帮助，但不是完整夜间休息的替代品。B 强行比较优劣；C 否定小睡作用；D 认为无需规律作息，都超过或违背了原句。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What approach to revision does the speaker recommend?",
+          "options": [
+            "Studying continuously until the examination begins.",
+            "Using sleep only as a reward after all revision is finished.",
+            "Combining concentrated study with sufficient sleep.",
+            "Replacing most study sessions with rest."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "The best revision plan includes both focused work and enough sleep to make that work stick."
+          },
+          "explain": "C 正确：建议把专注学习与充足睡眠共同纳入复习。A 排除必要休息，B 把睡眠降为可推迟的奖励，D 又用休息取代学习，均偏离两者结合的主张。"
+        }
+      ],
+      "translation": [
+        "学生常常在考试前牺牲睡眠，以为多学几个小时就会有更好的成绩。关于记忆的研究却指向相反的结论。睡眠不只是一段休息时间；它是一个活跃的阶段，大脑在其中整理、巩固并重组所学的内容。因此，为了腾出时间复习而削减睡眠，恰恰可能破坏它本想支持的学习本身。",
+        "这一过程在白天就开始了，新信息最初被编码。但正是在睡眠中，这道脆弱的痕迹才得到巩固。在深度睡眠中，大脑会重放与近期经历相关的活动模式，加强神经元之间的连接。在快速眼动睡眠中，它似乎会把新知识与已有记忆整合起来，帮助我们看出联系、解决问题。换句话说，一夜睡眠不是学习的中断，而是学习的一部分。",
+        "研究支持这一观点。在一个经典实验中，学完一串单词后睡过觉的参与者，比在同样长的时间里保持清醒的人记住了更多单词。其他研究还发现，睡眠能改善程序性技能，比如演奏乐器或打出网球发球。这种效果并不限于儿童；成年人和老年人同样受益。收益的大小各不相同，但方向是一致的。",
+        "睡眠还影响记忆的情绪含义。经历一件令人不安的事情之后，好好睡一夜能帮助人们消化这件事，而不至于被它压垮。在这个意义上，睡眠起到的是一种“一夜疗法”的作用。它不会抹去痛苦的记忆，但可能让人更容易与它们相处。研究人员仍在争论它究竟如何起作用，但证据表明，睡眠是情绪恢复的重要一环。这个过程不是有意识的，但它似乎在事情过去很久之后仍在继续。",
+        "对学生来说，实际的教训很简单：规律的作息是学习的一部分，而不是可以牺牲的奢侈品。通宵突击也许能带来短暂的“有进展”的感觉，但往往让大脑更难留住所学的内容。最好的复习计划既包括专注的学习，也包括足够的睡眠，让这些努力真正沉淀下来。小睡一会儿有帮助，但它替代不了一整夜的休息。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "中秋节是中国重要的传统节日之一，日期是农历八月十五。这一天，人们会与家人团聚，一起赏月、吃月饼。月饼圆圆的形状象征着团圆和美满。月饼最初是祭拜月神的供品，后来逐渐成为节日食品。关于中秋节的传说很多，其中嫦娥奔月的故事流传最广。人们还会点亮灯笼、猜灯谜，孩子们提着灯笼在街上玩耍。这些习俗寄托着人们对美好生活的向往。如今，中秋节不仅是一个家庭节日，也成为中华文化的重要象征。随着中外交流的增多，越来越多的外国朋友开始了解并喜爱这个节日。",
+    "hints": [
+      "traditional festival",
+      "lunar month",
+      "family reunion",
+      "symbolize",
+      "lantern riddles"
+    ],
+    "reference": "The Mid-Autumn Festival is one of China's most important traditional festivals, falling on the fifteenth day of the eighth lunar month. On this day, people gather with their families to admire the moon and eat mooncakes. The round shape of the mooncake symbolizes reunion and happiness. Mooncakes were originally offerings to the moon goddess and later became festival food. There are many legends about the festival, and the story of Chang'e flying to the moon is the most widely known. People also light lanterns and solve lantern riddles, while children carry lanterns through the streets. These customs express people's longing for a better life. Today, the Mid-Autumn Festival is not only a family occasion but also an important symbol of Chinese culture. As exchanges between China and other countries increase, more and more foreign friends are coming to know and love this festival.",
+    "scoringPoints": [
+      {
+        "zh": "重要的传统节日；农历八月十五",
+        "en": "one of China's most important traditional festivals; the fifteenth day of the eighth lunar month"
+      },
+      {
+        "zh": "与家人团聚；赏月、吃月饼",
+        "en": "gather with family; admire the moon and eat mooncakes"
+      },
+      {
+        "zh": "圆圆的形状象征团圆和美满",
+        "en": "the round shape symbolizes reunion and happiness"
+      },
+      {
+        "zh": "祭拜月神的供品；逐渐成为节日食品",
+        "en": "offerings to the moon goddess; later became festival food"
+      },
+      {
+        "zh": "嫦娥奔月的故事；灯笼、灯谜",
+        "en": "the story of Chang'e flying to the moon; lanterns and lantern riddles"
+      },
+      {
+        "zh": "寄托对美好生活的向往；中外交流增多",
+        "en": "express people's longing for a better life; as exchanges between China and other countries increase"
+      }
+    ],
+    "highlights": [
+      "falling on ...",
+      "symbolizes reunion and happiness",
+      "were originally ... and later became ...",
+      "the most widely known",
+      "express people's longing for ...",
+      "is not only ... but also ..."
+    ]
+  },
+  "writing": {
+    "topic": "The Value of Learning to Repair What We Own",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the value of learning to repair what we own. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: phenomenon → personal benefits → social/environmental value"
+    ],
+    "outlineHints": [
+      "开头：消费社会鼓励替换，修理技能变得稀缺；但修理的价值不止省钱。",
+      "中间：个人层面——理解物品、成为更谨慎的消费者、培养耐心。",
+      "结尾：社会/环境层面——可持续生活、社区连接；有限资源下的尊重。"
+    ],
+    "modelEssay": "In a culture that encourages us to replace rather than repair, the ability to fix a broken object has become a rare skill. Yet learning to repair what we own offers benefits that go far beyond saving money.\n\nRepairing things changes our relationship with the objects we use. When we open a kettle or mend a jacket, we begin to understand how it works and what it is made of. This knowledge makes us more careful consumers: we notice poor design, choose products that can be maintained, and throw away less. It also builds patience, since a successful repair often requires several attempts and a willingness to learn from mistakes.\n\nOn a larger scale, repair skills support a more sustainable way of living. Every object that is fixed rather than discarded saves energy, materials and money, and keeps waste out of landfill. Repair also connects people: a neighbour who can fix a bicycle or a lamp becomes a source of help and confidence. In a world of limits, knowing how to mend what we have is a practical form of respect—for our possessions, our communities and the planet.",
+    "structure": [
+      "第一段：现象 + 论点。消费社会鼓励「换新」，修理技能稀缺；修理的价值不止省钱。",
+      "第二段：个人收益。修理让人理解物品、成为更谨慎的消费者，也培养耐心和试错的意愿。",
+      "第三段：社会与环境价值。减少浪费、支持可持续生活、连接邻里；有限资源下的一种尊重。"
+    ],
+    "expressions": [
+      "replace rather than repair",
+      "go far beyond saving money",
+      "change our relationship with the objects we use",
+      "more careful consumers",
+      "a more sustainable way of living",
+      "keep waste out of landfill",
+      "a practical form of respect"
+    ],
+    "translation": "在一种鼓励我们更换而非修理的文化里，修好一件坏东西的能力已经成为一项稀缺技能。然而，学习修理自己的物品所带来的好处，远不止于省钱。\n\n修理东西会改变我们与自己使用的物品之间的关系。当我们打开一只水壶或补好一件夹克，我们开始理解它是怎么运作的、由什么材料做成。这种知识让我们成为更审慎的消费者：我们会注意到糟糕的设计，选择那些可以维护的产品，也扔得更少。它还能培养耐心，因为一次成功的修理往往需要反复尝试，以及从错误中学习的意愿。\n\n在更大的层面上，修理技能支撑着一种更可持续的生活方式。每一件被修好而不是被丢弃的物品，都省下了能源、材料和金钱，也让垃圾远离填埋场。修理还能把人连接起来：一个会修自行车或台灯的邻居，会成为帮助和信心的来源。在一个资源有限的世界里，懂得修补我们已有的东西，是一种实实在在的尊重——对物品、对社区，也对这颗星球。"
+  }
+}

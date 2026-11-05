@@ -1,0 +1,51 @@
+[
+  {
+    "day": 1,
+    "date": "2026-10-31",
+    "week": 1,
+    "theme": "注意力与工作方式",
+    "file": "day-01.json"
+  },
+  {
+    "day": 2,
+    "date": "2026-11-01",
+    "week": 1,
+    "theme": "修复与休息",
+    "file": "day-02.json"
+  },
+  {
+    "day": 3,
+    "date": "2026-11-02",
+    "week": 1,
+    "theme": "城市与日常",
+    "file": "day-03.json"
+  },
+  {
+    "day": 4,
+    "date": "2026-11-03",
+    "week": 1,
+    "theme": "现代生活与成长",
+    "file": "day-04.json"
+  },
+  {
+    "day": 5,
+    "date": "2026-11-04",
+    "week": 1,
+    "theme": "效率与判断",
+    "file": "day-05.json"
+  },
+  {
+    "day": 6,
+    "date": "2026-11-05",
+    "week": 1,
+    "theme": "创造与好奇",
+    "file": "day-06.json"
+  },
+  {
+    "day": 7,
+    "date": "2026-11-06",
+    "week": 1,
+    "theme": "教育与自然",
+    "file": "day-07.json"
+  }
+]

@@ -1,0 +1,435 @@
+{
+  "day": 3,
+  "date": "2026-11-02",
+  "week": 1,
+  "theme": "城市与日常",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The 15-Minute City",
+      "wordCount": 394,
+      "paragraphs": [
+        "Imagine a city where everything you need for daily life—work, school, shops, parks and a doctor—is within a fifteen-minute walk or bike ride. This is the promise of the \"15-minute city\", an idea that has spread quickly among urban planners. Instead of designing neighbourhoods around cars, the model puts everyday needs close to home. Its supporters say it could reduce traffic, cut pollution and make communities more liveable.",
+        "The idea is not entirely new. Before cars became common, many cities were already compact, with shops and services mixed into residential streets. What is new is the scale of the challenge: cities must now cut carbon emissions while accommodating growing populations. The 15-minute city offers a way to do both, by reducing the need to travel long distances and by encouraging walking and cycling. In Paris, for example, schoolyards have been opened to the public and some streets have been redesigned for pedestrians.",
+        "Supporters also emphasise the social benefits. When people spend less time commuting, they have more time for family, friends and local activities. Small businesses may benefit from residents who shop nearby rather than in distant malls. And neighbourhoods with a mix of housing, workplaces and public spaces tend to be safer and more lively. For older people and children, who may not drive, the ability to reach daily necessities on foot can make a significant difference.",
+        "Critics, however, point to practical obstacles. Not every city has the density or resources to create mixed-use neighbourhoods. In sprawling suburbs, services may be too far apart to reach in fifteen minutes, and people may still need cars for work. Some researchers warn that the idea could make housing more expensive in desirable central areas, pushing poorer residents further out. Others argue that the fifteen-minute limit is arbitrary and that the real goal should be better public transport.",
+        "These criticisms do not make the idea worthless. They suggest that the 15-minute city should be treated as a direction rather than a fixed rule. The most successful projects will adapt the principle to local conditions, combining walkable neighbourhoods with reliable public transport. In the end, the question is not whether every trip can be completed in fifteen minutes, but whether daily life can be organised around people rather than cars. The goal is a city that works for its residents, not one that simply moves them faster."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "The 15-minute city is a failed experiment.",
+            "The 15-minute city is a promising direction but needs local adaptation.",
+            "The 15-minute city is mainly about building more roads.",
+            "The 15-minute city has solved traffic problems in Paris."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "They suggest that the 15-minute city should be treated as a direction rather than a fixed rule."
+          },
+          "explain": "主旨题。文章先介绍 15 分钟城市的理念和好处，再列出密度、郊区、房价等现实限制，最后把结论落在「方向而非固定规则」。B 项最完整。A 项与 These criticisms do not make the idea worthless 矛盾；C 项与文章「减少对汽车依赖」的方向相反；D 项以偏概全，巴黎只是例子，原文没有说交通问题已经解决。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What is the core principle of the 15-minute city?",
+          "options": [
+            "Cities should build more roads for commuters.",
+            "Every neighbourhood should have its own shopping mall.",
+            "Daily needs should be within a short walk or bike ride.",
+            "People should move away from city centres."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "Imagine a city where everything you need for daily life—work, school, shops, parks and a doctor—is within a fifteen-minute walk or bike ride."
+          },
+          "explain": "细节题。首段直接给出定义：日常工作、学校、商店、公园、医生等日常所需都在十五分钟步行或骑行范围内。C 项是原句的概括。A 项与「不要围绕汽车设计社区」相反；B 项过度具体化，原文没有要求每个社区都有购物中心；D 项无中生有，文章没有让人搬离市中心。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What can be inferred about sprawling suburbs from Paragraph 4?",
+          "options": [
+            "They are the best places to test the 15-minute city.",
+            "They already have reliable public transport.",
+            "They have no residents who commute to work.",
+            "Their services may be too spread out for a 15-minute limit."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "In sprawling suburbs, services may be too far apart to reach in fifteen minutes, and people may still need cars for work."
+          },
+          "explain": "推断题。原文说在蔓延的郊区，服务设施可能相距太远，十五分钟内到不了，人们可能仍然需要开车上班。D 项是合理推断。A 项与原文相反：郊区正是难实施的场景。B 项无中生有：原文没有说郊区已有可靠公交。C 项绝对化：原文说 people may still need cars，不等于没人通勤。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"arbitrary\" in Paragraph 4 is closest in meaning to ______.",
+          "options": [
+            "not based on a clear reason",
+            "very expensive",
+            "carefully measured",
+            "widely accepted"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Others argue that the fifteen-minute limit is arbitrary and that the real goal should be better public transport."
+          },
+          "explain": "词义题。批评者认为「十五分钟」这个上限是 arbitrary，并主张真正的目标应是更好的公共交通——也就是说这个数字缺乏充分依据，是人为设定的。A 项最接近。B 项财务成本、C 项精确测量、D 项广泛接受都与批评语气不符。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward the 15-minute city?",
+          "options": [
+            "Uncritically enthusiastic.",
+            "Entirely dismissive.",
+            "Indifferent to its environmental value.",
+            "Supportive but realistic about its limits."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 5,
+            "quote": "These criticisms do not make the idea worthless."
+          },
+          "explain": "态度题。作者承认批评有道理，但紧接着说「这些批评并不意味着这个想法没有价值」，并主张把它当作方向、结合本地条件实施。D 项「支持但现实」最准确。A 项忽略第四段的限制；B 项忽略前三段的肯定；C 项与文章对环境价值的讨论矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What were many cities like before cars became common?",
+          "options": [
+            "Homes and services were deliberately kept far apart.",
+            "Residents could reach shops only by using public transport.",
+            "Shops and services were mixed into compact residential streets.",
+            "Every district followed a strict fifteen-minute travel rule."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Before cars became common, many cities were already compact, with shops and services mixed into residential streets."
+          },
+          "explain": "C 正确：汽车普及前许多城市已经紧凑，商店服务混合在居住街道中。A 与混合布局相反；B 的出行限制和 D 的严格十五分钟规定均无依据。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "Which change in Paris does the speaker mention?",
+          "options": [
+            "Opening schoolyards for public use.",
+            "Closing every street to bicycles.",
+            "Moving shops away from residential areas.",
+            "Replacing all public transport with private cars."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "In Paris, for example, schoolyards have been opened to the public and some streets have been redesigned for pedestrians."
+          },
+          "explain": "A 正确：巴黎将学校操场向公众开放，并改造部分街道供步行使用。B 错换对象；C 与就近服务相反；D 既过度绝对，也与减少汽车依赖不符。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "Why might a desirable walkable neighbourhood become less accessible to poorer residents?",
+          "options": [
+            "Local shops may stop selling everyday necessities.",
+            "Walking routes may be reserved for office workers.",
+            "Public parks may be converted into private car parks.",
+            "Rising housing costs may push them farther away."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Some researchers warn that the idea could make housing more expensive in desirable central areas, pushing poorer residents further out."
+          },
+          "explain": "D 正确：受欢迎的中心区房价上涨，可能把低收入居民推向更远处。A、B、C 都不是文中提出的住房可负担性问题，也没有对应证据。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "How does the speaker think the fifteen-minute principle should be applied?",
+          "options": [
+            "As a fixed travel limit that every city must enforce.",
+            "Flexibly, alongside dependable public transport.",
+            "Only in cities that already have no cars.",
+            "By replacing local services with distant shopping centres."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The most successful projects will adapt the principle to local conditions, combining walkable neighbourhoods with reliable public transport."
+          },
+          "explain": "B 正确：应适应地方条件，把步行社区与可靠公共交通结合。A 把方向变成硬性时限；C 加入无车前提；D 与生活服务就近的目标相反。"
+        }
+      ],
+      "translation": [
+        "想象这样一座城市：日常生活所需的一切——工作、学校、商店、公园和医生——都在步行或骑车十五分钟的范围内。这就是“15 分钟城市”的承诺，这个理念在城市规划者当中迅速传播开来。这种模式不是围绕汽车来设计街区，而是把日常所需放在离家很近的地方。支持者说，它可以减少交通流量、降低污染，让社区更宜居。",
+        "这个想法并不完全新鲜。在汽车普及之前，许多城市本来就是紧凑的，商店和服务混杂在住宅街道之间。新的是挑战的规模：城市现在必须在容纳不断增长的人口的同时削减碳排放。15 分钟城市提供了一条两者兼顾的路子——减少长距离出行的需要，并鼓励步行和骑车。以巴黎为例，一些校园操场已向公众开放，一些街道也重新设计，方便行人。",
+        "支持者还强调社会层面的好处。当人们花在通勤上的时间变少，就有更多时间留给家人、朋友和本地活动。小商户也可能受益，因为居民会在附近购物，而不是去远处的商场。而且，住宅、工作场所和公共空间混合的街区往往更安全、更有活力。对于可能不开车的老人和孩子来说，步行就能到达日常所需，会带来很大的不同。",
+        "然而批评者指出了现实障碍。并非每座城市都有足够的密度或资源来打造混合用途的街区。在无序蔓延的郊区，服务设施可能相距太远，十五分钟内到不了，人们上班可能仍然需要开车。一些研究者警告说，这个理念可能让条件好的中心城区住房更贵，把较贫困的居民进一步挤到城市外围。另一些人则认为，十五分钟这个上限是人为随意设定的，真正的目标应该是更好的公共交通。",
+        "这些批评并不意味着这个想法没有价值。它们说明，15 分钟城市应当被当作一个方向，而不是一条固定的规则。最成功的项目会把这一原则与本地条件相结合，让可步行的街区与可靠的公共交通配合起来。说到底，问题不在于每一次出行能否在十五分钟内完成，而在于日常生活能否围绕人而不是围绕车来组织。目标是一座为居民服务的城市，而不是一座只把人运送得更快的城市。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "Why We Underestimate Small Habits",
+      "wordCount": 382,
+      "paragraphs": [
+        "Most people believe that big changes require big actions. If we want to get fit, we plan to spend an hour at the gym every day; if we want to learn a language, we aim to study for two hours each night. Such plans often collapse within a few weeks. The problem is not a lack of ambition but the size of the first step. Small habits, by contrast, are easy to start and easy to repeat, which is exactly what makes them powerful.",
+        "A habit is a behaviour that has become automatic through repetition. When a cue in our environment triggers a routine, we act without much conscious thought. This is why habits can be so efficient: they free the brain from making the same decision again and again. But it also explains why bad habits are hard to break. The cue is still there, and the routine follows almost automatically, even when we know it is not good for us.",
+        "Small habits work because they fit into existing routines. A person who wants to read more might begin with one page before bed; someone who wants to exercise might start with five minutes of stretching after brushing their teeth. These actions are too small to fail, and they create a sense of success that makes repetition more likely. Over time, the habit can grow, but the initial step must be small enough to survive a busy or difficult day.",
+        "Researchers have found that consistency matters more than intensity in the early stages of habit formation. Missing one day is not a disaster, but missing several days in a row can weaken the association between cue and behaviour. This is why habit experts often advise people to focus on showing up rather than on performing perfectly. A short walk is better than no walk; a single page is better than an abandoned plan.",
+        "None of this means that ambitious goals are useless. Big goals give direction, but small habits provide the daily mechanism for reaching them. The most effective approach is to start with a step so small that it feels almost too easy, and then let repetition do the work. In a world that celebrates dramatic change, the quiet power of small habits is easy to overlook—and easy to use."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Big goals are more important than small habits.",
+            "Bad habits are impossible to change.",
+            "Small habits are powerful because they are easy to start and repeat.",
+            "People should exercise for an hour every day."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "Small habits, by contrast, are easy to start and easy to repeat, which is exactly what makes them powerful."
+          },
+          "explain": "主旨题。首段先指出宏大计划常常失败，随后给出全文核心：小习惯容易开始、容易重复，这正是它们的力量所在。C 项最准确。A 项与末段「大目标给方向、小习惯给机制」的平衡观点不符；B 项绝对化，原文只说坏习惯难改，不是不可能；D 项是文章开头的反例，不是主旨。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to the passage, why can habits be efficient?",
+          "options": [
+            "They require a lot of conscious thought.",
+            "They free the brain from making the same decision repeatedly.",
+            "They always lead to healthy behaviour.",
+            "They remove all cues from the environment."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "This is why habits can be so efficient: they free the brain from making the same decision again and again."
+          },
+          "explain": "细节题。原文在冒号后直接说明：习惯之所以高效，是因为它们让大脑不必反复做同一个决定。B 项是原句的同义改写。A 项与 automatic、without much conscious thought 相反；C 项绝对化：习惯也可能是坏习惯；D 项误解了 cue 的作用，习惯恰恰依赖环境提示。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What does the passage suggest about missing several days in a row?",
+          "options": [
+            "It makes the habit stronger.",
+            "It has no effect on the habit.",
+            "It is the best way to form a habit.",
+            "It can weaken the link between cue and behaviour."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Missing one day is not a disaster, but missing several days in a row can weaken the association between cue and behaviour."
+          },
+          "explain": "推断题。原文明确说漏掉一天不算灾难，但连续漏掉几天会削弱「提示—行为」之间的联系。D 项是原句的同义改写。A 项、C 项与原文相反；B 项与 can weaken 矛盾。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"consistency\" in Paragraph 4 is closest in meaning to ______.",
+          "options": [
+            "doing something regularly",
+            "working very quickly",
+            "changing plans often",
+            "avoiding all mistakes"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Researchers have found that consistency matters more than intensity in the early stages of habit formation."
+          },
+          "explain": "词义题。consistency 与 intensity 对比：前者指「持续、稳定地做」，后者指「强度大」。后文「漏一天没关系，连续漏几天才会削弱联系」也在解释持续性的重要。A 项最接近。B 项速度、C 项经常变计划、D 项不犯错都不是这个词的意思。"
+        },
+        {
+          "id": "q5",
+          "type": "目的题",
+          "stem": "What is the author's main purpose in writing the passage?",
+          "options": [
+            "To argue that big goals should be abandoned.",
+            "To explain why small habits work and how to build them.",
+            "To compare habit formation in children and adults.",
+            "To criticize people who fail to keep their resolutions."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The most effective approach is to start with a step so small that it feels almost too easy, and then let repetition do the work."
+          },
+          "explain": "目的题。全文先解释习惯为何高效、为何小步骤更容易坚持，最后给出「从极小的一步开始，让重复发挥作用」的方法，目的是说明小习惯的原理和做法。B 项最准确。A 项绝对化，作者并不否定大目标；C 项无中生有：没有比较儿童和成人；D 项曲解作者意图：文章是在帮助读者，不是在指责。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Why do many ambitious plans collapse, according to the speaker?",
+          "options": [
+            "People never set themselves meaningful goals.",
+            "The initial action demands too much from them.",
+            "Small habits require more equipment than large changes.",
+            "Repeating an action quickly makes it less automatic."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "The problem is not a lack of ambition but the size of the first step."
+          },
+          "explain": "B 正确：失败原因在于第一步过大，而不是缺少雄心。A 偷换成从不设目标；C 无中生有地谈设备；D 与重复形成自动行为的解释相反。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "Which example illustrates attaching a new habit to an existing routine?",
+          "options": [
+            "Buying several books before deciding what to read.",
+            "Spending a whole weekend exercising once a month.",
+            "Waiting for a free day to begin learning a language.",
+            "Stretching for five minutes after brushing one's teeth."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "A person who wants to read more might begin with one page before bed; someone who wants to exercise might start with five minutes of stretching after brushing their teeth."
+          },
+          "explain": "D 正确：刷牙后做五分钟拉伸，把新动作挂接在已有习惯后。A 只是购买，B 是低频集中行动，C 是等待条件，均不是原文强调的日常衔接。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What should a beginner do on an unusually busy day?",
+          "options": [
+            "Keep a small version of the habit that can still be completed.",
+            "Double the next day's target instead of doing anything today.",
+            "Treat the day as proof that the long-term goal is wrong.",
+            "Wait until the habit can be performed perfectly."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "Over time, the habit can grow, but the initial step must be small enough to survive a busy or difficult day."
+          },
+          "explain": "A 正确：小步骤应能在繁忙或困难的一天继续执行。B 要求次日加倍没有依据；C 把单日困难等同于目标错误；D 的完美主义违背坚持出现的建议。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "How does the speaker describe the relationship between goals and small habits?",
+          "options": [
+            "Large goals make daily routines unnecessary.",
+            "Small habits are useful only when there is no long-term goal.",
+            "Goals set a direction, while habits supply the daily means.",
+            "A goal should be abandoned as soon as a habit becomes easy."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "Big goals give direction, but small habits provide the daily mechanism for reaching them."
+          },
+          "explain": "C 正确：目标给方向，小习惯提供每日到达目标的机制。A 和 B 人为排斥两者结合；D 把容易坚持误当作放弃目标的理由，原文并未如此建议。"
+        }
+      ],
+      "translation": [
+        "大多数人相信，大的改变需要大的行动。如果我们想变健康，就计划每天在健身房待上一个小时；如果我们想学一门语言，就打算每晚学两个小时。这样的计划往往在几周内就崩掉了。问题不在于缺少雄心，而在于第一步的份量。相比之下，小习惯容易开始、容易重复，而这正是它们的力量所在。",
+        "习惯是通过重复而变得自动化的行为。当环境中的某个提示触发一套固定的动作时，我们几乎不用有意识地思考就会行动。这就是习惯为什么如此高效：它们让大脑不必一遍又一遍地做同一个决定。但这也解释了坏习惯为什么难改。提示还在那里，那套动作几乎自动跟随，即使我们知道它对自己并不好。",
+        "小习惯之所以有效，是因为它们能嵌入已有的日常安排。一个想多读书的人，可以从睡前读一页开始；一个想锻炼的人，可以从刷牙后做五分钟拉伸开始。这些行动小到不会失败，而它们带来一种成功感，让重复更有可能发生。随着时间推移，习惯可以长大，但最初的第一步必须小到足以熬过一个忙碌或艰难的日子。",
+        "研究者发现，在习惯形成的早期阶段，持续性比强度更重要。漏掉一天不算灾难，但连续漏掉几天会削弱提示与行为之间的联系。这就是习惯专家常常建议人们把注意力放在“露面”上、而不是追求完美表现的原因。走一小段路也比不走好；读一页也比放弃整个计划好。",
+        "这一切并不意味着宏大的目标没有用。大目标给出方向，而小习惯提供每天走向目标的机制。最有效的做法是：从一个小到几乎觉得太容易的步骤开始，然后让重复去发挥作用。在一个赞美剧烈变化的世界里，小习惯安静的力量很容易被忽视——也很容易拿来就用。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "中国高铁是近年来中国基础设施建设的重要成就之一。自2008年第一条高速铁路开通以来，中国已建成世界上规模最大的高铁网络，连接了数百座城市。高铁大大缩短了人们的出行时间，使许多原本需要一整天的旅程变成几个小时。它不仅改变了人们的出行方式，也促进了沿线地区的经济发展。高铁列车运行平稳、准时，乘坐舒适，受到越来越多国内外旅客的广泛欢迎。如今，中国高铁技术已经出口到多个国家，成为一张展示中国制造实力的名片。",
+    "hints": [
+      "high-speed rail",
+      "infrastructure",
+      "network",
+      "shorten",
+      "export"
+    ],
+    "reference": "China's high-speed rail is one of the country's most important infrastructure achievements in recent years. Since China's first high-speed line opened in 2008, China has built the world's largest high-speed rail network, connecting hundreds of cities. High-speed trains have greatly shortened travel times, turning many journeys that once took a whole day into a few hours. They have not only changed the way people travel but also promoted economic development in the regions along the lines. The trains run smoothly and punctually and offer a comfortable ride, so they are welcomed by more and more passengers at home and abroad. Today, China's high-speed rail technology has been exported to many countries, becoming a calling card of China's manufacturing strength.",
+    "scoringPoints": [
+      {
+        "zh": "重要成就之一；自2008年开通以来",
+        "en": "one of the most important achievements; since China's first high-speed line opened in 2008"
+      },
+      {
+        "zh": "建成世界最大高铁网络；连接数百座城市",
+        "en": "build the world's largest high-speed rail network; connect hundreds of cities"
+      },
+      {
+        "zh": "缩短出行时间；使……变成几个小时",
+        "en": "shorten travel times; turn ... into a few hours"
+      },
+      {
+        "zh": "不仅改变出行方式；也促进沿线经济",
+        "en": "not only change the way people travel but also promote economic development along the lines"
+      },
+      {
+        "zh": "平稳、准时、舒适；受到旅客欢迎",
+        "en": "run smoothly and punctually; comfortable; be welcomed by passengers"
+      },
+      {
+        "zh": "技术出口到多国；中国制造的名片",
+        "en": "technology exported to many countries; a calling card of China's manufacturing"
+      }
+    ],
+    "highlights": [
+      "Since ... opened in 2008",
+      "the world's largest",
+      "turning ... into ...",
+      "not only ... but also ...",
+      "be exported to",
+      "a calling card of ..."
+    ]
+  },
+  "writing": {
+    "topic": "The Problem of Food Waste on Campus",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the problem of food waste on campus. Your essay should describe the phenomenon, analyze its causes, and suggest ways to reduce it. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: phenomenon → causes → suggestions"
+    ],
+    "outlineHints": [
+      "开头：食堂里常见的剩饭剩菜现象，问题比想象中严重。",
+      "中间：原因——分量大、价格低让人觉得「划算」，节奏快，浪费看不见。",
+      "结尾：建议——小份菜、按需加餐、校园宣传、个人「吃多少拿多少」。"
+    ],
+    "modelEssay": "Walk into any university dining hall after lunch, and you will see plates left half-eaten and trays piled with discarded rice and vegetables. Food waste has become a familiar sight on campus, and it is more serious than many students realise.\n\nThe causes are partly practical and partly cultural. Dining halls often serve large portions at low prices, so students feel they are getting value for money even if they cannot finish the food. Busy schedules encourage people to eat quickly and leave leftovers behind. In addition, throwing food away is easy and invisible: once it is in the bin, no one has to think about the resources used to produce it.\n\nReducing waste requires small but consistent changes. Dining halls could offer smaller portions and let students ask for more if they are still hungry. Student groups could run campaigns that show how much food is wasted each day. Individuals can also start with a simple rule: take only what they can finish. These measures may seem modest, but together they can change habits and make waste less acceptable.",
+    "structure": [
+      "第一段：现象。食堂餐盘里大量剩饭剩菜，问题比学生以为的严重。",
+      "第二段：原因。分量大、价格低造成「划算」心理；节奏快；浪费一旦进垃圾桶就看不见。",
+      "第三段：建议。小份菜、按需加餐、校园宣传、个人按量取餐；小改变汇成习惯。"
+    ],
+    "expressions": [
+      "half eaten",
+      "trays piled with discarded food",
+      "value for money",
+      "leave leftovers behind",
+      "small but consistent changes",
+      "take only what they can finish",
+      "make waste less acceptable"
+    ],
+    "translation": "午饭后走进任何一所大学的食堂，你都会看到吃了一半就被剩下的餐盘，以及堆满被丢掉的米饭和蔬菜的托盘。食物浪费已经成为校园里熟悉的景象，而它比许多学生意识到的更严重。\n\n原因是既有现实层面的，也有文化层面的。食堂常常以低价提供大份量，于是学生觉得自己“钱花得值”，即使他们吃不完。忙碌的日程让人们吃得很快，把剩饭留在那里。此外，把食物扔掉既容易又不被看见：一旦进了垃圾桶，就没人需要再想生产它耗费了多少资源。\n\n减少浪费需要微小但持续的调整。食堂可以提供更小的份量，让学生还饿的时候再加。学生团体可以开展活动，让大家看到每天浪费了多少食物。个人也可以从一条简单的规则开始：只拿自己能吃完的。这些措施也许显得不起眼，但合在一起，它们能改变习惯，让浪费变得不那么被接受。"
+  }
+}

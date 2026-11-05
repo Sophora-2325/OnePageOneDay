@@ -1,0 +1,435 @@
+{
+  "day": 5,
+  "date": "2026-11-04",
+  "week": 1,
+  "theme": "效率与判断",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Open-Office Paradox",
+      "wordCount": 427,
+      "paragraphs": [
+        "Few management ideas have spread as quickly as the open-plan office. By removing walls and giving everyone a desk in a shared space, companies promised to break down hierarchies, encourage spontaneous conversation and make better use of expensive floor space. The design was sold as a way of making organisations more collaborative. Yet when researchers began to measure what actually happened, the results were less flattering.",
+        "One widely cited study tracked employees before and after a move to an open office. Face-to-face interaction fell by roughly seventy per cent, while electronic communication rose. The finding was counter-intuitive: people who could see one another all day seemed to retreat into email and messaging. A plausible explanation is that constant visibility makes conversation costly. Every chat risks disturbing a dozen colleagues, and every interruption is witnessed. Employees therefore develop quiet ways of communicating that protect them from social pressure. The effect may be strongest in jobs that require deep concentration, where a single interruption can cost several minutes of recovery.",
+        "Open offices also affect how people judge their own status. In a traditional office, a private room signals seniority and control over one's time. In an open plan, status is expressed through headphones, screens and the ability to work from home. Those who cannot escape the noise may feel that their concentration is treated as less valuable than the company's desire for flexibility. The result can be resentment that no amount of free coffee will fix. Openness can also make it harder for junior employees to ask questions, because every request for help becomes public.",
+        "Supporters reply that the problem is not openness itself but poor implementation. They point to quiet rooms, clear norms about when conversation is welcome, and teams that genuinely need to collaborate. These measures can help, but they do not change the underlying tension: collaboration requires both interaction and privacy, and an open plan tends to provide the first while charging for the second. The design assumes that communication is always beneficial, when in fact it has costs. The result is a space that looks collaborative but often functions as a collection of private silos.",
+        "None of this means that walls should return everywhere. The more useful lesson is that office design is not a solution in itself; it is a set of trade-offs. Companies that treat concentration as a resource, rather than an inconvenience, are more likely to get the collaboration they claim to want. The open office failed not because people stopped talking, but because it made the wrong kinds of talk expensive."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Open offices are always more collaborative than private offices.",
+            "Open offices promised collaboration but created trade-offs that design alone cannot solve.",
+            "Open offices failed mainly because employees disliked free coffee.",
+            "Private offices should replace open offices everywhere."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The more useful lesson is that office design is not a solution in itself; it is a set of trade-offs."
+          },
+          "explain": "主旨题。首段先讲开放式办公室的承诺，第二、三段用研究说明它如何制造干扰和地位焦虑，第四段指出「沟通总是有益」这个假设有问题，最后把结论落在「办公设计本身不是解决方案，而是一组取舍」。B 项最完整。A 项与第二段面对面对话下降 70% 的事实矛盾；C 项把「免费咖啡」这个细节当主因；D 项绝对化，末段明确说这并不意味着到处都要恢复隔间。"
+        },
+        {
+          "id": "q2",
+          "type": "推断题",
+          "stem": "Why did face-to-face interaction decline after the move to an open office?",
+          "options": [
+            "Employees were forbidden to talk during work hours.",
+            "The new office had fewer meeting rooms than before.",
+            "Employees preferred email to every kind of conversation.",
+            "Constant visibility made spontaneous conversation socially costly."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "Every chat risks disturbing a dozen colleagues, and every interruption is witnessed."
+          },
+          "explain": "推断题。原文先说面对面对话下降、邮件增加，再解释原因：在开放空间里，每次聊天都可能打扰十几位同事，每次打断都被看见。也就是说，持续可见让随意的交谈变得有「社交成本」。D 项需要把「visibility」和「socially costly」连起来推断，是正确答案。A 项无中生有：没有禁止说话。B 项把问题归因于会议室数量，原文没有这个比较。C 项过度概括：员工是用邮件「退避」，不是偏好邮件胜过所有交谈。"
+        },
+        {
+          "id": "q3",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward open-plan offices?",
+          "options": [
+            "Strongly supportive of the design.",
+            "Completely indifferent to its effects.",
+            "Critical of its assumptions, but not calling for all walls to return.",
+            "Convinced that quiet rooms solve every problem."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "The design assumes that communication is always beneficial, when in fact it has costs."
+          },
+          "explain": "态度题。作者用研究说明开放办公室的代价，并直接批评「沟通总是有益」这一设计假设；但末段又说这并不意味着到处恢复隔间，说明态度是「批评但不对立」。C 项最准确。A 项与全文批评矛盾；B 项与作者花大量篇幅讨论影响不符；D 项过度：第四段说 quiet rooms 有帮助，但没有说能解决所有问题。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"counter-intuitive\" in Paragraph 2 is closest in meaning to ______.",
+          "options": [
+            "contrary to what one would expect",
+            "supported by clear evidence",
+            "easy to explain",
+            "widely accepted"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "The finding was counter-intuitive: people who could see one another all day seemed to retreat into email and messaging."
+          },
+          "explain": "词义题。冒号后的内容说明「反直觉」在哪里：能整天看见彼此的人，反而退回到邮件和消息里。这与人们以为「看得见就会多交流」的直觉相反，所以 counter-intuitive 指「与预期相反」。A 项最接近。B 项「有证据支持」、C 项「容易解释」、D 项「被广泛接受」都不是这个词的意思；原文强调的是结果出人意料。"
+        },
+        {
+          "id": "q5",
+          "type": "推断题",
+          "stem": "What does the author mean by saying the open office \"made the wrong kinds of talk expensive\"?",
+          "options": [
+            "Employees had to schedule every conversation in advance.",
+            "The design discouraged the casual conversations that support collaboration.",
+            "Companies spent too much money on office furniture.",
+            "Managers talked too much and listened too little."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The open office failed not because people stopped talking, but because it made the wrong kinds of talk expensive."
+          },
+          "explain": "推断题。前文说开放空间让每次聊天都可能打扰同事、每次打断都被看见，员工于是转向安静的沟通方式；末句说它失败不是因为人不说话，而是因为「错误的交谈」变得昂贵。结合全文，这里「昂贵」指的是随意的、非正式的交流被抑制，而这恰恰是协作需要的。B 项是合理推断。A 项把「安静沟通」误解为「必须提前安排每次对话」，原文没有说员工要预约对话；C 项「家具太贵」、D 项「管理者说得太多」都不是「wrong kinds of talk」的所指。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Besides encouraging conversation, what benefit did companies promise from open-plan offices?",
+          "options": [
+            "A private room for every employee.",
+            "Better use of expensive office space.",
+            "A complete end to the need for meetings.",
+            "Guaranteed promotion for junior staff."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "By removing walls and giving everyone a desk in a shared space, companies promised to break down hierarchies, encourage spontaneous conversation and make better use of expensive floor space."
+          },
+          "explain": "B 正确：宣传收益还包括更好利用昂贵的办公面积。A 与共享空间不符；C 把鼓励交流夸大为无需会议；D 的晋升保证没有依据。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What happened to face-to-face interaction in the study mentioned by the speaker?",
+          "options": [
+            "It rose by about seventy per cent.",
+            "It remained at exactly the same level.",
+            "It fell by about seventy per cent.",
+            "It disappeared completely in every department."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Face-to-face interaction fell by roughly seventy per cent, while electronic communication rose."
+          },
+          "explain": "C 正确：面对面互动约下降七成，同时电子沟通增加。A 颠倒变化方向，B 否认变化，D 则把下降七成夸大为所有部门完全消失。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "Why might a junior employee hesitate to ask for help in an open office?",
+          "options": [
+            "Questions can be asked only by email under company rules.",
+            "Senior employees are always absent from the workplace.",
+            "Asking questions automatically reduces the employee's salary.",
+            "Other people can observe each request for help."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Openness can also make it harder for junior employees to ask questions, because every request for help becomes public."
+          },
+          "explain": "D 正确：求助变得公开，可能增加初级员工的顾虑。A 编造只能邮件提问的规则；B 的高管总缺席和 C 的扣薪也都不是原文原因。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What principle does the speaker suggest companies use when designing offices?",
+          "options": [
+            "Treat employees' concentration as a valuable resource.",
+            "Assume that more visible communication is always better.",
+            "Choose the layout that removes the greatest number of walls.",
+            "Use free coffee as the main way to resolve employees' concerns."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 5,
+            "quote": "Companies that treat concentration as a resource, rather than an inconvenience, are more likely to get the collaboration they claim to want."
+          },
+          "explain": "A 正确：把专注视为资源，才能更有可能得到协作。B 恰是受到批评的假设；C 只追求拆墙忽视取舍；D 被原文明确视为不足以消除怨气的做法。"
+        }
+      ],
+      "translation": [
+        "很少有管理理念像开放式办公室传播得那么快。通过拆掉隔墙、让每个人在共享空间里有一张桌子，公司承诺要打破层级、鼓励自发的交谈，并更好地利用昂贵的楼面面积。这个设计被当作让组织更具协作性的方式来推销。然而当研究者开始测量实际发生的情况时，结果就没那么体面了。",
+        "一项被广泛引用的研究追踪了员工在搬进开放办公室前后的情况。面对面的互动下降了大约百分之七十，而电子沟通上升了。这个发现是反直觉的：整天都能看见彼此的人，似乎反而退回到电子邮件和即时消息里。一个说得通的解释是，持续可见让交谈变得昂贵。每一次聊天都可能打扰十几位同事，每一次打断都被看在眼里。于是员工发展出安静的沟通方式，以保护自己免受社交压力。这种效应在需要深度专注的工作中可能最强，因为一次打断可能要好几分钟才能恢复。",
+        "开放式办公室还影响人们如何判断自己的地位。在传统办公室里，一间独立办公室代表着资历和对时间的掌控。在开放式布局里，地位则通过耳机、屏幕和能否在家工作来体现。那些无法逃离噪音的人，可能会觉得自己的专注被看得不如公司对灵活性的追求重要。结果可能是多少免费咖啡都弥补不了的怨气。开放还可能让资历较浅的员工更难开口提问，因为每一次求助都变成了公开的。",
+        "支持者回应说，问题不在于开放本身，而在于实施得不好。他们指出，可以设安静房间、就何时适合交谈订立清晰的规范，并让真正需要协作的团队在一起。这些措施有帮助，但并没有改变底层的张力：协作既需要互动，也需要私密，而开放式布局往往提供了前者，却让后者付出代价。这个设计假定沟通总是有益的，而事实上沟通是有成本的。结果是一个看起来很有协作性、实际却常常像一堆彼此隔绝的孤岛的空间。",
+        "这一切并不意味着到处都该重新砌起隔墙。更有用的教训是：办公设计本身不是解决方案，而是一组取舍。那些把专注当作一种资源、而不是一种麻烦的公司，更可能得到他们声称想要的协作。开放式办公室失败，不是因为人们不再说话，而是因为它让错误的那类交谈变得昂贵。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The Rebound Effect: When Efficiency Backfires",
+      "wordCount": 423,
+      "paragraphs": [
+        "When a machine becomes more efficient, it seems obvious that it will use less energy. Insulate a house, and the heating bill should fall; build a car that travels further on a litre of fuel, and petrol consumption should drop. Yet economies do not always behave as simple arithmetic suggests. Improvements in efficiency can change behaviour in ways that partly, or even fully, cancel out the savings. Economists call this the rebound effect.",
+        "The simplest form is direct rebound. If a car becomes cheaper to run, people may drive more often or choose a larger vehicle. If lighting becomes more efficient, shops may leave lights on longer. The saving per unit is real, but the number of units consumed rises. A second form is indirect: money saved on energy may be spent on other goods and services, which require energy to produce. The net effect is difficult to measure, but it can be substantial. Rebound effects are particularly large when energy is a small share of total costs, because consumers have little reason to notice the saving.",
+        "A broader version is sometimes called the Jevons paradox, after the nineteenth-century economist who noticed that more efficient coal engines led to greater coal consumption. Efficiency made coal-powered production cheaper, which increased demand for products and therefore for coal. The paradox does not mean efficiency is pointless. It means that efficiency alone is not a policy: if the goal is to reduce total resource use, price, regulation and infrastructure must change alongside technology.",
+        "Critics of the rebound argument warn that it can be exaggerated. Some rebounds are small, and efficiency still delivers benefits such as lower bills and cleaner local air. The danger is to treat rebound as an excuse for doing nothing, or as a reason to doubt every green technology. The evidence suggests a more careful conclusion: efficiency is necessary but rarely sufficient. It buys time and reduces costs, but it does not guarantee that total consumption will fall. For this reason, rebound is best treated as a design challenge rather than a reason for despair.",
+        "For policymakers, the lesson is to measure outcomes rather than intentions. A programme that claims to save energy should be judged by how much energy is actually saved, not by how efficient the new equipment is. That may sound obvious, but it is easy to forget when the engineering looks impressive. The rebound effect is a reminder that human behaviour is part of every technical system—and that numbers can be true and still tell only half the story."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Energy efficiency always reduces total consumption.",
+            "Rebound effects prove that green technology is useless.",
+            "Efficiency gains can be offset by behavioural changes, so policy must measure total consumption.",
+            "The Jevons paradox has been completely disproved."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "The evidence suggests a more careful conclusion: efficiency is necessary but rarely sufficient."
+          },
+          "explain": "主旨题。文章先解释效率提高为何可能被行为变化抵消，再介绍直接、间接和 Jevons 三种反弹，最后指出效率必要但不充分，政策要看实际节能总量。C 项概括了「可能被抵消」和「政策要看总量」。A 项与全文相反；B 项绝对化，作者明确说效率不是没用；D 项无中生有：文章没有说 Jevons 悖论被推翻。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "Which of the following is an example of direct rebound?",
+          "options": [
+            "A factory buys more efficient machines and produces the same amount.",
+            "People drive more often after a car becomes cheaper to run.",
+            "A government spends energy savings on public transport.",
+            "A household installs insulation and never turns on the heating."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "If a car becomes cheaper to run, people may drive more often or choose a larger vehicle."
+          },
+          "explain": "细节题。第二段把 direct rebound 定义为「单位使用成本下降后，人们增加使用量」：车更省油，就开得更多或换更大的车。B 项是原文的直接例子。A 项是产量不变、机器更高效，不一定产生反弹；C 项属于把钱花到别处，更接近间接反弹；D 项是减少使用，不是反弹。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What does the Jevons paradox suggest?",
+          "options": [
+            "Efficiency gains are always cancelled out by higher prices.",
+            "Efficiency improvements always reduce demand.",
+            "Consumers never respond to changes in price.",
+            "Improvements in efficiency can increase total demand for a resource."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Efficiency made coal-powered production cheaper, which increased demand for products and therefore for coal."
+          },
+          "explain": "推断题。原文说更高效的燃煤发动机反而带来更多煤炭消耗，因为效率让生产更便宜，产品需求上升，煤炭需求也跟着上升。D 项是这一逻辑的概括。A 项绝对化：原文只说 savings can be partly or even fully cancelled，不是所有效率提升都会被价格抵消；B 项与 Jevons 悖论相反；C 项无中生有：消费者对价格变化有反应，只是反应方向可能出人意料。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"sufficient\" in Paragraph 4 is closest in meaning to ______.",
+          "options": [
+            "enough to achieve the intended result",
+            "too expensive to be practical",
+            "difficult to measure",
+            "likely to be ignored"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "The evidence suggests a more careful conclusion: efficiency is necessary but rarely sufficient."
+          },
+          "explain": "词义题。定位句直接给出 efficiency is necessary but rarely sufficient；后一句解释：它能争取时间、降低成本，但不能保证总消费下降。因此 sufficient 指「足以达成目标」，A 项最接近。B 项成本高、C 项难测量、D 项被忽视都不是这个词的意思。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward energy efficiency?",
+          "options": [
+            "Efficiency is a waste of money.",
+            "Rebound effects make efficiency useless.",
+            "Efficiency is valuable but cannot by itself guarantee lower total consumption.",
+            "Efficiency improvements make regulation unnecessary."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "The rebound effect is a reminder that human behaviour is part of every technical system—and that numbers can be true and still tell only half the story."
+          },
+          "explain": "态度题。作者没有否定效率：第四段说它带来更低账单和更清洁的空气，也明确说「necessary but rarely sufficient」；但他提醒反弹效应可能抵消部分收益，政策要看总消费。C 项最准确。A 项、B 项与作者对效率的肯定矛盾；D 项与第三段「price, regulation and infrastructure must change alongside technology」相反。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Which situation illustrates the indirect rebound effect described in the talk?",
+          "options": [
+            "A driver uses the same car for fewer journeys.",
+            "A shop replaces its lights but never switches them on.",
+            "A household spends less on both energy and other goods.",
+            "Money saved on energy is spent on other energy-intensive goods or services."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "A second form is indirect: money saved on energy may be spent on other goods and services, which require energy to produce."
+          },
+          "explain": "D 正确：节能省下的钱用于其他需要能源生产的商品服务，属于间接反弹。A 减少使用量，B 无关设备实际使用，C 也没有把节省转成其他能源需求。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "When may rebound effects be particularly large, according to the speaker?",
+          "options": [
+            "When energy represents only a small proportion of total costs.",
+            "When consumers stop buying all manufactured products.",
+            "When energy prices prevent any additional consumption.",
+            "When equipment efficiency remains unchanged."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "Rebound effects are particularly large when energy is a small share of total costs, because consumers have little reason to notice the saving."
+          },
+          "explain": "A 正确：能源在总成本中所占份额很小时，原文说反弹效应可能尤其大。B、C 加入停止消费或完全限制额外消费的条件；D 未发生效率提升，不是所述条件。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "What benefit of efficiency do critics of the rebound argument still recognise?",
+          "options": [
+            "It guarantees a fall in all resource consumption.",
+            "It eliminates the need to assess energy use.",
+            "It can lower bills and improve local air quality.",
+            "It makes every form of regulation unnecessary."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "Some rebounds are small, and efficiency still delivers benefits such as lower bills and cleaner local air."
+          },
+          "explain": "C 正确：效率依然能降低账单、改善当地空气。A 把局部好处扩大成总消耗必降；B 和 D 又把效率收益误作无需评估或监管，均超出原文。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What should policymakers measure when evaluating an energy-saving programme?",
+          "options": [
+            "How ambitious the programme's stated intentions sound.",
+            "How much energy is actually saved overall.",
+            "How impressive the equipment looks to engineers.",
+            "How many efficiency claims appear in the publicity."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "A programme that claims to save energy should be judged by how much energy is actually saved, not by how efficient the new equipment is."
+          },
+          "explain": "B 正确：评价应看实际节省的能源总量。A 只看意图，C 只看设备的工程吸引力，D 只看宣传说法，都不能代替实际结果。"
+        }
+      ],
+      "translation": [
+        "当一台机器变得更高效时，它显然应该消耗更少的能源。给房子做保温，取暖费就该下降；造一辆每升油能跑更远的车，汽油消耗就该降低。然而经济运行并不总像简单算术那样。效率的提升会改变人的行为，而这些改变会部分、甚至完全抵消掉省下来的部分。经济学家把这称为“反弹效应”。",
+        "最简单的形式是直接反弹。如果开车的成本降低，人们可能会开得更频繁，或者选一辆更大的车。如果照明变得更高效，商店可能会让灯亮得更久。单位节省是真实的，但消耗的单位数量上升了。第二种形式是间接的：省在能源上的钱可能被花在其他商品和服务上，而那些东西的生产也需要能源。净效应很难测量，但它可能相当可观。当能源只占总成本的一小部分时，反弹效应尤其大，因为消费者几乎没有理由去注意那点节省。",
+        "一种更宽泛的版本有时被称为杰文斯悖论，得名于十九世纪那位注意到更高效的燃煤发动机反而带来更多煤炭消耗的经济学家。效率让燃煤生产更便宜，这增加了对产品的需求，也就增加了对煤的需求。这个悖论并不意味着效率没有意义。它意味着单靠效率并不构成一项政策：如果目标是减少资源消耗总量，那么价格、监管和基础设施都必须与技术一同改变。",
+        "对反弹论持批评态度的人警告说，这种说法可能被夸大。有些反弹很小，而效率仍然带来好处，比如更低的账单和更清洁的本地空气。危险在于把反弹当作什么都不做的借口，或者当作怀疑每一项绿色技术的理由。证据指向一个更审慎的结论：效率是必要的，但很少是充分的。它争取时间、降低成本，但不能保证总消费下降。因此，反弹最好被当作一个设计上的挑战，而不是绝望的理由。",
+        "对政策制定者来说，教训是要衡量结果而不是意图。一个声称能节能的项目，应该用实际节省了多少能源来评判，而不是看新设备有多高效。这听起来也许显而易见，但当工程本身看起来很漂亮时，人很容易忘掉这一点。反弹效应提醒我们：人的行为是每一个技术系统的一部分——而数字可以是真的，却仍然只讲了故事的一半。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "苏州园林是中国传统园林艺术的代表之一，已有两千多年的历史。这些园林大多建于明清时期，由文人、官员和商人建造。园林中的亭台楼阁、假山池塘和花草树木相互映衬，营造出安静而自然的氛围。设计者常常利用有限的空间，通过借景和曲折的路径，让人每走一步都能看到不同的景色。苏州园林不仅体现了中国人的独特审美情趣，也反映了人与自然和谐相处的理念。如今，多座园林被列入世界文化遗产名录，吸引着来自世界各地的游客。",
+    "hints": [
+      "traditional garden art",
+      "Ming and Qing dynasties",
+      "borrowed scenery",
+      "harmony between humans and nature",
+      "World Heritage List"
+    ],
+    "reference": "Suzhou gardens are one of the finest examples of traditional Chinese garden art and have a history of more than two thousand years. Most of these gardens were built during the Ming and Qing dynasties by scholars, officials and merchants. Pavilions, terraces, rockeries, ponds and plants in the gardens set one another off, creating a quiet and natural atmosphere. Designers often made use of limited space and, through borrowed scenery and winding paths, allowed visitors to see a different view at every step. Suzhou gardens not only reflect the unique aesthetic taste of the Chinese but also embody the idea of harmony between humans and nature. Today, many of these gardens are included on the World Heritage List and attract visitors from all over the world.",
+    "scoringPoints": [
+      {
+        "zh": "传统园林艺术的代表之一；两千多年历史",
+        "en": "one of the finest examples of traditional Chinese garden art; a history of more than two thousand years"
+      },
+      {
+        "zh": "建于明清时期；由文人、官员和商人建造",
+        "en": "built during the Ming and Qing dynasties; by scholars, officials and merchants"
+      },
+      {
+        "zh": "亭台楼阁、假山池塘和花草树木相互映衬",
+        "en": "pavilions, terraces, rockeries, ponds and plants set one another off"
+      },
+      {
+        "zh": "利用有限空间；借景和曲折路径",
+        "en": "make use of limited space; borrowed scenery and winding paths"
+      },
+      {
+        "zh": "审美情趣；人与自然和谐相处",
+        "en": "aesthetic taste; harmony between humans and nature"
+      },
+      {
+        "zh": "列入世界文化遗产名录；吸引世界各地游客",
+        "en": "be included on the World Heritage List; attract visitors from all over the world"
+      }
+    ],
+    "highlights": [
+      "one of the finest examples of ...",
+      "have a history of ...",
+      "set one another off",
+      "through borrowed scenery and winding paths",
+      "embody the idea of ...",
+      "be included on the World Heritage List"
+    ]
+  },
+  "writing": {
+    "topic": "The Value of Doubt",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the value of doubt. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: thesis → scientific and daily examples → limits and conclusion"
+    ],
+    "outlineHints": [
+      "开头：我们常把怀疑当弱点，但很多进步始于追问「真的是这样吗」。",
+      "中间：科学依赖可被检验、可被推翻的怀疑；日常生活中怀疑公式、标题也能让人理解更深、少传谣。",
+      "结尾：怀疑不能变成瘫痪或犬儒；按证据怀疑，并愿意修正观点。"
+    ],
+    "modelEssay": "We often praise confidence and treat doubt as a weakness. Yet many of the most important advances begin with someone asking whether the accepted answer is really true. Doubt, when it is disciplined, is not a barrier to progress; it is a method of thinking.\n\nScientific inquiry depends on doubt. A theory is useful only if it can be tested and, in principle, proved wrong. Researchers who question their own results are more likely to notice errors and design better experiments. The same habit applies outside the laboratory: a student who doubts a memorised formula may understand it more deeply; a citizen who doubts a headline may check the evidence before sharing it.\n\nDoubt becomes destructive only when it turns into paralysis or cynicism. The goal is not to doubt everything, but to doubt in proportion to the evidence, and to remain willing to revise our views. In a world full of confident claims, the ability to ask \"How do we know?\" is a form of intellectual honesty—and a practical advantage.",
+    "structure": [
+      "第一段：论点。我们常把怀疑当弱点，但真正的进步常始于对「标准答案」的追问；有纪律的怀疑是一种方法。",
+      "第二段：科学依赖可检验、可被推翻的怀疑；日常生活中怀疑公式、新闻标题也能带来更深理解和更谨慎的判断。",
+      "第三段：怀疑的边界。不能变成瘫痪或犬儒；要按证据怀疑并愿意修正，最后落到「我们怎么知道」是一种诚实和能力。"
+    ],
+    "expressions": [
+      "treat doubt as a weakness",
+      "the accepted answer",
+      "a barrier to progress",
+      "in principle",
+      "question their own results",
+      "doubt in proportion to the evidence",
+      "a form of intellectual honesty"
+    ],
+    "translation": "我们常常赞美自信，把怀疑当成一种弱点。然而许多最重要的进步，都始于有人问一句：公认的答案真的成立吗？有纪律的怀疑不是进步的障碍，而是一种思考方法。\n\n科学探究依赖怀疑。一个理论只有在能够被检验、并且原则上能够被证伪时，才是有用的。那些质疑自己研究结果的研究者，更可能发现错误，也更可能设计出更好的实验。同样的习惯也适用于实验室之外：一个怀疑背下来的公式的学生，可能把它理解得更深；一个怀疑新闻标题的公民，可能会在转发之前先核对证据。\n\n只有当怀疑变成瘫痪或犬儒时，它才具有破坏性。目标不是怀疑一切，而是按照证据的份量去怀疑，并且始终愿意修正自己的看法。在一个充满自信断言的世界里，能够问一句“我们怎么知道？”，是一种智识上的诚实——也是一种实实在在的优势。"
+  }
+}

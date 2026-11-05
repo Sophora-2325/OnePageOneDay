@@ -1,0 +1,434 @@
+{
+  "day": 4,
+  "date": "2026-11-03",
+  "week": 1,
+  "theme": "现代生活与成长",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Hidden Cost of Fast Fashion",
+      "wordCount": 383,
+      "paragraphs": [
+        "Every season, shops fill their windows with new clothes at surprisingly low prices. For many shoppers, fast fashion offers a way to follow trends without spending much. Yet the low price on the label does not tell the whole story. Behind each cheap T-shirt lies a chain of costs—environmental, social and personal—that is easy to ignore when the next sale arrives.",
+        "The environmental impact begins with production. Growing cotton requires large amounts of water and pesticides, while synthetic fabrics are made from petroleum. Dyeing and finishing use chemicals that can pollute rivers if they are not treated properly. Then there is the waste: clothes are worn fewer times than in the past, and millions of tonnes end up in landfill or are burned each year. Some garments are donated, but only a small share is actually resold or recycled. The fashion industry is also responsible for a significant share of global carbon emissions, and the problem is growing as production speeds up.",
+        "The social costs are less visible but no less serious. To keep prices low, brands often rely on factories in poorer countries where wages are low and working conditions may be poor. Workers may face long hours, unsafe buildings and pressure to meet tight deadlines. Consumers rarely see these conditions, and the distance between buyer and maker makes it easy to look away. When accidents happen, the consequences can be devastating, yet the brands at the top of the supply chain often avoid responsibility.",
+        "Supporters of fast fashion argue that it makes stylish clothing affordable and provides jobs in producing countries. Both points have some truth. Yet the model depends on ever-increasing consumption, and the jobs it creates are often insecure. A garment that falls apart after a few washes may save money at first, but it costs more over time—and it teaches shoppers to treat clothes as disposable. Cheap clothes may also encourage a cycle in which shoppers buy more than they need, only to discard items that were barely worn.",
+        "Change does not require everyone to stop buying new clothes. It requires better information, stronger regulation and a shift in habits: repairing and reselling, choosing clothes that last, and asking where they come from. The question is not whether fashion should be cheap, but who pays the real price."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Fast fashion's low prices hide serious environmental and social costs.",
+            "Fast fashion should be banned completely.",
+            "Fast fashion provides only low-quality jobs.",
+            "Consumers should never buy new clothes."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "Behind each cheap T-shirt lies a chain of costs—environmental, social and personal—that is easy to ignore when the next sale arrives."
+          },
+          "explain": "主旨题。首段末句点明全文核心：便宜衣服背后有一连串环境、社会和个人成本，而这些成本在下一场促销到来时很容易被忽略。A 项最准确。B 项绝对化：文章主张改善，不是全面禁止。C 项以偏概全：原文说 jobs are often insecure，不等于「只有低质量工作」。D 项绝对化：末段明确说 Change does not require everyone to stop buying new clothes。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "Which of the following is mentioned as an environmental cost of fast fashion?",
+          "options": [
+            "It reduces the number of clothes produced.",
+            "It makes clothes last longer.",
+            "It uses large amounts of water and pesticides.",
+            "It lowers the price of cotton."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Growing cotton requires large amounts of water and pesticides, while synthetic fabrics are made from petroleum."
+          },
+          "explain": "细节题。第二段明确说种植棉花需要大量水和农药，合成纤维来自石油。C 项是原文的直接信息。A 项与「衣服穿得更少、废弃物更多」相反；B 项与 clothes are worn fewer times 以及质量下降的语境相反；D 项无中生有：原文没有说降低棉花价格。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why might consumers find the social costs of fast fashion easy to ignore?",
+          "options": [
+            "Workers are paid fairly and work in safe buildings.",
+            "Factories are located close to shoppers.",
+            "Brands publish detailed information about wages.",
+            "The distance between buyer and maker hides working conditions."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Consumers rarely see these conditions, and the distance between buyer and maker makes it easy to look away."
+          },
+          "explain": "推断题。原文说消费者很少看到这些状况，买家与生产者之间的距离让人容易「把目光移开」。D 项是这句话的同义概括。A 项与 unsafe buildings、low wages 矛盾；B 项与距离远相反；C 项无中生有：文章没有说品牌公开工资信息。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"disposable\" in Paragraph 4 is closest in meaning to ______.",
+          "options": [
+            "designed to be thrown away after use",
+            "made to last for many years",
+            "too expensive for most people",
+            "difficult to produce"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "A garment that falls apart after a few washes may save money at first, but it costs more over time—and it teaches shoppers to treat clothes as disposable."
+          },
+          "explain": "词义题。disposable 与「衣服穿几次就坏、成本更高」的语境相连，指把衣服当成用后即弃的东西。A 项最接近。B 项与文章批评的「不耐穿」相反；C 项价格高、D 项难生产都不是这个词的意思。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward fast fashion?",
+          "options": [
+            "Uncritically supportive of it.",
+            "Completely opposed to buying any new clothes.",
+            "Concerned about its hidden costs, but not calling for a total boycott.",
+            "Indifferent to its environmental impact."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "Change does not require everyone to stop buying new clothes."
+          },
+          "explain": "态度题。作者用大量篇幅批评快时尚的环境和社会成本，但末段明确说改变并不要求所有人停止买新衣服，而是要求更好的信息、监管和消费习惯。C 项「担忧但不主张全面抵制」最准确。A 项与全文批评矛盾；B 项绝对化，与定位句相反；D 项与文章对环境影响的详细讨论矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "主旨题",
+          "stem": "Why does the speaker question the low prices shown on clothing labels?",
+          "options": [
+            "Discounts are available only to a small group of shoppers.",
+            "The labels usually display the wrong prices.",
+            "Fashion trends change too slowly to justify new purchases.",
+            "The price does not reflect wider environmental and social costs."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 1,
+            "quote": "Behind each cheap T-shirt lies a chain of costs—environmental, social and personal—that is easy to ignore when the next sale arrives."
+          },
+          "explain": "D 正确：标签低价没有反映环境、社会和个人承担的成本。A 编造折扣限制，B 把隐藏成本误作标价错误，C 讨论潮流变化速度，均偏离文章重点。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What resources are heavily used in growing cotton, according to the talk?",
+          "options": [
+            "Petroleum and metal ores.",
+            "Water and pesticides.",
+            "Timber and natural gas only.",
+            "Recycled clothing and household waste."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Growing cotton requires large amounts of water and pesticides, while synthetic fabrics are made from petroleum."
+          },
+          "explain": "B 正确：棉花种植消耗大量水和农药。A 把合成纤维使用石油混入种棉，C 的木材与天然气没有依据，D 也不是原文给出的种棉资源。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "Why might a very cheap garment turn out to be poor value?",
+          "options": [
+            "It may need replacing after only a few washes.",
+            "It always requires professional cleaning.",
+            "It cannot be worn outside its country of manufacture.",
+            "It necessarily costs more to repair than every expensive garment."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "A garment that falls apart after a few washes may save money at first, but it costs more over time—and it teaches shoppers to treat clothes as disposable."
+          },
+          "explain": "A 正确：衣服很快损坏，需要反复更换，长期成本可能更高。B 和 C 的使用限制无依据；D 作出原文没有的维修价格比较，并使用 necessarily 绝对化。"
+        },
+        {
+          "id": "l4",
+          "type": "细节题",
+          "stem": "Which response to fast fashion does the speaker recommend?",
+          "options": [
+            "Buying every new trend before prices rise.",
+            "Ending all purchases of new clothes immediately.",
+            "Repairing and reselling clothes and choosing durable items.",
+            "Leaving all decisions about clothing to manufacturers."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "It requires better information, stronger regulation and a shift in habits: repairing and reselling, choosing clothes that last, and asking where they come from."
+          },
+          "explain": "C 正确：建议维修、转售、选耐穿衣物，并了解来源。A 加剧消费循环；B 与不必完全停止购买新衣的说明相反；D 忽略消费者习惯改变。"
+        }
+      ],
+      "translation": [
+        "每一季，商店的橱窗里都摆满价格低得惊人的新衣服。对许多购物者来说，快时尚提供了一种花不了多少钱就能跟上潮流的办法。然而标签上的低价并不能说明全部。每一件廉价 T 恤背后，都有一连串的成本——环境的、社会的和个人的——而当下一次促销到来时，这些成本很容易被忽略。",
+        "环境影响从生产环节就开始了。种植棉花需要大量的水和农药，而合成纤维则来自石油。染色和后整理使用的化学品如果处理不当，会污染河流。然后是废弃物问题：如今衣服被穿过的次数比过去更少，每年有数百万吨的衣物进了垃圾填埋场或被焚烧。有些衣物被捐赠出去，但真正被转卖或回收的只占很小一部分。时尚产业还占了全球碳排放的相当大一份，而随着生产速度加快，问题正在变大。",
+        "社会成本不那么显眼，但同样严重。为了压低价格，品牌常常依赖较贫穷国家的工厂，那里工资低、工作条件可能很差。工人可能面临长时间工作、不安全的建筑，以及赶紧交期的压力。消费者很少看到这些情况，而买家与生产者之间的距离，让人很容易把目光移开。一旦发生事故，后果可能是毁灭性的，然而处在供应链顶端的品牌却常常逃避责任。",
+        "快时尚的支持者辩称，它让时髦的衣服变得买得起，并在生产国提供了就业。这两点都有一定道理。然而这种模式依赖的是不断增长的消费，而它创造的岗位往往并不稳定。一件洗几次就散架的衣服，起初也许省钱，长期算下来反而更贵——而且它教会购物者把衣服当成用后即弃的东西。廉价衣服还可能催生一种循环：购物者买下超过自己需要的东西，最后只把几乎没穿过的衣服丢掉。",
+        "要改变，并不需要所有人都不再买新衣服。它需要更好的信息、更严格的监管，以及习惯的转变：修补和转卖，选择耐穿的衣服，并追问它们来自哪里。问题不在于时尚是否应该便宜，而在于真正付出代价的是谁。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "Why We Need Boredom",
+      "wordCount": 387,
+      "paragraphs": [
+        "Boredom has a bad reputation. We treat it as a problem to be solved, a gap to be filled with a phone screen or a streaming service. Yet psychologists argue that boredom is not simply the absence of stimulation. It is a signal that our attention is not engaged, and it can push us to seek something more meaningful. In a world designed to keep us entertained, losing the ability to be bored may cost us more than we think.",
+        "When the mind is under-stimulated, it does not switch off. Instead, it begins to wander. This wandering is not wasted time: it allows the brain to connect ideas that do not usually meet, to replay past experiences and to imagine future possibilities. Some studies suggest that people are more creative after completing a dull task, such as copying numbers or reading a long list of names. The boredom seems to create space for original thought.",
+        "Boredom can also reveal what we really care about. If we fill every quiet moment with distraction, we never have to ask why we feel restless. Sitting with that feeling can be uncomfortable, but it may point to a change we need to make: a project we have been avoiding, a relationship that needs attention, or a goal that no longer fits. In this sense, boredom is a form of information.",
+        "The problem is that modern technology makes boredom increasingly rare. Waiting for a bus, standing in a queue or lying in bed, we reach for our phones almost automatically. Each swipe provides a small reward, and the brain quickly learns to expect constant stimulation. The result is a mind that is always busy but rarely free to reflect. We may have eliminated boredom, but we have also reduced the chance for deep thought. The constant availability of entertainment makes it harder to notice when we are avoiding a difficult thought.",
+        "None of this means that we should seek boredom all the time. Stimulation, play and social contact are essential too. But we might benefit from protecting a few empty moments: a walk without headphones, a meal without a screen, a quiet ride home. Boredom is not a failure of attention; it is an invitation to use it differently. A little emptiness can be a useful companion, not an enemy to defeat."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Boredom is a sign of laziness.",
+            "Technology has made people more creative.",
+            "Boredom can be valuable and should not always be avoided.",
+            "People should stop using phones completely."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "Boredom is not a failure of attention; it is an invitation to use it differently."
+          },
+          "explain": "主旨题。文章先纠正「无聊是问题」的偏见，再说明无聊如何促进联想、暴露真实需求，最后建议保留一些空白时刻，但不必完全拒绝刺激。C 项最完整。A 项与全文相反；B 项无中生有：文章说技术让无聊变少，不是说更有创造力；D 项绝对化，作者明确说 stimulation 也很重要。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What happens when the mind is under-stimulated?",
+          "options": [
+            "It switches off completely.",
+            "It wanders and connects ideas.",
+            "It becomes less creative.",
+            "It stops processing past experiences."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "This wandering is not wasted time: it allows the brain to connect ideas that do not usually meet, to replay past experiences and to imagine future possibilities."
+          },
+          "explain": "细节题。原文说大脑在刺激不足时不会关机，而是开始走神；这种走神让大脑连接平时不相遇的想法、重放过去、想象未来。B 项是概括。A 项与 does not switch off 相反；C 项与「更有创造力」相反；D 项与 replay past experiences 相反。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What does the author mean by \"boredom is a form of information\"?",
+          "options": [
+            "Boredom can tell us what we care about or need to change.",
+            "Boredom is caused by too much information.",
+            "Boredom can be cured by reading more.",
+            "Boredom makes people less aware of their feelings."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "Sitting with that feeling can be uncomfortable, but it may point to a change we need to make: a project we have been avoiding, a relationship that needs attention, or a goal that no longer fits."
+          },
+          "explain": "推断题。前文说无聊会暴露我们真正在意什么；如果每个安静时刻都被填满，我们就不会问自己为什么不安。后文说这种感觉可能指向需要做出的改变。A 项最符合。B 项把 information 误解为「信息量」；C 项无中生有；D 项与「暴露真实需求」相反。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"under-stimulated\" in Paragraph 2 is closest in meaning to ______.",
+          "options": [
+            "given too many choices",
+            "not given enough to keep the mind engaged",
+            "extremely tired",
+            "unable to remember anything"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "When the mind is under-stimulated, it does not switch off."
+          },
+          "explain": "词义题。under-stimulated 由 under-（不足）+ stimulate（刺激）构成；下文说大脑不会关机，而是开始走神、产生联想，说明它指「刺激不足、没什么能抓住注意力」。B 项最接近。A 项意思相反；C 项疲劳、D 项失忆都不是这个词的意思。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward constantly reaching for a phone during idle moments?",
+          "options": [
+            "He considers it a harmless way to relax.",
+            "He believes it reduces the chance for deep thought.",
+            "He thinks it makes people more creative.",
+            "He is unsure whether it affects attention."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "We may have eliminated boredom, but we have also reduced the chance for deep thought."
+          },
+          "explain": "态度题。作者在第四段说，等车、排队、躺在床上时我们几乎自动伸手拿手机，每个滑动带来小奖励，结果大脑一直忙碌却很少自由反思；末句明确说这减少了深度思考的机会。B 项最准确。A 项与作者的担忧相反；C 项与文章「无聊促进创造力」的方向相反，手机提供的是持续刺激；D 项与作者对注意力影响的明确判断矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "主旨题",
+          "stem": "What useful message can boredom send, according to the speaker?",
+          "options": [
+            "Our attention may need something more meaningful to engage with.",
+            "We should avoid all activities that require concentration.",
+            "Our brains have stopped working permanently.",
+            "We need an uninterrupted supply of entertainment."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "It is a signal that our attention is not engaged, and it can push us to seek something more meaningful."
+          },
+          "explain": "A 正确：无聊提示注意力未被投入，并促使人寻找更有意义的事。B 把寻找投入误成回避专注，C 夸大为大脑停工，D 与保留空白时刻的主张相反。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What kind of activity preceded greater creativity in some studies?",
+          "options": [
+            "An intense debate about a new invention.",
+            "A competitive team sport.",
+            "A long conversation with close friends.",
+            "A dull task such as copying numbers."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "Some studies suggest that people are more creative after completing a dull task, such as copying numbers or reading a long list of names."
+          },
+          "explain": "D 正确：研究提到抄数字或读长名单这样的乏味任务。A 的辩论、B 的体育比赛、C 的朋友交流都没有被列为这些研究中的前置任务。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "Why can reaching for a phone during every idle moment become automatic?",
+          "options": [
+            "Phones prevent people from remembering their past experiences.",
+            "Every application requires the same physical movement.",
+            "Repeated small rewards train the brain to expect stimulation.",
+            "People receive instructions to use their phones while waiting."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "Each swipe provides a small reward, and the brain quickly learns to expect constant stimulation."
+          },
+          "explain": "C 正确：每次滑动的小奖励让大脑学会期待持续刺激。A 的记忆阻断、B 的应用动作一致、D 的外部指令，都不是原文解释的强化机制。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What balance does the speaker favour in everyday life?",
+          "options": [
+            "Replacing all social contact with quiet time alone.",
+            "Keeping some empty moments while still enjoying stimulation and company.",
+            "Seeking boredom during every activity.",
+            "Filling every pause with an entertaining programme."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "Stimulation, play and social contact are essential too. But we might benefit from protecting a few empty moments: a walk without headphones, a meal without a screen, a quiet ride home."
+          },
+          "explain": "B 正确：作者承认刺激、娱乐和社交的重要性，也建议保护少量空白时刻。A 排除社交，C 要求时刻无聊，D 要求填满空隙，都把平衡立场推向极端。"
+        }
+      ],
+      "translation": [
+        "无聊名声不好。我们把它当成一个需要解决的问题，一个要用手机屏幕或流媒体服务填上的空隙。然而心理学家认为，无聊并不只是缺乏刺激。它是一个信号，说明我们的注意力没有被调动起来，而它可以推动我们去寻找更有意义的东西。在一个被设计来不断取悦我们的世界里，失去感到无聊的能力，代价可能比我们想的更大。",
+        "当头脑受到的刺激不足时，它并不会关机。相反，它开始走神。这种走神不是浪费时间：它让大脑把平时不会相遇的想法连接起来，重放过去的经历，想象未来的可能。一些研究表明，人在完成一件枯燥的任务之后更有创造力，比如抄写数字或读一长串名字。无聊似乎为原创的想法腾出了空间。",
+        "无聊还能揭示我们真正在意什么。如果我们用消遣填满每一个安静的时刻，我们就永远不必问自己为什么感到焦躁不安。与这种感觉待在一起也许不舒服，但它可能指向我们需要做出的改变：一个一直回避的项目，一段需要关注的关系，或者一个已经不再合适的目标。在这个意义上，无聊是一种信息。",
+        "问题在于，现代技术让无聊变得越来越罕见。等公交、排队或躺在床上时，我们几乎自动地伸手去拿手机。每一次滑动都带来一点小奖励，大脑很快就学会期待持续的刺激。结果是一颗一直忙碌却很少自由反思的心。我们也许已经消灭了无聊，但也减少了深入思考的机会。娱乐的随时可得，让我们更难察觉自己正在回避某个困难的念头。",
+        "这一切并不意味着我们应该时时追求无聊。刺激、玩耍和社交同样必不可少。但我们或许可以从守住几个空白时刻中受益：一段不戴耳机的散步，一顿不看屏幕的饭，一段安静的回家路。无聊不是注意力的失败；它是换一种方式使用注意力的邀请。一点点空，可以是有用的伙伴，而不是要打败的敌人。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "移动支付在中国已经成为一种普遍的消费方式。无论是在大城市还是小城镇，人们出门时常常只带一部手机，用扫码的方式完成购物、乘车和缴费。移动支付不仅方便快捷，还减少了现金携带带来的风险。许多商家也因此提高了结账效率，顾客不必再排队等待找零。如今，移动支付正在向更多领域扩展，为人们的生活带来实实在在的便利。与此同时，个人信息安全和隐私保护也受到越来越多的关注。对于不会使用智能手机的老年人来说，如何跨越数字鸿沟，也成为一个值得思考的问题。",
+    "hints": [
+      "mobile payment",
+      "QR code",
+      "cash",
+      "checkout",
+      "digital divide"
+    ],
+    "reference": "Mobile payment has become a common way of spending in China. Whether in big cities or small towns, people often go out with only a smartphone and use QR codes to shop, take public transport and pay bills. Mobile payment is not only convenient and fast but also reduces the risks of carrying cash. Many businesses have also improved their checkout efficiency, so customers no longer have to queue and wait for change. Today, mobile payment is expanding into more areas and bringing real convenience to people's lives. At the same time, the security of personal information and privacy have attracted increasing attention. For older people who do not know how to use smartphones, how to bridge the digital divide has also become a question worth thinking about.",
+    "scoringPoints": [
+      {
+        "zh": "普遍的消费方式",
+        "en": "a common way of spending"
+      },
+      {
+        "zh": "无论大城市还是小城镇；只带一部手机",
+        "en": "whether in big cities or small towns; go out with only a smartphone"
+      },
+      {
+        "zh": "扫码完成购物、乘车、缴费",
+        "en": "use QR codes to shop, take public transport and pay bills"
+      },
+      {
+        "zh": "不仅方便快捷；减少现金携带风险",
+        "en": "not only convenient and fast; reduce the risks of carrying cash"
+      },
+      {
+        "zh": "提高结账效率；不必排队找零",
+        "en": "improve checkout efficiency; no longer queue for change"
+      },
+      {
+        "zh": "个人信息安全与隐私；数字鸿沟",
+        "en": "personal information security and privacy; the digital divide"
+      }
+    ],
+    "highlights": [
+      "Whether ... or ...",
+      "not only ... but also ...",
+      "so ... no longer ...",
+      "have attracted increasing attention",
+      "a question worth thinking about"
+    ]
+  },
+  "writing": {
+    "topic": "The Value of Failure",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the value of failure. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: thesis → lessons → resilience and reflection"
+    ],
+    "outlineHints": [
+      "开头：多数人回避失败，但失败本身可以很有价值。",
+      "中间：失败暴露假设与现实的差距；具体、难忘，让人调整方法。",
+      "结尾：失败培养韧性，但前提是反思；真正的问题不是是否失败，而是是否学到东西。"
+    ],
+    "modelEssay": "Most people try to avoid failure, and schools often reward those who never make mistakes. Yet failure, handled well, can be one of the most useful experiences a person can have. The value of failure lies not in the failure itself, but in what it teaches us.\n\nWhen a plan fails, it exposes the gap between our assumptions and reality. A student who fails an exam may discover that memorising facts is not enough; an entrepreneur whose first product flops may learn that customers care about different features than expected. These lessons are difficult to accept, but they are specific and memorable. Success can make us complacent, while failure forces us to examine what went wrong and to adjust.\n\nFailure also builds resilience. People who have recovered from setbacks are often less afraid of taking risks, because they know they can survive a bad outcome. Of course, failure is only valuable if we reflect on it rather than repeat the same mistake. In that sense, the real question is not whether we fail, but whether we learn.",
+    "structure": [
+      "第一段：论点。多数人回避失败，但失败的价值不在失败本身，而在它教给我们什么。",
+      "第二段：失败暴露假设与现实的差距，给出考试、创业等具体例子；成功容易让人自满，失败逼人调整。",
+      "第三段：失败培养韧性；但只有反思、不重复错误，失败才有价值。"
+    ],
+    "expressions": [
+      "handled well",
+      "the gap between our assumptions and reality",
+      "make us complacent",
+      "builds resilience",
+      "recover from setbacks",
+      "reflect on it",
+      "the real question is not whether we fail, but whether we learn"
+    ],
+    "translation": "大多数人试图避免失败，学校也常常奖励那些从不犯错的人。然而，处理得当的失败，可以是一个人所能拥有的最有用的经历之一。失败的价值不在于失败本身，而在于它教会我们什么。\n\n当一个计划失败时，它暴露出我们的假设与现实之间的差距。一个考试失利的学生可能会发现，光背事实是不够的；一个第一款产品就折戟的创业者可能会明白，顾客在意的功能和自己预期的不一样。这些教训很难接受，但它们具体而令人难忘。成功可能让我们自满，而失败迫使我们检查哪里出了问题，并做出调整。\n\n失败还能培养韧性。从挫折中恢复过来的人，往往不那么害怕承担风险，因为他们知道自己能挺过一次糟糕的结果。当然，只有当我们反思失败、而不是重复同一个错误时，失败才有价值。在这个意义上，真正的问题不是我们是否失败，而是我们是否学到了东西。"
+  }
+}

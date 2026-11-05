@@ -1,0 +1,436 @@
+{
+  "day": 1,
+  "date": "2026-10-31",
+  "week": 1,
+  "theme": "注意力与工作方式",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Hidden Cost of Constant Switching",
+      "wordCount": 399,
+      "paragraphs": [
+        "Few of us would describe ourselves as easily distracted, yet the average office worker now checks email or a messaging app every few minutes. The devices that were supposed to free us from routine have instead created an economy in which our attention is the most valuable commodity. Technology companies design their products to capture it, and they have become remarkably good at their job. The result is a working day that feels busy from morning to night but produces surprisingly little finished work; reversing that pattern requires more than willpower.",
+        "The problem is not simply that interruptions take time. A notification may last only a few seconds, but the mind does not switch instantly. Psychologists call the lingering effect \"attention residue\": part of your brain remains on the task you just left, even after you have moved on. When people switch repeatedly between tasks, they perform worse on each one, not because they are less capable, but because their mental resources are spread thinly across unfinished business. Studies of office workers suggest that it can take more than twenty minutes to return fully to a demanding task after an interruption.",
+        "Companies have begun to notice the cost. Some have introduced \"focus hours\" during which meetings and messages are banned. Others have removed email from employees' phones or replaced open-plan offices with quieter spaces. These measures are popular, but they are often treated as perks rather than as core to the business. That is a mistake. If an organization rewards instant replies, no amount of quiet space will protect deep work; employees will simply answer messages more quietly.",
+        "Individuals face a similar trap. Willpower alone is a weak defence, because the distraction is designed to be irresistible. A more reliable strategy is to change the environment: keep the phone in another room, close unnecessary tabs, and decide in advance when to check messages. Such rules may feel rigid, but they free the mind from a constant, exhausting series of small decisions.",
+        "None of this means that technology is the enemy. Used deliberately, digital tools can support concentration rather than undermine it. The question is who is in charge. An attention economy will always reward those who capture our focus; we have to decide whether we are willing to hand it over by default. The point is not to reject the tools but to use them on our own terms."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Technology companies are solely responsible for the decline in productivity.",
+            "Open-plan offices are the main cause of distraction at work.",
+            "Constant switching harms productivity, and the remedy requires deliberate changes.",
+            "Attention residue affects only workers in creative industries."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "The result is a working day that feels busy from morning to night but produces surprisingly little finished work; reversing that pattern requires more than willpower."
+          },
+          "explain": "主旨题。首段末句给出全文核心：工作日看起来很忙，实际产出却很少，而扭转这一点不能只靠意志力。后文正是沿着这个方向展开：第三段讲公司层面的「专注时间」还不够，第四段讲个人必须改变环境。C 项把「频繁切换损害效率」和「需要刻意改变」都概括进去了。A 项绝对化：原文只说科技公司设计产品来争夺注意力，并没有说生产力下降全是它们的责任。B 项以偏概全：开放式办公室只是第三段提到的例子之一。D 项无中生有：原文的 office workers 并不限于创意行业。主旨题需要综合全文：定位句覆盖「产出下降 + 需要改变」，而「频繁切换」的现象见本段前一句。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to the passage, what is \"attention residue\"?",
+          "options": [
+            "The habit of checking messages every few minutes.",
+            "The part of the mind that stays on a task after switching.",
+            "The time needed to finish routine work.",
+            "The advertising value of a user's attention."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Psychologists call the lingering effect \"attention residue\": part of your brain remains on the task you just left, even after you have moved on."
+          },
+          "explain": "细节题。原文在冒号后直接给出定义：大脑的一部分仍然停留在你刚刚离开的任务上，即使你已经转向下一件事。B 项是原句的同义改写：stays on = remains on，after switching = after you have moved on。A 项偷换概念：频繁查看消息是造成干扰的行为，不是 attention residue 的定义。C 项张冠李戴：原文说重新回到一个费脑的任务可能需要二十多分钟，不是完成日常工作的时间。D 项无中生有：注意力有价值是首段的说法，不是这个词的含义。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What can be inferred about relying on willpower to resist distraction?",
+          "options": [
+            "It works better for students than for office workers.",
+            "It becomes stronger with repeated practice.",
+            "It is the strategy most companies recommend.",
+            "It is unlikely to succeed because distractions are designed to be hard to resist."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Willpower alone is a weak defence, because the distraction is designed to be irresistible."
+          },
+          "explain": "推断题。原文说单靠意志力是「薄弱的防御」，因为干扰被设计得「难以抵抗」；D 项是对这句话的合理推断：unlikely to succeed 对应 weak defence，designed to be hard to resist 对应 designed to be irresistible。A 项无中生有：文中没有比较学生和上班族。B 项无中生有：作者没有说意志力会越练越强，反而说它不够用。C 项张冠李戴：公司推荐的是 focus hours、安静空间等做法，不是让员工靠意志力硬扛。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"perks\" in Paragraph 3 is closest in meaning to ______.",
+          "options": [
+            "extra benefits",
+            "strict rules",
+            "basic duties",
+            "financial costs"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "These measures are popular, but they are often treated as perks rather than as core to the business."
+          },
+          "explain": "词义题。perks 与 core to the business 形成对比：一个是「额外的福利」，一个是「业务的核心」。A 项 extra benefits 最接近。B 项 strict rules 与 popular、treated as 的语境不符；C 项 basic duties 正好与 rather than core 相反；D 项 financial costs 无依据，福利不等于成本，而且与「受欢迎」不搭。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward digital tools?",
+          "options": [
+            "Completely opposed to them.",
+            "Indifferent to their effects on work.",
+            "Cautiously positive.",
+            "Strongly optimistic that they will eliminate distraction."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "Used deliberately, digital tools can support concentration rather than undermine it."
+          },
+          "explain": "态度题。原文明确说「这不意味着技术是敌人」，紧接着给出条件：有意识地使用，数字工具可以支持专注而不是削弱专注。C 项用 cautiously positive 概括这种有条件的肯定，原文的 Used deliberately, digital tools can support concentration 就是依据。A 项绝对化，与 None of this means that technology is the enemy 矛盾。B 项无中生有，作者整篇都在讨论技术对工作的影响。D 项过度推断：作者只说工具可以支持专注，没有说它们会消除干扰；末句反而强调我们要决定是否把注意力交出去。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "主旨题",
+          "stem": "What does the speaker want listeners to take control of?",
+          "options": [
+            "The speed at which technology companies release products.",
+            "The number of people employed in an office.",
+            "The way digital tools receive and use their attention.",
+            "The total time their colleagues spend at work."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "The point is not to reject the tools but to use them on our own terms."
+          },
+          "explain": "C 正确：结尾强调按自己的方式使用工具，主动掌握注意力。A 讨论产品发布速度，B 讨论员工人数，D 讨论同事工时，都偏离个人如何使用工具这一重点。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "How long may a worker need to regain full concentration after an interruption?",
+          "options": [
+            "More than twenty minutes.",
+            "Less than one minute.",
+            "Exactly five minutes.",
+            "An entire working day."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "Studies of office workers suggest that it can take more than twenty minutes to return fully to a demanding task after an interruption."
+          },
+          "explain": "A 正确：more than twenty minutes 表明恢复专注可能超过二十分钟。B 和 C 缩短了原文时间；D 把代价夸大为一整天，原文没有这一说法。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "Why might a quiet office fail to protect employees' focus?",
+          "options": [
+            "Employees may find silence more distracting than noise.",
+            "Quiet rooms are intended only for senior managers.",
+            "The organisation may have removed all digital tools.",
+            "Employees may still feel expected to reply immediately."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "If an organization rewards instant replies, no amount of quiet space will protect deep work; employees will simply answer messages more quietly."
+          },
+          "explain": "D 正确：只要组织奖励即时回复，员工仍会中断深度工作。A 把安静说成更大的干扰，B 限定为高管使用，C 声称移除全部工具，都不是原文给出的原因。"
+        },
+        {
+          "id": "l4",
+          "type": "目的题",
+          "stem": "Why does the speaker suggest deciding in advance when to check messages?",
+          "options": [
+            "To avoid ever communicating with colleagues.",
+            "To reduce the repeated effort of making small decisions.",
+            "To make every message receive an instant reply.",
+            "To replace company rules with longer working hours."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "Such rules may feel rigid, but they free the mind from a constant, exhausting series of small decisions."
+          },
+          "explain": "B 正确：预先定规则能减少不断做小决定的消耗。A 把定时沟通扩大为完全不沟通；C 与减少即时打断的目的相反；D 的延长工时没有依据。"
+        }
+      ],
+      "translation": [
+        "我们很少有人会把自己说成容易分心的人，但如今普通的办公室职员每隔几分钟就要查看一次电子邮件或即时通讯应用。这些本应把我们从日常琐事中解放出来的设备，反而造就了一种经济形态——在这种经济里，我们的注意力成了最值钱的商品。科技公司设计产品就是为了抓住这份注意力，而它们在这件事上已经做得相当出色。结果是一个从早忙到晚的工作日，真正完成的活儿却少得惊人；要扭转这种局面，光靠意志力远远不够。",
+        "问题并不只是打断会占用时间。一条通知也许只持续几秒钟，但人的头脑不会瞬间切换。心理学家把这种迟迟不散的影响称为“注意力残留”：即便你已经转去做别的事，大脑的一部分仍然留在刚刚离开的那项任务上。当人们反复在任务之间切换时，他们在每一项上的表现都会变差——不是因为他们能力不足，而是因为心智资源被摊薄在了一堆没有做完的事情上。针对办公室职员的研究表明，被打断之后，人要完全回到一项费脑的任务上，可能需要二十多分钟。",
+        "公司已经开始意识到这种代价。一些公司推出了“专注时间”，在这段时间里禁止开会和发消息。还有一些公司把电子邮件从员工的手机上撤掉，或者用更安静的场所取代开放式办公室。这些做法很受欢迎，但往往被当作额外福利，而不是业务的核心。这就错了。如果一个组织奖励的是即时回复，那么再多的安静空间也保护不了深度工作；员工只会把消息回得更安静而已。",
+        "个人也面临类似的困境。单靠意志力是薄弱的防线，因为干扰本来就是被设计成难以抗拒的。更可靠的做法是改变环境：把手机放到另一个房间，关掉不必要的标签页，并提前决定什么时候查看消息。这类规则可能显得死板，却能让头脑从一连串不断消耗人的小决定中解脱出来。",
+        "这一切并不意味着技术是敌人。只要有意识地使用，数字工具可以支撑专注，而不是削弱专注。问题在于谁说了算。注意力经济永远会奖励那些抓住我们注意力的人；我们必须决定，自己是否愿意默认把它交出去。关键不是拒绝这些工具，而是按我们自己的条件使用它们。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The Four-Day Workweek Experiment",
+      "wordCount": 408,
+      "paragraphs": [
+        "For decades, the five-day workweek has seemed as natural as the weekend itself. But a growing number of companies are testing a different arrangement: paying employees the same salary for four days of work instead of five. Early results have been striking. In trials across several countries, most participating firms reported that productivity stayed the same or improved, while employees reported lower stress and better sleep. The idea has moved from the margins of management theory to the centre of public debate.",
+        "Supporters argue that the gains come from better use of time. When employees have one fewer day to complete their work, they tend to cut unnecessary meetings, shorten email exchanges, and concentrate on tasks that matter. Meetings that once filled an hour are reduced to a short written update, and decisions that used to wait for the next gathering are made on the spot. Some companies also report that staff take fewer sick days and are less likely to leave. For employers, the promise is attractive: happier workers who produce as much in less time.",
+        "The picture is not uniformly positive, however. A four-day week can be difficult to apply in hospitals, schools, restaurants and factories, where work must be covered continuously. Nurses cannot simply compress five shifts into four without affecting patients, and teachers cannot leave a class unattended. Some trials have relied on extra staff or on employees working longer hours on the remaining four days. In those cases, the arrangement may simply redistribute stress rather than reduce it. There is also a risk that the extra day off becomes a day of errands and screen time, leaving workers no more rested than before.",
+        "Critics therefore warn against treating the four-day week as a universal solution. They point out that successful trials have often involved office-based companies with a high degree of control over their schedules. It is far from clear whether the same results would appear in a supermarket or a primary school. Even enthusiastic supporters admit that the model needs to be adapted to the nature of the work rather than imposed from above.",
+        "Still, the experiments have changed the terms of the debate. Instead of asking whether employees should work less, companies are now asking how work could be organised more intelligently. That question is likely to outlast the four-day week itself. Even if the four-day week fades, the questions it has raised about wasted time and exhausted workers will remain."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "The four-day workweek shows promise but is not a universal solution.",
+            "The four-day workweek has been proven to work in every industry.",
+            "Employees are unwilling to return to a five-day workweek.",
+            "Companies adopt the four-day workweek mainly to reduce salaries."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Critics therefore warn against treating the four-day week as a universal solution."
+          },
+          "explain": "主旨题。文章先讲四天工作制的积极试验结果（第一、二段），再讲医院、学校等场景的限制（第三段）和「不是万能方案」的警告（第四段），最后说这场试验改变了讨论框架（第五段）。整体态度是「有前景，但有局限」，A 项最全面。B 项绝对化，与 not uniformly positive、not a universal solution 矛盾。C 项无中生有：文中没有说员工不愿回到五天工作制。D 项偷换概念：原文是四天拿同样的薪水，不是降低薪水。定位句是第四段的转折句，只覆盖「不是万能方案」；「有前景」来自第一、二段的试验结果。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to the passage, why do some firms report higher productivity under a four-day week?",
+          "options": [
+            "Employees work longer hours on each of the four days.",
+            "Companies hire more staff to share the workload.",
+            "Employees are paid less but work harder.",
+            "Employees use their time more efficiently and cut low-value activities."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "When employees have one fewer day to complete their work, they tend to cut unnecessary meetings, shorten email exchanges, and concentrate on tasks that matter."
+          },
+          "explain": "细节题。原文把效率提升归因于更少的时间逼出了更好的时间利用：砍掉不必要的会议、缩短邮件往来、专注重要任务。D 项正是概括。A 项张冠李戴：员工在剩下的四天里工作更久，是第三段中部分试验维持服务覆盖的做法，不是生产率提高的原因。B 项也是第三段的内容，而且讲的是医院、学校等难覆盖的场景。C 项与原文 same salary 矛盾。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What can be inferred about applying the four-day week in hospitals and schools?",
+          "options": [
+            "It always fails because employees refuse to cooperate.",
+            "It may require extra staff or longer shifts to maintain service.",
+            "It has produced better results than office-based trials.",
+            "It is the main focus of current research."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "Some trials have relied on extra staff or on employees working longer hours on the remaining four days."
+          },
+          "explain": "推断题。原文说医院、学校、餐馆、工厂的工作必须持续有人覆盖，护士不能把五个班硬压成四个，老师也不能让课堂没人管；接着指出部分试验靠增加人手或让员工在剩余四天工作更久来维持。B 项是对这一段的合理推断。A 项绝对化（always）且无中生有（没有提到员工拒绝合作）。C 项无中生有：原文只说 the picture is not uniformly positive，并没有比较这些场景与办公室试验的效果。D 项无中生有：文中没有说这是当前研究的主要焦点。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"errands\" in Paragraph 3 is closest in meaning to ______.",
+          "options": [
+            "short trips to do small tasks",
+            "long periods of rest",
+            "formal work meetings",
+            "additional paid work"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "There is also a risk that the extra day off becomes a day of errands and screen time, leaving workers no more rested than before."
+          },
+          "explain": "词义题。errands 与 screen time 并列，指休息日被买菜、取快递、办事等琐事占满，结果 no more rested than before。A 项「做小任务的短途出行」最接近。B 项与「没有休息得更好」相反。C 项无中生有：errands 不是正式工作会议。D 项无中生有：errands 不是额外有偿工作，而且与 day off 的语境冲突。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward the four-day workweek?",
+          "options": [
+            "Uncritically enthusiastic.",
+            "Entirely dismissive.",
+            "Uncertain whether the trials are reliable.",
+            "Balanced, seeing both promise and limitations."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "The picture is not uniformly positive, however."
+          },
+          "explain": "态度题。第三段开头 The picture is not uniformly positive, however 是全文态度的转折：作者没有一味乐观。第一、二段报告了生产率持平或提高、压力下降、睡眠改善等积极结果；第三、四段指出行业限制、额外人手、休息日被琐事占满等风险；第五段承认试验改变了讨论框架。整体是平衡的，D 项正确。A 项忽略了第三、四段的保留；B 项忽略了第一、二段的积极证据；C 项无中生有：原文明确说 trials、experiments 已经发生，作者质疑的是能否推广到所有行业，不是试验是否可靠。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What arrangement are companies in the trials offering employees?",
+          "options": [
+            "The same salary for four working days.",
+            "A lower salary for four working days.",
+            "The same salary for six shorter working days.",
+            "A higher salary in return for working weekends."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "But a growing number of companies are testing a different arrangement: paying employees the same salary for four days of work instead of five."
+          },
+          "explain": "A 正确：安排是四天工作、薪资不变。B 擅自加入降薪，C 把工作日改成六天，D 加入周末加班和涨薪，都与所述试验不符。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What has replaced some hour-long meetings in the trials?",
+          "options": [
+            "Additional compulsory training sessions.",
+            "Daily discussions with every member of staff.",
+            "Longer exchanges of email messages.",
+            "Short written updates."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "Meetings that once filled an hour are reduced to a short written update, and decisions that used to wait for the next gathering are made on the spot."
+          },
+          "explain": "D 正确：原来一小时的会议被简短书面更新取代。A 的培训未被提及；B 增加集体讨论，与压缩会议不符；C 与缩短邮件交流的方向相反。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What does the speaker suggest about an extra day off?",
+          "options": [
+            "It guarantees that workers will sleep better.",
+            "Its benefit depends partly on how workers spend it.",
+            "It should always be spent doing paid work.",
+            "It removes the need for changes inside the workplace."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "There is also a risk that the extra day off becomes a day of errands and screen time, leaving workers no more rested than before."
+          },
+          "explain": "B 正确：多休一天如果都用来办杂事和看屏幕，未必得到休息。A 将效果绝对化；C 强加额外有偿工作；D 忽略关于工作组织方式的讨论。"
+        },
+        {
+          "id": "l4",
+          "type": "主旨题",
+          "stem": "What lasting contribution does the speaker attribute to these experiments?",
+          "options": [
+            "They prove that every occupation needs the same schedule.",
+            "They show that salaries should depend only on hours worked.",
+            "They encourage companies to rethink how work is organised.",
+            "They settle the debate about the ideal number of working days."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "Instead of asking whether employees should work less, companies are now asking how work could be organised more intelligently."
+          },
+          "explain": "C 正确：试验促使企业思考怎样更聪明地组织工作，这个问题会持续存在。A 忽略行业差异；B 未谈薪资计算原则；D 误把持续讨论说成已经定论。"
+        }
+      ],
+      "translation": [
+        "几十年来，五天工作制看起来就像周末本身一样理所当然。但越来越多的公司在试验另一种安排：雇员干四天活而不是五天，却拿同样的薪水。早期的结果相当惊人。在多个国家开展的试验中，大多数参与企业报告生产率持平甚至有所提高，同时员工报告压力降低、睡眠改善。这个想法已经从管理理论的边缘走到了公共讨论的中心。",
+        "支持者认为，这些好处来自对时间的更好利用。当员工只有四天来完成工作，他们往往会砍掉不必要的会议、缩短邮件往来，并集中精力在真正重要的任务上。过去要开满一小时的会议被压缩成一份简短的书面更新，过去要等下次聚会才做的决定当场就做了。一些公司还报告说，员工请病假的次数变少，离职的可能性也更低。对雇主来说，这个前景很有吸引力：更快乐的员工，用更少的时间产出同样多的成果。",
+        "然而情况并非一片大好。四天工作制在医院、学校、餐馆和工厂里可能很难实行，因为这些地方的工作必须持续有人覆盖。护士不能在不影响病人的情况下把五个班硬压成四个，老师也不能让课堂无人看管。一些试验依靠增加人手，或者让员工在剩下的四天里工作更长时间。在这些情况下，这种安排可能只是把压力重新分配，而不是减轻压力。还有一种风险：多出来的休息日会变成办事加刷屏的一天，让员工休息得并不比从前更好。",
+        "因此批评者警告说，不要把四天工作制当成万能的解决方案。他们指出，成功的试验往往发生在对日程有高度掌控权的办公室型公司。同样的结果会不会在超市或小学出现，还远不清楚。就连热情的支持者也承认，这种模式需要根据工作的性质加以调整，而不是自上而下地强行推行。",
+        "不过，这些试验已经改变了讨论的框架。公司现在问的不再是员工该不该少干一点，而是工作怎样才能组织得更聪明。这个问题很可能会比四天工作制本身活得更久。即使四天工作制逐渐消退，它所提出的关于时间浪费和员工疲惫的问题仍将存在。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "中国是茶的故乡，饮茶已有数千年的历史。茶不仅是一种日常饮品，也承载着丰富的文化内涵。中国人常以茶待客，在品茶的过程中交流感情、增进友谊。泡茶、斟茶、敬茶都有讲究，体现了中国人谦和礼让的传统美德。不同的地区还形成了各具特色的饮茶习俗，如广东的早茶和四川的盖碗茶。在中国人的日常生活中，茶既是解渴的饮料，也是表达敬意和祝福的常见方式。如今，随着中外文化交流的不断加深，中国茶文化正走向世界，受到越来越多外国朋友的喜爱。",
+    "hints": [
+      "hometown of tea",
+      "cultural connotations",
+      "serve tea to guests",
+      "modesty and courtesy",
+      "distinctive tea-drinking customs"
+    ],
+    "reference": "China is the hometown of tea, and tea drinking has a history of thousands of years. Tea is not only a daily beverage but also carries rich cultural connotations. The Chinese often serve tea to guests, and while tasting tea they share their feelings and strengthen their friendship. Brewing, pouring and offering tea all follow particular rules, which reflect the traditional Chinese virtues of modesty and courtesy. Different regions have also developed distinctive tea-drinking customs, such as Cantonese morning tea and Sichuan covered-bowl tea (gaiwan tea). In everyday life in China, tea is both a drink to quench thirst and a common way to express respect and good wishes. Today, as cultural exchanges between China and other countries deepen, Chinese tea culture is spreading around the world and is gaining popularity among more and more foreign friends.",
+    "scoringPoints": [
+      {
+        "zh": "茶的故乡；数千年的历史",
+        "en": "be the hometown of tea; have a history of thousands of years"
+      },
+      {
+        "zh": "不仅……也……",
+        "en": "not only ... but also ..."
+      },
+      {
+        "zh": "以茶待客；交流感情、增进友谊；表达敬意和祝福",
+        "en": "serve tea to guests; share feelings and strengthen friendship; express respect and good wishes"
+      },
+      {
+        "zh": "泡茶、斟茶、敬茶；谦和礼让",
+        "en": "brewing, pouring and offering tea; modesty and courtesy"
+      },
+      {
+        "zh": "各具特色的饮茶习俗",
+        "en": "distinctive tea-drinking customs"
+      },
+      {
+        "zh": "随着……不断加深；走向世界",
+        "en": "as ... deepen; spread around the world / go global"
+      }
+    ],
+    "highlights": [
+      "be the hometown of tea",
+      "not only ... but also ...",
+      "while tasting tea",
+      "which reflect the traditional Chinese virtues of ...",
+      "as cultural exchanges ... deepen",
+      "a way to express respect and good wishes"
+    ]
+  },
+  "writing": {
+    "topic": "The Importance of Protecting Our Attention in the Digital Age",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the importance of protecting our attention in the digital age. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: phenomenon → costs → solutions"
+    ],
+    "outlineHints": [
+      "开头：各类应用都在争夺注意力，频繁切换成了常态；我们也很难真正陪伴身边的人。",
+      "中间：切换的代价——注意力残留、效率下降、失去深度思考与满足感。",
+      "结尾：不靠意志力，靠环境设计和固定习惯；注意力是稀缺资源。"
+    ],
+    "modelEssay": "In an age when every app competes for our glance, attention has become a scarce resource. We check messages while eating, scroll through feeds while waiting, and rarely finish a task uninterrupted. This constant switching may feel harmless, but it quietly erodes our ability to think deeply and to be present with the people around us.\n\nThe costs are both practical and personal. Studies suggest that after an interruption the mind needs time to return to a demanding task, so a day full of small distractions can end with little accomplished. The damage goes beyond productivity. When our attention is always elsewhere, we lose the patience to read, to listen and to reflect, and we may feel busy without feeling satisfied.\n\nProtecting attention therefore requires deliberate choices rather than mere willpower. We can keep our phones out of reach during focused work, set fixed times for checking messages, and protect a few uninterrupted hours each day. Such habits may seem small, but they decide who controls our time. In a world designed to distract us, the ability to choose where to look is a form of freedom worth defending.",
+    "structure": [
+      "第一段：现象 + 论点。用「每个应用都在争夺注意力」开场，点明注意力是稀缺资源；也点出我们很难真正陪伴身边的人。",
+      "第二段：代价。先讲效率（注意力残留、需要时间回到任务），再讲心理代价（失去阅读、倾听、反思的耐心，忙碌却不满足）。",
+      "第三段：对策 + 结论。环境设计（手机放远、固定查看消息时间、保护不被打断的时间），最后落到「选择看哪里是一种自由」。"
+    ],
+    "expressions": [
+      "compete for our glance",
+      "a scarce resource",
+      "erode our ability to think deeply",
+      "be present with the people around us",
+      "the mind needs time to return to a demanding task",
+      "deliberate choices rather than mere willpower",
+      "keep our phones out of reach",
+      "the ability to choose where to look"
+    ],
+    "translation": "在一个每个应用都在争夺我们目光的时代，注意力已经成为一种稀缺资源。我们一边吃饭一边看消息，一边等车一边刷动态，很少能不受打扰地完成一件事。这种不断的切换或许让人觉得无害，但它正在悄悄侵蚀我们深入思考的能力，也侵蚀我们真正陪伴身边人的能力。\n\n代价既实际，也关乎内心。研究表明，被打断之后，头脑需要时间才能回到一项费脑的任务上，因此一个充满细小干扰的日子，最后可能什么也没做成。损害还不止于效率。当我们的注意力总是在别处，我们就会失去阅读、倾听和反思的耐心，还可能觉得自己很忙，却并不满足。\n\n因此，保护注意力需要刻意的选择，而不是单靠意志力。我们可以在专注工作时把手机放到够不着的地方，为查看消息设定固定时间，每天守住几段不被打断的时光。这些习惯看似微小，却决定了谁在掌控我们的时间。在一个被设计来分散我们注意力的世界里，能够选择把目光放在哪里，是一种值得捍卫的自由。"
+  }
+}

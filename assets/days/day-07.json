@@ -1,0 +1,435 @@
+{
+  "day": 7,
+  "date": "2026-11-06",
+  "week": 1,
+  "theme": "教育与自然",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Trouble with Standardized Tests",
+      "wordCount": 411,
+      "paragraphs": [
+        "Few institutions shape a student's future as powerfully as the standardized test. A single score can determine admission to a university, placement in a programme or access to a scholarship. Supporters defend these tests as objective: everyone answers the same questions under the same conditions, so the results can be compared fairly. Critics reply that uniformity is not the same as fairness. A test can be consistent and still measure only a narrow slice of what students know and can do. The debate is not really about whether tests are useful, but about how much weight they should carry.",
+        "The most obvious problem is what tests leave out. Standardized exams tend to reward speed, recall and the ability to choose among ready-made answers. They are less suited to assessing sustained research, collaborative problem-solving or the patience to revise a piece of writing. Students who think slowly but deeply, or who work best on open-ended projects, may appear mediocre on paper while possessing qualities that matter far more in adult life.",
+        "Test scores also reflect resources. Families who can afford tutoring, quiet study space and repeated attempts give their children an advantage that has little to do with intelligence. Schools in wealthier areas may offer more advanced courses and better preparation. When a score is treated as a neutral measure of merit, these advantages become invisible. The result is a system that can reproduce inequality while claiming to reward talent. A student who cannot afford a retake may be judged by a single bad morning.",
+        "Defenders respond that tests provide a common standard in a world of unequal schools. Without them, admissions might depend even more on essays, interviews and personal connections, which can favour the already privileged. This is a serious point. A test is not automatically fair, but neither is a system with no common measure. The question is how the score is used, and what other evidence is allowed to count.",
+        "A better approach would treat standardized tests as one signal among many. Scores could be considered alongside portfolios, teacher recommendations and samples of student work. Tests might be redesigned to assess reasoning and writing rather than memorisation. None of this will eliminate inequality, but it could make the measures more honest about what they capture. The goal is not to abolish measurement, but to stop pretending that a single number can sum up a person. That would be a more demanding standard, but also a more honest one."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Standardized tests are completely useless and should be abolished.",
+            "Standardized tests are perfectly fair because everyone takes the same exam.",
+            "Standardized tests measure something useful but should not be the only measure.",
+            "Standardized tests mainly reflect students' intelligence."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "The goal is not to abolish measurement, but to stop pretending that a single number can sum up a person."
+          },
+          "explain": "主旨题。文章既承认标准化考试提供共同标准，也指出它只测量窄范围能力、受资源影响；最后主张把分数作为多种信号之一。C 项最完整。A 项绝对化，与「不是废除测量」矛盾；B 项忽略第三、四段对资源和不公平的讨论；D 项与「分数还反映资源」相反。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What kinds of abilities do standardized exams tend to reward?",
+          "options": [
+            "Sustained research and collaborative problem-solving.",
+            "Speed, recall and choosing among ready-made answers.",
+            "Patience in revising a long piece of writing.",
+            "The ability to design original experiments."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Standardized exams tend to reward speed, recall and the ability to choose among ready-made answers."
+          },
+          "explain": "细节题。第二段明确说标准化考试倾向于奖励速度、记忆和从现成答案中选择的能力。B 项是原句。A、C、D 都是原文说标准化考试「不太适合评估」的能力，与题干相反。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why can standardized tests reproduce inequality?",
+          "options": [
+            "Because poor students are less intelligent than wealthy students.",
+            "Because all students receive the same preparation at school.",
+            "Because test questions are always too easy for wealthy students.",
+            "Because family resources and school quality affect scores."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Families who can afford tutoring, quiet study space and repeated attempts give their children an advantage that has little to do with intelligence."
+          },
+          "explain": "推断题。第三段说能负担辅导、安静学习空间和多次考试的 family 给孩子优势，富裕地区学校资源也更好；当分数被当成中立的 merit 衡量时，这些优势就隐形了。D 项概括了资源与学校质量的影响。A 项把差距归因于智力，原文恰恰反对；B 项与 unequal schools 相反；C 项无中生有：题目难度不是原文解释。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"neutral\" in Paragraph 3 is closest in meaning to ______.",
+          "options": [
+            "not favouring any side",
+            "very difficult to measure",
+            "based on clear evidence",
+            "widely accepted by parents"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "When a score is treated as a neutral measure of merit, these advantages become invisible."
+          },
+          "explain": "词义题。原文说分数被当成 neutral 的 merit 衡量时，家庭和学校优势就 invisible 了；也就是说它被误认为「不偏向任何一方、客观」。A 项最接近。B 项难测量、C 项有证据、D 项家长接受都不是 neutral 在句中的意思。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward standardized tests?",
+          "options": [
+            "Uncritically supportive.",
+            "Completely opposed to any form of measurement.",
+            "Critical of their overuse, but not in favour of abolishing measurement.",
+            "Indifferent to their effects on inequality."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "A test is not automatically fair, but neither is a system with no common measure."
+          },
+          "explain": "态度题。作者批评考试只测窄能力、放大资源差距，但也承认没有共同标准的系统未必更公平，末段明确说目标不是废除测量。C 项最准确。A 项忽略批评；B 项与 not abolish measurement 矛盾；D 项与全文对不平等的讨论矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What can a single standardized test score determine?",
+          "options": [
+            "A student's future salary.",
+            "University admission, programme placement or a scholarship.",
+            "The quality of a student's school.",
+            "The number of courses a student must take."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "A single score can determine admission to a university, placement in a programme or access to a scholarship."
+          },
+          "explain": "听力细节题。开头直接说一个分数可以决定大学录取、项目分配或奖学金资格。B 项是原文列举。A 项未来工资、C 项学校质量、D 项课程数量都没有在句中提到。"
+        },
+        {
+          "id": "l2",
+          "type": "主旨题",
+          "stem": "What is the main criticism of standardized tests in Paragraph 2?",
+          "options": [
+            "They are too expensive for most schools.",
+            "They are marked by biased teachers.",
+            "They measure only a narrow range of skills.",
+            "They take too long to complete."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "The most obvious problem is what tests leave out."
+          },
+          "explain": "听力主旨题。第二段说最明显的问题是考试遗漏了什么：它奖励速度、记忆和选现成答案，却难以评估持续研究、合作解决问题、修改写作等能力。C 项概括。A 项费用、B 项教师偏见、D 项耗时都不是本段论点。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "Why might essays and interviews also be unfair?",
+          "options": [
+            "They are always graded by machines.",
+            "They cannot show a student's writing ability.",
+            "They are less common than standardized tests.",
+            "They can favour students with personal connections and resources."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Without them, admissions might depend even more on essays, interviews and personal connections, which can favour the already privileged."
+          },
+          "explain": "听力推断题。第四段说如果没有标准化考试，录取可能更依赖文书、面试和个人关系，而这些可能偏向已经拥有优势的人。D 项是合理推断。A 项机器评分、B 项不能展示写作、C 项常见程度都不符合原文。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What does the author recommend?",
+          "options": [
+            "Using test scores as the only measure of merit.",
+            "Using tests as one signal alongside other evidence.",
+            "Replacing all tests with interviews.",
+            "Ignoring test scores completely."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "A better approach would treat standardized tests as one signal among many."
+          },
+          "explain": "听力态度题。末段建议把标准化考试当作多种信号之一，并结合作品集、教师推荐和学生作品样本。B 项是原句的同义改写。A 项与「不要只看一个数字」相反；C、D 项绝对化，作者没有主张完全取消或完全忽略考试。"
+        }
+      ],
+      "translation": [
+        "很少有哪种制度能像标准化考试那样有力地塑造一个学生的未来。一个分数就能决定大学录取、某个项目的分配，或者奖学金资格。支持者为这类考试辩护，说它们是客观的：每个人在相同条件下回答相同的问题，因此结果可以公平比较。批评者则回应说，整齐划一并不等于公平。一项考试可以前后一致，却仍然只测量了学生所知所能的狭窄一角。这场争论真正涉及的并不是考试有没有用，而是它应该占多大的分量。",
+        "最明显的问题是考试遗漏了什么。标准化考试倾向于奖励速度、记忆，以及从现成答案中做出选择的能力。它们不太适合评估持续的研究、合作解决问题，或者修改一篇文章所需的耐心。那些思考缓慢但深入的学生，或者最擅长开放式项目的学生，在纸面上也许显得平庸，却拥有在成年生活中重要得多的品质。",
+        "考试分数还反映资源。能负担得起课外辅导、安静的学习空间和多次重考的家庭，给了孩子一种与智力几乎无关的优势。富裕地区的学校可能开设更高级的课程，提供更好的备考。当分数被当成衡量才能的中立标准时，这些优势就变得看不见了。结果是一套可能复制不平等、却声称在奖励才能的制度。一个负担不起重考的学生，可能只因为一个状态糟糕的早晨就被评判了。",
+        "辩护者回应说，在学校条件不平等的世界里，考试提供了一种共同标准。如果没有考试，录取可能更加依赖文书、面试和个人关系，而这些都可能偏向本已享有特权的人。这是一个严肃的观点。考试并不自动公平，但一个没有任何共同衡量标准的系统同样不公平。问题在于分数该如何使用，以及还允许哪些其他证据被计入。",
+        "更好的做法是把标准化考试当作众多信号之一。分数可以与作品集、教师推荐和学生作品样本一并考虑。考试也可以重新设计，去评估推理和写作，而不是记忆。这一切都不会消除不平等，但它可以让这些衡量方式对自身究竟测到了什么更诚实一些。目标不是废除衡量，而是不要再假装一个数字就能概括一个人。那会是一种更苛刻的标准，但也是一种更诚实的标准。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The Quiet Power of Urban Trees",
+      "wordCount": 419,
+      "paragraphs": [
+        "Trees are often treated as decoration in cities: pleasant to look at, useful for shade, but optional when budgets are tight. A growing body of research suggests that this view is short-sighted. Urban trees cool streets, absorb rainwater, clean the air and provide habitats for birds and insects. They also affect how people feel and behave. In a warming world, the humble street tree is becoming an essential piece of urban infrastructure. The benefits are easy to take for granted until a street loses its canopy.",
+        "The cooling effect is the most direct. Leaves release water vapour, and shade prevents surfaces from heating up. A mature tree can lower the temperature of the air around it by several degrees, reducing the need for air conditioning in nearby buildings. Trees also intercept rainfall, slowing the water that reaches drains and lowering the risk of flooding during heavy storms. These services are easy to overlook because they are not bought and sold in a market. The shade also makes walking more comfortable, encouraging people to leave their cars at home.",
+        "The benefits are not evenly distributed. Wealthier neighbourhoods often have more trees, while poorer areas may have fewer and older ones. This pattern is not accidental: it reflects decades of investment decisions, zoning rules and neglect. Researchers have linked tree cover to better mental health, lower stress and even lower crime rates, though the causal pathways are complex. When trees are scarce, residents lose not only shade but also a shared space for meeting and play.",
+        "Planting trees is popular, but keeping them alive is harder. Young trees need water, protection and maintenance for years before they provide full benefits. Budgets often pay for planting but not for care, so many saplings die within a few seasons. Trees also compete for space with parking, utilities and new construction. A serious urban forest policy therefore has to plan for decades, not for a single photo opportunity. Without a long-term budget, a celebrated planting campaign can leave behind a row of dead saplings.",
+        "None of this means that trees can solve every urban problem. They cannot replace affordable housing, public transport or good schools. But they are a relatively cheap investment with wide benefits, and they make the case for thinking about cities as living systems rather than machines. A city that plants and protects trees is making a bet on the future—one that its residents will feel every summer. That is why the case for trees is ultimately a case for patience."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "主旨题",
+          "stem": "Which of the following best states the main idea of the passage?",
+          "options": [
+            "Trees are mainly decorative and should be cut when budgets are tight.",
+            "Urban trees provide valuable services, but their benefits are uneven and require long-term care.",
+            "Planting trees is enough to solve most urban problems.",
+            "Wealthy neighbourhoods should have fewer trees."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "But they are a relatively cheap investment with wide benefits, and they make the case for thinking about cities as living systems rather than machines."
+          },
+          "explain": "主旨题。文章说明树木的降温、蓄水、健康和空间价值，也指出分布不均、养护不足和不能替代住房/交通/学校；最后说树木是便宜而回报广的投资。B 项最完整。A 项与全文相反；C 项过度推断，末段明确说不能解决所有城市问题；D 项与「贫困社区树木更少」的公平问题相反。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "How do trees help reduce flooding?",
+          "options": [
+            "They make drains larger.",
+            "They stop all rain from reaching the ground.",
+            "They intercept rainfall and slow the water reaching drains.",
+            "They increase the number of storms."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Trees also intercept rainfall, slowing the water that reaches drains and lowering the risk of flooding during heavy storms."
+          },
+          "explain": "细节题。第二段说树木拦截降雨，让进入排水管的水变慢，从而降低暴雨时洪水的风险。C 项是原句。A 项扩大排水管、B 项完全阻止雨水、D 项增加风暴都不符合原文。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why are tree benefits unevenly distributed?",
+          "options": [
+            "Because trees grow better in wealthy areas.",
+            "Because poorer residents do not like trees.",
+            "Because tree planting is always random.",
+            "Because investment decisions, zoning and neglect have shaped neighbourhoods differently."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "This pattern is not accidental: it reflects decades of investment decisions, zoning rules and neglect."
+          },
+          "explain": "推断题。第三段说这种分布并非偶然，而是几十年投资决策、分区规则和忽视的结果。D 项是原句的概括。A 项树木在富区长得更好、B 项穷人不喜欢树、C 项随机种植都没有依据。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "The word \"intercept\" in Paragraph 2 is closest in meaning to ______.",
+          "options": [
+            "catch or stop something before it reaches a place",
+            "make something move faster",
+            "measure the amount of something",
+            "replace something completely"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "Trees also intercept rainfall, slowing the water that reaches drains and lowering the risk of flooding during heavy storms."
+          },
+          "explain": "词义题。intercept 与 slowing the water that reaches drains 相连，指在雨水到达排水管前「接住/截住」它。A 项最接近。B 项加速、C 项测量、D 项完全替代都不符合语境。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward planting urban trees?",
+          "options": [
+            "Uncritically enthusiastic.",
+            "Completely opposed because trees take space.",
+            "Supportive, but aware that trees need long-term care and cannot solve every problem.",
+            "Indifferent to their benefits."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "Planting trees is popular, but keeping them alive is harder."
+          },
+          "explain": "态度题。作者肯定树木的多种好处，但强调种下不等于活下来，需要多年浇水、保护和维护；末段也说树木不能替代住房、公交和学校。C 项最准确。A 项忽略养护和局限；B 项与全文相反；D 项与详细列举好处矛盾。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What is the most direct benefit of urban trees mentioned in the passage?",
+          "options": [
+            "Cooling streets and nearby buildings.",
+            "Increasing property prices.",
+            "Reducing traffic noise.",
+            "Creating new parking spaces."
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "The cooling effect is the most direct. Leaves release water vapour, and shade prevents surfaces from heating up."
+          },
+          "explain": "听力细节题。第二段开头说最直接的好处是降温：树叶释放水蒸气，树荫防止表面升温。A 项是原文。B 项房价、C 项噪音、D 项停车位都不是本段所说的最直接好处。"
+        },
+        {
+          "id": "l2",
+          "type": "推断题",
+          "stem": "Why do many young trees die within a few seasons?",
+          "options": [
+            "They are planted in the wrong season.",
+            "They receive too much water.",
+            "They are damaged by birds and insects.",
+            "Budgets pay for planting but not for long-term care."
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Budgets often pay for planting but not for care, so many saplings die within a few seasons."
+          },
+          "explain": "听力推断题。第四段说预算常常只支付种植、不支付养护，因此许多树苗在几个季节内死亡。D 项是原句。A 项种植季节、B 项水太多、C 项鸟虫破坏都没有提到。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "What can urban trees NOT replace according to the passage?",
+          "options": [
+            "Parks and gardens.",
+            "Birds and insects.",
+            "Affordable housing, public transport and good schools.",
+            "Shade and clean air."
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "They cannot replace affordable housing, public transport or good schools."
+          },
+          "explain": "听力细节题。末段明确说树木不能替代可负担住房、公共交通或好学校。C 项是原句。A、B、D 都是树木能提供或相关的益处，不是「不能替代」的对象。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What is the author's view of spending on urban trees?",
+          "options": [
+            "It is a waste of public money.",
+            "It is a relatively cheap investment with wide benefits.",
+            "It should be replaced by spending on parking.",
+            "It only benefits wealthy neighbourhoods."
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "But they are a relatively cheap investment with wide benefits, and they make the case for thinking about cities as living systems rather than machines."
+          },
+          "explain": "听力态度题。末段说树木是相对便宜、回报广泛的投资，并有助于把城市看作生命系统。B 项是原句。A 项浪费、C 项改为停车、D 项只惠及富人区都与作者观点相反。"
+        }
+      ],
+      "translation": [
+        "在城市里，树木常常被当作装饰：看着舒服，能提供树荫，但预算紧张时就可以省掉。越来越多的研究表明，这种看法是短视的。城市树木给街道降温、吸收雨水、净化空气，还为鸟类和昆虫提供栖息地。它们也影响人们的感受和行为。在一个不断变暖的世界里，不起眼的行道树正在成为城市基础设施中不可或缺的一部分。这些好处很容易被当作理所当然，直到某条街道失去了自己的树冠。",
+        "降温效果是最直接的。树叶释放水蒸气，树荫则阻止表面升温。一棵成熟的树能把周围空气的温度降低好几度，从而减少附近建筑对空调的需要。树木还能截留降雨，让流入排水管的水变慢，降低暴雨期间发生洪水的风险。这些服务很容易被忽视，因为它们并不在市场上买卖。树荫还让步行更舒适，从而鼓励人们把车留在家里。",
+        "好处并不是平均分配的。较富裕的街区往往树木更多，而较贫困的地区树木可能更少、更老。这种格局并非偶然：它反映了数十年来的投资决策、分区规则和忽视。研究者把树木覆盖率与更好的心理健康、更低的压力甚至更低的犯罪率联系起来，尽管其中的因果路径很复杂。当树木稀少时，居民失去的不只是树荫，还有一个见面和玩耍的共享空间。",
+        "种树很受欢迎，但让它们活下来更难。幼树需要多年的浇水、保护和养护，才能提供全部的好处。预算常常只支付种植，不支付养护，因此许多树苗在几个季节内就死了。树木还要与停车位、管线和新的建设争夺空间。因此，一项认真的城市森林政策必须做几十年的规划，而不是只为一次拍照的机会。如果没有长期预算，一场广受称赞的植树运动，可能最后只留下一排死掉的树苗。",
+        "这一切并不意味着树木能解决所有的城市问题。它们无法取代可负担住房、公共交通或好学校。但它们是一项相对便宜、回报广泛的投资，也为「把城市看作生命系统而非机器」提供了理由。一座种树并保护树木的城市，是在为未来下注——而它的居民每个夏天都会感受到这个赌注。也正因为如此，为树木辩护，归根到底是在为耐心辩护。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "乡村振兴是中国近年来推动的一项重要发展战略。它的目标不仅是提高农民收入，也包括改善农村的教育、医疗和交通条件。许多地方通过发展特色农业、乡村旅游和电子商务，为当地居民创造了新的就业机会。与此同时，政府加强了对传统村落和生态环境的保护，使乡村在发展的同时保留自己的特色。乡村振兴是一项长期任务，需要政府、企业和村民共同努力。随着政策的不断推进，越来越多的年轻人选择回到家乡创业。这些举措也让乡村面貌发生了明显变化。",
+    "hints": [
+      "rural revitalisation",
+      "farmers' income",
+      "rural tourism",
+      "e-commerce",
+      "traditional villages"
+    ],
+    "reference": "Rural revitalisation is an important development strategy that China has promoted in recent years. Its goals include not only raising farmers' incomes but also improving education, medical care and transport in rural areas. In many places, local residents have gained new job opportunities through special agriculture, rural tourism and e-commerce. At the same time, the government has strengthened the protection of traditional villages and the ecological environment, so that rural areas can retain their own character while developing. Rural revitalisation is a long-term task that requires the joint efforts of the government, enterprises and villagers. As policies continue to advance, more and more young people are choosing to return to their hometowns to start businesses. These measures have also brought visible changes to the countryside.",
+    "scoringPoints": [
+      {
+        "zh": "乡村振兴；重要发展战略",
+        "en": "rural revitalisation; an important development strategy"
+      },
+      {
+        "zh": "提高农民收入；改善教育、医疗和交通",
+        "en": "raise farmers' incomes; improve education, medical care and transport"
+      },
+      {
+        "zh": "特色农业、乡村旅游和电子商务；创造就业",
+        "en": "special agriculture, rural tourism and e-commerce; create job opportunities"
+      },
+      {
+        "zh": "保护传统村落和生态环境；保留特色",
+        "en": "protect traditional villages and the ecological environment; retain their own character"
+      },
+      {
+        "zh": "长期任务；政府、企业和村民共同努力",
+        "en": "a long-term task; the joint efforts of the government, enterprises and villagers"
+      },
+      {
+        "zh": "政策推进；年轻人回乡创业",
+        "en": "as policies advance; young people return to their hometowns to start businesses"
+      }
+    ],
+    "highlights": [
+      "not only ... but also ...",
+      "gain new opportunities through ...",
+      "at the same time",
+      "so that ... can ...",
+      "the joint efforts of ...",
+      "as policies continue to advance"
+    ]
+  },
+  "writing": {
+    "topic": "The Value of Play",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the value of play. You should write at least 150 words but no more than 200 words.",
+    "requirements": [
+      "150–200 words",
+      "30 minutes",
+      "3 paragraphs: thesis → learning through play → freedom not productivity"
+    ],
+    "outlineHints": [
+      "开头：大人常把玩当成工作的反面，但玩不是浪费时间。",
+      "中间：玩让人在低风险中试验、协商规则、从失败中恢复；成人也需要玩来尝试不寻常的组合。",
+      "结尾：玩的价值在自由，不在产出；不要每个游戏都变成比赛或课程。"
+    ],
+    "modelEssay": "Adults often treat play as the opposite of work: something children do before they grow up and become serious. Yet play is not a waste of time. It is one of the ways human beings learn to solve problems, negotiate rules and recover from failure.\n\nIn play, the stakes are low enough to experiment. A child building a tower learns that it can fall and be rebuilt; a group playing a game learns to make rules, argue and compromise. Adults benefit too. Playful thinking allows people to try unusual combinations and to imagine possibilities that a purely practical frame would dismiss. Many creative breakthroughs begin as something that looks like play.\n\nThe value of play lies in its freedom, not in its productivity. When we turn every game into a lesson or a competition, we may lose the very quality that makes play useful. A society that respects play gives people room to explore without immediately asking what it is for. In a world obsessed with measurable results, that may be the most radical lesson of all.",
+    "structure": [
+      "第一段：论点。大人常把玩当成工作的反面，但玩是学习解决问题、协商规则和从失败中恢复的方式。",
+      "第二段：低风险试验；孩子搭塔、群体游戏学会规则和妥协；成人也需要玩来尝试不寻常的组合。",
+      "第三段：玩的价值在自由而非产出；不要把每个游戏都变成课程或比赛；给探索留空间。"
+    ],
+    "expressions": [
+      "the opposite of work",
+      "the stakes are low enough to experiment",
+      "learn to make rules, argue and compromise",
+      "playful thinking",
+      "a purely practical frame",
+      "the value of play lies in its freedom",
+      "room to explore"
+    ],
+    "translation": "成年人常常把玩当成工作的反面：那是孩子在长大、变得严肃之前才会做的事。然而玩并不是浪费时间。它是人类学会解决问题、协商规则和从失败中恢复的方式之一。\n\n在玩的时候，代价足够低，可以放心试验。一个搭塔的孩子会学到：塔可以倒，也可以重新搭起来；一群一起玩游戏的人会学会制定规则、争论和妥协。成年人同样受益。玩的心态让人去尝试不寻常的组合，去想象一个纯粹实用的框架会直接排除掉的可能性。许多创造性的突破，最初看起来都像是玩。\n\n玩的价值在于它的自由，而不在于它的产出。当我们把每一场游戏都变成一堂课或一场比赛时，我们可能恰恰失去了让玩有用的那种品质。一个尊重玩的社会，会给人们留出探索的空间，而不必立刻就问「这有什么用」。在一个痴迷于可测量结果的世界里，这也许是最激进的一课。"
+  }
+}
