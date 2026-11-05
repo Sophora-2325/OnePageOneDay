@@ -1,6 +1,7 @@
 // 版本检查：唯一允许的开发者侧网络资产。只在用户手动点击时，对一个静态 version.json 发一次 GET，
 // 不带任何参数与设备信息；有新版只提示，下载交给系统浏览器。
 
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -63,8 +64,9 @@ class UpdateAvailable extends UpdateResult {
 }
 
 class UpdateFailed extends UpdateResult {
-  const UpdateFailed(this.message);
+  const UpdateFailed(this.message, {this.network = false});
   final String message;
+  final bool network;
 }
 
 Future<UpdateResult> checkForUpdate({required String currentVersion, Dio? dio}) async {
@@ -74,11 +76,11 @@ Future<UpdateResult> checkForUpdate({required String currentVersion, Dio? dio}) 
       options: Options(
         responseType: ResponseType.plain,
         sendTimeout: const Duration(seconds: 10),
-        receiveTimeout: const Duration(seconds: 15),
+        receiveTimeout: const Duration(seconds: 20),
         followRedirects: true,
         validateStatus: (_) => true,
       ),
-    );
+    ).timeout(const Duration(seconds: 30));
     if (res.statusCode == 404) return const UpdateFailed('还没有发布任何版本');
     if ((res.statusCode ?? 0) >= 300) return UpdateFailed('检查失败（HTTP ${res.statusCode}）');
     final body = res.data;
@@ -86,9 +88,13 @@ Future<UpdateResult> checkForUpdate({required String currentVersion, Dio? dio}) 
     final info = UpdateInfo.fromJson((json as Map).cast<String, dynamic>());
     return compareVersions(info.version, currentVersion) > 0 ? UpdateAvailable(info) : UpToDate(info.version);
   } on DioException catch (e) {
-    return UpdateFailed(e.type == DioExceptionType.connectionError || e.type == DioExceptionType.unknown
-        ? '无法连接 GitHub，请检查网络后再试'
-        : '检查超时，请稍后再试');
+    return UpdateFailed(
+        e.type == DioExceptionType.connectionError || e.type == DioExceptionType.unknown
+            ? '无法连接 GitHub，请检查网络后再试'
+            : '检查超时，请稍后再试',
+        network: true);
+  } on TimeoutException {
+    return const UpdateFailed('检查超时，请稍后再试', network: true);
   } catch (_) {
     return const UpdateFailed('版本信息格式不对，已忽略');
   }

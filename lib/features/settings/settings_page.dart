@@ -161,6 +161,25 @@ class _AboutCardState extends State<_AboutCard> {
     switch (result) {
       case UpToDate(:final latest):
         showToast(context, '已是最新版本（$latest）');
+      case UpdateFailed(:final message, :final network) when network:
+        await showDialog<void>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('没连上 GitHub'),
+            content: Text('$message\n\n国内网络访问 GitHub 时快时慢，可以过会儿再试，或直接在浏览器里打开发布页看看有没有新版本。',
+                style: const TextStyle(height: 1.6)),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(context), child: const Text('知道了')),
+              FilledButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  launchUrl(Uri.parse(releasesPageUrl), mode: LaunchMode.externalApplication);
+                },
+                child: const Text('打开发布页'),
+              ),
+            ],
+          ),
+        );
       case UpdateFailed(:final message):
         showToast(context, message);
       case UpdateAvailable(:final info):
