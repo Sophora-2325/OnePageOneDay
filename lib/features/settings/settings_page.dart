@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../core/backup/backup_service.dart';
 import '../../core/storage/app_store.dart';
+import '../../core/update/update_checker.dart';
+import '../../ui/components/brand.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/misc.dart';
@@ -45,6 +49,7 @@ class SettingsPage extends ConsumerWidget {
                     text: '只有选词翻译和生成题包会联网，且只发往你自己填写的模型地址；不填就完全不联网。',
                   ),
                   _FlowLine(icon: Icons.lock_outline, text: 'API 密钥只在系统密钥库，不进数据库、日志和备份文件。'),
+                  _FlowLine(icon: Icons.system_update_outlined, text: '检查更新只在你点击时读取一次 GitHub 上的公开版本号，不带任何个人信息。'),
                 ],
               ),
             ),
@@ -99,21 +104,7 @@ class SettingsPage extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpace.s4),
             const SectionTitle('关于'),
-            PaperCard(
-              padding: const EdgeInsets.all(AppSpace.s4),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('六级每日训练 · 1.1.0', style: TextStyle(fontWeight: FontWeight.w700, color: c.ink)),
-                  const SizedBox(height: AppSpace.s1),
-                  Text(
-                    '每天约 160 分钟：2 篇仔细阅读（各 5 题 + 4 道听读题）、1 段翻译、1 篇写作、笔记与复盘。'
-                    '所有文章、题目、译文、范文均为原创仿写，不是真题；页面听读题不能替代真题听力。',
-                    style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft),
-                  ),
-                ],
-              ),
-            ),
+            const _AboutCard(),
           ],
         );
       }),
@@ -140,6 +131,112 @@ class SettingsPage extends ConsumerWidget {
     await store.resetDay(day);
     ref.read(countdownHubProvider).resetDay(day);
     if (context.mounted) showToast(context, '${dayLabel(day)} 已重置');
+  }
+}
+
+class _AboutCard extends StatefulWidget {
+  const _AboutCard();
+
+  @override
+  State<_AboutCard> createState() => _AboutCardState();
+}
+
+class _AboutCardState extends State<_AboutCard> {
+  String _version = '';
+  bool _checking = false;
+
+  @override
+  void initState() {
+    super.initState();
+    PackageInfo.fromPlatform().then((p) {
+      if (mounted) setState(() => _version = p.version);
+    });
+  }
+
+  Future<void> _check() async {
+    setState(() => _checking = true);
+    final result = await checkForUpdate(currentVersion: _version);
+    if (!mounted) return;
+    setState(() => _checking = false);
+    switch (result) {
+      case UpToDate(:final latest):
+        showToast(context, '已是最新版本（$latest）');
+      case UpdateFailed(:final message):
+        showToast(context, message);
+      case UpdateAvailable(:final info):
+        await showDialog<void>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('发现新版本 ${info.version}'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('当前 $_version${info.published.isEmpty ? '' : ' · 发布于 ${info.published}'}',
+                    style: TextStyle(fontSize: 12, color: context.c.muted)),
+                const SizedBox(height: AppSpace.s2),
+                for (final n in info.notes) Text('· $n', style: const TextStyle(height: 1.6)),
+                const SizedBox(height: AppSpace.s3),
+                Text('会用浏览器打开 GitHub 下载安装包；本机数据不受影响，建议先导出一份备份。',
+                    style: TextStyle(fontSize: 12, height: 1.5, color: context.c.muted)),
+              ],
+            ),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(context), child: const Text('以后再说')),
+              FilledButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  launchUrl(Uri.parse(info.downloadUrl), mode: LaunchMode.externalApplication);
+                },
+                child: const Text('去下载'),
+              ),
+            ],
+          ),
+        );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.c;
+    return PaperCard(
+      padding: EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(AppSpace.s4),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                const AibiAvatar(size: 48),
+                const SizedBox(width: AppSpace.s3),
+                Expanded(
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Text(appName, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: c.ink)),
+                    Text(_version.isEmpty ? '每天练一页' : '版本 $_version · 每天练一页',
+                        style: TextStyle(fontSize: 12, color: c.muted)),
+                  ]),
+                ),
+              ]),
+              const SizedBox(height: AppSpace.s3),
+              Text(
+                '$mascotName是陪你练完今天这一页的小精灵。现在这一页是 CET-6：2 篇仔细阅读（各 5 题 + 4 道听读题）、'
+                '1 段翻译、1 篇写作、笔记与复盘。所有文章、题目、译文、范文均为原创仿写，不是真题；听读题不能替代真题听力。',
+                style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft),
+              ),
+            ]),
+          ),
+          Divider(height: 1, color: c.lineSoft),
+          ListTile(
+            leading: Icon(Icons.system_update_outlined, color: c.blue),
+            title: const Text('检查更新'),
+            subtitle: const Text('手动检查；有新版只提示，不会自动下载'),
+            trailing: _checking ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)) : null,
+            onTap: _checking || _version.isEmpty ? null : _check,
+          ),
+        ],
+      ),
+    );
   }
 }
 

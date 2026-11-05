@@ -52,7 +52,7 @@ class Cet6App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return StoreBuilder(
       builder: (context, store) => MaterialApp.router(
-        title: '六级每日训练',
+        title: '一页英语',
         debugShowCheckedModeBanner: false,
         theme: buildTheme(Brightness.light),
         darkTheme: buildTheme(Brightness.dark),

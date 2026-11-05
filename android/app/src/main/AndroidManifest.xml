@@ -2,7 +2,7 @@
     <!-- 唯一出网用途：请求用户自己填写的模型 API 地址。 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="六级每日训练"
+        android:label="一页英语"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:usesCleartextTraffic="false"
@@ -48,6 +48,10 @@
         </intent>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
         </intent>
     </queries>
 </manifest>

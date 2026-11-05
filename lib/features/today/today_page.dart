@@ -5,6 +5,7 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../core/storage/app_store.dart';
+import '../../ui/components/brand.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/segmented_step.dart';
 import '../../ui/components/timer_bar.dart';
@@ -98,6 +99,8 @@ class TodayHeader extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const SizedBox(height: AppSpace.s3),
+          const AibiGreeting(),
+          const SizedBox(height: AppSpace.s4),
           DayHeader(
             day: data.day,
             date: data.date,

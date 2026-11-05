@@ -1,0 +1,8 @@
+flutter_native_splash:
+  color: "#14202C"
+  image: assets/brand/aibi.jpg
+  android_12:
+    color: "#14202C"
+    image: assets/brand/aibi.jpg
+  ios: false
+  web: false

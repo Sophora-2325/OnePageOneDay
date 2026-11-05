@@ -20,12 +20,12 @@ class BackupService {
     final json = const JsonEncoder.withIndent('  ').convert(data.toJson());
     final dir = await getTemporaryDirectory();
     final stamp = DateTime.now().toIso8601String().substring(0, 16).replaceAll(':', '').replaceAll('T', '-');
-    final file = File(p.join(dir.path, 'cet6-backup-$stamp.json'));
+    final file = File(p.join(dir.path, 'yiye-backup-$stamp.json'));
     await file.writeAsString(json);
     await SharePlus.instance.share(ShareParams(
       files: [XFile(file.path, mimeType: 'application/json')],
-      subject: 'CET-6 每日训练备份',
-      text: '六级每日训练本地备份（不含任何 API 密钥）',
+      subject: '一页英语备份',
+      text: '一页英语本地备份（不含任何 API 密钥）',
     ));
     store.setSetting('lastBackupAt', DateTime.now().toIso8601String());
     return file.path;
