@@ -1,0 +1,437 @@
+{
+  "goal": "tem4",
+  "diff": "steady",
+  "day": 1,
+  "date": "2026-11-06",
+  "week": 1,
+  "theme": "语言学习笔记与校园纸刊阅读",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "Learning a Language by Keeping a Notebook",
+      "wordCount": 361,
+      "paragraphs": [
+        "When I joined the exchange programme, I carried a notebook and a fear that others spoke faster than I could listen. Classes were lively, but I often lost the thread before I could form a reply. A teacher noticed my silence and told me to write down one phrase each day, not rules but a sentence someone really said. I began that evening with a question a neighbour had asked at the bus stop.",
+        "The habit changed what I paid attention to. Instead of chasing every unknown word, I started listening for complete turns of phrase that I could borrow later. A greeting, an apology, a way of softening a disagreement all became small, portable things. Copying them by hand slowed me down enough to notice their shape, and the notebook filled with ordinary language no textbook had bothered to include.",
+        "Looking back, the notebook worked because it turned a vague anxiety into a manageable task. Fluency had seemed like a distant country I would never reach, while a single phrase was something I could collect before dinner. The entries recorded my mistakes without scolding me, since a misheard word could be corrected the next day with a laugh. My classmates who kept neat grammar charts sometimes progressed faster on tests, yet I grew more willing to speak.",
+        "There is a wider lesson here about how we judge progress in any skill. Measurable milestones are comforting, but they rarely capture the moment when a strange sound becomes familiar. A learner who records what was once confusing keeps a private map of that change. Teachers are right that a notebook alone will not build a vocabulary, yet used alongside regular practice it gives memory something concrete to hold.",
+        "I still have the notebook, its cover softened by years in a pocket. The early pages are full of careful, awkward sentences that I would now write differently. I keep them because they show a person who did not yet know the language but kept turning up to meet it. Collect one real sentence a day, and let the pile quietly argue that you are moving, even on the days when it feels otherwise."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "细节题",
+          "stem": "What did the teacher advise the writer to do each day?",
+          "options": [
+            "Memorise a list of grammar rules",
+            "Write down one phrase someone actually said",
+            "Record every unknown word in a dictionary",
+            "Practise speaking faster than classmates"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "A teacher noticed my silence and told me to write down one phrase each day, not rules but a sentence someone really said."
+          },
+          "explain": "正确项「Write down one phrase someone actually said」与第 1 段原文「A teacher noticed my silence and t…」对应，细节题可据此推出：把记一句真实话语的建议错当成整理语法规则。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What did the writer begin to listen for instead of every unknown word?",
+          "options": [
+            "Complete turns of phrase that could be borrowed later",
+            "Long lists of irregular verbs",
+            "The teacher's corrections only",
+            "Recordings played at double speed"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "A greeting, an apology, a way of softening a disagreement all became small, portable things."
+          },
+          "explain": "正确项「Complete turns of phrase that could be borrowed later」与第 2 段原文「A greeting, an apology, a way of s…」对应，细节题可据此推出：把关注完整短语偷换成只听生词或纠错。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "Why did the notebook help reduce the writer's anxiety?",
+          "options": [
+            "It replaced all classroom lessons",
+            "It proved the writer was better than classmates",
+            "It removed the need to speak at all",
+            "It turned a distant goal into a small daily task"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "The entries recorded my mistakes without scolding me, since a misheard word could be corrected the next day with a laugh."
+          },
+          "explain": "正确项「It turned a distant goal into a small daily task」与第 3 段原文「The entries recorded my mistakes w…」对应，推断题可据此推出：把化整为零的作用夸大成替代课程或免开口。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "语气题",
+          "stem": "What tone does the writer use when describing the early notebook pages?",
+          "options": [
+            "Bitter regret about wasted years",
+            "Affectionate acceptance of earlier awkwardness",
+            "Cold detachment from private records",
+            "Open mockery of former classmates"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "Collect one real sentence a day, and let the pile quietly argue that you are moving, even on the days when it feels otherwise."
+          },
+          "explain": "正确项「Affectionate acceptance of earlier awkwardness」与第 5 段原文「Collect one real sentence a day, a…」对应，语气题可据此推出：把温和回望的语气误读成懊悔或嘲讽。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "修辞题",
+          "stem": "What is the effect of the phrase \"let the pile quietly argue\"?",
+          "options": [
+            "It suggests the notebook should be thrown away",
+            "It compares learning to a loud public debate",
+            "It turns collected sentences into a gentle proof of progress",
+            "It introduces a formal statistical method"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 5,
+            "quote": "I keep them because they show a person who did not yet know the language but kept turning up to meet it."
+          },
+          "explain": "正确项「It turns collected sentences into a gentle proof of progress」与第 5 段原文「I keep them because they show a pe…」对应，修辞题可据此推出：把累积手稿拟人化为温和证据误读成丢弃或统计。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Where did the writer hear the first sentence copied into the notebook?",
+          "options": [
+            "At a bus stop, from a neighbour",
+            "In a crowded lecture hall",
+            "During a grammar examination",
+            "From a recorded radio programme"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "A teacher noticed my silence and told me to write down one phrase each day, not rules but a sentence someone really said."
+          },
+          "explain": "正确项「At a bus stop, from a neighbour」与第 1 段原文「A teacher noticed my silence and t…」对应，细节题可据此推出：把车站邻人的问话错置成课堂或考试内容。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What did copying phrases by hand allow the writer to notice?",
+          "options": [
+            "The price of the notebook",
+            "The number of pages left blank",
+            "The teacher's handwriting style",
+            "The exact shape and rhythm of the expressions"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "A greeting, an apology, a way of softening a disagreement all became small, portable things."
+          },
+          "explain": "正确项「The exact shape and rhythm of the expressions」与第 2 段原文「A greeting, an apology, a way of s…」对应，细节题可据此推出：把抄写带来的细察误记成对物品或字迹的留意。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "How did the notebook treat the writer's mistakes?",
+          "options": [
+            "It erased them at once",
+            "It ranked them by seriousness",
+            "It recorded them without scolding so they could be corrected later",
+            "It sent them to the teacher each week"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "The entries recorded my mistakes without scolding me, since a misheard word could be corrected the next day with a laugh."
+          },
+          "explain": "正确项「It recorded them without scolding so they could be corrected later」与第 3 段原文「The entries recorded my mistakes w…」对应，推断题可据此推出：把不责备的记录方式错当成擦除或排名。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "推断题",
+          "stem": "What does the writer say about grammar charts kept by classmates?",
+          "options": [
+            "They were useless in every situation",
+            "They sometimes led to faster progress on tests",
+            "They were unsystematic and should be abandoned",
+            "They always produced greater confidence"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "Fluency had seemed like a distant country I would never reach, while a single phrase was something I could collect before dinner."
+          },
+          "explain": "正确项「They sometimes led to faster progress on tests」与第 3 段原文「Fluency had seemed like a distant …」对应，推断题可据此推出：把部分同学在测试上更快的有限事实扩大成全面优劣判断。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "刚参加交换项目时，我随身带着一个小本子，还有一份不愿说出口的担心：别人说得都比我听得快。课堂很热闹，可我常常还没想好怎么回答，一段对话的线索就已经断了。一位老师注意到我的沉默，给了一个听起来朴素得几乎没用的建议。她说，每天记下一句话，不是记一串规则，而是记某个真的对你说过的一句话。那天晚上我就开始了，写的是在车站一位邻居问我的问题。",
+        "这个习惯改变了我留意的东西。我不再追着每一个生词跑，而是开始听那些以后能借来用的完整说法。一句问候、一句道歉、一种把分歧说得委婉的方式，都成了可以随身带走的小东西。手写抄下来让我慢到足以看清它们的形状，本子也慢慢填满那些教科书懒得收进去的日常语言。几个月后重读那几页，我能想起每条句子连着的街道、天气和那张脸。",
+        "现在回头看，我觉得本子管用，是因为它把一种含糊的焦虑变成了能应付的小任务。流利曾像一座我永远到不了的远方，而一句话是我晚饭前就能收进来的东西。那些记录也记下了我的错，却并不责备我：一个听岔的词写下来，第二天可以笑着改过来。班里把语法表整理得整整齐齐的同学，有时在考试上进步更快，我却变得更敢开口。我发现，信心是由许多细小的证据堆起来的。",
+        "这里还有一层关于「怎样衡量任何一项技能的进步」的更大道理。可量化的里程碑让人安心，却很少捕捉到一个陌生声音忽然变熟的那一刻。一个把曾经困惑的东西记下来的人，手里就留着一张关于这种变化的私人地图。老师有时嫌这样的收集不成体系，他们说光靠本子建不起词汇量，这没错。但把它和日常练习放在一起用，它给了记忆一点抓得住的东西，这比卷面上的一个分数能做的更多。",
+        "那个本子我至今还留着，封皮因为常年揣在口袋里已经软了。前面几页写满小心而笨拙的句子，如今我会换一种写法。我偏留着它们，正因为它们显出一个人：那时还不懂这门语言，却仍一次次去见它。任何刚开始做一件难事的人，都可以试试这个很小的办法。每天收一句真实的话，让那一摞纸安静地替你证明：即便在觉得原地不动的日子里，你其实一直在往前。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The School Magazine That Stayed on Paper",
+      "wordCount": 360,
+      "paragraphs": [
+        "For nearly thirty years the school magazine has appeared in paper, with a cover drawn by a different student each term. When the administration suggested moving it online, the editorial team did not object on grounds of cost or nostalgia. They argued that a printed copy changes how a piece of writing is read. A page cannot be scrolled past, refreshed or buried under a feed of newer posts, so it waits on a library table.",
+        "The students tested their claim in a modest way during the spring term. They printed the same issue in two forms, one posted to the school platform and one left in stacks by the entrance. Readers of the digital version tended to remember headlines but few of the longer articles. Those who picked up a paper copy were more likely to finish a page and recall a sentence or two a week later.",
+        "Part of the explanation may lie in the absence of competing signals. A screen invites a message, a notification or another tab, and reading becomes one activity among many. Paper offers no such doorway, so the reader settles into a single stretch of time. Teachers pointed out that this is not a virtue of ink itself, but of the boundaries it happens to create.",
+        "The magazine also carries a social weight that a platform page struggles to reproduce. Contributors see their names beside a drawing, a poem and a photograph chosen by someone in the year above them. Holding the finished object makes the collaboration visible in a way a scrolling list does not. Former students often write to ask for a spare copy years later, long after the online posts have been archived and forgotten.",
+        "In the end the team chose a compromise that satisfied almost no one completely. The magazine remained in print, while a plain digital archive was added for those who had left the town. The editors were careful not to call paper superior in every respect, only better at the slow reading they wanted to protect. Their decision is less a verdict on technology than a reminder that a medium quietly shapes the attention it receives."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "细节题",
+          "stem": "Why did the editorial team object to moving the magazine online?",
+          "options": [
+            "Because printing was far cheaper than any website",
+            "Because the administration forbade all digital files",
+            "Because a printed page receives a different kind of attention",
+            "Because no student knew how to use a computer"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "They argued that a printed copy changes how a piece of writing is read."
+          },
+          "explain": "正确项「Because a printed page receives a different kind of attention」与第 1 段原文「They argued that a printed copy ch…」对应，细节题可据此推出：把纸质阅读方式之争错记成成本或禁令问题。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What did readers of the digital version tend to remember?",
+          "options": [
+            "Mainly headlines rather than longer pieces",
+            "Nearly every sentence of the longer articles",
+            "Only the cover drawing",
+            "The names of all the contributors"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "Readers of the digital version tended to remember headlines but few of the longer articles."
+          },
+          "explain": "正确项「Mainly headlines rather than longer pieces」与第 2 段原文「Readers of the digital version ten…」对应，细节题可据此推出：把只记标题的有限记忆夸大成记住全文。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What do teachers suggest about the virtue of paper?",
+          "options": [
+            "Ink itself has a unique moral quality",
+            "Paper creates boundaries that limit competing interruptions",
+            "Digital editions can never support slow reading",
+            "Students dislike every kind of screen"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "Paper offers no such doorway, so the reader settles into a single stretch of time."
+          },
+          "explain": "正确项「Paper creates boundaries that limit competing interruptions」与第 3 段原文「Paper offers no such doorway, so t…」对应，推断题可据此推出：把边界带来的效果偷换成油墨本身的固有优点。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "细节题",
+          "stem": "Why do former students write to ask for a spare copy?",
+          "options": [
+            "To complain about the cover design",
+            "To request a refund of their fees",
+            "To submit a new poem for the next issue",
+            "To replace posts that have been archived and forgotten"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Holding the finished object makes the collaboration visible in a way a scrolling list does not."
+          },
+          "explain": "正确项「To replace posts that have been archived and forgotten」与第 4 段原文「Holding the finished object makes …」对应，细节题可据此推出：把索取实体刊物用于留存记忆错当成投稿或投诉。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "主旨题",
+          "stem": "What does the final paragraph suggest about the compromise?",
+          "options": [
+            "It proves that print is superior in every respect",
+            "It protects a particular kind of slow reading rather than condemning technology",
+            "It abandons print entirely within a year",
+            "It settles the debate once and for all"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The editors were careful not to call paper superior in every respect, only better at the slow reading they wanted to protect."
+          },
+          "explain": "正确项「It protects a particular kind of slow reading rather than condemning technology」与第 5 段原文「The editors were careful not to ca…」对应，主旨题可据此推出：把有限目标的折中方案夸大成全面结论或终局定论。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "Who draws the magazine cover each term?",
+          "options": [
+            "A different student",
+            "The school administration",
+            "A hired professional artist",
+            "The former students' association"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "They argued that a printed copy changes how a piece of writing is read."
+          },
+          "explain": "正确项「A different student」与第 1 段原文「They argued that a printed copy ch…」对应，细节题可据此推出：把每期换学生绘制错记成固定机构或外聘。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "Where did the team leave the printed copies during the spring test?",
+          "options": [
+            "On every classroom desk",
+            "Inside the digital archive",
+            "In stacks by the entrance",
+            "In the town library only"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Readers of the digital version tended to remember headlines but few of the longer articles."
+          },
+          "explain": "正确项「In stacks by the entrance」与第 2 段原文「Readers of the digital version ten…」对应，细节题可据此推出：把入口处堆放的位置错置成课桌或档案馆。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What does a screen invite according to Paragraph 3?",
+          "options": [
+            "A single uninterrupted stretch of time",
+            "A slower and deeper reading",
+            "The absence of any competing signal",
+            "Messages, notifications or another tab"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "Paper offers no such doorway, so the reader settles into a single stretch of time."
+          },
+          "explain": "正确项「Messages, notifications or another tab」与第 3 段原文「Paper offers no such doorway, so t…」对应，推断题可据此推出：把屏幕带来的多重干扰颠倒成单一专注。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "推断题",
+          "stem": "What did the compromise add for people who had left the town?",
+          "options": [
+            "Extra printed copies by post",
+            "A plain digital archive",
+            "A new cover competition",
+            "A weekly online debate"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "Their decision is less a verdict on technology than a reminder that a medium quietly shapes the attention it receives."
+          },
+          "explain": "正确项「A plain digital archive」与第 5 段原文「Their decision is less a verdict o…」对应，推断题可据此推出：把面向离校者的数字档案错记成加印或竞赛。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "近三十年来，这份校刊一直以纸质出版，每期封面由不同学生绘制。当校方提议把它搬到网上时，编辑部并没有以成本或怀旧为由反对。他们争辩说，印在纸上的一份东西，会改变一篇文章被阅读的方式。一页纸没法被滑过去、刷新掉，也没法被更新的信息流埋住。它摆在图书馆的桌上等着，结果竟成了一种安静却实在的注意力。",
+        "春季学期里，学生们用一个不大的办法检验了这个说法。同一期内容印成两种形式，一份发到学校平台，一份摞在入口处。读数字版的人往往只记得标题，长文章记住的很少。而拿起纸质版的人，更可能把一页读完，一周后还能想起一两句。样本很小，也说不上科学，但差别稳定得足以让编辑部停下来想一想。",
+        "一部分解释，也许在于没有互相争抢的信号。屏幕会招来一条消息、一个提醒或另一个标签页，阅读于是变成许多相互争抢的活动之一。纸不提供这样的出口，读者便安顿进一整段不被打断的时间里。注意到这场实验的老师指出，这并不是油墨本身的美德，而是它恰好划出的边界。一个干扰更少、设计得当的数字版，原则上也能做到类似的事，只是当时还没有人做出来。",
+        "这份刊物还带着一种平台页面难以复制的分量。投稿者会看到自己的名字，挨着一幅画、一首诗，以及高年级某人挑的一张照片。把成品拿在手里，合作便以滚动列表做不到的方式变得可见。毕业多年的学生常写信来讨一本多余的，那时网上的帖子早被归档、被忘了。对一所小小的学校来说，这种实体上的延续，正是一份共同记忆被留住的方式之一。",
+        "最后，编辑部选了一个几乎没让任何人完全满意的折中。刊物继续印，同时加了一个朴素的数字档案，给那些已经离开这座小城的人。编辑们很小心，没有说纸在各方面都更好，只说它更适合他们想护住的那种慢读。这个决定与其说是对技术下的判决，不如说是一个提醒：媒介会悄悄塑造它得到的注意力。选择怎样出版，似乎也就是选择怎样被阅读。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "街角那家旧书店已经开了二十多年，木架上的书按到货先后摆放，并不按类别分区。老板说，找书慢一点，客人反而常遇见本来不会翻开的那一本。每逢周末，店里腾出靠窗一角，办一场不需报名的朗读会。来的人有退休教师、放学的孩子，也有进来避雨的邻居。一段短文读完，大家随意聊几句，话题常从书里滑到各自的近处生活。有人问为什么不搬到线上，老板指了指窗外：雨停了，人自然散了，可总有人下周还来。这种不记名、不打卡的相聚，让小书店慢慢成了街区的客厅。",
+    "hints": [
+      "second-hand bookshop",
+      "in the order they arrived",
+      "come across a volume",
+      "a reading aloud session",
+      "drift into their everyday lives"
+    ],
+    "reference": "The second-hand bookshop on the corner has been open for more than twenty years. On the wooden shelves behind the counter, books stand in the order they arrived rather than by category. The owner says that when the search is a little slower, customers often come across a volume they would never otherwise have opened. Every weekend the shop clears a corner by the window for a reading aloud session that requires no registration. Those who come include retired teachers, children just out of school, and neighbours who simply stepped in to escape the rain. When a short passage ends, people chat casually, and the talk often drifts from the book into their everyday lives. Someone once asked why the event was not moved online. The owner pointed out of the window: the rain stops, people naturally drift away, yet somebody always returns the following week.",
+    "scoringPoints": [
+      {
+        "zh": "按到货先后而非类别摆书",
+        "en": "books stand in the order they arrived rather than by category"
+      },
+      {
+        "zh": "找书慢反而遇见意外之书",
+        "en": "a slower search leads to a volume never otherwise opened"
+      },
+      {
+        "zh": "靠窗办不需报名的朗读会",
+        "en": "hold a reading session by the window with no registration"
+      },
+      {
+        "zh": "话题从书滑到近处生活",
+        "en": "the talk drifts from the book into their everyday lives"
+      },
+      {
+        "zh": "雨停人散却总有人再来",
+        "en": "the rain stops, people drift away, yet somebody returns"
+      },
+      {
+        "zh": "小书店成了街区的客厅",
+        "en": "a small bookshop slowly becomes the neighbourhood sitting room"
+      }
+    ],
+    "highlights": [
+      "has been open for more than ...",
+      "rather than by category",
+      "would never otherwise have opened",
+      "Those who come include ...",
+      "drift from ... into ...",
+      "somebody always returns the following week"
+    ]
+  },
+  "writing": {
+    "topic": "Why School Libraries Still Matter",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on why school libraries still matter. You should write at least 150 words but no more than 190 words.",
+    "requirements": [
+      "150–190 words",
+      "30 minutes",
+      "3 paragraphs: thesis → librarians and serendipity → trust and lasting habit"
+    ],
+    "outlineHints": [
+      "开头：图书馆被低估，它提供难得的「被允许空闲」，是私人好奇的起点。",
+      "中间：馆员的摆放与顺手推荐是课表外的引导；偶遇比速度更珍贵。",
+      "结尾：不替代课堂，但把浏览时间信任地交给学生，影响长过一次作业。"
+    ],
+    "modelEssay": "A school library is easy to underestimate, since it looks like a room that simply holds books. It is one of the few places where a student may sit without buying anything or being tested. That permission to be unoccupied is rare, and an afternoon with no purpose can begin a private curiosity.\n\nThe best librarians arrange more than shelves. They put a returned novel face-out near the door and recommend a poet to someone who came for something else. Such acts appear in no timetable, yet they shape what a student reads for years. A search engine finds answers faster, but rarely offers the unexpected book beside the one you sought. Serendipity, not speed, may be the library's quietest gift.\n\nNone of this means a library can replace a classroom or a good teacher. A school that treats its library as spare space has misunderstood what it owns. Protecting time to browse and follow a stray reference trusts students with their own attention. Long after a particular title is forgotten, the memory of being allowed to wander may remain, and that is no small part of an education.",
+    "structure": [
+      "第一段：图书馆不只是藏书房间，它提供无需消费、考试或解释的「被允许空闲」，滋养私人好奇。",
+      "第二段：馆员用摆放与顺手推荐做课表外的引导；搜索引擎更快，却难给出意外之书，偶遇才是礼物。",
+      "第三段：图书馆不替代课堂，但把浏览与重读的时间交给学生，是信任其注意力，影响超过某一次作业。"
+    ],
+    "expressions": [
+      "easy to underestimate",
+      "permission to be unoccupied",
+      "a genuinely private curiosity",
+      "do not appear in any timetable",
+      "Serendipity, not speed",
+      "trusting students with their own attention",
+      "no small part of an education"
+    ],
+    "translation": "学校图书馆容易被低估，因为它看上去不过是一间放着书的屋子。可只要仔细观察过就会明白，它做的远不止这些。它是校园里少有的地方：学生可以坐在那里，不必买任何东西，不必被测验，也不必解释自己为什么在那儿。这种「被允许空闲」的许可，比听上去更稀有。对一个正长成自己兴趣的年轻人来说，一个没有指定任务的下午，可能正是一段真正私人的好奇心的起点。\n\n馆员懂得这一点，所以最出色的馆员布置的不只是书架。他们把刚归还的小说封面朝外摆在门边，把一叠地图放在历史论文旁边，还会顺手给本来来找别的东西的人推荐一位诗人。这些细小的引导不会写进任何课程表，却常常影响一个学生此后多年的阅读。搜索引擎能更快地找到答案，却很少把一本意外的书，放到你本来要找的那本旁边。图书馆最安静的礼物，也许是偶遇，而不是速度。\n\n这并不是说图书馆能取代课堂、实验室或一位好老师。它只是意味着，把图书馆当成闲置空间的学校，误解了自己手里拥有什么。保护浏览、重读、顺着一条偶然注释追下去的时间，其实是把注意力交还给学生、并信任他们。在那里养成的习惯，比任何一次作业都更长久。某本书的书名早被忘记之后，被允许随意游走的记忆可能还留着，而这恰恰是教育里不算小的一部分。"
+  }
+}

@@ -158,7 +158,6 @@ class _ReadingStepState extends ConsumerState<ReadingStep> {
                   child: _ReadingChip(
                     label: r.label,
                     selected: r.id == rid,
-                    status: _status(store, d.day, r),
                     onTap: () => ref.read(readingTabProvider.notifier).select(r.id),
                   ),
                 ),
@@ -265,7 +264,7 @@ class _ReadingStepState extends ConsumerState<ReadingStep> {
                   ? () {
                       final g = grade(reading.questions, answers);
                       store.submit(d.day, 'reading', rid, score: g.correct, total: g.total);
-                      ref.read(countdownHubProvider).get('${d.day}|reading|$rid', const Duration(minutes: 9)).pause();
+                      ref.read(countdownHubProvider).get(store.goal, d.day, 'reading|$rid', const Duration(minutes: 9)).pause();
                       _scroll.animateTo(0, duration: const Duration(milliseconds: 250), curve: Curves.easeOut);
                       WidgetsBinding.instance.addPostFrameCallback((_) {
                         if (mounted) showToast(context, '${reading.label}：${g.correct}/${g.total}，逐题看定位和解析');
@@ -297,20 +296,15 @@ class _ReadingStepState extends ConsumerState<ReadingStep> {
     });
   }
 
-  String _status(AppStore store, int day, Reading r) {
-    final a = store.peekAttempt(day, 'reading', r.id);
-    if (a?.submitted ?? false) return '${a!.score}/${a.total}';
-    final n = a?.answers.length ?? 0;
-    return n == 0 ? '未做' : '$n/${r.questions.length}';
-  }
 }
 
+/// v1.3：状态已合并到计时条（「阅读 A · 未做 · 04:00」），
+/// A/B Chip 只负责切换，不再重复显示「未做 / 3/5」。
 class _ReadingChip extends StatelessWidget {
-  const _ReadingChip({required this.label, required this.selected, required this.status, required this.onTap});
+  const _ReadingChip({required this.label, required this.selected, required this.onTap});
 
   final String label;
   final bool selected;
-  final String status;
   final VoidCallback onTap;
 
   @override
@@ -323,13 +317,10 @@ class _ReadingChip extends StatelessWidget {
         customBorder: const StadiumBorder(),
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-          child: Text.rich(
-            TextSpan(children: [
-              TextSpan(text: label, style: TextStyle(fontWeight: FontWeight.w700, color: selected ? c.blue : c.ink)),
-              TextSpan(text: ' $status', style: TextStyle(fontSize: 12, color: c.muted)),
-            ]),
-            style: const TextStyle(fontSize: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+          child: Text(
+            label,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: selected ? c.blue : c.ink),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

@@ -9,6 +9,7 @@ import '../../core/generation/generation_engine.dart';
 import '../../core/network/llm_client.dart';
 import '../../core/storage/records.dart';
 import '../../domain/grading.dart';
+import '../../domain/training_scope.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/misc.dart';
@@ -53,6 +54,15 @@ class _GeneratePageState extends ConsumerState<GeneratePage> {
     final now = DateTime.now();
     final date = (last.isAfter(now) ? last : now).toIso8601String().substring(0, 10);
 
+    // 目标与难度都在「我的」页设置，这里只读；档位规范由引擎按 goal 注入。
+    final scope = ref.read(trainingScopeProvider);
+    final diffNote = diffPromptNote(scope.nextDiff);
+    final focusText = [
+      scope.goalSpec.focus,
+      if (_focus.text.trim().isNotEmpty) _focus.text.trim(),
+      if (diffNote.isNotEmpty) diffNote,
+    ].join('；');
+
     final titles = <String>[];
     final topics = <String>[];
     for (final e in index.reversed.take(14)) {
@@ -76,7 +86,9 @@ class _GeneratePageState extends ConsumerState<GeneratePage> {
           example: await repo.presetRaw(presets.last.day),
           avoidTitles: titles,
           avoidWritingTopics: topics,
-          focus: _focus.text,
+          focus: focusText.isEmpty ? null : focusText,
+          goal: scope.goal,
+          diff: scope.nextDiff,
         ),
         onEvent: (e) {
           if (mounted) setState(() => _events.add(e));
@@ -84,6 +96,9 @@ class _GeneratePageState extends ConsumerState<GeneratePage> {
         cancel: _cancel,
       );
       await store.addGeneratedDay(GeneratedDayRec(day: dayNo, payload: day, model: ref.read(apiConfigProvider).model));
+      // 只有质检通过并成功入库才推进：本套写入实际难度，下套复位稳定。
+      // 失败 / 取消 / 离线回落都不调用，调整不被消耗。
+      ref.read(trainingScopeProvider.notifier).settle();
       if (!mounted) return;
       refreshDays(ref);
       _openDay(dayNo);
@@ -226,6 +241,13 @@ class _GeneratePageState extends ConsumerState<GeneratePage> {
       _ => ('未通过质检，没有交付', '${f.message}。坏题不会进入题库；可以重试，或换一个能力更强的模型。'),
     };
     final repairs = _events.where((e) => e.kind == GenEventKind.repair).toList();
+    // v1.3：失败页补「上次成功生成」，让用户知道本机还有可练的内容。
+    final goal = ref.read(trainingScopeProvider).goal;
+    final generated = ref.read(storeProvider).generatedFor(goal).toList()
+      ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+    final lastSuccess = generated.isEmpty
+        ? '还没有成功生成过'
+        : 'Day ${generated.first.day} · ${generated.first.date}';
     return [
       PaperCard(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -242,17 +264,47 @@ class _GeneratePageState extends ConsumerState<GeneratePage> {
           ],
         ]),
       ),
+      const SizedBox(height: AppSpace.s3),
+      PaperCard(
+        padding: const EdgeInsets.symmetric(horizontal: AppSpace.s4, vertical: AppSpace.s3),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(children: [
+              Text('上次成功生成', style: TextStyle(fontSize: AppType.min, color: c.muted)),
+              const Spacer(),
+              Text(lastSuccess, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: c.ink)),
+            ]),
+            const SizedBox(height: AppSpace.s2),
+            Row(children: [
+              Icon(Icons.menu_book_outlined, size: 16, color: c.blue),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text('本机已有预置题，离线也能继续练。',
+                    style: TextStyle(fontSize: AppType.min, color: c.muted)),
+              ),
+            ]),
+          ],
+        ),
+      ),
       const SizedBox(height: AppSpace.s4),
       if (kind == LlmErrorKind.unauthorized || kind == LlmErrorKind.invalidConfig || kind == LlmErrorKind.http) ...[
         PrimaryButton(label: '看教程', icon: Icons.school_outlined, onPressed: () => context.push('/tutorial')),
         const SizedBox(height: AppSpace.s3),
       ],
-      OutlineAction(label: '重试', icon: Icons.refresh, onPressed: _start),
-      const SizedBox(height: AppSpace.s3),
-      OutlineAction(
-        label: '先练预置题',
-        icon: Icons.menu_book_outlined,
-        onPressed: () => _fallback(kind == null ? '未通过质检，已使用 {day} 预置题' : '已为你打开 {day} 预置题'),
+      // v1.3：两条恢复路径并排，压缩失败页下方的空白。
+      Row(
+        children: [
+          Expanded(child: OutlineAction(label: '重试', icon: Icons.refresh, onPressed: _start)),
+          const SizedBox(width: AppSpace.s2),
+          Expanded(
+            child: OutlineAction(
+              label: '先练预置题',
+              icon: Icons.menu_book_outlined,
+              onPressed: () => _fallback(kind == null ? '未通过质检，已使用 {day} 预置题' : '已为你打开 {day} 预置题'),
+            ),
+          ),
+        ],
       ),
     ];
   }

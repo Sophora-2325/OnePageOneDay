@@ -21,6 +21,7 @@ class Cet6Colors extends ThemeExtension<Cet6Colors> {
     required this.marker,
     required this.markerSoft,
     required this.tabIdle,
+    required this.onAccent,
   });
 
   final Color bg;
@@ -40,12 +41,16 @@ class Cet6Colors extends ThemeExtension<Cet6Colors> {
   final Color markerSoft;
   final Color tabIdle;
 
+  /// 蓝 / 红 / 绿填充上的前景色。深色主题下语义色都很亮，
+  /// 必须取深色前景，禁止组件硬编码 Colors.white。
+  final Color onAccent;
+
   static const light = Cet6Colors(
     bg: Color(0xFFE6EAEE),
     paper: Color(0xFFFCFDFE),
     ink: Color(0xFF17222E),
     inkSoft: Color(0xFF33414F),
-    muted: Color(0xFF5F6C78),
+    muted: Color(0xFF586571),
     line: Color(0xFFC9D2DA),
     lineSoft: Color(0xFFE2E8ED),
     red: Color(0xFFB92D2D),
@@ -56,7 +61,8 @@ class Cet6Colors extends ThemeExtension<Cet6Colors> {
     blueSoft: Color(0xFFEAF1F6),
     marker: Color(0xFFF4D35E),
     markerSoft: Color(0xFFFFF1B8),
-    tabIdle: Color(0xFF7A8792),
+    tabIdle: Color(0xFF586571),
+    onAccent: Color(0xFFFFFFFF),
   );
 
   static const dark = Cet6Colors(
@@ -76,6 +82,7 @@ class Cet6Colors extends ThemeExtension<Cet6Colors> {
     marker: Color(0xFFE8C24D),
     markerSoft: Color(0xFF4A3E18),
     tabIdle: Color(0xFF8E9BA6),
+    onAccent: Color(0xFF141B22),
   );
 
   @override
@@ -106,6 +113,11 @@ class AppRadius {
   static const lg = 12.0;
 }
 
+/// 字阶下限：全库禁止 fontSize < 12，弱信息靠 c.muted 与字重区分。
+class AppType {
+  static const double min = 12;
+}
+
 /// 英文阅读正文、范文：衬线 16/26。
 const readingFont = 'serif';
 
@@ -114,11 +126,11 @@ ThemeData buildTheme(Brightness brightness) {
   final scheme = ColorScheme(
     brightness: brightness,
     primary: c.blue,
-    onPrimary: brightness == Brightness.light ? Colors.white : c.bg,
+    onPrimary: c.onAccent,
     secondary: c.blue,
-    onSecondary: Colors.white,
+    onSecondary: c.onAccent,
     error: c.red,
-    onError: Colors.white,
+    onError: c.onAccent,
     surface: c.paper,
     onSurface: c.ink,
     surfaceContainerHighest: c.lineSoft,
@@ -175,7 +187,7 @@ ThemeData buildTheme(Brightness brightness) {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: c.paper,
-      hintStyle: TextStyle(color: c.muted),
+      hintStyle: TextStyle(color: c.muted, fontSize: 13),
       contentPadding: const EdgeInsets.all(AppSpace.s3),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(AppRadius.md),

@@ -10,6 +10,7 @@ import '../network/llm_client.dart';
 import '../spec/prompt.dart';
 import '../spec/validate_day.dart';
 import '../../domain/grading.dart';
+import '../../domain/training_scope.dart';
 
 enum GenStage { readingA, readingB, translation, writing, finalCheck }
 
@@ -53,16 +54,22 @@ class GenerationRequest {
     this.avoidTitles = const [],
     this.avoidWritingTopics = const [],
     this.focus,
+    this.goal = GoalId.cet6,
+    this.diff = DiffLevel.steady,
   });
 
   final int dayNo;
   final String date;
 
-  /// 预置题包中的一天（原始 JSON），用作 few-shot 结构示例。
+  /// 本档预置题包中的一天（原始 JSON），用作 few-shot 结构示例。
   final Map<String, dynamic> example;
   final List<String> avoidTitles;
   final List<String> avoidWritingTopics;
   final String? focus;
+
+  /// 目标档与本次生效的难度；决定 prompt、topic 池和质检规则。
+  final GoalId goal;
+  final DiffLevel diff;
 }
 
 class GenerationEngine {
@@ -87,8 +94,10 @@ class GenerationEngine {
   }) async {
     void emit(GenStage s, GenEventKind k, String m) => onEvent?.call(GenEvent(s, k, m));
     final dayNo = req.dayNo;
+    final spec = goalOf(req.goal);
+    final rule = spec.rule;
     final exReadings = (req.example['readings'] as List).cast<Map<String, dynamic>>();
-    final topicA = readingTopics[dayNo % readingTopics.length];
+    final topicA = rule.topics[dayNo % rule.topics.length];
 
     final readingA = await _part(
       GenStage.readingA,
@@ -100,10 +109,13 @@ class GenerationEngine {
         focus: req.focus,
         answerKey: _answerKey(5),
         listeningKey: _answerKey(4),
+        goal: req.goal,
+        diff: req.diff,
       ),
-      (j) => validateReadingPart(j, dayNo: dayNo, index: 0),
+      (j) => validateReadingPart(j, dayNo: dayNo, index: 0, goal: req.goal),
       emit,
       cancel,
+      goal: req.goal,
       fix: (j) => _fixReading(j, 'r1'),
     );
 
@@ -117,10 +129,13 @@ class GenerationEngine {
         otherTopic: readingA['topic']?.toString() ?? topicA,
         answerKey: _answerKey(5),
         listeningKey: _answerKey(4),
+        goal: req.goal,
+        diff: req.diff,
       ),
-      (j) => validateReadingPart(j, dayNo: dayNo, index: 1),
+      (j) => validateReadingPart(j, dayNo: dayNo, index: 1, goal: req.goal),
       emit,
       cancel,
+      goal: req.goal,
       fix: (j) => _fixReading(j, 'r2'),
     );
 
@@ -128,29 +143,35 @@ class GenerationEngine {
       GenStage.translation,
       translationPrompt(
         example: (req.example['translation'] as Map).cast(),
-        topic: translationTopics[dayNo % translationTopics.length],
+        topic: rule.translationTopics[dayNo % rule.translationTopics.length],
+        goal: req.goal,
       ),
-      (j) => validateTranslationPart(j, dayNo: dayNo),
+      (j) => validateTranslationPart(j, dayNo: dayNo, goal: req.goal),
       emit,
       cancel,
+      goal: req.goal,
     );
 
     final writing = await _part(
       GenStage.writing,
       writingPrompt(
         example: (req.example['writing'] as Map).cast(),
-        kind: writingKinds[dayNo % writingKinds.length],
+        kind: rule.writingKinds[dayNo % rule.writingKinds.length],
         avoidTopics: req.avoidWritingTopics,
+        goal: req.goal,
       ),
-      (j) => validateWritingPart(j, dayNo: dayNo),
+      (j) => validateWritingPart(j, dayNo: dayNo, goal: req.goal),
       emit,
       cancel,
+      goal: req.goal,
       fix: _fixWriting,
     );
 
     final themeA = readingA.remove('topic')?.toString().trim();
     final themeB = readingB.remove('topic')?.toString().trim();
     final day = <String, dynamic>{
+      'goal': req.goal.name,
+      'diff': req.diff.name,
       'day': dayNo,
       'date': req.date,
       'week': ((dayNo - 1) ~/ 7) % 7 + 1,
@@ -162,7 +183,7 @@ class GenerationEngine {
     if ((day['theme'] as String).isEmpty) day['theme'] = readingA['title'];
 
     emit(GenStage.finalCheck, GenEventKind.start, '整天终检');
-    final report = validateDay(day);
+    final report = validateDay(day, goal: req.goal);
     if (!report.ok) {
       throw GenerationFailed('整天终检未通过：${describeIssue(report.errors.first.message)}');
     }
@@ -176,9 +197,10 @@ class GenerationEngine {
     ValidationReport Function(Map<String, dynamic>) validate,
     void Function(GenStage, GenEventKind, String) emit,
     CancelToken? cancel, {
+    required GoalId goal,
     Map<String, dynamic> Function(Map<String, dynamic>)? fix,
   }) async {
-    final messages = <ChatMessage>[const ChatMessage.system(systemPrompt), ChatMessage.user(prompt)];
+    final messages = <ChatMessage>[ChatMessage.system(systemPromptFor(goal)), ChatMessage.user(prompt)];
     emit(stage, GenEventKind.start, '正在生成${stage.label}');
     for (var round = 0; round <= maxRepairs; round++) {
       final String raw;
@@ -211,7 +233,7 @@ class GenerationEngine {
       messages
         ..removeRange(2, messages.length)
         ..add(ChatMessage.assistant(jsonEncode(json)))
-        ..add(ChatMessage.user(repairPrompt(errs)));
+        ..add(ChatMessage.user(repairPrompt(errs, goal: goal)));
     }
     throw GenerationFailed('${stage.label}修复 $maxRepairs 次后仍未通过质检');
   }
@@ -267,20 +289,20 @@ String describeIssue(String msg) {
   if (msg.contains('answer must be A-D')) return '$w答案不是 A–D';
   if (msg.contains('options')) return '$w选项数量不对';
   if (msg.contains('duplicates a reading stem')) return '$w听读题与阅读题重复';
-  final words = RegExp(r'(\d+) words, expected 380-450').firstMatch(msg);
-  if (words != null) return '$w词数 ${words.group(1)}，要求 380–450';
+  final words = RegExp(r'(\d+) words, expected (\d+-\d+)').firstMatch(msg);
+  if (words != null) return '$w词数 ${words.group(1)}，要求 ${words.group(2)!.replaceAll('-', '–')}';
   if (msg.contains('paragraphs, got')) return '$w段落数不在 4–6';
   if (msg.contains('questions, got')) return '$w题量不对';
   if (msg.contains('translated paragraphs')) return '${msg.contains('r1') ? '阅读 A' : '阅读 B'}译文段数与原文不一致';
   if (msg.contains('writing translation')) return '范文译文不是 3 段';
-  final cn = RegExp(r'(\d+) Chinese characters').firstMatch(msg);
-  if (cn != null) return '翻译原文 ${cn.group(1)} 字，要求 180–200';
+  final cn = RegExp(r'(\d+) Chinese characters, expected (\d+-\d+)').firstMatch(msg);
+  if (cn != null) return '翻译原文 ${cn.group(1)} 字，要求 ${cn.group(2)!.replaceAll('-', '–')}';
   if (msg.contains('scoring point')) return '采分点不完整或数量不对';
   if (msg.contains('reference')) return '参考译文词数不对';
   if (msg.contains('hints')) return '翻译提示词数量不对';
   if (msg.contains('highlights')) return '亮点表达不足 3 个';
-  final essay = RegExp(r'model essay has (\d+) words').firstMatch(msg);
-  if (essay != null) return '范文 ${essay.group(1)} 词，要求 150–200';
+  final essay = RegExp(r'model essay has (\d+) words, expected (\d+-\d+)').firstMatch(msg);
+  if (essay != null) return '范文 ${essay.group(1)} 词，要求 ${essay.group(2)!.replaceAll('-', '–')}';
   if (msg.contains('structure')) return '写作结构不是 3 条';
   if (msg.contains('expressions')) return '可复用表达不足 5 条';
   return msg;

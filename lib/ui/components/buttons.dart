@@ -12,17 +12,20 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.c;
+    // v1.3：主按钮回到「卷面卡片」调性——描边 + 极轻底，不用大面积亮蓝实底。
+    final enabled = onPressed != null;
     return SizedBox(
       width: double.infinity,
       height: 52,
-      child: FilledButton.icon(
+      child: OutlinedButton.icon(
         onPressed: onPressed,
         icon: icon == null ? const SizedBox.shrink() : Icon(icon, size: 20),
         label: Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-        style: FilledButton.styleFrom(
-          backgroundColor: c.blue,
-          disabledBackgroundColor: c.lineSoft,
+        style: OutlinedButton.styleFrom(
+          backgroundColor: enabled ? c.blueSoft : c.lineSoft,
+          foregroundColor: c.blue,
           disabledForegroundColor: c.muted,
+          side: BorderSide(color: enabled ? c.blue : c.lineSoft, width: 1.5),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.md)),
         ),
       ),
@@ -72,8 +75,9 @@ class OutlineAction extends StatelessWidget {
         icon: icon == null ? const SizedBox.shrink() : Icon(icon, size: 18),
         label: Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
         style: OutlinedButton.styleFrom(
+          minimumSize: const Size(44, 44),
           foregroundColor: fg,
-          side: BorderSide(color: danger ? c.red : c.line),
+          side: BorderSide(color: danger ? c.red : c.line, width: 1.5),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.md)),
         ),
       ),

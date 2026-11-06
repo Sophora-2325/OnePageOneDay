@@ -79,8 +79,8 @@ class _StepDot extends StatelessWidget {
     final filled = active || done;
     final bg = done && !active ? c.green : c.blue;
     return Container(
-      width: 20,
-      height: 20,
+      width: 24,
+      height: 24,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -88,10 +88,14 @@ class _StepDot extends StatelessWidget {
         border: Border.all(color: filled ? bg : c.line),
       ),
       child: done && !active
-          ? const Icon(Icons.check, size: 13, color: Colors.white)
+          ? Icon(Icons.check, size: 16, color: c.onAccent)
           : Text(
               '${index + 1}',
-              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: filled ? Colors.white : c.muted),
+              style: TextStyle(
+                fontSize: AppType.min,
+                fontWeight: FontWeight.w700,
+                color: filled ? c.onAccent : c.muted,
+              ),
             ),
     );
   }

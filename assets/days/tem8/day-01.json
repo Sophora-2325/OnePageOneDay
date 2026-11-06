@@ -1,0 +1,443 @@
+{
+  "goal": "tem8",
+  "diff": "steady",
+  "day": 1,
+  "date": "2026-11-06",
+  "week": 1,
+  "theme": "译句的余生与世界文学的版图",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Afterlife of a Translated Sentence",
+      "wordCount": 467,
+      "paragraphs": [
+        "A translated sentence leads a double life, which is easiest to grasp when the translation is old. The words belong to the language into which they have been carried, yet their rhythm hints at a grammar no longer visible. Readers who do not know the original often sense this foreignness without being able to name it. Some call it stiffness, a defect to be smoothed away; others suspect the slight resistance is where much of the meaning quietly settled.",
+        "The dispute is really about what a translation is expected to do. If its duty is to deliver content, every trace of the source is an obstruction and the ideal version reads as though written that morning in the target language. If its duty is to register an encounter between languages, then perfect ease may be a kind of dishonesty. Neither position is comfortable, and most practising translators live somewhere between the two.",
+        "History complicates the choice further, because what counts as natural changes with the decades. A version that once felt boldly literal can, a century later, sound arch and strange, while a fluent rendering of the same period may now seem flat. The translator cannot control this drift, any more than a writer can control the future reputation of a metaphor. What was an act of hospitality in one generation becomes, without anyone intending it, an exercise in nostalgia in the next.",
+        "Critics sometimes speak of fidelity as though it were a measurable quantity. The metaphor is misleading, since languages do not divide the world into identical units. A word heavy with rural association in one tongue may have no counterpart that is not faintly comic in another. Choosing the lesser distortion is therefore an act of judgement rather than calculation. The best translators describe their work as compromise, a loyalty to an effect rather than to words.",
+        "There is also a politics of smoothness, though it is rarely stated aloud. Editions prepared for a broad market are often encouraged to dissolve unfamiliar names, idioms and structures into something immediately digestible. The result is hospitable, and quietly reassuring, because it confirms the reader in the feeling that everywhere is more or less like home. A translation that leaves a few edges unplaned asks the reader to admit that a different way of arranging experience exists.",
+        "Perhaps the most honest account of translation is a modest one. It is not a mirror, a window or a betrayal, but a second composition made under constraint, answerable to a work it can never fully reproduce. To read it well is to hold two absences at once: the original that is not there, and the reader the translator imagined but cannot know. That unresolved condition is not a failure to be repaired, but the form the work happens to take."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "态度题",
+          "stem": "How does the author regard the \"slight resistance\" of an old translation?",
+          "options": [
+            "As a clear defect that editors should remove",
+            "As a sign that the translator lacked skill",
+            "As a place where much of the meaning may reside",
+            "As proof that the original was badly written"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 1,
+            "quote": "Readers who do not know the original often sense this foreignness without being able to name it."
+          },
+          "explain": "正确项「As a place where much of the meaning may reside」与第 1 段原文「Readers who do not know the origin…」对应，态度题可据此推出：把含蓄肯定的陌生感误判成应当抹平的缺陷。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "推断题",
+          "stem": "What does the author imply about the ideal of perfect fluency?",
+          "options": [
+            "It may amount to a kind of dishonesty about the encounter between languages",
+            "It is the only legitimate goal of translation",
+            "It always preserves the foreign work intact",
+            "It is required by every modern publisher"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "If its duty is to register an encounter between languages, then perfect ease may be a kind of dishonesty."
+          },
+          "explain": "正确项「It may amount to a kind of dishonesty about the encounter between languages」与第 2 段原文「If its duty is to register an enco…」对应，推断题可据此推出：把对流畅的复杂保留简化成唯一合法目标。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "修辞题",
+          "stem": "Why does the author say a translation can become \"an exercise in nostalgia\"?",
+          "options": [
+            "Because translators deliberately imitate old styles",
+            "Because readers prefer only ancient texts",
+            "Because publishers reprint old covers unchanged",
+            "Because naturalness shifts over time, so once-bold choices later sound arch"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "The translator cannot control this drift, any more than a writer can control the future reputation of a metaphor."
+          },
+          "explain": "正确项「Because naturalness shifts over time, so once-bold choices later sound arch」与第 3 段原文「The translator cannot control this…」对应，修辞题可据此推出：把时间造成的语感漂移误读成译者有意的仿古。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "细节题",
+          "stem": "Why does the author call the idea of measurable fidelity misleading?",
+          "options": [
+            "Translators rarely consult dictionaries",
+            "Languages do not divide the world into identical units",
+            "No two readers ever agree on a plot",
+            "Original manuscripts are usually lost"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "The best translators describe their work as compromise, a loyalty to an effect rather than to words."
+          },
+          "explain": "正确项「Languages do not divide the world into identical units」与第 4 段原文「The best translators describe thei…」对应，细节题可据此推出：把语言单位不可对应的论点错置成材料散佚问题。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "态度题",
+          "stem": "What is the author's tone toward market-driven smooth editions?",
+          "options": [
+            "Wholehearted approval of their hospitality",
+            "Quietly critical, noting they reassure readers that everywhere resembles home",
+            "Open hostility toward all popular books",
+            "Complete indifference to editorial choices"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "The result is hospitable, and quietly reassuring, because it confirms the reader in the feeling that everywhere is more or less like home."
+          },
+          "explain": "正确项「Quietly critical, noting they reassure readers that everywhere resembles home」与第 5 段原文「The result is hospitable, and quie…」对应，态度题可据此推出：把含蓄批评的语气误读成全然赞同或激烈敌视。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "推断题",
+          "stem": "Whom does the author say can often sense a translation's foreignness?",
+          "options": [
+            "Readers who do not know the original",
+            "Only professional linguists",
+            "The original author alone",
+            "Publishers checking sales figures"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "Readers who do not know the original often sense this foreignness without being able to name it."
+          },
+          "explain": "正确项「Readers who do not know the original」与第 1 段原文「Readers who do not know the origin…」对应，推断题可据此推出：把普通读者的隐约感知错置成只有专家能察觉。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What can a translator not control, according to Paragraph 3?",
+          "options": [
+            "The price of the printed edition",
+            "The length of the source manuscript",
+            "The choice of the target language",
+            "The future reputation of a metaphor or the drift of naturalness"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "What was an act of hospitality in one generation becomes, without anyone intending it, an exercise in nostalgia in the next."
+          },
+          "explain": "正确项「The future reputation of a metaphor or the drift of naturalness」与第 3 段原文「What was an act of hospitality in …」对应，细节题可据此推出：把不可控的历史语感漂移错记成定价或篇幅。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What do practising translators tend to emphasise in describing their work?",
+          "options": [
+            "Exact mathematical equivalence",
+            "Complete freedom from the source",
+            "Compromise and loyalty to an effect rather than to words",
+            "The speed of production"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "A word heavy with rural association in one tongue may have no counterpart that is not faintly comic in another."
+          },
+          "explain": "正确项「Compromise and loyalty to an effect rather than to words」与第 4 段原文「A word heavy with rural associatio…」对应，推断题可据此推出：把折中与效果忠诚的立场偷换成精确对等或脱离原文。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "修辞题",
+          "stem": "What is the effect of describing translation as \"not a mirror, a window or a betrayal\"?",
+          "options": [
+            "It insists a translation must reproduce the original exactly",
+            "It rejects familiar metaphors to frame translation as a constrained second composition",
+            "It compares reading to a financial transaction",
+            "It argues that all translations are deliberate deceptions"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 6,
+            "quote": "Perhaps the most honest account of translation is a modest one."
+          },
+          "explain": "正确项「It rejects familiar metaphors to frame translation as a constrained second composition」与第 6 段原文「Perhaps the most honest account of…」对应，修辞题可据此推出：把否定常见比喻以重下定义的修辞意图误读成要求逐字复制。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "一句被翻译过来的话过着双重生活，而当译本年代久远时，这一点最容易体会。纸上的词属于它被带进去的那门语言，可它的节奏总在暗示一套已经看不见的语法。不懂原文的读者，常常能感到这丝淡淡异质，却说不出它是什么。有人称之为生硬，把它当成该被抹平的毛病。也有人隐约觉得，那点不大的阻力，恰恰是相当一部分意义悄悄落定的地方。",
+        "这场争执真正关乎的，是翻译被期待去做什么。如果它的职责是传递内容，那么来源语的每一丝痕迹都是障碍，理想的译文读起来应像当天早晨刚用目标语写成。如果它的职责是记下两种语言之间的一次相遇，那么彻底的顺滑反而可能是一种不诚实。两种立场都不太舒服：前一种有抹去异域作品之险，后一种又有把阅读变成语言学课之险。多数实际做翻译的人，住在两者之间的某处。",
+        "历史让选择更复杂，因为什么算自然，会随年代而变。一个当年显得大胆直译的版本，一百年后可能听来古雅而刻意古怪；同一时期流畅的译笔，如今却可能显得平淡。译者控制不了这种漂移，正如作家控制不了一个比喻日后的名声。一代人殷勤待客的举动，无须谁有意安排，到下一代就成了怀旧的练习。句子在它的制造者停手之后，仍在继续移动。",
+        "批评者有时谈起忠实，仿佛它是一个可测量的量，是两段文本之间原则上能缩到零的距离。这个比喻让人安心，却有误导性，因为语言并不把世界切成一模一样的单位。一个在某门语言里带着浓重乡土联想的词，换到另一门语言，可能找不到不略带滑稽的对应。于是选择较小的失真，靠的是判断而非计算，而最出色的译者往往用「折中」的字眼描述自己的工作。可以说，忠实是对一种效果的忠诚，而不是对一份词汇清单的忠诚。",
+        "顺滑之中还藏着一种政治，只是很少被明说。面向大市场准备的版本，常被鼓励把陌生的名字、习语和结构，化进立刻就能消化的东西里。结果是好客的，也悄悄令人安心，因为它让读者更确信：别处大体都和家里差不多。而保留几处未刨平棱角的译文，做的正相反：它请读者承认，安排经验的方式还可以是另一种。这个请求是否被欢迎，取决于时代，倒不太取决于文本本身。",
+        "也许对翻译最诚实的说法，是谦逊的说法。它不是镜子，不是窗，也不是背叛，而是在约束之下写成的第二篇作品，要对一件它永远无法完全复现的作品负责。要把它读好，就得同时托住两种缺席：不在场的原文，以及译者想象过、却无从认识的读者。句子在两者之间继续它双重的生活，既不完全异域，也不完全安居。这种未获解决的状态，不是有待修补的失败，而正是这件作品恰好采取的形式。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "The Idea of a World Literature",
+      "wordCount": 460,
+      "paragraphs": [
+        "The phrase world literature is uttered with such ease that its strangeness is easy to miss. It suggests a single shelf on which every tradition might be arranged, a common space where a novel from one continent can be compared with a poem from another. Yet the shelf was built at a particular moment, by particular institutions, with particular ideas about what counts as worth keeping. The category is a map, and like all maps it has edges.",
+        "Those edges were drawn by translation, criticism, prizes and syllabi long before any geographer drew them. A text becomes world literature not through intrinsic quality alone, but because it circulates beyond its place of origin, usually in a language of wide reach. This circulation is uneven, since some routes are well paved and others barely marked. A writer in a small language may wait decades for a translator, while a neighbour in a dominant language is reviewed abroad within a season.",
+        "Defenders of the category answer that circulation, however unequal, still enlarges the conversation. A reader who meets a distant work is invited to revise what is possible in a sentence, and the invitation is genuine even when the door is narrow. There is a real gain in the comparison that a shared shelf permits. The question is whether the gain is being distributed, or merely collected at a few well-lit centres.",
+        "A further complication lies in the expectation of representativeness. Works that travel are often asked to stand for an entire culture, to explain a region to readers who will meet no other book from it. The burden quietly flattens the work itself, turning a quirky, private novel into a dutiful ambassador. Authors who resist this role are accused of being insufficiently local, while those who accept it risk writing for an imagined foreign judge.",
+        "It would be too simple to conclude that the whole enterprise should be abandoned. The alternative is not a pure, unmediated encounter with a text, which never existed, but a more crowded set of mediations that nobody has bothered to examine. A more self-aware criticism would keep the shelf while naming who stocked it, which routes were taken, and what was left in the warehouse. Innocence, here, is a luxury of the centre.",
+        "Seen in this light, world literature is less a finished collection than an ongoing argument about attention. It asks who is read, in which language, under what description, and with how much of their oddness intact. The most valuable works may be those that refuse to sit neatly on the shelf, keeping a residue the importing language cannot settle. To read them well is to allow the map to be redrawn, and to accept that a world of letters should stay slightly unfamiliar."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "修辞题",
+          "stem": "What does the author achieve by calling the category \"a map\"?",
+          "options": [
+            "To praise its completeness and perfect accuracy",
+            "To argue that geography should replace literary study",
+            "To claim that maps are more reliable than texts",
+            "To suggest it has edges and was drawn from a particular standpoint"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 1,
+            "quote": "Yet the shelf was built at a particular moment, by particular institutions, with particular ideas about what counts as worth keeping."
+          },
+          "explain": "正确项「To suggest it has edges and was drawn from a particular standpoint」与第 1 段原文「Yet the shelf was built at a parti…」对应，修辞题可据此推出：把地图比喻暗含的局限与立场误读成对完备性的赞许。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "According to Paragraph 2, how does a text become world literature?",
+          "options": [
+            "By circulating beyond its place of origin, often in a widely used language",
+            "By being written in the oldest known language",
+            "By winning a prize in its own country only",
+            "By avoiding translation altogether"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 2,
+            "quote": "This circulation is uneven, since some routes are well paved and others barely marked."
+          },
+          "explain": "正确项「By circulating beyond its place of origin, often in a widely used language」与第 2 段原文「This circulation is uneven, since …」对应，细节题可据此推出：把跨语际流通的机制错记成获奖或拒绝翻译。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "态度题",
+          "stem": "What is the author's attitude toward the defenders of circulation?",
+          "options": [
+            "Dismissive of any possible gain",
+            "Certain that all centres share it equally",
+            "Receptive to the gain but unresolved about how it is distributed",
+            "Convinced that comparison is impossible"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "There is a real gain in the comparison that a shared shelf permits."
+          },
+          "explain": "正确项「Receptive to the gain but unresolved about how it is distributed」与第 3 段原文「There is a real gain in the compar…」对应，态度题可据此推出：把承认收益又追问分配的保留立场简化成全盘否定。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "推断题",
+          "stem": "What does the author imply about works asked to represent a whole culture?",
+          "options": [
+            "They become more accurate as a result",
+            "They are quietly flattened into dutiful ambassadors",
+            "They are always translated without loss",
+            "They stop being read abroad entirely"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 4,
+            "quote": "The burden quietly flattens the work itself, turning a quirky, private novel into a dutiful ambassador."
+          },
+          "explain": "正确项「They are quietly flattened into dutiful ambassadors」与第 4 段原文「The burden quietly flattens the wo…」对应，推断题可据此推出：把代表制带来的扁平化错当成更准确或不再流通。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "修辞题",
+          "stem": "What is the function of the phrase \"Innocence, here, is a luxury of the centre\"?",
+          "options": [
+            "To praise readers at the centre for their purity",
+            "To argue that criticism should stop examining institutions",
+            "To describe the price of imported books",
+            "To ironically note that unawareness of mediation is itself a privileged position"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 5,
+            "quote": "A more self-aware criticism would keep the shelf while naming who stocked it, which routes were taken, and what was left in the warehouse."
+          },
+          "explain": "正确项「To ironically note that unawareness of mediation is itself a privileged position」与第 5 段原文「A more self-aware criticism would …」对应，修辞题可据此推出：把反讽式的立场揭示误读成对中心读者的赞美。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What drew the edges of world literature before any geographer did?",
+          "options": [
+            "National borders drawn at peace conferences",
+            "The physical distance between continents",
+            "The personal taste of a single novelist",
+            "Translation, criticism, prizes and syllabi"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 2,
+            "quote": "A writer in a small language may wait decades for a translator, while a neighbour in a dominant language is reviewed abroad within a season."
+          },
+          "explain": "正确项「Translation, criticism, prizes and syllabi」与第 2 段原文「A writer in a small language may w…」对应，细节题可据此推出：把制度性流通渠道错置成地理边界或个人趣味。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "推断题",
+          "stem": "Why may a writer in a small language wait decades?",
+          "options": [
+            "Because small languages lack any grammar",
+            "Because such writers refuse to publish",
+            "Because circulation depends on the accident of a translator",
+            "Because prizes are banned in their country"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "This circulation is uneven, since some routes are well paved and others barely marked."
+          },
+          "explain": "正确项「Because circulation depends on the accident of a translator」与第 2 段原文「This circulation is uneven, since …」对应，推断题可据此推出：把流通渠道不均的等待错归因于语言本身或禁令。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What risk do authors face if they accept the ambassador role?",
+          "options": [
+            "They may write for an imagined foreign judge",
+            "They will never be translated again",
+            "They lose the ability to use their own language",
+            "They are guaranteed a wider readership at home"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 4,
+            "quote": "Authors who resist this role are accused of being insufficiently local, while those who accept it risk writing for an imagined foreign judge."
+          },
+          "explain": "正确项「They may write for an imagined foreign judge」与第 4 段原文「Authors who resist this role are a…」对应，推断题可据此推出：把迎合外部评判的风险错置成失去母语或必然畅销。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What does the author suggest about abandoning the whole enterprise?",
+          "options": [
+            "It is the only honest option available",
+            "The alternative is a more crowded, unexamined set of mediations",
+            "It would immediately restore pure reading",
+            "It has already happened in most universities"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "Innocence, here, is a luxury of the centre."
+          },
+          "explain": "正确项「The alternative is a more crowded, unexamined set of mediations」与第 5 段原文「Innocence, here, is a luxury of th…」对应，态度题可据此推出：把对放弃论的反驳误读成对纯真阅读的恢复。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "「世界文学」这个说法被说得如此顺口，以至于它的奇怪之处很容易被漏掉。它暗示有那么一个书架，所有传统都能在上面排开；有那么一个共同空间，一个大陆的小说可以与另一个大陆的诗相比。可这个书架是在某个特定时刻、由某些特定机构、带着关于「什么算值得留下的作品」的某些特定观念搭起来的。因此，谈一个文字的世界，也就是谈使这样一个世界变得可以想象的网络。这个类别是一张地图，而像所有地图一样，它有边界。",
+        "这些边界，早在任何地理学家动手之前，就已被翻译、批评、奖项和教学大纲划好。一部文本成为世界文学，并非只因某种内在品质，而是因为它开始在生产它的地方之外流通，且通常借一门辐射很广的语言。这种流通从设计上就不均匀：有些路铺得平整，有些几乎看不出痕迹。用小型语言写作的人，可能要等上几十年，才碰巧等来一位译者；而隔壁用强势语言写作的人，一季之内就在国外被评论了。看上去，偶然穿上了才能的外衣。",
+        "为这个类别辩护的人会回应：流通无论多么不平等，毕竟把交谈拓宽了。遇见一部远方作品的读者，被请去修正「一句话里什么算可能」的尺度，即便门很窄，这份邀请也是真的。一个共同书架所容许的比较，确有一份收获；若每种文学都封在自己的地方里，这份收获就没了。问题在于，这份收获是在被分发，还是只是在少数灯火通明的中心被收集。单靠赞叹，回答不了它。",
+        "还有一层复杂，在于「代表性」的期待。得以远行的作品，常被要求替一整个文化站台，向那些不会再读到它第二本书的读者解释一个地区。这份担子并不公平，还悄悄把作品本身压平：一部古怪、私人的小说，被改造成一位尽职的使者。拒绝这个角色的作者，有时被指不够本土；接受它的作者，又可能是在为一个想象中的外国裁判写作。无论哪条路，第一页还没翻，阅读就已经歪了。",
+        "若就此断定整件事该被放弃，又太简单了。替代方案并不是与文本纯粹、无中介的相遇，那样的相遇从来不曾存在；而是一堆更拥挤、却没人费心去审视的中介。一种更有自知之明的批评，会保留这个书架，同时点明是谁上的书、走了哪几条路、又有什么留在了仓库里。这样的留意并不毁掉读一本远方书的愉快，只是不肯假装这份愉快是自己找上门来的。在这里，天真，是中心才享用得起的奢侈品。",
+        "这样看，世界文学与其说是一套已完成的收藏，不如说是一场关于注意力尚未结束的争论。它追问谁被读到、用哪门语言、顶着怎样的说明，又保留了多少自己的古怪。最有价值的作品，或许恰恰是那些不肯规规矩矩待在书架上、总留着一点输入语消化不掉的残余的东西。把它们读好，就是容许地图被稍稍重画，并接受：一个配得上这名字的文字世界，本该始终带点陌生。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "一座港口城市的档案馆近年启动了一项口述计划，记录街坊对方言的记忆。城市因码头而兴，几代移民把乡音带进同一条巷子，口音在日常买卖中慢慢磨平。研究者发现，人们记得最牢的往往不是字词，而是叫卖的调子、节庆祝词，以及长辈训话时冒出的一句土话。这些声音依附于具体场景，离开厨房或渡口便难以复述。整理者不急于给词条下定论，先记下说话的人、地点和天气。有人嫌这工作琐碎，难称学问。主持者却回答：方言不是等待封存的清单，而是仍被讲述的关系；记录得越细，后来的人越能听出，哪些被时间带走，哪些被悄悄留下。",
+    "hints": [
+      "an oral project",
+      "the local dialect",
+      "worn smooth by everyday trade",
+      "cling to particular settings",
+      "not a list waiting to be sealed"
+    ],
+    "reference": "The archive of a port city recently began an oral project devoted to old residents' memories of the local dialect. The city grew around its docks, and successive waves of migrants carried their home accents into the same narrow lanes, where the rough edges were worn smooth by everyday trade. Researchers found that what people recall most vividly is rarely the words themselves, but the cadence of street cries, festival blessings, and a sudden phrase that an elder let slip while scolding a child. Such sounds cling to particular settings; once removed from a kitchen or a ferry, they can hardly be reproduced. Rather than fix every entry, the compilers first set down who was speaking, where, and the weather. Some object that the work is too trivial for scholarship. The director answers that a dialect is not a list waiting to be sealed, but a relationship still being narrated; the finer the record, the more clearly later listeners hear what time carried away and what people quietly kept.",
+    "scoringPoints": [
+      {
+        "zh": "记录老街坊对方言的记忆",
+        "en": "record old residents memories of the local dialect"
+      },
+      {
+        "zh": "几代移民把乡音带进同一条巷子",
+        "en": "successive waves of migrants carried home accents into the same lanes"
+      },
+      {
+        "zh": "口音在日常买卖中被慢慢磨平",
+        "en": "accents were gradually worn smooth by everyday trade"
+      },
+      {
+        "zh": "记得最牢的是叫卖调子与祝词",
+        "en": "what is recalled most vividly is the cadence of street cries and blessings"
+      },
+      {
+        "zh": "先记下说话人、地点与天气",
+        "en": "first set down who was speaking, where, and the weather"
+      },
+      {
+        "zh": "方言是仍被讲述的关系而非封存清单",
+        "en": "a dialect is a relationship still being narrated, not a sealed list"
+      }
+    ],
+    "highlights": [
+      "devoted to ...",
+      "what people recall most vividly is rarely ... but ...",
+      "Such sounds cling to ...",
+      "Rather than rush to ...",
+      "not a list waiting to be sealed, but a relationship still being narrated",
+      "the finer the record, the more clearly ..."
+    ]
+  },
+  "writing": {
+    "topic": "On the Uses of Rereading",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the uses of rereading. You should write at least 180 words but no more than 220 words.",
+    "requirements": [
+      "180–220 words",
+      "30 minutes",
+      "3 paragraphs: thesis → criticism and revision → the ethics of returning"
+    ],
+    "outlineHints": [
+      "开头：重读被低估；书未变而读者已变，同一作品在新光下成了不同对象。",
+      "中间：批评者须定论却常改观；以「重新接续的对话」取代定本幻想。",
+      "结尾：重读是温和伦理，抵抗求新市场，记录不断变化又不断回返的自我。"
+    ],
+    "modelEssay": "To reread a book is often treated as a lesser act than to read a new one, as though a second encounter repeats the first. That assumption flatters a culture of novelty, and is mistaken. A book does not stay still between readings, because the reader does not either. The sentences remain identical, yet the reader has acquired disappointments and a different sense of what is at stake. What returns is the same work under a newer light, a quietly different object.\n\nCritics are expected to deliver a settled judgement on a first encounter. Yet the most durable criticism often admits a change of mind. A passage once merely decorative can later become the hinge on which the whole argument turns. Such revisions are not failures of attention but evidence that attention has a history. To acknowledge this replaces the fantasy of a definitive reading with a conversation resumed.\n\nThere is, finally, a modest ethics in rereading. It declines the conviction that a work can be consumed and set aside, granting an object the dignity of outlasting our first opinion. In a market organised around the new, returning is a small act of refusal. A shelf of reread books is not a record of repetition; it is a record of a self that kept changing and kept coming back.",
+    "structure": [
+      "第一段：重读被误认为低于初读；书未变而读者已变，同一作品在新光下已是不同对象。",
+      "第二段：批评者常须一次定论，但最耐久的批评承认改观；用「重新接续的对话」取代定本幻想。",
+      "第三段：重读是一种温和的伦理，拒绝「可消费可搁置」，以回返抵抗求新市场，记录不断变化的自我。"
+    ],
+    "expressions": [
+      "a lesser act than",
+      "flattering to a culture that prizes novelty",
+      "the same work under a newer light",
+      "deliver a settled judgement",
+      "the hinge on which the whole argument turns",
+      "attention has a history",
+      "a conversation resumed",
+      "grants an object the dignity of outlasting",
+      "a small act of refusal"
+    ],
+    "translation": "重读一本书，常被视为比读一本新书低一等的举动，仿佛第二次相遇只能重复初读早已定下的东西。这种假定恭维了一个崇尚新奇的文化，却也弄错了。两次阅读之间，书并没有静止，因为读者也没有静止。句子一字未改，可迎向它们的人已经添了失望、争论，以及对什么才算要紧的另一种分寸。于是回来的，不再是同一部作品，而是同一部作品落在一道更新的光里，成了一件悄然不同的东西。\n\n批评者有职业上的理由抗拒这一点，因为人们期待他们在初次相遇时就给出定论。然而最经得起时间的批评，往往肯承认自己改了主意。一段当年只觉得是装饰的文字，多年后会显出它其实是整个论证借以转动的轴；一个曾被当作配角的人物，可能变成再也忘不掉的那一个。这类修正不是注意力失职，反倒证明注意力也有自己的历史。书一直在等，读者终于配得上其中的某一部分了。肯承认这一点，就等于用「一场重新接续的对话」，换掉关于定本的幻想。\n\n最后，重读里还藏着一点温和的伦理。它不肯接受「一部作品可以被消费、被概括、被搁到一边」的轻巧确信，而把「比我们最初对它的看法活得更久」这种尊严还给对象。在一个围绕新货组织起来的市场里，选择回返几乎是一桩小小的拒绝。它暗示价值也许不在于翻过多少书名，而在于耐心地留在少数几本旁边。一架重读过的书，不是重复的流水账，而是一个不断改变、又不断回来的自我的记录。"
+  }
+}

@@ -234,7 +234,10 @@ class ListeningBar extends StatelessWidget {
                     style: IconButton.styleFrom(backgroundColor: c.blue, minimumSize: const Size(52, 52)),
                     tooltip: playing ? '暂停' : '播放',
                     onPressed: aloud.toggle,
-                    icon: Icon(playing ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white),
+                    icon: Icon(
+                      playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                   ),
                   const SizedBox(width: AppSpace.s3),
                   Expanded(
@@ -252,16 +255,22 @@ class ListeningBar extends StatelessWidget {
                   ),
                   for (final r in ReadingAloud.rates)
                     Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: ChoiceChip(
-                        label: Text('${r}x'),
-                        selected: aloud.rate == r,
-                        showCheckmark: false,
-                        selectedColor: c.blueSoft,
-                        side: BorderSide(color: aloud.rate == r ? c.blue : c.line),
-                        labelStyle: TextStyle(fontSize: 12, color: aloud.rate == r ? c.blue : c.inkSoft, fontWeight: FontWeight.w600),
-                        visualDensity: VisualDensity.compact,
-                        onSelected: (_) => aloud.setRate(r),
+                      padding: const EdgeInsets.only(left: AppSpace.s2),
+                      // 触控目标 44×44pt：不再用 VisualDensity.compact 压缩高度。
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
+                        child: ChoiceChip(
+                          label: Text('${r}x'),
+                          selected: aloud.rate == r,
+                          showCheckmark: false,
+                          selectedColor: c.blueSoft,
+                          side: BorderSide(color: aloud.rate == r ? c.blue : c.line),
+                          labelStyle: TextStyle(
+                              fontSize: AppType.min,
+                              color: aloud.rate == r ? c.blue : c.inkSoft,
+                              fontWeight: FontWeight.w600),
+                          onSelected: (_) => aloud.setRate(r),
+                        ),
                       ),
                     ),
                 ],

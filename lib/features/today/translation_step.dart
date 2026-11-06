@@ -21,7 +21,7 @@ class TranslationStep extends StatelessWidget {
     final c = context.c;
     final day = data.day;
     return StoreBuilder(builder: (context, store) {
-      final revealed = store.flag('reveal.$day.translation');
+      final revealed = store.flag(store.revealKey(day, 'translation'));
       final checked = store.peekReview(day)?.scoring ?? const <int>{};
       final draft = store.draft(day, 'translation');
       return ListView(
@@ -64,7 +64,7 @@ class TranslationStep extends StatelessWidget {
             PrimaryButton(
               label: '显示参考译文',
               icon: Icons.visibility_outlined,
-              onPressed: () => store.setFlag('reveal.$day.translation', true),
+              onPressed: () => store.setFlag(store.revealKey(day, 'translation'), true),
             )
           else ...[
             PaperCard(
@@ -105,7 +105,7 @@ class TranslationStep extends StatelessWidget {
               child: QuietButton(
                 label: '收起参考译文',
                 icon: Icons.visibility_off_outlined,
-                onPressed: () => store.setFlag('reveal.$day.translation', false),
+                onPressed: () => store.setFlag(store.revealKey(day, 'translation'), false),
               ),
             ),
           ],

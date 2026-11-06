@@ -9,19 +9,25 @@ import 'core/storage/app_store.dart';
 import 'core/storage/db.dart';
 import 'core/storage/secure.dart';
 import 'domain/grading.dart';
+import 'domain/training_scope.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final store = AppStore(AppDatabase());
   await store.load();
-  final repo = DayRepository(generated: () => store.generatedDays.map((k, v) => MapEntry(k, v.payload)));
+  final repo = DayRepository(
+    goal: () => store.goal,
+    generated: () => store.generatedDays.map((k, v) => MapEntry(k, v.payload)),
+  );
   final index = await repo.index();
   final secure = SecureApiConfigStore();
   final apiConfig = await secure.read();
 
   final today = DateTime.now();
   final todayKey = today.toIso8601String().substring(0, 10);
-  final lastDay = int.tryParse(store.setting('lastDay') ?? '');
+  // 按档恢复：1.0 的全局 lastDay 作为六级的历史值兜底。
+  final lastDay = int.tryParse(
+      store.setting(TrainingScope.keyLastDay(store.goal)) ?? store.setting('lastDay') ?? '');
   final chosenToday = store.setting('lastDayOn') == todayKey;
   final initialDay = chosenToday && lastDay != null && index.any((e) => e.day == lastDay)
       ? lastDay

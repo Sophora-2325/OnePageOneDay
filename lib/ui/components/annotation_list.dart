@@ -71,7 +71,7 @@ class AnnotationList extends StatelessWidget {
                             ),
                             child: Text(
                               'Day ${a.day} · ${annotationTargetLabel(a.target)} · 第 ${a.paraIndex + 1} 段',
-                              style: TextStyle(fontSize: 11, color: c.blue),
+                              style: TextStyle(fontSize: AppType.min, color: c.blue),
                             ),
                           ),
                           Expanded(

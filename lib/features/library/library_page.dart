@@ -7,6 +7,7 @@ import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../domain/day_summary.dart';
 import '../../domain/grading.dart';
+import '../../domain/training_scope.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/misc.dart';
@@ -19,6 +20,7 @@ class LibraryPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(dayIndexProvider);
     final current = ref.watch(currentDayProvider);
+    final scope = ref.watch(trainingScopeProvider);
     final c = context.c;
     return Scaffold(
       appBar: AppBar(title: const Text('题库')),
@@ -36,8 +38,14 @@ class LibraryPage extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
             children: [
               Text(
-                '预置 ${days.length - generated} 天${generated == 0 ? '' : ' · AI 生成 $generated 天'} · 已完成 $doneCount 天 · 全部离线可用',
+                '${scope.goalSpec.name} · 预置 ${days.length - generated} 天'
+                '${generated == 0 ? '' : ' · AI 生成 $generated 天'} · 已完成 $doneCount 天 · 全部离线可用',
                 style: TextStyle(fontSize: 13, color: c.muted),
+              ),
+              const SizedBox(height: AppSpace.s1),
+              Text(
+                '阅读 ${scope.goalSpec.rule.minWords}–${scope.goalSpec.rule.maxWords} 词 · ${scope.goalSpec.focus}',
+                style: TextStyle(fontSize: AppType.min, height: 1.5, color: c.muted),
               ),
               const SizedBox(height: AppSpace.s4),
               for (final week in byWeek.keys.toList()..sort()) ...[
@@ -92,8 +100,9 @@ class LibraryPage extends ConsumerWidget {
       final presets = days.where((e) => !e.generated).toList();
       ref.read(currentDayProvider.notifier).select(pickDefaultDay(presets, DateTime.now()));
     }
-    await ref.read(storeProvider).deleteGeneratedDay(d.day);
-    ref.read(countdownHubProvider).resetDay(d.day);
+    final store = ref.read(storeProvider);
+    await store.deleteGeneratedDay(d.day);
+    ref.read(countdownHubProvider).resetDay(store.goal, d.day);
     refreshDays(ref);
     if (context.mounted) showToast(context, '${dayLabel(d.day)} 已删除');
   }
@@ -106,6 +115,7 @@ class _GenerateCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final c = context.c;
     final ready = ref.watch(chatModelProvider) != null;
+    final scope = ref.watch(trainingScopeProvider);
     return PaperCard(
       padding: const EdgeInsets.all(AppSpace.s4),
       child: Column(
@@ -122,6 +132,21 @@ class _GenerateCard extends ConsumerWidget {
                 ? '用你自己的模型生成一整天的新题，每段都过质检门禁；不合格不会进入题库。'
                 : '填入自己的模型 API 后，可以无限生成新题。不填也能用全部预置题。',
             style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft),
+          ),
+          const SizedBox(height: AppSpace.s2),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.info_outline, size: 14, color: c.muted),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  '${scope.goalSpec.name} · 将以「${diffLabel(scope.nextDiff)}」难度生成'
+                  '${scope.hasPending ? '；下套设置待生效，生成成功后自动复位稳定' : ''}。调整请到「我的」。',
+                  style: TextStyle(fontSize: 12, height: 1.5, color: c.muted),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: AppSpace.s3),
           ready
@@ -217,6 +242,6 @@ class _Pill extends StatelessWidget {
           border: Border.all(color: color.withValues(alpha: 0.5)),
           borderRadius: BorderRadius.circular(999),
         ),
-        child: Text(text, style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w600)),
+        child: Text(text, style: TextStyle(fontSize: AppType.min, color: color, fontWeight: FontWeight.w600)),
       );
 }

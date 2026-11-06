@@ -1,4 +1,5 @@
 import '../core/storage/app_store.dart';
+import 'training_scope.dart';
 
 /// 某训练日的本地成绩汇总（只用已提交的作答）。
 class DaySummary {
@@ -24,9 +25,11 @@ class DaySummary {
 
   bool get started => readingSubmitted > 0 || listeningSubmitted > 0 || done;
 
-  static DaySummary of(AppStore store, int day) {
+  /// [goal] 只用于「复盘按档查看」的只读筛选；不传时取当前训练档。
+  static DaySummary of(AppStore store, int day, {GoalId? goal}) {
+    final g = goal ?? store.goal;
     var rs = 0, rt = 0, rn = 0, ls = 0, lt = 0, ln = 0;
-    for (final a in store.attempts.where((a) => a.day == day && a.submitted)) {
+    for (final a in store.attemptsFor(g).where((a) => a.day == day && a.submitted)) {
       if (a.kind == 'reading') {
         rs += a.score ?? 0;
         rt += a.total ?? 0;
@@ -45,7 +48,7 @@ class DaySummary {
       listeningScore: ls,
       listeningTotal: lt,
       listeningSubmitted: ln,
-      done: store.peekReview(day)?.done ?? false,
+      done: store.reviewFor(g, day)?.done ?? false,
     );
   }
 }

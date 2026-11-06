@@ -1,7 +1,10 @@
+import '../../domain/training_scope.dart';
 import '../spec/validate_day.dart';
 import '../storage/records.dart';
 
-const backupSchema = 'cet6.backup.v1';
+/// v2：每条记录显式带 goal，五档进度各自独立；仍接受 1.0 的 v1 备份（整体归入六级）。
+const backupSchema = 'cet6.backup.v2';
+const legacyBackupSchema = 'cet6.backup.v1';
 
 /// 设置里不允许进入备份的键（凭据类）。API 配置本就只在 Keystore，这里是第二道防线。
 bool isSensitiveSettingKey(String key) {
@@ -36,6 +39,20 @@ class BackupData {
   final DateTime? exportedAt;
   final String appVersion;
 
+  /// 导出时用平台真实版本覆盖默认的 '1.0.0'；存储层不依赖 Flutter 插件。
+  BackupData withAppVersion(String version) => BackupData(
+        attempts: attempts,
+        drafts: drafts,
+        annotations: annotations,
+        notes: notes,
+        reviews: reviews,
+        settings: settings,
+        generatedDays: generatedDays,
+        rejectedGeneratedDays: rejectedGeneratedDays,
+        exportedAt: exportedAt,
+        appVersion: version,
+      );
+
   Map<String, dynamic> toJson() => {
         'schema': backupSchema,
         'exportedAt': (exportedAt ?? DateTime.now()).toIso8601String(),
@@ -55,7 +72,8 @@ class BackupData {
       };
 
   static BackupData fromJson(Map<String, dynamic> j) {
-    if (j['schema'] != backupSchema) {
+    final schema = j['schema'];
+    if (schema != backupSchema && schema != legacyBackupSchema) {
       throw const FormatException('不是本 App 的备份文件（schema 不匹配）');
     }
     final s = (j['state'] as Map?)?.cast<String, dynamic>() ?? const {};
@@ -66,7 +84,10 @@ class BackupData {
     for (final raw in (j['generatedDays'] as List?) ?? const []) {
       try {
         final rec = GeneratedDayRec.fromJson((raw as Map).cast());
-        if (rec.payload['day'] == rec.day && validateDay(rec.payload).ok) {
+        // 题包自带的档位必须与记录一致；用该档自己的规范重新过质检。
+        final payloadGoal = rec.payload['goal']?.toString();
+        final consistent = payloadGoal == null || payloadGoal == rec.goal.name;
+        if (consistent && rec.payload['day'] == rec.day && validateDay(rec.payload, goal: rec.goal).ok) {
           generated.add(rec);
         } else {
           rejected++;
@@ -92,20 +113,48 @@ class BackupData {
     );
   }
 
+  /// 兼容旧调用：所有档训练日号的并集（不区分档）。
   Set<int> get days => {
-        ...attempts.map((e) => e.day),
-        ...drafts.map((e) => e.day),
-        ...annotations.map((e) => e.day),
-        ...notes.map((e) => e.day),
-        ...reviews.map((e) => e.day),
-        ...generatedDays.map((e) => e.day),
+        for (final set in daysByGoal.values) ...set,
       };
 
+  /// 按档分组的训练日，供 summary 与导入预览使用。
+  Map<GoalId, Set<int>> get daysByGoal {
+    final out = <GoalId, Set<int>>{};
+    void add(GoalId g, int day) => out.putIfAbsent(g, () => <int>{}).add(day);
+    for (final e in attempts) {
+      add(e.goal, e.day);
+    }
+    for (final e in drafts) {
+      add(e.goal, e.day);
+    }
+    for (final e in annotations) {
+      add(e.goal, e.day);
+    }
+    for (final e in notes) {
+      add(e.goal, e.day);
+    }
+    for (final e in reviews) {
+      add(e.goal, e.day);
+    }
+    for (final e in generatedDays) {
+      add(e.goal, e.day);
+    }
+    return out;
+  }
+
   String summary() {
-    final d = days.toList()..sort();
+    final parts = <String>[];
+    for (final g in kGoals) {
+      final d = daysByGoal[g.id];
+      if (d == null || d.isEmpty) continue;
+      final list = d.toList()..sort();
+      parts.add('${g.name} ${d.length} 天（Day ${list.join('、')}）');
+    }
+    final scope = parts.isEmpty ? '暂无训练日' : '涉及 ${parts.join('；')}';
     final gen = generatedDays.isEmpty ? '' : '、AI 题包 ${generatedDays.length} 天';
     final bad = rejectedGeneratedDays == 0 ? '' : '\n另有 $rejectedGeneratedDays 天题包未通过质检，将被跳过。';
-    return '涉及 ${d.isEmpty ? 0 : d.length} 个训练日${d.isEmpty ? '' : '（Day ${d.join('、')}）'}：'
+    return '$scope：'
         '作答 ${attempts.length} 条、草稿 ${drafts.length} 条、标注 ${annotations.length} 条、'
         '笔记 ${notes.length} 篇、复盘 ${reviews.length} 条$gen。$bad';
   }

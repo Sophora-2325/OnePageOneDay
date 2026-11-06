@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -16,7 +17,16 @@ class BackupService {
 
   /// 写出备份文件并打开系统分享面板（可存到文件、网盘或发给自己）。
   Future<String> export() async {
-    final data = store.snapshot();
+    // 先把防抖中的草稿/复盘落库，避免导出后立刻被杀进程时本机与备份不一致。
+    await store.flush();
+    final snap = store.snapshot();
+    var version = snap.appVersion;
+    try {
+      version = (await PackageInfo.fromPlatform()).version;
+    } catch (_) {
+      // 拿不到平台版本（如单测环境）时保留默认值，不影响导出。
+    }
+    final data = snap.withAppVersion(version);
     final json = const JsonEncoder.withIndent('  ').convert(data.toJson());
     final dir = await getTemporaryDirectory();
     final stamp = DateTime.now().toIso8601String().substring(0, 16).replaceAll(':', '').replaceAll('T', '-');

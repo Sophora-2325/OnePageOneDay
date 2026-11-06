@@ -2,6 +2,7 @@
 // 输入是原始 JSON（与 assets/days/day-XX.json 同构：阅读译文在 readings[].translation，
 // 范文译文在 writing.translation），因为模型产出可能连类型都不对，不能先解析成 DayData。
 
+import '../../domain/training_scope.dart';
 import 'normalize.dart';
 
 class ValidationIssue {
@@ -34,9 +35,12 @@ bool _isInt(Object? v) => v is int || (v is double && v == v.roundToDouble());
 String _js(Object? v) => v == null ? 'undefined' : v.toString();
 
 class _Checker {
-  _Checker(this.report);
+  _Checker(this.report, this.rule);
 
   final ValidationReport report;
+
+  /// 各档内容规范；六级的取值与 1.0 完全一致，报错文案也不变。
+  final GoalContentRule rule;
   String part = 'meta';
 
   void fail(String msg) => report.errors.add(ValidationIssue(part, msg));
@@ -84,7 +88,9 @@ class _Checker {
     }
     final paras = paragraphs.map(_str).toList();
     final actualWords = _words(paras.join(' '));
-    if (actualWords < 380 || actualWords > 450) fail('$prefix: $actualWords words, expected 380-450');
+    if (actualWords < rule.minWords || actualWords > rule.maxWords) {
+      fail('$prefix: $actualWords words, expected ${rule.wordRange}');
+    }
     final declared = reading['wordCount'];
     if (declared is num && declared.isFinite && (declared - actualWords).abs() > 15) {
       warn('$prefix: declared wordCount ${_js(declared)} differs from actual $actualWords');
@@ -186,7 +192,9 @@ class _Checker {
     if (t is! Map) return fail('$prefix: missing object');
 
     final chars = _cnChars(_js(t['chinese']));
-    if (chars < 180 || chars > 200) fail('$prefix: $chars Chinese characters, expected 180-200');
+    if (chars < rule.minHanzi || chars > rule.maxHanzi) {
+      fail('$prefix: $chars Chinese characters, expected ${rule.hanziRange}');
+    }
 
     final hints = t['hints'];
     if (hints is! List || hints.length < 3 || hints.length > 5) fail('$prefix: expected 3-5 hints');
@@ -194,7 +202,9 @@ class _Checker {
       fail('$prefix: missing reference translation');
     } else {
       final refWords = _words(t['reference']);
-      if (refWords < 100 || refWords > 160) fail('$prefix: reference has $refWords words, expected 100-160');
+      if (refWords < rule.minRefWords || refWords > rule.maxRefWords) {
+        fail('$prefix: reference has $refWords words, expected ${rule.refRange}');
+      }
     }
     final points = t['scoringPoints'];
     if (points is! List || points.length < 4 || points.length > 6) {
@@ -215,7 +225,9 @@ class _Checker {
     if (!_filled(w['topic'])) fail('$prefix: missing topic');
     if (!_filled(w['prompt'])) fail('$prefix: missing prompt');
     final essayWords = _words(_filled(w['modelEssay']) ? w['modelEssay'] : '');
-    if (essayWords < 150 || essayWords > 200) fail('$prefix: model essay has $essayWords words, expected 150-200');
+    if (essayWords < rule.minEssayWords || essayWords > rule.maxEssayWords) {
+      fail('$prefix: model essay has $essayWords words, expected ${rule.essayRange}');
+    }
     final structure = w['structure'];
     if (structure is! List || structure.length != 3) fail('$prefix: expected 3 structure paragraphs');
     final expressions = w['expressions'];
@@ -233,31 +245,48 @@ class _Checker {
   }
 }
 
+/// 解析该用哪一套规范：显式传入 > payload 自带 goal > 六级默认。
+GoalContentRule ruleFor(Map<String, dynamic> day, GoalId? goal) =>
+    goalOf(goal ?? goalIdFromKey(day['goal'] as String?) ?? GoalId.cet6).rule;
+
 /// 整天校验；[ValidationReport.ok] 为 true 才允许落库。
-ValidationReport validateDay(Map<String, dynamic> day) {
+ValidationReport validateDay(Map<String, dynamic> day, {GoalId? goal}) {
   final report = ValidationReport();
-  _Checker(report).checkDay(day);
+  _Checker(report, ruleFor(day, goal)).checkDay(day);
   return report;
 }
 
 /// 单篇阅读（含逐段译文）校验，供分段生成时定向修复。
-ValidationReport validateReadingPart(Map<String, dynamic> reading, {required int dayNo, required int index}) {
+ValidationReport validateReadingPart(
+  Map<String, dynamic> reading, {
+  required int dayNo,
+  required int index,
+  GoalId goal = GoalId.cet6,
+}) {
   final report = ValidationReport();
-  final c = _Checker(report)..part = 'r${index + 1}';
+  final c = _Checker(report, goalOf(goal).rule)..part = 'r${index + 1}';
   c.checkReading('Day $dayNo', reading, index);
   c.checkReadingTranslation('Day $dayNo', reading);
   return report;
 }
 
-ValidationReport validateTranslationPart(Map<String, dynamic> translation, {required int dayNo}) {
+ValidationReport validateTranslationPart(
+  Map<String, dynamic> translation, {
+  required int dayNo,
+  GoalId goal = GoalId.cet6,
+}) {
   final report = ValidationReport();
-  (_Checker(report)..part = 'translation').checkTranslation('Day $dayNo', translation);
+  (_Checker(report, goalOf(goal).rule)..part = 'translation').checkTranslation('Day $dayNo', translation);
   return report;
 }
 
-ValidationReport validateWritingPart(Map<String, dynamic> writing, {required int dayNo}) {
+ValidationReport validateWritingPart(
+  Map<String, dynamic> writing, {
+  required int dayNo,
+  GoalId goal = GoalId.cet6,
+}) {
   final report = ValidationReport();
-  final c = _Checker(report)..part = 'writing';
+  final c = _Checker(report, goalOf(goal).rule)..part = 'writing';
   c.checkWriting('Day $dayNo', writing);
   c.checkWritingTranslation('Day $dayNo', writing);
   return report;

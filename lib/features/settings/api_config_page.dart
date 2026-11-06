@@ -261,12 +261,18 @@ class TutorialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.c;
+    // v1.3：3 步主卡首屏收完，细节按需展开，与「30 秒」的节奏一致。
     const steps = [
-      ('选一家服务商', '任选支持「OpenAI 兼容接口」的模型服务（如 DeepSeek、通义千问、智谱、Kimi 等），注册并实名。'),
-      ('创建 API 密钥', '在服务商控制台的「API Keys」页面新建一个密钥，复制下来。密钥相当于付费账户的密码，不要发给别人。'),
-      ('查到地址和模型名', '控制台文档里会写「base_url」（通常以 /v1 结尾）和可用的模型名。也可以在上一页点「快速填入」。'),
-      ('填入并测试', '回到「模型 API」页填三项，点「测试连接」。看到「连接成功」后保存。'),
-      ('开始用', '阅读文章里长按选词 → 「翻译」；题库页 → 「生成新的一天」。生成的题都要过自动质检，不合格不会交给你。'),
+      ('选服务商并创建密钥', '任选支持「OpenAI 兼容接口」的模型服务，注册后在控制台新建 API Key 并复制。密钥相当于付费账户密码，不要发给别人。'),
+      ('查到地址和模型名', '文档里的 base_url 通常以 /v1 结尾；也可以在上一页点「快速填入」直接使用常见配置。'),
+      ('填入并测试', '回到「模型 API」填三项，点「测试连接」，看到「连接成功」后保存即可开始生成题包。'),
+    ];
+    const details = [
+      ('1 · 选一家服务商', '如 DeepSeek、通义千问、智谱、Kimi 等，注册并实名。'),
+      ('2 · 创建 API 密钥', '控制台「API Keys」页新建密钥，复制完整字符串。'),
+      ('3 · 查地址与模型名', '以控制台文档的 base_url 与可用模型名为准。'),
+      ('4 · 填入并测试', '三项填好后点「测试连接」，成功再保存。'),
+      ('5 · 开始用', '长按选词 → 翻译；题库页 → 生成新的一天。生成的题都要过自动质检。'),
     ];
     const faqs = [
       ('提示「密钥未通过验证」', '密钥复制不完整、已删除或欠费。重新复制一份，或到控制台检查余额。'),
@@ -275,7 +281,7 @@ class TutorialPage extends StatelessWidget {
       ('生成多次没通过质检', '换一个能力更强的模型。质检不放行是为了保证你练到的每道题定位都准确。'),
     ];
     return Scaffold(
-      appBar: AppBar(title: const Text('30 秒教程')),
+      appBar: AppBar(title: const Text('30 秒教程 · 3 步')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
         children: [
@@ -297,6 +303,23 @@ class TutorialPage extends StatelessWidget {
                 ]),
               ),
             ),
+          FoldSection(
+            title: '展开 5 步细节',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (final (t, d) in details)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpace.s2),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text(t, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: c.ink)),
+                      const SizedBox(height: 2),
+                      Text(d, style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft)),
+                    ]),
+                  ),
+              ],
+            ),
+          ),
           const SizedBox(height: AppSpace.s2),
           const SectionTitle('常见问题'),
           for (final (q, a) in faqs) FoldSection(title: q, child: Text(a, style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft))),

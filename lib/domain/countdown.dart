@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import 'training_scope.dart';
+
 /// 训练计时：只是节奏提示，超时继续计（显示为负数），不打断作答。
 class Countdown extends ChangeNotifier {
   Countdown(this.total);
@@ -45,15 +47,22 @@ class Countdown extends ChangeNotifier {
   }
 }
 
-/// 计时器按「训练日 + 板块」保存在内存中，切换分段不会重置。
+/// 计时器按「档 + 训练日 + 板块」保存在内存中，切换分段不会重置。
+/// key 必须带档：五档各自有同号训练日，不带档会互相串计时进度。
+/// 用方法生成 key 而不是让调用方拼字符串，编译器能保证每处都带 goal。
 class CountdownHub {
   final Map<String, Countdown> _items = {};
 
-  Countdown get(String key, Duration total) => _items.putIfAbsent(key, () => Countdown(total));
+  Countdown get(GoalId goal, int day, String section, Duration total) =>
+      _items.putIfAbsent(_key(goal, day, section), () => Countdown(total));
 
-  void resetDay(int day) {
+  String _key(GoalId goal, int day, String section) => '${goal.name}|$day|$section';
+
+  /// 重置当前档本日的所有计时（其他档同号日不受影响）。
+  void resetDay(GoalId goal, int day) {
+    final prefix = '${goal.name}|$day|';
     for (final e in _items.entries) {
-      if (e.key.startsWith('$day|')) e.value.reset();
+      if (e.key.startsWith(prefix)) e.value.reset();
     }
   }
 

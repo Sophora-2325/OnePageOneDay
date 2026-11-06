@@ -25,12 +25,14 @@ class StampBadge extends StatelessWidget {
       angle: -0.03,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        // 红只属于批改 / 错误 / 超时；「原创仿写」是中性标签。
         decoration: BoxDecoration(
-          border: Border.all(color: c.red, width: 1.4),
+          border: Border.all(color: c.line, width: 1.4),
           borderRadius: BorderRadius.circular(AppRadius.sm),
-          color: c.redSoft.withValues(alpha: 0.5),
         ),
-        child: Text(text, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: c.red, letterSpacing: 1)),
+        child: Text(text,
+            style: TextStyle(
+                fontSize: AppType.min, fontWeight: FontWeight.w700, color: c.inkSoft, letterSpacing: 1)),
       ),
     );
   }
@@ -71,7 +73,8 @@ class DayHeader extends StatelessWidget {
             ],
           ),
         ),
-        if (onToggleTheme != null)
+        // v1.3：主题切换唯一入口在「我的 → 外观」，今日首屏不再放这个按钮。
+        if (onToggleTheme != null) ...[
           Material(
             color: c.paper,
             shape: CircleBorder(side: BorderSide(color: c.line)),
@@ -81,7 +84,8 @@ class DayHeader extends StatelessWidget {
               icon: Icon(isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined, color: c.ink),
             ),
           ),
-        const SizedBox(width: AppSpace.s3),
+          const SizedBox(width: AppSpace.s3),
+        ],
         const Padding(padding: EdgeInsets.only(top: 10), child: StampBadge('原创仿写')),
       ],
     );

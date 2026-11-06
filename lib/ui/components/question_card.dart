@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../domain/grading.dart';
+import 'locate_quote.dart';
 import 'paper_card.dart';
 
 enum OptionState { idle, selected, correct, wrong, disabled }
@@ -20,7 +21,8 @@ class OptionRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.c;
     final (Color border, Color strip, Color bg, Color fg) = switch (state) {
-      OptionState.selected => (c.blue, c.blue, c.blueSoft, c.ink),
+      // v1.3：选中 = 左色块 + 描边加深 + 卷面底，不再用 blueSoft 大面积填充。
+      OptionState.selected => (c.blue, c.blue, c.paper, c.ink),
       OptionState.correct => (c.green, c.green, c.greenSoft, c.ink),
       OptionState.wrong => (c.red, c.red, c.redSoft, c.ink),
       OptionState.disabled => (c.lineSoft, Colors.transparent, c.paper, c.muted),
@@ -80,47 +82,8 @@ class OptionRow extends StatelessWidget {
   }
 }
 
-/// 定位引文：琥珀底 + 左侧 3px 竖线 + 原句。
-class LocateQuote extends StatelessWidget {
-  const LocateQuote({super.key, required this.para, required this.quote, this.onLocate});
-
-  final int para;
-  final String quote;
-  final VoidCallback? onLocate;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.c;
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: c.markerSoft,
-        borderRadius: BorderRadius.circular(AppRadius.sm),
-        border: Border(left: BorderSide(color: c.marker, width: 3)),
-      ),
-      padding: const EdgeInsets.fromLTRB(AppSpace.s3, AppSpace.s2, AppSpace.s2, AppSpace.s2),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text('定位 · 第 $para 段', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Theme.of(context).brightness == Brightness.dark ? c.ink : const Color(0xFF6B5410))),
-              const Spacer(),
-              if (onLocate != null)
-                TextButton.icon(
-                  onPressed: onLocate,
-                  style: TextButton.styleFrom(minimumSize: const Size(44, 36), padding: const EdgeInsets.symmetric(horizontal: 8)),
-                  icon: Icon(Icons.my_location, size: 16, color: c.blue),
-                  label: Text('在原文定位', style: TextStyle(color: c.blue, fontSize: 13, fontWeight: FontWeight.w600)),
-                ),
-            ],
-          ),
-          Text(quote, style: TextStyle(fontFamily: readingFont, fontSize: 15, height: 1.55, color: c.ink)),
-        ],
-      ),
-    );
-  }
-}
+// v1.3：定位引文收敛到 ui/components/locate_quote.dart（唯一 Component Set）。
+// inline / card 两个变体共用 markerSoft 实色，深色下 ink / markerSoft = 9.02:1。
 
 class ExplainBlock extends StatelessWidget {
   const ExplainBlock({super.key, required this.text});

@@ -1,112 +1,253 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../core/storage/app_store.dart';
 import '../../domain/day_summary.dart';
+import '../../domain/training_scope.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/misc.dart';
 import '../../ui/components/paper_card.dart';
 import '../today/draft_field.dart';
 
-class ReviewPage extends ConsumerWidget {
+/// 复盘页。顶部「按档查看」只是**统计视角**：只读、不写全局目标，
+/// 也不允许在别的档里编辑复盘内容（避免把笔记写进错误的目标）。
+/// 真正的目标切换入口只有「我的」页。
+class ReviewPage extends ConsumerStatefulWidget {
   const ReviewPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ReviewPage> createState() => _ReviewPageState();
+}
+
+class _ReviewPageState extends ConsumerState<ReviewPage> {
+  GoalId? _filter;
+
+  @override
+  Widget build(BuildContext context) {
     final day = ref.watch(currentDayProvider);
-    final index = ref.watch(dayIndexProvider).value ?? const [];
+    final currentGoal = ref.watch(trainingScopeProvider).goal;
+    final viewGoal = _filter ?? currentGoal;
+    final readOnly = viewGoal != currentGoal;
     final c = context.c;
+
+    // 当前训练档改变时，视角自动跟随，不残留上一档。
+    ref.listen(trainingScopeProvider, (prev, next) {
+      if (prev?.goal != next.goal && _filter != null) setState(() => _filter = null);
+    });
+
     return Scaffold(
       appBar: AppBar(title: Text('复盘 · ${dayLabel(day)}')),
       body: StoreBuilder(builder: (context, store) {
-        final r = store.peekReview(day);
-        final summary = DaySummary.of(store, day);
-        final allDays = index.map((e) => e.day).toList();
-        final doneDays = store.reviews.where((e) => e.done).map((e) => e.day).toSet();
-        final summaries = [for (final d in allDays) DaySummary.of(store, d)];
+        final spec = goalOf(viewGoal);
+        final allDays = _daysFor(store, viewGoal);
+        final doneDays = store.reviewsFor(viewGoal).where((e) => e.done).map((e) => e.day).toSet();
+        final summaries = [for (final d in allDays) DaySummary.of(store, d, goal: viewGoal)];
+        final r = store.reviewFor(currentGoal, day);
+        final started = summaries.any((s) => s.started);
+
         return ListView(
-          key: ValueKey(day),
+          key: ValueKey('$viewGoal|$day'),
           padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
           children: [
-            Row(
-              children: [
-                Expanded(child: _StatTile(label: '已完成', value: '${doneDays.length}', unit: '天')),
-                const SizedBox(width: AppSpace.s3),
-                Expanded(child: _StatTile(label: '连续完成', value: '${completionStreak(allDays, doneDays)}', unit: '天')),
-                const SizedBox(width: AppSpace.s3),
-                Expanded(
-                  child: _StatTile(
-                    label: '今日阅读',
-                    value: summary.readingSubmitted == 0 ? '—' : '${summary.readingScore}/${summary.readingTotal}',
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpace.s4),
             PaperCard(
-              padding: const EdgeInsets.all(AppSpace.s4),
+              padding: const EdgeInsets.all(AppSpace.s3),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  Row(children: [
+                    Icon(Icons.filter_alt_outlined, size: 16, color: c.muted),
+                    const SizedBox(width: 6),
+                    Text('按备考目标查看', style: Theme.of(context).textTheme.titleSmall),
+                    const Spacer(),
+                    Text('只读', style: TextStyle(fontSize: AppType.min, color: c.muted)),
+                  ]),
+                  const SizedBox(height: AppSpace.s2),
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 4,
                     children: [
-                      Text('得分趋势', style: Theme.of(context).textTheme.titleSmall),
-                      const Spacer(),
-                      _Legend(color: c.blue, label: '阅读 /10'),
-                      const SizedBox(width: AppSpace.s3),
-                      _Legend(color: c.green, label: '听读 /8'),
+                      for (final g in kGoals)
+                        _GoalChip(
+                          label: g.name,
+                          selected: g.id == viewGoal,
+                          onTap: () => setState(() => _filter = g.id == currentGoal ? null : g.id),
+                        ),
                     ],
                   ),
-                  const SizedBox(height: AppSpace.s3),
-                  if (summaries.every((s) => !s.started))
-                    const EmptyState(icon: Icons.bar_chart, title: '还没有成绩', message: '提交阅读或听读题后，这里按天显示得分。')
-                  else
-                    SizedBox(height: 150, child: _ScoreChart(summaries: summaries, current: day)),
                   const SizedBox(height: AppSpace.s2),
-                  Text('目标：仔细阅读 W2 末 6/10、W4 末 7/10、W6 末 8/10；听读逐步到 7/8。', style: TextStyle(fontSize: 12, color: c.muted)),
+                  Text('各档作答进度独立保存。这里只切换统计视角，不改变训练档；切换目标请到「我的」。',
+                      style: TextStyle(fontSize: AppType.min, height: 1.5, color: c.muted)),
                 ],
               ),
             ),
-            const SizedBox(height: AppSpace.s6),
-            _ReviewField(
-              title: '错题原因',
-              hint: '没找到定位？没看懂同义替换？被干扰项骗了？把定位句抄过来。',
-              initial: r?.wrongReason ?? '',
-              onChanged: (v) => store.updateReview(day, (x) => x.wrongReason = v),
-            ),
-            _ReviewField(
-              title: '3 个生词 / 表达',
-              hint: '例：heighten the urge — 加剧冲动',
-              initial: r?.vocab ?? '',
-              onChanged: (v) => store.updateReview(day, (x) => x.vocab = v),
-            ),
-            _ReviewField(
-              title: '明日改进点',
-              hint: '只写一条最重要的。',
-              initial: r?.nextStep ?? '',
-              onChanged: (v) => store.updateReview(day, (x) => x.nextStep = v),
-            ),
-            const SizedBox(height: AppSpace.s2),
-            if (r?.done ?? false)
-              _DoneBanner(onUndo: () => store.updateReview(day, (x) => x.done = false, debounce: false))
-            else
-              PrimaryButton(
-                label: '标记今日完成',
-                icon: Icons.task_alt,
-                onPressed: () => _markDone(context, store, day),
+            if (readOnly) ...[
+              const SizedBox(height: AppSpace.s3),
+              PaperCard(
+                color: c.blueSoft,
+                padding: const EdgeInsets.symmetric(horizontal: AppSpace.s4, vertical: AppSpace.s3),
+                child: Row(children: [
+                  Icon(Icons.visibility_outlined, size: 18, color: c.blue),
+                  const SizedBox(width: AppSpace.s2),
+                  Expanded(
+                    child: Text('正在查看「${spec.name}」的成绩，仅统计。要在这里写复盘，请先到「我的」切换目标。',
+                        style: TextStyle(fontSize: 12, height: 1.5, color: c.inkSoft)),
+                  ),
+                ]),
               ),
+            ],
+            const SizedBox(height: AppSpace.s4),
+            // v1.3 空态：三张「0 天 / —」统计卡 + 得分趋势卡 + 孤立图例
+            // 合并为一句引导，不再展示假数据；有成绩时才出现统计与图表。
+            if (!started)
+              PaperCard(
+                padding: const EdgeInsets.all(AppSpace.s4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(children: [
+                      Icon(Icons.bar_chart, size: 20, color: c.muted),
+                      const SizedBox(width: AppSpace.s2),
+                      Text('${spec.name}还没有成绩', style: Theme.of(context).textTheme.titleSmall),
+                    ]),
+                    const SizedBox(height: AppSpace.s3),
+                    Text('提交第一份作答后开始记录',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: c.ink)),
+                    const SizedBox(height: AppSpace.s1),
+                    Text('连续天数、得分趋势和错题原因都会在这里出现。',
+                        style: TextStyle(fontSize: AppType.min, height: 1.5, color: c.muted)),
+                    const SizedBox(height: AppSpace.s3),
+                    OutlineAction(
+                      label: '去练今天这一页',
+                      icon: Icons.arrow_forward_outlined,
+                      onPressed: () => context.go('/today'),
+                    ),
+                  ],
+                ),
+              )
+            else ...[
+              Row(
+                children: [
+                  Expanded(child: _StatTile(label: '已完成', value: '${doneDays.length}', unit: '天')),
+                  const SizedBox(width: AppSpace.s3),
+                  Expanded(child: _StatTile(label: '连续完成', value: '${completionStreak(allDays, doneDays)}', unit: '天')),
+                  const SizedBox(width: AppSpace.s3),
+                  Expanded(
+                    child: _StatTile(
+                      label: '本档标准',
+                      value: '${spec.rule.minWords}',
+                      unit: '词/篇起',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: AppSpace.s4),
+              PaperCard(
+                padding: const EdgeInsets.all(AppSpace.s4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text('${spec.name} · 得分趋势', style: Theme.of(context).textTheme.titleSmall),
+                        const Spacer(),
+                        _Legend(color: c.blue, label: '阅读 /10'),
+                        const SizedBox(width: AppSpace.s3),
+                        _Legend(color: c.green, label: '听读 /8'),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpace.s3),
+                    SizedBox(height: 150, child: _ScoreChart(summaries: summaries, current: day)),
+                    const SizedBox(height: AppSpace.s2),
+                    Text(spec.focus, style: TextStyle(fontSize: AppType.min, color: c.muted)),
+                  ],
+                ),
+              ),
+            ],
+            const SizedBox(height: AppSpace.s6),
+            if (!readOnly) ...[
+              _ReviewField(
+                title: '错题原因',
+                hint: '示例：没找到定位句 / 被同义替换绕住了，把定位句抄过来。',
+                initial: r?.wrongReason ?? '',
+                onChanged: (v) => store.updateReview(day, (x) => x.wrongReason = v),
+              ),
+              _ReviewField(
+                title: '3 个生词 / 表达',
+                hint: '示例：heighten the urge — 加剧冲动',
+                initial: r?.vocab ?? '',
+                onChanged: (v) => store.updateReview(day, (x) => x.vocab = v),
+              ),
+              _ReviewField(
+                title: '明日改进点',
+                hint: '示例：只写一条最重要的，比如「先定位再排除干扰项」。',
+                initial: r?.nextStep ?? '',
+                onChanged: (v) => store.updateReview(day, (x) => x.nextStep = v),
+              ),
+              const SizedBox(height: AppSpace.s2),
+              if (r?.done ?? false)
+                _DoneBanner(onUndo: () => store.updateReview(day, (x) => x.done = false, debounce: false))
+              else
+                PrimaryButton(
+                  label: '标记今日完成',
+                  icon: Icons.task_alt,
+                  onPressed: () => _markDone(context, store, day),
+                ),
+            ],
           ],
         );
       }),
     );
   }
 
+  /// 该档需要画柱子的天数：预置样张天数 + 已有记录里出现的最大日号。
+  List<int> _daysFor(AppStore store, GoalId goal) {
+    final maxRecord = <int>{
+      specMaxDays(goal),
+      for (final e in store.attemptsFor(goal)) e.day,
+      for (final e in store.reviewsFor(goal)) e.day,
+      for (final e in store.generatedFor(goal)) e.day,
+    }.reduce((a, b) => a > b ? a : b);
+    return [for (var d = 1; d <= maxRecord.clamp(1, 60); d++) d];
+  }
+
+  int specMaxDays(GoalId goal) => goalOf(goal).presetDays;
+
   void _markDone(BuildContext context, AppStore store, int day) {
     store.updateReview(day, (x) => x.done = true, debounce: false);
     showToast(context, '${dayLabel(day)} 已完成。明天从下一天继续。');
+  }
+}
+
+class _GoalChip extends StatelessWidget {
+  const _GoalChip({required this.label, required this.selected, required this.onTap});
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.c;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+        decoration: BoxDecoration(
+          color: selected ? c.blueSoft : c.paper,
+          borderRadius: BorderRadius.circular(999),
+          border: Border.all(color: selected ? c.blue : c.line, width: selected ? 1.3 : 1),
+        ),
+        child: Text(label,
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: selected ? FontWeight.w700 : FontWeight.w400,
+                color: selected ? c.blue : c.muted)),
+      ),
+    );
   }
 }
 
@@ -174,7 +315,8 @@ class _StatTile extends StatelessWidget {
           Text.rich(TextSpan(children: [
             TextSpan(
               text: value,
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: c.ink, fontFeatures: const [FontFeature.tabularFigures()]),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: c.ink,
+                  fontFeatures: const [FontFeature.tabularFigures()]),
             ),
             if (unit != null) TextSpan(text: ' $unit', style: TextStyle(fontSize: 12, color: c.muted)),
           ])),
@@ -195,7 +337,7 @@ class _Legend extends StatelessWidget {
         children: [
           Container(width: 10, height: 10, decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2))),
           const SizedBox(width: 4),
-          Text(label, style: TextStyle(fontSize: 11, color: context.c.muted)),
+          Text(label, style: TextStyle(fontSize: AppType.min, color: context.c.muted)),
         ],
       );
 }
@@ -233,7 +375,7 @@ class _ScoreChart extends StatelessWidget {
                 Text(
                   'D${s.day}',
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: AppType.min,
                     fontWeight: s.day == current ? FontWeight.w700 : FontWeight.w400,
                     color: s.day == current ? c.blue : c.muted,
                   ),

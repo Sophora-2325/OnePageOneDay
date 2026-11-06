@@ -9,11 +9,13 @@ import '../../app/theme.dart';
 import '../../core/backup/backup_service.dart';
 import '../../core/storage/app_store.dart';
 import '../../core/update/update_checker.dart';
+import '../../domain/training_scope.dart';
 import '../../ui/components/brand.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/day_header.dart';
 import '../../ui/components/misc.dart';
 import '../../ui/components/paper_card.dart';
+import 'training_scope_sheets.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -22,13 +24,14 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final c = context.c;
     final day = ref.watch(currentDayProvider);
+    final scope = ref.watch(trainingScopeProvider);
     return Scaffold(
       appBar: AppBar(title: const Text('我的')),
       body: StoreBuilder(builder: (context, store) {
         return ListView(
           padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
           children: [
-            _BackupCard(store: store, onImported: () => refreshDays(ref)),
+            _BackupCard(store: store, onImported: () => syncAfterImport(ref)),
             const SizedBox(height: AppSpace.s4),
             PaperCard(
               padding: const EdgeInsets.all(AppSpace.s4),
@@ -41,7 +44,7 @@ class SettingsPage extends ConsumerWidget {
                     Text('数据流向', style: Theme.of(context).textTheme.titleSmall),
                   ]),
                   const SizedBox(height: AppSpace.s2),
-                  _FlowLine(icon: Icons.phone_android, text: '作答、草稿、标注、笔记、复盘：只存在这台手机。'),
+                  _FlowLine(icon: Icons.phone_android, text: '作答、草稿、标注、笔记、复盘：只存在这台手机，五档各自独立保存。'),
                   _FlowLine(icon: Icons.cloud_off_outlined, text: '没有账号、没有云同步、没有埋点；开发者看不到任何数据。'),
                   _FlowLine(icon: Icons.record_voice_over_outlined, text: '朗读使用系统语音引擎，离线可用。'),
                   _FlowLine(
@@ -69,11 +72,27 @@ class SettingsPage extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: AppSpace.s4),
-            const SectionTitle('训练'),
+            SectionTitle('训练', trailing: Text('备考目标 / 难度只在这里切换', style: TextStyle(fontSize: AppType.min, color: c.muted))),
             PaperCard(
               padding: EdgeInsets.zero,
               child: Column(
                 children: [
+                  ListTile(
+                    leading: Icon(Icons.flag_outlined, color: c.blue),
+                    title: const Text('备考目标'),
+                    subtitle: Text('${scope.goalSpec.name} · ${scope.goalSpec.sub} · 预置 ${scope.goalSpec.presetDays} 天 · 进度独立'),
+                    trailing: Icon(Icons.chevron_right, size: 18, color: c.muted),
+                    onTap: () => showGoalSheet(context, ref),
+                  ),
+                  Divider(height: 1, color: c.lineSoft),
+                  ListTile(
+                    leading: Icon(Icons.tune_outlined, color: c.blue),
+                    title: const Text('档内难度'),
+                    subtitle: Text('本套 ${diffLabel(scope.currentDiff)} · 下套 ${diffLabel(scope.nextDiff)}${scope.hasPending ? ' · 待生效' : ''}'),
+                    trailing: Icon(Icons.chevron_right, size: 18, color: c.muted),
+                    onTap: () => showDifficultySheet(context, ref),
+                  ),
+                  Divider(height: 1, color: c.lineSoft),
                   ListTile(
                     leading: Icon(Icons.restart_alt, color: c.red),
                     title: Text('重置 ${dayLabel(day)}', style: TextStyle(color: c.red, fontWeight: FontWeight.w600)),
@@ -104,7 +123,7 @@ class SettingsPage extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpace.s4),
             const SectionTitle('关于'),
-            const _AboutCard(),
+            _AboutCard(goalName: scope.goalSpec.sub),
           ],
         );
       }),
@@ -129,13 +148,15 @@ class SettingsPage extends ConsumerWidget {
     );
     if (ok != true) return;
     await store.resetDay(day);
-    ref.read(countdownHubProvider).resetDay(day);
+    ref.read(countdownHubProvider).resetDay(store.goal, day);
     if (context.mounted) showToast(context, '${dayLabel(day)} 已重置');
   }
 }
 
 class _AboutCard extends StatefulWidget {
-  const _AboutCard();
+  const _AboutCard({required this.goalName});
+
+  final String goalName;
 
   @override
   State<_AboutCard> createState() => _AboutCardState();
@@ -239,19 +260,40 @@ class _AboutCardState extends State<_AboutCard> {
               ]),
               const SizedBox(height: AppSpace.s3),
               Text(
-                '$mascotName是陪你练完今天这一页的小精灵。现在这一页是 CET-6：2 篇仔细阅读（各 5 题 + 4 道听读题）、'
-                '1 段翻译、1 篇写作、笔记与复盘。所有文章、题目、译文、范文均为原创仿写，不是真题；听读题不能替代真题听力。',
+                '$mascotName是陪你练完今天这一页的小精灵。当前是${widget.goalName}：2 篇仔细阅读（各 5 题 + 4 道听读题）、'
+                '1 段翻译、1 篇写作、笔记与复盘；五档各有材料规范，进度互不影响。'
+                '所有文章、题目、译文、范文均为原创仿写，不是真题；听读题不能替代真题听力。',
                 style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft),
               ),
             ]),
           ),
           Divider(height: 1, color: c.lineSoft),
-          ListTile(
-            leading: Icon(Icons.system_update_outlined, color: c.blue),
-            title: const Text('检查更新'),
-            subtitle: const Text('手动检查；有新版只提示，不会自动下载'),
-            trailing: _checking ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)) : null,
+          // v1.3：去掉 ListTile.leading 造成的第二套左边界，
+          // 卡内所有文字统一从 16pt 起排，状态图标移到右侧。
+          InkWell(
             onTap: _checking || _version.isEmpty ? null : _check,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpace.s4, vertical: AppSpace.s3),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('检查更新', style: TextStyle(fontSize: 15, color: c.ink)),
+                        const SizedBox(height: 2),
+                        Text('手动检查；有新版只提示，不会自动下载',
+                            style: TextStyle(fontSize: AppType.min, color: c.muted)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: AppSpace.s2),
+                  _checking
+                      ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                      : Icon(Icons.system_update_outlined, color: c.blue, size: 20),
+                ],
+              ),
+            ),
           ),
         ],
       ),
@@ -286,7 +328,7 @@ class _BackupCard extends StatelessWidget {
   const _BackupCard({required this.store, required this.onImported});
 
   final AppStore store;
-  final VoidCallback onImported;
+  final Future<void> Function() onImported;
 
   @override
   Widget build(BuildContext context) {
@@ -316,7 +358,10 @@ class _BackupCard extends StatelessWidget {
           Row(children: [
             Icon(Icons.verified_user_outlined, size: 16, color: c.green),
             const SizedBox(width: 4),
-            Text('备份文件不含任何 API 密钥', style: TextStyle(fontSize: 12, color: c.green, fontWeight: FontWeight.w600)),
+            Expanded(
+              child: Text('备份不含任何 API 密钥 · v2 含全部五档进度，可兼容旧版备份',
+                  style: TextStyle(fontSize: 12, color: c.green, fontWeight: FontWeight.w600)),
+            ),
           ]),
           const SizedBox(height: AppSpace.s4),
           Row(
@@ -369,7 +414,7 @@ class _BackupCard extends StatelessWidget {
       );
       if (ok != true) return;
       await store.importBackup(data);
-      onImported();
+      await onImported();
       if (context.mounted) showToast(context, '导入完成');
     } on FormatException catch (e) {
       if (context.mounted) showToast(context, '无法导入：${e.message}');

@@ -1,0 +1,437 @@
+{
+  "goal": "kaoyan",
+  "diff": "steady",
+  "day": 1,
+  "date": "2026-11-06",
+  "week": 1,
+  "theme": "算法判断的归属与成人再培训政策",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Quiet Transfer of Judgement",
+      "wordCount": 465,
+      "paragraphs": [
+        "Few organisational changes are as quietly consequential as the decision to let software rank, filter and recommend on behalf of human beings. Such systems promise consistency, speed and freedom from the fatigue that clouds judgement late in a working day. Yet every criterion they apply was chosen by someone, and that choice rarely appears in the interface shown to the person being judged. What presents itself as neutral arithmetic is, on inspection, a set of prior decisions frozen into code. The convenience of the tool should not be confused with the absence of a decision-maker.",
+        "Defenders of automation are right to note that human discretion is hardly a benchmark of fairness. Interviewers favour candidates who resemble them, and tired reviewers drift toward whichever option requires the least effort. A well-designed rule, applied uniformly, can restrain these impulses rather than amplify them. The trouble is that the comparison is usually drawn against an idealised human, not against the actual, hurried and biased alternative. Once the baseline is stated honestly, the case for automation becomes an argument about which errors we prefer, not about whether errors exist.",
+        "The deeper difficulty concerns explanation rather than accuracy alone. A person refused a loan, a shift or a place on a shortlist is often told only that a threshold was not met. Because the model weighs dozens of features at once, even its designers may struggle to say which consideration proved decisive. This opacity shifts the burden of proof onto the individual, who must now guess at a logic nobody will fully articulate. A procedure that cannot give reasons can hardly be called accountable, however carefully its outputs are audited.",
+        "Some institutions have responded by requiring a human to confirm every automated recommendation. In practice, this safeguard often decays into a ritual, since a reviewer facing a confident score and a long queue has little incentive to disagree. The signature that was meant to restore responsibility can instead distribute it until no one clearly owns the outcome. Genuine oversight would demand time, training and the authority to overturn a result without penalty, all of which cost more than a nominal approval step. Whether organisations are willing to pay that price remains an open question.",
+        "None of this warrants a blanket rejection of automated tools, which already spare people from tedious and error-prone work. The more defensible position is to treat judgement as something that must be continually justified rather than merely delegated. Systems should be designed so that their criteria can be inspected, contested and revised when they produce patterns nobody intended. The question is not whether machines may advise us, but whether we keep the capacity to answer for what we accept. A society that forgets this distinction may gain efficiency while quietly losing the habit of giving reasons."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "推断题",
+          "stem": "What does the author imply about the claim that automated systems are neutral?",
+          "options": [
+            "The claim is false because every applied criterion reflects an earlier human choice",
+            "The claim holds only when the software is open source",
+            "The claim is supported by the speed of modern processors",
+            "The claim applies mainly to small organisations"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "The convenience of the tool should not be confused with the absence of a decision-maker."
+          },
+          "explain": "正确项「The claim is false because every applied criterion reflects an earlier human choice」与第 1 段原文「The convenience of the tool should…」对应，推断题可据此推出：把界面呈现的中立表象误当成没有人为取舍。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "态度题",
+          "stem": "How does the author characterise the defenders' comparison with human judgement?",
+          "options": [
+            "As conclusive proof that machines are fairer",
+            "As reasonable in principle but misleading because it uses an idealised baseline",
+            "As irrelevant to any discussion of fairness",
+            "As evidence that all human reviewers should be replaced"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Once the baseline is stated honestly, the case for automation becomes an argument about which errors we prefer, not about whether errors exist."
+          },
+          "explain": "正确项「As reasonable in principle but misleading because it uses an idealised baseline」与第 2 段原文「Once the baseline is stated honest…」对应，态度题可据此推出：把有保留的肯定夸大成对自动化无条件的辩护。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "细节题",
+          "stem": "Why is it difficult to explain an automated decision to an affected person?",
+          "options": [
+            "The relevant law expressly forbids giving reasons",
+            "Affected people rarely ask for an explanation",
+            "The model weighs many features at once, so even designers may not know which mattered",
+            "The software deletes its records immediately after each case"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "A procedure that cannot give reasons can hardly be called accountable, however carefully its outputs are audited."
+          },
+          "explain": "正确项「The model weighs many features at once, so even designers may not know which mattered」与第 3 段原文「A procedure that cannot give reaso…」对应，细节题可据此推出：把技术上的不可解释性错记成法律或记录问题。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "推断题",
+          "stem": "What does the author suggest about a human confirmation step?",
+          "options": [
+            "It fully restores accountability at almost no cost",
+            "It is required by international standards everywhere",
+            "It eliminates the need to audit outputs",
+            "It often becomes a ritual unless reviewers have time, training and real authority"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Whether organisations are willing to pay that price remains an open question."
+          },
+          "explain": "正确项「It often becomes a ritual unless reviewers have time, training and real authority」与第 4 段原文「Whether organisations are willing …」对应，推断题可据此推出：把名义上的签字误认为已经实现实质问责。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "主旨题",
+          "stem": "Which statement best captures the author's overall position?",
+          "options": [
+            "Automated tools should be banned from all consequential decisions",
+            "Automated tools are useful, but the duty to justify judgements must not be delegated",
+            "Human reviewers are always more accurate than any model",
+            "Efficiency is the only standard by which systems should be judged"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "A society that forgets this distinction may gain efficiency while quietly losing the habit of giving reasons."
+          },
+          "explain": "正确项「Automated tools are useful, but the duty to justify judgements must not be delegated」与第 5 段原文「A society that forgets this distin…」对应，主旨题可据此推出：把有条件保留的立场偷换成全面否定或唯一标准。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What do automated systems promise according to Paragraph 1?",
+          "options": [
+            "Consistency, speed and freedom from fatigue",
+            "Complete freedom from all legal oversight",
+            "A guarantee of higher profits every year",
+            "The removal of every human criterion"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "The convenience of the tool should not be confused with the absence of a decision-maker."
+          },
+          "explain": "正确项「Consistency, speed and freedom from fatigue」与第 1 段原文「The convenience of the tool should…」对应，细节题可据此推出：把工具带来的效率承诺扩大成全面免责。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "推断题",
+          "stem": "Why can a uniform rule be defended in Paragraph 2?",
+          "options": [
+            "Because it removes the need for any reviewer",
+            "Because it can restrain the biased impulses of hurried human reviewers",
+            "Because it is always based on perfect data",
+            "Because it makes every decision faster than thought"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Once the baseline is stated honestly, the case for automation becomes an argument about which errors we prefer, not about whether errors exist."
+          },
+          "explain": "正确项「Because it can restrain the biased impulses of hurried human reviewers」与第 2 段原文「Once the baseline is stated honest…」对应，推断题可据此推出：把一致规则能抑制偏见的有限好处夸大成无需复核。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "词义题",
+          "stem": "What does \"opacity\" in Paragraph 3 most nearly mean?",
+          "options": [
+            "The speed of a calculation",
+            "The accuracy of a threshold",
+            "The lack of a clear, articulable reason",
+            "The cost of hiring designers"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "A procedure that cannot give reasons can hardly be called accountable, however carefully its outputs are audited."
+          },
+          "explain": "正确项「The lack of a clear, articulable reason」与第 3 段原文「A procedure that cannot give reaso…」对应，词义题可据此推出：把不可解释理解成运算速度或成本问题。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What is the author's view on paying for genuine oversight?",
+          "options": [
+            "It is unnecessary because nominal approval is enough",
+            "It is a settled cost that every organisation already accepts",
+            "It would ban automated advice entirely",
+            "It remains uncertain whether organisations will bear that cost"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Whether organisations are willing to pay that price remains an open question."
+          },
+          "explain": "正确项「It remains uncertain whether organisations will bear that cost」与第 4 段原文「Whether organisations are willing …」对应，态度题可据此推出：把开放未决的问题说成已解决的既定事实。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "很少有哪种组织变革，像「让软件替人去排序、筛选和推荐」这个决定那样，安静却影响深远。这类系统许诺的是一致、迅速，以及摆脱工作日晚些时候拖累判断的疲惫。然而它们所套用的每一条标准，都是某个人选出来的，而这个选择很少出现在被评判者所看到的界面上。看上去像是中立算术的东西，细看之下，其实是一组被冻结进代码里的事先决定。工具的便利，不该被误认为决策者的缺席。",
+        "为自动化辩护的人说得没错：人的自由裁量本来就算不上公平的标杆。面试官偏爱与自己相似的候选人，疲惫的评审则容易滑向最省力的那个选项。一条设计良好、一视同仁的规则，能够约束这些冲动，而不是放大它们。问题在于，这种比较通常是对着一个理想化的人做的，而不是对着现实里匆忙又带偏见的替代方案。一旦把基准诚实地说清楚，支持自动化的理由就变成了「我们更愿意容忍哪一类错误」，而不是「错误是否存在」。",
+        "更深的难题在于解释，而不只是准确。一个被拒了贷款、班次或短名单名额的人，往往只被告知某项阈值没有达到。由于模型同时权衡几十个特征，就连设计者也未必说得出究竟哪一项起了决定作用。这种不透明把举证的责任推给了个人，他如今得去猜一套没人愿意完整讲清的逻辑。一个给不出理由的程序，无论其输出被审计得多仔细，都很难称得上可问责。",
+        "有些机构的应对办法，是要求由人来确认每一条自动推荐。实践中，这道防线常常退化成走过场：面对一个自信的分数和排得长长的队列，复核者几乎没有动力提出异议。本想找回责任的那一个签名，反而把责任摊薄到没人清楚承担结果。真正的监督需要时间、培训，以及能够无惩罚地推翻结论的权限，而这些都比一次名义上的点击贵得多。机构是否愿意付这笔代价，仍是一个悬而未决的问题。",
+        "这一切都不构成对自动化工具的全盘否定，它们早就把人从枯燥易错的工作里解放出来。更站得住脚的立场，是把判断看成一件必须不断被说明理由、而不能仅仅被交出去的事。系统的设计应当让其标准可以被检视、被质疑，并在产生无人预料的结果时被修订。问题不是机器可不可以给我们建议，而是我们是否保留了为自己所接受的东西作答的能力。一个忘记这条分别的社会，或许得到了效率，却悄悄丢掉了讲理由的习惯。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "Why Cities Pay Adults to Retrain",
+      "wordCount": 451,
+      "paragraphs": [
+        "When a large employer closes a plant, the loss is rarely confined to the workers who receive notice. Local shops lose customers, councils lose tax revenue, and the skills that once held a town together begin to scatter. Governments have therefore grown interested in subsidising adult retraining, not as charity but as a form of economic maintenance. The logic is deceptively simple: if displaced workers can be moved into expanding sectors, the shock need not become permanent decline. Whether the premise holds in practice is a far harder question than the slogan suggests.",
+        "Early programmes were designed around the assumption that a short course could translate directly into a new job. Evaluations soon complicated that optimism. Participants who completed training did gain credentials, yet their wages often rose only modestly, and many returned to work in fields unrelated to what they had studied. The problem was not laziness or poor teaching alone, but a mismatch between the courses on offer and the vacancies that actually existed nearby. A certificate, it turned out, is not the same thing as a labour market.",
+        "Policymakers drew two different lessons from these results. Some concluded that the answer was tighter targeting, with curricula written alongside local employers and updated as demand shifted. Others argued that the deeper failure lay upstream, in regional economies too thin to absorb skilled workers no matter how well they were trained. Both readings can be true at once, which is precisely what makes evaluation so contentious. A programme that looks ineffective in a shrinking town may be succeeding at something harder to measure, namely keeping people attached to work at all.",
+        "Funding rules add another layer of difficulty, since they reward what can be counted quickly. Completion rates and immediate placements are easy to audit, while confidence, mobility and the avoidance of long-term unemployment are not. Agencies responding to such incentives have reason to select candidates already close to employment, a practice that improves statistics while leaving the most disadvantaged untouched. This is not necessarily bad faith; it is the predictable behaviour of institutions judged by narrow indicators. The measure, in effect, begins to shape the thing it was meant merely to observe.",
+        "A more honest settlement would treat retraining as one instrument among several, alongside housing, transport and direct support for creation of jobs. It would also admit that some transitions take years and that a single course cannot carry that weight. None of this diminishes the case for helping adults adapt, which remains stronger than the case for doing nothing. It does, however, argue against promising a quick conversion of decline into growth. Public patience, more than any particular curriculum, may be the scarcest resource such policies require."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "推断题",
+          "stem": "Why do governments subsidise adult retraining according to Paragraph 1?",
+          "options": [
+            "Mainly to reduce the workload of local councils",
+            "To treat it as economic maintenance rather than charity",
+            "To guarantee that every closed plant will reopen",
+            "To replace all existing schools in a region"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 1,
+            "quote": "Whether the premise holds in practice is a far harder question than the slogan suggests."
+          },
+          "explain": "正确项「To treat it as economic maintenance rather than charity」与第 1 段原文「Whether the premise holds in pract…」对应，推断题可据此推出：把经济维护的动机错记成慈善或学校替代。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What did early evaluations reveal about training programmes?",
+          "options": [
+            "Wages rose sharply for every participant",
+            "No participant ever found work again",
+            "Credentials were gained but wage gains were modest and jobs often unrelated",
+            "Courses were always taught by local employers"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "A certificate, it turned out, is not the same thing as a labour market."
+          },
+          "explain": "正确项「Credentials were gained but wage gains were modest and jobs often unrelated」与第 2 段原文「A certificate, it turned out, is n…」对应，细节题可据此推出：把有限且错位的收益夸大成普遍大幅涨薪。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What does the author say about the two lessons policymakers drew?",
+          "options": [
+            "Both can be true at once, which makes evaluation contentious",
+            "One has been proven false by later data",
+            "They both call for ending all subsidies",
+            "They apply only to expanding sectors"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 3,
+            "quote": "A programme that looks ineffective in a shrinking town may be succeeding at something harder to measure, namely keeping people attached to work at all."
+          },
+          "explain": "正确项「Both can be true at once, which makes evaluation contentious」与第 3 段原文「A programme that looks ineffective…」对应，推断题可据此推出：把两种并行成立的解读说成非此即彼的对错。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "推断题",
+          "stem": "Why might agencies select candidates already close to employment?",
+          "options": [
+            "Because the law excludes the long-term unemployed",
+            "Because such candidates refuse any training",
+            "Because employers forbid other applicants",
+            "Because narrow indicators reward easily audited outcomes"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "The measure, in effect, begins to shape the thing it was meant merely to observe."
+          },
+          "explain": "正确项「Because narrow indicators reward easily audited outcomes」与第 4 段原文「The measure, in effect, begins to …」对应，推断题可据此推出：把指标激励下的选择行为错当成法律或禁令所致。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "主旨题",
+          "stem": "Which best summarises the author's conclusion?",
+          "options": [
+            "Retraining is useless and should be abandoned",
+            "Retraining helps, but it needs patience and complementary policies rather than quick promises",
+            "Housing and transport alone can solve every decline",
+            "A single course is sufficient for any transition"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "Public patience, more than any particular curriculum, may be the scarcest resource such policies require."
+          },
+          "explain": "正确项「Retraining helps, but it needs patience and complementary policies rather than quick promises」与第 5 段原文「Public patience, more than any par…」对应，主旨题可据此推出：把有条件肯定的结论偷换成全盘否定或单一手段。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What happens to a town when a large employer closes a plant?",
+          "options": [
+            "Local shops lose customers and councils lose tax revenue",
+            "Only the workers who receive notice are affected",
+            "Every resident immediately finds a better job",
+            "The local skills become more valuable at once"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "Whether the premise holds in practice is a far harder question than the slogan suggests."
+          },
+          "explain": "正确项「Local shops lose customers and councils lose tax revenue」与第 1 段原文「Whether the premise holds in pract…」对应，细节题可据此推出：把连锁的地方损失缩小成仅通知员工受影响。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What mismatch did evaluators identify in Paragraph 2?",
+          "options": [
+            "Between the length of courses and the age of participants",
+            "Between teacher salaries and student fees",
+            "Between course content and the vacancies that existed nearby",
+            "Between national targets and foreign standards"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "A certificate, it turned out, is not the same thing as a labour market."
+          },
+          "explain": "正确项「Between course content and the vacancies that existed nearby」与第 2 段原文「A certificate, it turned out, is n…」对应，细节题可据此推出：把课程与岗位错配偷换成课时与年龄的关系。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "推断题",
+          "stem": "What is said about a programme in a shrinking town?",
+          "options": [
+            "It is definitely wasting public money",
+            "It always produces immediate wage growth",
+            "It should be audited only on completion rates",
+            "It may succeed at keeping people attached to work, which is hard to measure"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 3,
+            "quote": "A programme that looks ineffective in a shrinking town may be succeeding at something harder to measure, namely keeping people attached to work at all."
+          },
+          "explain": "正确项「It may succeed at keeping people attached to work, which is hard to measure」与第 3 段原文「A programme that looks ineffective…」对应，推断题可据此推出：把难以衡量的隐性成效误判为确定无效。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "态度题",
+          "stem": "What does the author identify as the scarcest resource for such policies?",
+          "options": [
+            "A particular curriculum design",
+            "Public patience over long transitions",
+            "Larger training budgets alone",
+            "Stricter completion audits"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "None of this diminishes the case for helping adults adapt, which remains stronger than the case for doing nothing."
+          },
+          "explain": "正确项「Public patience over long transitions」与第 5 段原文「None of this diminishes the case f…」对应，态度题可据此推出：把长期耐心这一稀缺资源错认成课程或预算。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "当一家大雇主关掉工厂，损失很少只落在收到通知的工人身上。本地店铺少了顾客，地方议会少了税收，曾经把一座小镇拢在一起的技能也开始四散。因此，政府越来越愿意补贴成人再培训，不是当作慈善，而是当作一种经济维护。逻辑简单得有些迷惑：只要能把失业的工人送进扩张中的行业，冲击就不必变成长期的衰败。这个前提在实践中是否成立，远比口号所说的要难回答得多。",
+        "早期的项目建立在一个假定之上：一门短期课程就能直接换成一份新工作。评估很快让这种乐观变得复杂。完成培训的人确实拿到了证书，可工资往往只涨了一点，许多人最后回到与所学毫无关系的行业里干活。问题不只是懒散或教得不好，而是开设的课程与附近真实存在的岗位之间对不上。一张证书，原来并不等于一个劳动力市场。",
+        "政策制定者从这些结果里读出了两种不同的教训。一些人认为答案是更精准的定位：课程该与本地雇主一起写，并随需求变化而更新。另一些人则说，更深的失败在上游，在于区域经济太单薄，无论工人训练得多好都吸纳不了。两种解读可以同时成立，而这恰恰让评估变得争议不断。一个在萎缩小镇里看似无效的项目，可能正在做成一件更难衡量的事，也就是让人们始终没有脱离工作。",
+        "资金规则又添了一层难处，因为它们奖励的是能被迅速计数的东西。结业率和即时上岗容易审计，而信心、流动能力，以及避免长期失业，却不容易。面对这类激励的机构，有理由挑那些本来就离就业很近的人，这种做法改善了统计数字，却把最弱势的人留在原处。这未必是恶意，而是被狭窄指标评判的机构可预料的行为。指标实际上开始塑造它本想只是观察的那件事。",
+        "更诚实的安排，会把再培训当作若干工具之一，与住房、交通，以及直接扶持创造岗位并列。它也会承认，有些转型要花上好几年，一门课程扛不起这个重量。这些都不削弱帮助成年人适应变化的理由，它仍然比什么都不做更强。不过，它确实提醒我们：别轻易许诺把衰败迅速转成增长。比起任何一套具体课程，公共耐心或许才是这类政策最稀缺的资源。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "近年来，越来越多的博物馆把馆藏文物制成高清数字影像，向公众免费开放。支持者认为，这打破了地域与开放时间的限制，让偏远地区的研究者和观众都能近距离观察纹饰与铭文。它也降低了反复提取易损原件的风险。然而，数字化并不等于原作。屏幕均匀的光线会抹去器物表面的细微起伏，观看者很难体会尺度与材质的感受。一些馆长提醒，数字资源应被看作邀请而非替代：它把人引向展厅，而不是让人不再走进展厅。如何在开放获取与实物保护之间取得平衡，仍是各馆讨论的议题。",
+    "hints": [
+      "high-resolution digital images",
+      "open to the public free of charge",
+      "remove the limits of geography",
+      "handle fragile originals",
+      "an invitation rather than a replacement"
+    ],
+    "reference": "In recent years, a growing number of museums have produced high-resolution digital images of their collections and opened them to the public free of charge. Supporters argue that this removes the limits of geography and opening hours, allowing researchers in remote regions and ordinary visitors alike to examine decorative patterns and inscriptions at close range. It also reduces the risk of repeatedly handling fragile originals. Yet digitisation is not the same as the object itself. The even light of a screen erases subtle surface unevenness, and viewers can hardly recover the sense of scale and material that a physical encounter provides. Some directors therefore caution that digital resources should be an invitation rather than a replacement: they lead people toward the gallery instead of making it unnecessary. Striking a balance between open access and the care of originals remains a question institutions continue to debate.",
+    "scoringPoints": [
+      {
+        "zh": "把馆藏制成高清影像并免费开放",
+        "en": "produce high-resolution digital images and open them free of charge"
+      },
+      {
+        "zh": "打破地域与开放时间的限制",
+        "en": "remove the limits of geography and opening hours"
+      },
+      {
+        "zh": "近距离观察纹饰与铭文",
+        "en": "examine decorative patterns and inscriptions at close range"
+      },
+      {
+        "zh": "降低反复提取易损原件的风险",
+        "en": "reduce the risk of repeatedly handling fragile originals"
+      },
+      {
+        "zh": "屏幕光线抹去表面起伏",
+        "en": "the even light of a screen erases subtle unevenness"
+      },
+      {
+        "zh": "数字资源是邀请而非替代",
+        "en": "digital resources are an invitation rather than a replacement"
+      }
+    ],
+    "highlights": [
+      "a growing number of ...",
+      "remove the limits of ...",
+      "leaving more room for ...",
+      "is not the same as ...",
+      "should be treated as an invitation rather than a replacement",
+      "Striking a balance between ... and ... remains ..."
+    ]
+  },
+  "writing": {
+    "topic": "The Limits of Measurable Outcomes",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the limits of measurable outcomes in public institutions. You should write at least 160 words but no more than 200 words.",
+    "requirements": [
+      "160–200 words",
+      "30 minutes",
+      "3 paragraphs: thesis → the temporal problem → indicators as signals"
+    ],
+    "outlineHints": [
+      "开头：指标有治理价值，但清晰导致狭窄，快速可计数的事挤走缓慢重要的事。",
+      "中间：重要效果成熟慢、难归因；回应测量派的合理担忧，提出第三条路。",
+      "结尾：指标是信号不是判决，配慢判断并肯修订，守住报表与初衷之别。"
+    ],
+    "modelEssay": "Modern institutions are fond of numbers, and for good reason. A clear indicator can reveal waste and make an organisation answerable. Yet the clarity that makes a measure useful also makes it dangerously narrow. Whatever can be counted quickly tends to displace whatever matters slowly, and agencies learn to serve the number rather than the person in front of it.\n\nThe deeper problem is temporal. The effects institutions value, such as confidence or persistence, mature over years and resist neat attribution. Defenders of measurement reply that vague goals invite favouritism, and without a common standard decisions drift toward habit and connection. The choice is not between measurement and chaos, but between a single loud indicator and an imperfect bundle of evidence that keeps several kinds of value in view.\n\nA wiser practice would treat indicators as signals rather than verdicts, pairing numbers with sustained observation. This is untidy and will never satisfy a demand for one ranking. It may, however, keep institutions honest about the difference between what they can report and what they hope to achieve. A society that forgets that distinction risks becoming very good at things it never intended to value.",
+    "structure": [
+      "第一段：指标有治理价值，但可快速计数的事会挤走缓慢重要的事；扭曲源于激励而非欺骗。",
+      "第二段：真正重要的效果成熟慢、难归因；测量与混乱之间还有一束不完美证据的第三条路。",
+      "第三段：把指标当信号而非判决，配合慢判断并随时修订，守住报表与初衷之间的差别。"
+    ],
+    "expressions": [
+      "for good reason",
+      "serve the number rather than the person",
+      "resist neat attribution",
+      "drift toward habit and connection",
+      "a deliberately imperfect bundle of evidence",
+      "treat indicators as signals rather than verdicts",
+      "what they can report and what they actually hope to achieve"
+    ],
+    "translation": "现代机构偏爱数字，而且不无道理。一个清晰的指标能暴露浪费、比较方案，让庞大组织对公众有所交代。然而，正是让指标有用的那种清晰，也使它危险地狭窄。凡能被迅速计数的事，往往会挤走那些缓慢才显出分量的问题。只以就业率评判的机构、只看分数的学校、只算接诊量的诊所，都会慢慢学会服务数字，而不是眼前的人。这种扭曲很少源于不诚实，它更像是有能力的人面对既有激励时的正常反应。\n\n更深的难处在于时间。机构真正看重的效果，比如自信、好奇心，或者愿意回到难题上的习惯，往往要多年才成熟，也难以干脆地归因。季度报告看不见它们，于是理性的管理者没什么理由去保护它们。为测量辩护的人会说，模糊的目标会纵容偏袒与惰性，这一反驳值得认真对待。若完全没有共同标准，决策就会滑向惯例与人情。因此，选择并不是在测量与混乱之间二选一，而是在一个响亮的单一指标，与一束刻意不完美、却让多种价值同时可见的证据之间取舍。\n\n更明智的做法，是把指标当作信号而非判决。数字应当配上更缓慢的判断方式：持续的观察、当事人的陈述，以及在指标开始失真时愿意修改它的气度。这不整齐，也费钱，而且永远满足不了人们想要一张排行榜的期待。但它或许能让机构诚实地守住一条界线：能写进报表的，与真正希望达成的，并不相同。一个忘记这条界线的社会，有可能变得非常擅长那些它本来并不打算珍视的事。"
+  }
+}

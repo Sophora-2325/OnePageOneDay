@@ -6,6 +6,7 @@ import '../../app/theme.dart';
 import '../../core/storage/records.dart';
 import '../../features/ai/word_translation_sheet.dart';
 import 'highlight_spans.dart';
+import 'locate_quote.dart';
 
 /// 一段英文正文：定位高亮（黄）、标注下划线（蓝）、朗读中整段底色；
 /// 长按选词可「标注」，配置了模型 API 时还可「翻译」。
@@ -49,8 +50,10 @@ class PassageBlock extends ConsumerWidget {
             decorationStyle: TextDecorationStyle.dotted,
           ),
         ),
+      // 与解析卡的 LocateQuote 共用 markerSoft 实色：深色下 9.02:1，
+      // 不再用 marker@60% 半透明叠底（旧实现 3.20:1 且逐行锯齿）。
       if (locateRange != null)
-        SpanMark(locateRange!.start, locateRange!.end, TextStyle(backgroundColor: c.marker.withValues(alpha: 0.6), color: c.ink)),
+        SpanMark(locateRange!.start, locateRange!.end, LocateQuote.inlineStyle(context)),
     ];
 
     final content = SelectableText.rich(
@@ -103,7 +106,8 @@ class PassageBlock extends ConsumerWidget {
               width: 18,
               child: Padding(
                 padding: const EdgeInsets.only(top: 2),
-                child: Text('${paraIndex + 1}', style: TextStyle(fontSize: 11, color: c.blue, fontWeight: FontWeight.w600)),
+                child: Text('${paraIndex + 1}',
+                    style: TextStyle(fontSize: AppType.min, color: c.blue, fontWeight: FontWeight.w600)),
               ),
             ),
           Expanded(child: content),

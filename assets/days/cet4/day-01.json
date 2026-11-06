@@ -1,0 +1,435 @@
+{
+  "goal": "cet4",
+  "diff": "steady",
+  "day": 1,
+  "date": "2026-11-06",
+  "week": 1,
+  "theme": "校园共享自习室与绿色骑行出行",
+  "readings": [
+    {
+      "id": "r1",
+      "title": "The Shared Study Room on Campus",
+      "wordCount": 302,
+      "paragraphs": [
+        "Across many universities, a quiet room with a long table has become the most contested space on campus. Students call it the shared study room, and it is neither a classroom nor a library. During examination weeks, seats fill within minutes of the doors opening. Some arrive with laptops and notes, while others bring only a notebook and a pencil. It matters because it offers the uninterrupted silence that a crowded dormitory rarely provides.",
+        "Rules for the room are simple, yet they are surprisingly hard to enforce. A sign near the entrance asks everyone to keep voices low and avoid phone calls. Most students respect it, since they depend on the same quiet themselves. Problems begin when a group reviews a project together, and one conversation breaks the concentration of a dozen people.",
+        "The library staff have tried several solutions over the past two years. They added a booking system so that students could reserve a seat for a fixed period. It reduced early-morning queues, but it created complaints about empty reserved seats. A few students now suggest dividing the room into a silent zone and a discussion zone, with unclear results.",
+        "Beyond the rules, the room reveals how students actually study. Many prefer to work near strangers who are also working, a habit some describe as quiet company. The presence of others makes long hours of reading less lonely and less tiring. The shared effort, not the furniture, turns an ordinary space into a small community.",
+        "For new students, learning to use such spaces is part of settling into campus life. They discover that a good seat is less important than a steady routine. A shared study room teaches, in a modest way, how to live with strangers. That lesson may last longer than anything memorised during a single examination week."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "细节题",
+          "stem": "Why does the shared study room matter to students?",
+          "options": [
+            "It provides silence that a crowded dormitory rarely offers",
+            "It offers free laptops and printed notes to everyone",
+            "It is the only place used for examinations",
+            "It lets groups hold loud project discussions"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "It matters because it offers the uninterrupted silence that a crowded dormitory rarely provides."
+          },
+          "explain": "正确项「It provides silence that a crowded dormitory rarely offers」与第 1 段原文「It matters because it offers the u…」对应，细节题可据此推出：把宿舍也能满足的条件错当成自习室独有的价值。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What does the sign near the entrance ask students to do?",
+          "options": [
+            "Reserve a seat through the booking system",
+            "Keep voices low and avoid phone calls",
+            "Bring only a notebook and a pencil",
+            "Divide the room into two separate zones"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Most students respect it, since they depend on the same quiet themselves."
+          },
+          "explain": "正确项「Keep voices low and avoid phone calls」与第 2 段原文「Most students respect it, since th…」对应，细节题可据此推出：把后文才出现的管理措施误提前到入室须知。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "细节题",
+          "stem": "What problem did the booking system create?",
+          "options": [
+            "It made the doors open much later",
+            "It led to complaints about empty reserved seats",
+            "It removed every repair stand on campus",
+            "It forced students to review projects together"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "It reduced early-morning queues, but it created complaints about empty reserved seats."
+          },
+          "explain": "正确项「It led to complaints about empty reserved seats」与第 3 段原文「It reduced early-morning queues, b…」对应，细节题可据此推出：把预约制的附带问题错记成开门时间的变化。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "词义题",
+          "stem": "What does the phrase \"quiet company\" refer to in Paragraph 4?",
+          "options": [
+            "A rule that bans all conversation",
+            "A service offered by the library staff",
+            "The comfort of working near other focused students",
+            "A type of silent examination"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 4,
+            "quote": "The presence of others makes long hours of reading less lonely and less tiring."
+          },
+          "explain": "正确项「The comfort of working near other focused students」与第 4 段原文「The presence of others makes long …」对应，词义题可据此推出：把抽象比喻误解成一条具体的管理规定。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "主旨题",
+          "stem": "What lesson does the author draw in the final paragraph?",
+          "options": [
+            "A good seat matters more than any routine",
+            "Examination weeks should be made shorter",
+            "Memorising facts is the main goal of study",
+            "Shared spaces quietly teach students how to live with strangers"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 5,
+            "quote": "A shared study room teaches, in a modest way, how to live with strangers."
+          },
+          "explain": "正确项「Shared spaces quietly teach students how to live with strangers」与第 5 段原文「A shared study room teaches, in a …」对应，主旨题可据此推出：把末段关于相处的感悟缩小成一条应试技巧。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "When do seats in the shared study room fill up fastest?",
+          "options": [
+            "Right after the doors open during examination weeks",
+            "Late in the evening after the library closes",
+            "Only on weekends when no classes are held",
+            "Before the booking system was introduced"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "It matters because it offers the uninterrupted silence that a crowded dormitory rarely provides."
+          },
+          "explain": "正确项「Right after the doors open during examination weeks」与第 1 段原文「It matters because it offers the u…」对应，细节题可据此推出：把考试周的高峰时段错记成闭馆前的冷清时段。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "推断题",
+          "stem": "What can be inferred about enforcing the room rules?",
+          "options": [
+            "Rules are easy to enforce because everyone agrees",
+            "Most students keep quiet, yet a single group can disturb many",
+            "The staff have stopped trying to manage the room",
+            "Phone calls are welcome during examination weeks"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 2,
+            "quote": "Most students respect it, since they depend on the same quiet themselves."
+          },
+          "explain": "正确项「Most students keep quiet, yet a single group can disturb many」与第 2 段原文「Most students respect it, since th…」对应，推断题可据此推出：把多数人守规与个别干扰并存的事实绝对化。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "What have the library staff added over the past two years?",
+          "options": [
+            "More buses to the teaching building",
+            "A ban on all group projects",
+            "A booking system for reserving seats",
+            "Extra dormitories near the library"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 3,
+            "quote": "It reduced early-morning queues, but it created complaints about empty reserved seats."
+          },
+          "explain": "正确项「A booking system for reserving seats」与第 3 段原文「It reduced early-morning queues, b…」对应，细节题可据此推出：把预约系统错记成与交通或住宿有关的变化。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "细节题",
+          "stem": "According to Paragraph 4, what makes long reading hours less tiring?",
+          "options": [
+            "Brighter furniture in the room",
+            "A strict rule about silence",
+            "Free coffee provided by the staff",
+            "The presence of other students who are also working"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "The presence of others makes long hours of reading less lonely and less tiring."
+          },
+          "explain": "正确项「The presence of other students who are also working」与第 4 段原文「The presence of others makes long …」对应，细节题可据此推出：把他人相伴带来的心理作用错当成硬件条件。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "在许多大学里，一间摆着长桌的安静房间，已经成了校园里最抢手的空间。学生们把它叫作共享自习室，它既不是教室，也不是图书馆。到了考试周，门一开，座位几分钟内就被坐满。有人带着笔记本电脑和打印好的笔记来，也有人只拿一个本子和一支笔。这间屋子之所以重要，是因为它能提供拥挤的宿舍很少给得了的东西，也就是不被打断的安静。",
+        "自习室的规则很简单，可执行起来却出人意料地难。入口旁的牌子请大家放低声音、不要打电话。多数学生都照做，因为他们自己也依赖这份安静来完成工作。麻烦往往从某个小组决定一起讨论项目、又忘了自己身在何处开始。一段对话就能顺着长桌蔓延开，打断十几个人的思路。",
+        "过去两年里，图书馆的老师试过好几种办法。他们加了一套预约系统，让学生可以固定时段订一个座位。系统缓解了清晨排队，却又引出另一种抱怨：有些订了的座位一直空着。现在有学生建议把房间分成静音区和讨论区。这能不能让所有人满意还不好说，因为安静很难衡量，却很容易被看重。",
+        "规则之外，这间屋子还透露了学生实际是怎么学习的。很多人喜欢坐在同样在用功的陌生人旁边，有人把这叫作安静的陪伴。他人在场，似乎让长时间的阅读没那么孤单，也没那么累。一间只摆了桌子的房间，本身造不出这种效果。把普通空间变成一个小共同体的，是那份一起用力的氛围，而不是家具。",
+        "对新生来说，学会使用这样的空间，也是适应校园生活的一部分。他们会发现，一个好座位其实不如一份稳定的作息重要。他们也会学着在自己的需要和周围人的舒适之间找平衡。一间共享自习室，用很朴素的方式教人怎样与陌生人相处。这一课，可能比某个考试周里硬背下来的东西留得更久。"
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "Campus Cycling and Cleaner Air",
+      "wordCount": 302,
+      "paragraphs": [
+        "On a mild morning, the bicycle racks outside the teaching building fill faster than the nearby bus stop. More students now ride to class instead of taking a crowded bus or driving a car. The change is small, yet it reflects a wider interest in daily habits and health. A short ride wakes the body, costs nothing and leaves no exhaust behind. For a campus built on flat ground, cycling is an obvious fit.",
+        "The university has supported the trend with practical changes rather than slogans. It widened several narrow paths and painted clear lanes between the dormitories and the libraries. Repair stands near the main gate let a student borrow a pump or fix a loose chain. Simple lighting along the paths made evening rides safer than before.",
+        "Health is not the only reason students give for choosing a bicycle. Many mention the chance to notice the season, the trees and the faces they pass each day. A bus ride hides the campus behind a window, while a bicycle keeps a person close to it. Riders also report arriving at class more alert and less impatient.",
+        "Still, cycling brings problems that a friendly poster cannot solve. Wet roads make sudden stops risky, and careless riding near crossings has caused minor accidents. Some students complain that broken bicycles sit chained to railings for months. The university now asks every rider to check brakes and tyres before the start of each term.",
+        "Taken together, these small choices add up to a noticeable difference in campus life. Fewer short car trips mean cleaner air around the teaching buildings and less noise at busy hours. A student who rides regularly gains gentle exercise without setting aside extra time for sport. Healthy routines, it seems, begin with a decision about how to travel a single kilometre."
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "细节题",
+          "stem": "Why is cycling described as an obvious fit for the campus?",
+          "options": [
+            "The campus is built on flat ground and trips are short",
+            "The university banned all buses and cars last year",
+            "Every student already owns a new bicycle",
+            "The teaching buildings have no windows at all"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "For a campus built on flat ground, cycling is an obvious fit."
+          },
+          "explain": "正确项「The campus is built on flat ground and trips are short」与第 1 段原文「For a campus built on flat ground,…」对应，细节题可据此推出：把地势与短途的便利错当成强制禁令的结果。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q2",
+          "type": "细节题",
+          "stem": "What did the university paint between the dormitories and libraries?",
+          "options": [
+            "Large advertising posters",
+            "New parking spaces for cars",
+            "Clear bicycle lanes",
+            "White lines for a running track"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Repair stands near the main gate let a student borrow a pump or fix a loose chain."
+          },
+          "explain": "正确项「Clear bicycle lanes」与第 2 段原文「Repair stands near the main gate l…」对应，细节题可据此推出：把自行车道错记成与汽车或跑步相关的标线。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q3",
+          "type": "推断题",
+          "stem": "What reason for cycling goes beyond physical health?",
+          "options": [
+            "Riders save a great deal of money on fuel",
+            "Riders notice the trees, the season and the people they pass",
+            "Riders no longer need to attend morning classes",
+            "Riders can avoid all traffic rules on campus"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "A bus ride hides the campus behind a window, while a bicycle keeps a person close to it."
+          },
+          "explain": "正确项「Riders notice the trees, the season and the people they pass」与第 3 段原文「A bus ride hides the campus behind…」对应，推断题可据此推出：把骑行带来的观察与亲近感偷换成省钱的算计。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q4",
+          "type": "细节题",
+          "stem": "What does the university ask riders to do before each term?",
+          "options": [
+            "Buy a brand new bicycle",
+            "Register for a bus pass",
+            "Paint their own lane markings",
+            "Check brakes and tyres"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 4,
+            "quote": "Some students complain that broken bicycles sit chained to railings for months."
+          },
+          "explain": "正确项「Check brakes and tyres」与第 4 段原文「Some students complain that broken…」对应，细节题可据此推出：把学期前的车况检查错当成购买或登记手续。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "q5",
+          "type": "主旨题",
+          "stem": "What is the main point of the final paragraph?",
+          "options": [
+            "Grand plans are the only way to build healthy routines",
+            "Small daily choices can improve air, noise and personal health",
+            "Cycling should replace every form of exercise",
+            "Car trips are the single cause of campus noise"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 5,
+            "quote": "A student who rides regularly gains gentle exercise without setting aside extra time for sport."
+          },
+          "explain": "正确项「Small daily choices can improve air, noise and personal health」与第 5 段原文「A student who rides regularly gain…」对应，主旨题可据此推出：把末段关于小习惯的论点夸大成唯一手段。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "listeningQuestions": [
+        {
+          "id": "l1",
+          "type": "细节题",
+          "stem": "What do the bicycle racks fill faster than on a mild morning?",
+          "options": [
+            "The nearby bus stop",
+            "The university library",
+            "The examination hall",
+            "The repair stand queue"
+          ],
+          "answer": "A",
+          "locate": {
+            "para": 1,
+            "quote": "For a campus built on flat ground, cycling is an obvious fit."
+          },
+          "explain": "正确项「The nearby bus stop」与第 1 段原文「For a campus built on flat ground,…」对应，细节题可据此推出：把比较对象从公交站偷换成校内其他设施。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l2",
+          "type": "细节题",
+          "stem": "What can a student borrow at the repair stands near the main gate?",
+          "options": [
+            "A free bus ticket",
+            "A new helmet every term",
+            "A pump or tools to fix a loose chain",
+            "A map of the examination rooms"
+          ],
+          "answer": "C",
+          "locate": {
+            "para": 2,
+            "quote": "Repair stands near the main gate let a student borrow a pump or fix a loose chain."
+          },
+          "explain": "正确项「A pump or tools to fix a loose chain」与第 2 段原文「Repair stands near the main gate l…」对应，细节题可据此推出：把维修工具错记成票务或考试用品。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l3",
+          "type": "细节题",
+          "stem": "What problem do wet roads create for riders?",
+          "options": [
+            "They make the lanes much wider",
+            "They make sudden stops risky",
+            "They close every repair stand",
+            "They increase the number of bus passengers"
+          ],
+          "answer": "B",
+          "locate": {
+            "para": 3,
+            "quote": "A bus ride hides the campus behind a window, while a bicycle keeps a person close to it."
+          },
+          "explain": "正确项「They make sudden stops risky」与第 3 段原文「A bus ride hides the campus behind…」对应，细节题可据此推出：把天气带来的安全隐患错当成设施变化。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        },
+        {
+          "id": "l4",
+          "type": "推断题",
+          "stem": "What does the author suggest about healthy routines?",
+          "options": [
+            "They require expensive equipment and strict plans",
+            "They matter only during examination weeks",
+            "They are impossible on a crowded campus",
+            "They can begin with a small everyday decision"
+          ],
+          "answer": "D",
+          "locate": {
+            "para": 5,
+            "quote": "Healthy routines, it seems, begin with a decision about how to travel a single kilometre."
+          },
+          "explain": "正确项「They can begin with a small everyday decision」与第 5 段原文「Healthy routines, it seems, begin …」对应，推断题可据此推出：把日常小决定能开启习惯的观点颠倒成高门槛要求。其余三项分别存在范围扩大、对象错置、无中生有或绝对化表述的问题，均无法由该段原文支持；答题时先回到定位句逐字核对，再比较选项与原文在范围、程度和因果上的细微差别。"
+        }
+      ],
+      "translation": [
+        "天气温和的早晨，教学楼外的自行车架，比旁边的公交站满得还快。越来越多学生选择骑车上课，而不是挤公交或开车。这个变化本身不大，却反映出人们对日常习惯和健康的更广泛关注。短短一段骑行能让人清醒，不花钱，也不留下尾气。对一所建在地势平坦处的校园来说，骑车显然是顺理成章的选择。",
+        "学校没有喊口号，而是用一些实际改动来支持这股风气。它拓宽了几条窄路，在宿舍楼和图书馆之间画了清晰的车道。校门附近立起了维修架，学生可以在那儿借打气筒，或者紧一紧松掉的链条。沿路加了简单的照明之后，傍晚骑车也比从前更安心。这些措施花费不多，却消除了曾让人不愿骑车的那些小小顾虑。",
+        "健康并不是学生选择骑车的唯一理由。很多人提到，骑车让他们有机会注意到季节、树木，还有每天擦肩而过的面孔。坐公交时，校园被隔在车窗后面；骑车却让人始终离它很近。骑车的人也说，到教室时更清醒、不那么急躁。这点好处很难在一项研究里被证实，却在安静的早晨很容易被感觉到。",
+        "当然，骑车也带来一些友好海报解决不了的问题。路面湿滑时急刹有风险，路口附近骑得大意也造成过几起小事故。有学生抱怨，坏掉的自行车被锁在栏杆上几个月都没人管。维修架有帮助，但它替代不了定期保养的习惯。现在学校要求每位骑车人在每学期开始前检查刹车和轮胎。",
+        "这些细小的选择加在一起，让校园生活有了看得见的不同。短途开车少了，教学楼周围的空气更干净，繁忙时段的噪音也更小。经常骑车的人不必另外挤出时间运动，就得到了温和的锻炼。也许最持久的价值，是它提醒我们：健康的日常并不需要宏大的计划。它始于一个关于如何走完一公里的决定。"
+      ]
+    }
+  ],
+  "translation": {
+    "chinese": "每到学期末，校园图书馆都会办一次旧书交换。同学们把读过的小说和笔记带到一楼大厅，摆在长桌上。任何人都可以免费取走需要的书，留下不再用的书。活动起初只是几个学生的提议，如今已成每学期的传统。它让旧书重新流通，也让陌生同学因为一本书聊起天来。有人在书页里发现前一位读者的批注，像收到一封陌生人的短信。组织者说，交换的不是书，而是一段可以继续的阅读。",
+    "hints": [
+      "second-hand book exchange",
+      "lay them out on long tables",
+      "for free",
+      "keep old books in circulation",
+      "notes left in the margins"
+    ],
+    "reference": "At the end of every term, the campus library holds a second-hand book exchange. Students bring finished novels and notes to the hall on the first floor and lay them out on long tables. Anyone may take a book they need for free, or leave one they no longer use. What began as a suggestion from a few students has become one of the most anticipated traditions of the term. It keeps old books in circulation, cuts waste, and starts conversations between strangers. Some readers find notes in the margins, like a short letter from someone they have never met. The organisers say that what is exchanged is not a book but a reading journey that can continue.",
+    "scoringPoints": [
+      {
+        "zh": "学期末举办的旧书交换",
+        "en": "a second-hand book exchange held at the end of every term"
+      },
+      {
+        "zh": "把读过的书摆在一楼长桌上",
+        "en": "lay finished books out on long tables on the first floor"
+      },
+      {
+        "zh": "免费取走或留下不再用的书",
+        "en": "take a needed book for free or leave an unused one"
+      },
+      {
+        "zh": "减少浪费并让旧书重新流通",
+        "en": "cut waste and keep old books in circulation"
+      },
+      {
+        "zh": "书页批注像陌生人的短信",
+        "en": "notes in the margins are like a letter from a stranger"
+      },
+      {
+        "zh": "交换的是可继续的阅读",
+        "en": "what is exchanged is a reading journey that can continue"
+      }
+    ],
+    "highlights": [
+      "What began as ... has become ...",
+      "keep ... in circulation",
+      "not only ... but also ...",
+      "like a short letter from someone ...",
+      "what is exchanged is not ... but ..."
+    ]
+  },
+  "writing": {
+    "topic": "The Habit of Keeping a Weekly Plan",
+    "prompt": "Directions: For this part, you are allowed 30 minutes to write an essay on the habit of keeping a weekly plan. You should write at least 120 words but no more than 160 words.",
+    "requirements": [
+      "120–160 words",
+      "30 minutes",
+      "3 paragraphs: thesis → flexible planning → understanding time"
+    ],
+    "outlineHints": [
+      "开头：学期常在希望与困惑之间溜走，一张写下来的每周清单就够用。",
+      "中间：排满会脆弱，只锁定两三件要事，留弹性，周末温和复盘。",
+      "结尾：计划是理解时间，划掉与重复处透露真正重心，换来从容。"
+    ],
+    "modelEssay": "Many students start a term hopefully and end it wondering where the weeks went. A simple weekly plan helps. It need not be detailed, only written down and consulted often. It turns vague intentions into a short list of doable tasks.\n\nA good plan leaves room for surprise. If every hour is filled, one late assignment can break the schedule. Wise students mark only the tasks that matter most and keep the rest flexible. A Sunday review reveals more than any Monday resolution.\n\nKeeping a weekly plan is less about controlling time than understanding it. Over a term, the crossed-out lines show what a person values. A notebook like this costs almost nothing, yet it changes how a student meets a busy week. The calm it brings rewards a small effort.",
+    "structure": [
+      "第一段：提出每周计划能把模糊打算变成可执行的短清单，无需精美。",
+      "第二段：好计划要留余地，只标最重要的两三件事，并在周末复盘而非自责。",
+      "第三段：计划的意义在于理解时间而非控制时间，划掉与重复的任务透露真正的重心。"
+    ],
+    "expressions": [
+      "turn vague intentions into a short list",
+      "a sense of failure",
+      "mark only the tasks that matter most",
+      "keep the rest flexible",
+      "review the plan at the end of the week",
+      "meet a busy week"
+    ],
+    "translation": "许多学生开学时满怀希望，期末却疑惑几周时间去了哪里。一份简单的每周计划就能带来不同。它不必写得详细或漂亮，只需要写下来、常常翻看。它的意义是把模糊的打算变成一张确实能完成的短清单。\n\n好的计划会给意外留余地。如果每个小时都被排满，一次迟交的作业或一个疲惫的夜晚就足以打乱整张表，带来挫败感。因此聪明的学生只标出最重要的两三件事，其余保持弹性。他们也会在周末回看计划，不是为了责备自己，而是留意哪些事总被往后推。这个小习惯，比周一早晨立下的任何决心都更能透露真正的优先级。\n\n坚持每周计划，与其说是控制时间，不如说是理解时间。一学期下来，被划掉的条目和反复出现的任务，会悄悄显示一个人看重什么、一天究竟花在了哪里。这样的本子几乎不花什么钱，却能改变学生面对忙碌一周的方式。它带来的从容，是对一点点努力很实在的回报。"
+  }
+}

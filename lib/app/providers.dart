@@ -7,6 +7,8 @@ import '../core/storage/secure.dart';
 import '../core/spec/day_repository.dart';
 import '../core/storage/app_store.dart';
 import '../domain/countdown.dart';
+import '../domain/grading.dart';
+import '../domain/training_scope.dart';
 import '../features/reading_mode/reading_aloud.dart';
 
 /// 在 main() 里加载完成后 override。
@@ -28,7 +30,8 @@ class CurrentDay extends Notifier<int> {
   void select(int day) {
     state = day;
     final store = ref.read(storeProvider);
-    store.setSetting('lastDay', '$day');
+    // 每档各记各的「上次练到哪天」，切档回来接着练。
+    store.setSetting(TrainingScope.keyLastDay(store.goal), '$day');
     store.setSetting('lastDayOn', DateTime.now().toIso8601String().substring(0, 10));
   }
 }
@@ -73,6 +76,17 @@ void refreshDays(WidgetRef ref) {
   ref.invalidate(dayDataProvider);
 }
 
+/// Notifier 内部持有的是 [Ref] 而不是 [WidgetRef]，单独留一个入口。
+void refreshDaysFromRef(Ref ref) {
+  ref.invalidate(dayIndexProvider);
+  ref.invalidate(dayDataProvider);
+}
+
+/// 导入备份后调用：把档位状态、当前训练日与失效的题库一次性对齐。
+/// 定义在文件末尾，运行时才解析 provider，不依赖声明顺序。
+Future<void> syncAfterImport(WidgetRef ref) =>
+    ref.read(trainingScopeProvider.notifier).reloadFromStore();
+
 // ---------------- 模型 API（只在 Keystore） ----------------
 
 final apiConfigStoreProvider = Provider<ApiConfigStore>((ref) => MemoryApiConfigStore());
@@ -101,6 +115,68 @@ final chatModelProvider = Provider<ChatModel?>((ref) {
   final config = ref.watch(apiConfigProvider);
   return config.isComplete ? LlmClient(config) : null;
 });
+
+// ---------------- 备考目标 / 档内难度 ----------------
+// 切换入口只存在于「我的」页：今日、题库、复盘一律 ref.watch 只读展示。
+
+class TrainingScopeNotifier extends Notifier<TrainingScope> {
+  @override
+  TrainingScope build() => TrainingScope.fromSettings(ref.read(storeProvider).setting);
+
+  void _save(TrainingScope next) {
+    final store = ref.read(storeProvider);
+    for (final e in next.toSettings().entries) {
+      store.setSetting(e.key, e.value);
+    }
+    state = next;
+  }
+
+  /// 只有「我的 → 备考目标」会调用。切档后：换库视图、复位分段、
+  /// 并把当前训练日恢复到这一档上次练到的位置（没有记录就取默认日）。
+  Future<void> pickGoal(GoalId id) async {
+    final next = state.withGoal(id);
+    if (next.goal == state.goal) return;
+    _save(next);
+    await _restoreDay(id);
+  }
+
+  /// 导入备份后调用。备份的 settings 可能覆盖 `scope.goal` / 难度，
+  /// [AppStore.setSetting] 会改掉 `store.goal`，但 Notifier 只 build 一次，
+  /// 不重读就会让 UI 档位、题库与实际数据档不一致。
+  Future<void> reloadFromStore() async {
+    state = TrainingScope.fromSettings(ref.read(storeProvider).setting);
+    await _restoreDay(state.goal);
+  }
+
+  /// 切档与导入共用的日号恢复。先写一个本档必定存在的日号，
+  /// 避免新题库加载期间读到不存在的 Day。
+  Future<void> _restoreDay(GoalId id) async {
+    final store = ref.read(storeProvider);
+    final repo = ref.read(dayRepositoryProvider);
+    // 必须在写入新档的 lastDay 之前读，否则会被临时日号覆盖。
+    final last = int.tryParse(store.setting(TrainingScope.keyLastDay(id)) ?? '');
+    ref.read(currentDayProvider.notifier).select(1);
+    ref.read(todayStepProvider.notifier).select(0);
+    ref.read(readingTabProvider.notifier).select('r1');
+    refreshDaysFromRef(ref);
+    final index = await repo.index();
+    // 等题库期间用户可能又切了一次档：放弃这次恢复，
+    // 否则会把旧档的日号写进新档的 lastDay（竞态）。
+    if (state.goal != id) return;
+    final restored = last != null && index.any((e) => e.day == last)
+        ? last
+        : (index.isEmpty ? 1 : pickDefaultDay(index, DateTime.now()));
+    ref.read(currentDayProvider.notifier).select(restored);
+  }
+
+  /// 只有「我的 → 档内难度」会调用；只写 nextDiff，不碰本套。
+  void setNextDiff(DiffLevel d) => _save(state.withNextDiff(d));
+
+  /// 只在新题包通过质检并成功入库后调用；失败不复位、不消耗调整。
+  void settle() => _save(state.settled());
+}
+
+final trainingScopeProvider = NotifierProvider<TrainingScopeNotifier, TrainingScope>(TrainingScopeNotifier.new);
 
 /// 监听 [AppStore] 变化的便捷组件。
 class StoreBuilder extends ConsumerWidget {

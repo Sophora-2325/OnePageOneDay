@@ -24,7 +24,7 @@ class WritingStep extends StatelessWidget {
     final day = data.day;
     final essay = w.essayParagraphs;
     return StoreBuilder(builder: (context, store) {
-      final revealed = store.flag('reveal.$day.writing');
+      final revealed = store.flag(store.revealKey(day, 'writing'));
       final draft = store.draft(day, 'writing');
       final annotations = store.annotationsFor(day, 'writing');
       return ListView(
@@ -74,7 +74,7 @@ class WritingStep extends StatelessWidget {
             PrimaryButton(
               label: '显示范文',
               icon: Icons.visibility_outlined,
-              onPressed: () => store.setFlag('reveal.$day.writing', true),
+              onPressed: () => store.setFlag(store.revealKey(day, 'writing'), true),
             )
           else ...[
             PaperCard(
@@ -149,7 +149,7 @@ class WritingStep extends StatelessWidget {
               child: QuietButton(
                 label: '收起范文',
                 icon: Icons.visibility_off_outlined,
-                onPressed: () => store.setFlag('reveal.$day.writing', false),
+                onPressed: () => store.setFlag(store.revealKey(day, 'writing'), false),
               ),
             ),
           ],
