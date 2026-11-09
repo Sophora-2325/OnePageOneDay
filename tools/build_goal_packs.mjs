@@ -1,4 +1,4 @@
-// 生成四档新目标的「预置样张」题包，并在写盘前逐份过质检。
+// 生成其余两档目标的「预置样张」题包，并在写盘前逐份过质检。
 // 用法：node tools/build_goal_packs.mjs
 //
 // 语料格式见 tools/goal_corpus.mjs。构建器刻意把机械活全包了：
@@ -20,8 +20,6 @@ const outRoot = path.join(root, 'assets', 'days');
 const RULES = {
   cet4:  { words: [290, 350], hanzi: [130, 160], ref: [75, 120],  essay: [120, 160] },
   kaoyan:{ words: [420, 480], hanzi: [180, 200], ref: [110, 160], essay: [160, 200] },
-  tem4:  { words: [350, 410], hanzi: [160, 190], ref: [95, 150],  essay: [150, 190] },
-  tem8:  { words: [450, 520], hanzi: [190, 220], ref: [120, 170], essay: [180, 220] },
 };
 
 const words = (s) => String(s).trim().split(/\s+/).filter(Boolean).length;

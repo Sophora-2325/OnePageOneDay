@@ -4,12 +4,17 @@
 // 今日 / 题库 / 复盘只能读这里的状态做展示，不得提供任何切换控件；
 // 复盘里的目标 Chip 只是「查看哪一档的成绩」，不写全局状态。
 //
-// 依据《备考目标与难度调整计划》：5 档目标进度隔离；难度一次性、延迟生效；
+// 依据《备考目标与难度调整计划》：各档目标进度隔离；难度一次性、延迟生效；
 // 用户随时能判断本套与下套的状态。
 //
 // 纯 Dart，不依赖 Flutter / 数据库，便于单测。
 
-/// 五档备考目标。v3 起全部有预置样张与分档生成规范。
+/// 可选备考目标为四级 / 六级 / 考研三档，见 [kGoals]。
+///
+/// `tem4` / `tem8` 是已下线档位：仍保留枚举值与 day 槽位，只为让老数据库里的
+/// 记录能正确解码、不串进其它档。它们不在 [kGoals] 里，因此不可选、不生成、
+/// 不出现在任何 UI 与导出摘要中；[goalIdFromKey] 遇到这两个字符串返回 null，
+/// 升级后当前档自动回落到六级。
 enum GoalId { cet4, cet6, kaoyan, tem4, tem8 }
 
 /// 档内难度。不用红黄绿：红=批改、绿=正确、荧光黄=定位引文已被语义独占。
@@ -24,6 +29,8 @@ enum DiffLevel { harder, steady, easier }
 // ---------------------------------------------------------------------------
 const int kDayStride = 10000;
 
+// 槽位一经写入 SQLite 就不能回收：3 / 4 是已下线档位的历史槽位，保留映射才能让
+// 老记录仍解码成自己的档，而不是被当成「六级 Day 30001」这类畸形数据。
 const Map<GoalId, int> _goalSlots = {
   GoalId.cet6: 0,
   GoalId.cet4: 1,
@@ -161,48 +168,6 @@ const GoalContentRule _kaoyanRule = GoalContentRule(
   writingKinds: ['观点论证', '现象分析', '图表描述', '建议信/通知'],
 );
 
-const GoalContentRule _tem4Rule = GoalContentRule(
-  minWords: 350,
-  maxWords: 410,
-  targetWords: 380,
-  minHanzi: 160,
-  maxHanzi: 190,
-  targetHanzi: 175,
-  minRefWords: 95,
-  maxRefWords: 150,
-  minEssayWords: 150,
-  maxEssayWords: 190,
-  targetEssayWords: 170,
-  readingRule: '正文 4–6 段，题材偏人文与校园社会，叙述与说明并重；允许少量文学性表达但答案仍只凭原文可推出。',
-  questionRule: '5 道阅读题兼顾细节、词义/指代、推断与态度，至少 1 道考修辞或语气；4 道听读题注意语篇衔接与说话人态度。',
-  translationRule: '中文段落考常见成语与文化表达的英译，参考译文注意语体自然。',
-  writingRule: '写作以观点论证与便条/通知为主，范文语气得体、格式规范。',
-  topics: ['校园与成长', '语言与学习', '文化生活', '媒体与阅读', '社会观察', '自然与旅行'],
-  translationTopics: ['校园文化', '社会', '文学艺术', '教育', '传统习俗'],
-  writingKinds: ['观点论证', '建议信/通知', '现象分析', '图表描述'],
-);
-
-const GoalContentRule _tem8Rule = GoalContentRule(
-  minWords: 450,
-  maxWords: 520,
-  targetWords: 480,
-  minHanzi: 190,
-  maxHanzi: 220,
-  targetHanzi: 205,
-  minRefWords: 120,
-  maxRefWords: 170,
-  minEssayWords: 180,
-  maxEssayWords: 220,
-  targetEssayWords: 200,
-  readingRule: '正文 5–6 段，偏评论与思辨，含抽象概念、反讽或含蓄立场；允许较复杂的插入与并列结构。',
-  questionRule: '5 道阅读题里至少 3 道推断 / 态度 / 主旨题，至少 1 道考作者语气或修辞意图；干扰项高度贴近原文，错因是细微的范围与程度变化。',
-  translationRule: '中文段落偏文学或评论语体，考长句重组、语体转换与文化负载词；参考译文需地道。',
-  writingRule: '写作要求立场清晰、论据有层次并回应反方，范文用词准确、句式有变化。',
-  topics: ['文学与批评', '思想史', '全球化与文化', '科技与伦理', '社会结构', '语言与翻译'],
-  translationTopics: ['文学艺术', '思想文化', '社会', '经济', '教育'],
-  writingKinds: ['观点论证', '现象分析', '图表描述', '建议信/通知'],
-);
-
 class GoalSpec {
   const GoalSpec({
     required this.id,
@@ -265,30 +230,14 @@ const List<GoalSpec> kGoals = [
     rule: _kaoyanRule,
     presetDays: 1,
   ),
-  GoalSpec(
-    id: GoalId.tem4,
-    name: '专四',
-    sub: 'TEM-4',
-    mark: 'TEM4',
-    exam: 'TEM-4（英语专业四级）',
-    focus: '人文题材、语篇衔接与语气辨析',
-    rule: _tem4Rule,
-    presetDays: 1,
-  ),
-  GoalSpec(
-    id: GoalId.tem8,
-    name: '专八',
-    sub: 'TEM-8',
-    mark: 'TEM8',
-    exam: 'TEM-8（英语专业八级）',
-    focus: '评论思辨、含蓄立场与文化负载表达',
-    rule: _tem8Rule,
-    presetDays: 1,
-  ),
 ];
 
-GoalSpec goalOf(GoalId id) => kGoals.firstWhere((g) => g.id == id);
+/// 已下线档位没有内容规范；万一从老备份记录里传进来，兜底回第一档，绝不抛异常。
+GoalSpec goalOf(GoalId id) =>
+    kGoals.firstWhere((g) => g.id == id, orElse: () => kGoals.first);
 
+/// 只认当前开放的档位。已下线的 `tem4` / `tem8` 返回 null，
+/// 调用方（设置读取、切档）会回落到六级。备份记录解码另见 records.dart。
 GoalId? goalIdFromKey(String? key) {
   if (key == null) return null;
   for (final g in kGoals) {
@@ -365,9 +314,11 @@ class TrainingScope {
         keyNextDiff: nextDiff.name,
       };
 
-  /// 只有「我的」页会调用。未就绪档在 UI 层禁用，这里也做一道防线。
-  TrainingScope withGoal(GoalId id) =>
-      goalOf(id).ready ? TrainingScope(goal: id, currentDiff: currentDiff, nextDiff: nextDiff) : this;
+  /// 只有「我的」页会调用。未就绪档与已下线档都拦在这里，避免把当前档切进历史槽位。
+  TrainingScope withGoal(GoalId id) {
+    if (!kGoals.any((g) => g.id == id && g.ready)) return this;
+    return TrainingScope(goal: id, currentDiff: currentDiff, nextDiff: nextDiff);
+  }
 
   /// 只写 nextDiff，**绝不碰 currentDiff**：延迟生效的核心不变量。
   TrainingScope withNextDiff(DiffLevel d) =>

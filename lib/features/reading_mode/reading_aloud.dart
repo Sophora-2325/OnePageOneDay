@@ -1,10 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../../domain/speech_rate.dart';
+
 /// 朗读：按段播放系统 TTS，当前段落高亮。
 /// 控制器是全局单例，「文章 / 听力题」切换时不会中断。
 class ReadingAloud extends ChangeNotifier {
-  ReadingAloud() {
+  ReadingAloud({double? initialRate, this.onRateChanged})
+      : rate = normalizeRate(initialRate ?? kRateDefault) {
     _tts.setCompletionHandler(_onParagraphDone);
     _tts.setErrorHandler((msg) {
       error = '朗读出错：$msg';
@@ -13,14 +16,16 @@ class ReadingAloud extends ChangeNotifier {
     });
   }
 
+  /// 速率变化后写回 Settings。由 provider 注入，保持本类不依赖存储层。
+  final ValueChanged<double>? onRateChanged;
+
   final FlutterTts _tts = FlutterTts();
-  static const rates = [0.8, 1.0, 1.2];
 
   String? sourceKey;
   List<String> _paragraphs = const [];
   int currentPara = 0;
   bool _playing = false;
-  double rate = 1.0;
+  double rate;
   String? error;
   bool _prepared = false;
 
@@ -59,7 +64,7 @@ class ReadingAloud extends ChangeNotifier {
     if (from != null) currentPara = from.clamp(0, _paragraphs.length - 1);
     _playing = true;
     notifyListeners();
-    await _tts.setSpeechRate(rate * 0.5);
+    await _tts.setSpeechRate(engineRate(rate));
     await _tts.speak(_paragraphs[currentPara]);
   }
 
@@ -71,8 +76,13 @@ class ReadingAloud extends ChangeNotifier {
 
   Future<void> toggle() => _playing ? pause() : play();
 
+  /// 收敛到 [kRateMin, kRateMax] 的两位小数；无变化时不做任何事，
+  /// 避免滑块松手 / 重复导入备份时无谓地重启当前段落。
   Future<void> setRate(double r) async {
-    rate = r;
+    final next = normalizeRate(r);
+    if (next == rate) return;
+    rate = next;
+    onRateChanged?.call(next);
     notifyListeners();
     if (_playing) {
       await _tts.stop();

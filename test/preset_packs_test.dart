@@ -1,4 +1,4 @@
-// 四档新增预置样张：用 Dart 侧权威校验器按各档规范逐份验，防 JS 构建器与 Dart 规则漂移。
+// 其余两档预置样张：用 Dart 侧权威校验器按各档规范逐份验，防 JS 构建器与 Dart 规则漂移。
 import 'dart:convert';
 import 'dart:io';
 
@@ -11,7 +11,7 @@ Map<String, dynamic> readJson(String p) =>
     (jsonDecode(File(p).readAsStringSync()) as Map).cast<String, dynamic>();
 
 void main() {
-  for (final goal in [GoalId.cet4, GoalId.kaoyan, GoalId.tem4, GoalId.tem8]) {
+  for (final goal in [GoalId.cet4, GoalId.kaoyan]) {
     group('${goal.name} 预置样张', () {
       final dir = 'assets/days/${goal.name}';
       final index = (jsonDecode(File('$dir/index.json').readAsStringSync()) as List)
@@ -30,7 +30,7 @@ void main() {
       });
 
       test('错用别的档规范会被质检拦下', () {
-        final other = goal == GoalId.cet4 ? GoalId.tem8 : GoalId.cet4;
+        final other = goal == GoalId.cet4 ? GoalId.kaoyan : GoalId.cet4;
         // 字数区间不同，至少词数规则会报错；证明规则确实按档生效。
         final report = validateDay(day, goal: other);
         expect(report.ok, isFalse);
@@ -49,11 +49,23 @@ void main() {
     });
   }
 
-  test('五档预置天数与随包目录一致', () {
+  test('三档预置天数与随包目录一致', () {
     for (final g in kGoals) {
       final dir = g.id == GoalId.cet6 ? 'assets/days' : 'assets/days/${g.id.name}';
       final index = (jsonDecode(File('$dir/index.json').readAsStringSync()) as List).length;
       expect(index, g.presetDays, reason: '${g.name} 的 presetDays 与实际题库不符');
+    }
+  });
+
+  test('已下线两档的随包目录、assets 声明与语料均已移除', () {
+    final pubspec = File('pubspec.yaml').readAsStringSync();
+    final corpus = File('tools/goal_corpus.mjs').readAsStringSync();
+    final packs = File('tools/build_goal_packs.mjs').readAsStringSync();
+    for (final name in ['tem4', 'tem8']) {
+      expect(Directory('assets/days/$name').existsSync(), isFalse, reason: '$name 目录仍存在');
+      expect(pubspec, isNot(contains('assets/days/$name/')));
+      expect(corpus, isNot(contains('$name:')));
+      expect(packs, isNot(contains('$name:')));
     }
   });
 }

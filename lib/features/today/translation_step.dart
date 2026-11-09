@@ -7,7 +7,6 @@ import '../../domain/grading.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/misc.dart';
 import '../../ui/components/paper_card.dart';
-import 'draft_field.dart';
 import 'today_page.dart';
 
 class TranslationStep extends StatelessWidget {
@@ -23,7 +22,6 @@ class TranslationStep extends StatelessWidget {
     return StoreBuilder(builder: (context, store) {
       final revealed = store.flag(store.revealKey(day, 'translation'));
       final checked = store.peekReview(day)?.scoring ?? const <int>{};
-      final draft = store.draft(day, 'translation');
       return ListView(
         padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
         children: [
@@ -47,17 +45,6 @@ class TranslationStep extends StatelessWidget {
                 ],
               ],
             ),
-          ),
-          const SizedBox(height: AppSpace.s4),
-          SectionTitle(
-            '我的译文',
-            trailing: Text('${countWords(draft)} 词', style: TextStyle(fontSize: 12, color: c.muted)),
-          ),
-          DraftField(
-            initial: draft,
-            serif: true,
-            hint: '先自己写完，再看参考译文。输入会自动保存在本机。',
-            onChanged: (v) => store.setDraft(day, 'translation', v),
           ),
           const SizedBox(height: AppSpace.s4),
           if (!revealed)

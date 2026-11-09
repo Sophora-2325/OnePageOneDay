@@ -10,7 +10,7 @@ import '../../ui/components/misc.dart';
 // 「我的」页是备考目标与档内难度的唯一切换入口。
 // 这两个 Sheet 只由 settings_page.dart 调用；今日 / 题库 / 复盘不得引用本文件。
 
-/// 五档备考目标，全部可选。每档有独立的预置题包、内容规范与作答进度。
+/// 三档备考目标，全部可选。每档有独立的预置题包、内容规范与作答进度。
 void showGoalSheet(BuildContext context, WidgetRef ref) {
   final current = ref.read(trainingScopeProvider).goal;
   showModalBottomSheet<void>(
@@ -27,7 +27,7 @@ void showGoalSheet(BuildContext context, WidgetRef ref) {
           children: [
             Text('选择备考目标', style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: AppSpace.s2),
-            Text('五档各有自己的材料规范与预置样张，作答、笔记、复盘按档分开保存，切回来接着练。',
+            Text('三档各有自己的材料规范与预置样张，作答、笔记、复盘按档分开保存，切回来接着练。',
                 style: TextStyle(fontSize: 13, height: 1.6, color: context.c.muted)),
             const SizedBox(height: AppSpace.s4),
             for (final g in kGoals) _GoalRow(spec: g, current: current, ref: ref, parentContext: context),

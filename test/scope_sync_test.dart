@@ -41,7 +41,7 @@ void main() {
 
     final a = hub.get(GoalId.cet6, 3, 'reading|r1', total);
     final b = hub.get(GoalId.cet4, 3, 'reading|r1', total);
-    expect(a, isNot(same(b)), reason: '五档的同号训练日必须是不同计时器');
+    expect(a, isNot(same(b)), reason: '三档的同号训练日必须是不同计时器');
     expect(hub.get(GoalId.cet6, 3, 'reading|r1', total), same(a), reason: '同档同板块复用');
     expect(hub.get(GoalId.cet6, 3, 'reading|r2', total), isNot(same(a)), reason: 'A/B 篇各自计时');
 

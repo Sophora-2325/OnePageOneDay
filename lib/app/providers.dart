@@ -8,6 +8,7 @@ import '../core/spec/day_repository.dart';
 import '../core/storage/app_store.dart';
 import '../domain/countdown.dart';
 import '../domain/grading.dart';
+import '../domain/speech_rate.dart';
 import '../domain/training_scope.dart';
 import '../features/reading_mode/reading_aloud.dart';
 
@@ -65,7 +66,12 @@ final countdownHubProvider = Provider<CountdownHub>((ref) {
 });
 
 final readingAloudProvider = Provider<ReadingAloud>((ref) {
-  final r = ReadingAloud();
+  // read 而非 watch：store 是 ChangeNotifier，watch 会让每次记录变更都重建朗读单例。
+  final store = ref.read(storeProvider);
+  final r = ReadingAloud(
+    initialRate: rateFromSetting(store.setting(kTtsRateKey)),
+    onRateChanged: (v) => store.setSetting(kTtsRateKey, formatRate(v)),
+  );
   ref.onDispose(r.dispose);
   return r;
 });
@@ -82,10 +88,16 @@ void refreshDaysFromRef(Ref ref) {
   ref.invalidate(dayDataProvider);
 }
 
-/// 导入备份后调用：把档位状态、当前训练日与失效的题库一次性对齐。
+/// 导入备份后调用：把档位状态、当前训练日、失效的题库与朗读倍速一次性对齐。
 /// 定义在文件末尾，运行时才解析 provider，不依赖声明顺序。
-Future<void> syncAfterImport(WidgetRef ref) =>
-    ref.read(trainingScopeProvider.notifier).reloadFromStore();
+Future<void> syncAfterImport(WidgetRef ref) async {
+  // 所有 ref 读取都放在第一个 await 之前：导入期间用户可能已经退出设置页。
+  final notifier = ref.read(trainingScopeProvider.notifier);
+  final store = ref.read(storeProvider);
+  final aloud = ref.read(readingAloudProvider);
+  await notifier.reloadFromStore();
+  await aloud.setRate(rateFromSetting(store.setting(kTtsRateKey)));
+}
 
 // ---------------- 模型 API（只在 Keystore） ----------------
 

@@ -6,8 +6,6 @@ import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../core/storage/app_store.dart';
 import '../../ui/components/brand.dart';
-import '../../ui/components/day_header.dart';
-import '../../ui/components/scope_strip.dart';
 import '../../ui/components/segmented_step.dart';
 import '../../ui/components/timer_bar.dart';
 import 'notes_step.dart';
@@ -37,7 +35,6 @@ class TodayPage extends ConsumerWidget {
         bottom: false,
         child: Column(
           children: [
-            const ScopeStrip(), // 只读；切换入口只在「我的」
             Expanded(
               child: data.when(
                 data: (d) => _TodayBody(key: ValueKey(d.day), data: d),
@@ -89,6 +86,8 @@ class _TodayBody extends ConsumerWidget {
       };
       return Column(
         children: [
+          // 欢迎语提到滚动区外，与计时条一起常驻最高位；笔记步骤 ?timer 自动省略。
+          const AibiGreeting(),
           ?timer,
           Expanded(
             child: IndexedStack(
@@ -107,7 +106,7 @@ class _TodayBody extends ConsumerWidget {
   }
 }
 
-/// 每个步骤页顶部共用：DayHeader + SegmentedStep。
+/// 每个步骤页顶部共用：四步切换。欢迎语已上提到 _TodayBody 的固定区。
 class TodayHeader extends ConsumerWidget {
   const TodayHeader({super.key, required this.data});
 
@@ -116,19 +115,10 @@ class TodayHeader extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final step = ref.watch(todayStepProvider);
-    // v1.3：主题切换唯一入口在「我的 → 外观」，今日首屏不再放第二处入口。
     return StoreBuilder(
       builder: (context, store) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: AppSpace.s3),
-          const AibiGreeting(),
-          const SizedBox(height: AppSpace.s4),
-          DayHeader(
-            day: data.day,
-            date: data.date,
-            theme: data.theme,
-          ),
           const SizedBox(height: AppSpace.s4),
           SegmentedStep(
             labels: todaySteps,

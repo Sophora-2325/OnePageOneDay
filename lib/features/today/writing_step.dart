@@ -8,7 +8,6 @@ import '../../ui/components/buttons.dart';
 import '../../ui/components/misc.dart';
 import '../../ui/components/paper_card.dart';
 import '../../ui/components/passage_block.dart';
-import 'draft_field.dart';
 import 'reading_step.dart';
 import 'today_page.dart';
 
@@ -25,7 +24,6 @@ class WritingStep extends StatelessWidget {
     final essay = w.essayParagraphs;
     return StoreBuilder(builder: (context, store) {
       final revealed = store.flag(store.revealKey(day, 'writing'));
-      final draft = store.draft(day, 'writing');
       final annotations = store.annotationsFor(day, 'writing');
       return ListView(
         padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
@@ -59,15 +57,6 @@ class WritingStep extends StatelessWidget {
                   ),
               ],
             ),
-          ),
-          const SizedBox(height: AppSpace.s4),
-          SectionTitle('我的作文', trailing: WordCountChip(count: countWords(draft))),
-          DraftField(
-            initial: draft,
-            serif: true,
-            minLines: 12,
-            hint: '30 分钟写完，至少 150 词，目标 170–190 词，三段。',
-            onChanged: (v) => store.setDraft(day, 'writing', v),
           ),
           const SizedBox(height: AppSpace.s4),
           if (!revealed)

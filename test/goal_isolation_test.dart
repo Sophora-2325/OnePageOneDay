@@ -1,4 +1,4 @@
-// v3 回归：五档进度隔离、备份 v2、分档质检与分档 prompt。
+// v3 回归：三档进度隔离、备份 v2、分档质检与分档 prompt。
 import 'dart:convert';
 import 'dart:io';
 
@@ -22,7 +22,7 @@ void switchGoal(AppStore store, GoalId goal) =>
     store.setSetting(TrainingScope.keyGoal, goal.name);
 
 void main() {
-  group('五档进度隔离（内存 SQLite）', () {
+  group('三档进度隔离（内存 SQLite）', () {
     late AppDatabase db;
     late AppStore store;
 
@@ -88,9 +88,9 @@ void main() {
       await store.addGeneratedDay(GeneratedDayRec(day: 8, payload: cet6Pack));
       store.answer(8, 'reading', 'r1', 'q1', 'B');
 
-      switchGoal(store, GoalId.tem8);
-      final tem8Pack = loadDay(7)..['day'] = 8;
-      await store.addGeneratedDay(GeneratedDayRec(day: 8, payload: tem8Pack));
+      switchGoal(store, GoalId.kaoyan);
+      final otherPack = loadDay(7)..['day'] = 8;
+      await store.addGeneratedDay(GeneratedDayRec(day: 8, payload: otherPack));
       expect(store.generatedDays[8], isNotNull);
       expect(store.peekAttempt(8, 'reading', 'r1'), isNull);
 
@@ -223,7 +223,7 @@ void main() {
       ), contains('130–160'));
     });
 
-    test('五档都有完整的材料规范与预置样张', () {
+    test('三档都有完整的材料规范与预置样张', () {
       for (final g in kGoals) {
         expect(g.ready, isTrue);
         expect(g.presetDays, greaterThan(0));

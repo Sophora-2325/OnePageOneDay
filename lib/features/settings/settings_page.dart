@@ -44,7 +44,7 @@ class SettingsPage extends ConsumerWidget {
                     Text('数据流向', style: Theme.of(context).textTheme.titleSmall),
                   ]),
                   const SizedBox(height: AppSpace.s2),
-                  _FlowLine(icon: Icons.phone_android, text: '作答、草稿、标注、笔记、复盘：只存在这台手机，五档各自独立保存。'),
+                  _FlowLine(icon: Icons.phone_android, text: '作答、草稿、标注、笔记、复盘：只存在这台手机，三档各自独立保存。'),
                   _FlowLine(icon: Icons.cloud_off_outlined, text: '没有账号、没有云同步、没有埋点；开发者看不到任何数据。'),
                   _FlowLine(icon: Icons.record_voice_over_outlined, text: '朗读使用系统语音引擎，离线可用。'),
                   _FlowLine(
@@ -261,7 +261,7 @@ class _AboutCardState extends State<_AboutCard> {
               const SizedBox(height: AppSpace.s3),
               Text(
                 '$mascotName是陪你练完今天这一页的小精灵。当前是${widget.goalName}：2 篇仔细阅读（各 5 题 + 4 道听读题）、'
-                '1 段翻译、1 篇写作、笔记与复盘；五档各有材料规范，进度互不影响。'
+                '1 段翻译、1 篇写作、笔记与复盘；三档各有材料规范，进度互不影响。'
                 '所有文章、题目、译文、范文均为原创仿写，不是真题；听读题不能替代真题听力。',
                 style: TextStyle(fontSize: 13, height: 1.6, color: c.inkSoft),
               ),
@@ -359,7 +359,7 @@ class _BackupCard extends StatelessWidget {
             Icon(Icons.verified_user_outlined, size: 16, color: c.green),
             const SizedBox(width: 4),
             Expanded(
-              child: Text('备份不含任何 API 密钥 · v2 含全部五档进度，可兼容旧版备份',
+              child: Text('备份不含任何 API 密钥 · v2 含全部三档进度，可兼容旧版备份',
                   style: TextStyle(fontSize: 12, color: c.green, fontWeight: FontWeight.w600)),
             ),
           ]),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../domain/grading.dart';
+import '../../domain/speech_rate.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/misc.dart';
 import '../../ui/components/paper_card.dart';
@@ -206,73 +208,164 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
   }
 }
 
-/// 常驻底部的朗读控制条：播放 / 暂停、当前段、倍速。
-class ListeningBar extends StatelessWidget {
+/// 常驻底部的朗读控制条：播放 / 暂停、当前段、倍速值（点击就地输入）、速度滑块。
+class ListeningBar extends StatefulWidget {
   const ListeningBar({super.key, required this.aloud, required this.sourceKey});
 
   final ReadingAloud aloud;
   final String sourceKey;
 
   @override
+  State<ListeningBar> createState() => _ListeningBarState();
+}
+
+class _ListeningBarState extends State<ListeningBar> {
+  final _controller = TextEditingController();
+  final _focus = FocusNode();
+
+  /// 拖动中的临时值：只更新显示，松手才提交给 TTS（避免边拖边重启朗读）。
+  double? _draft;
+  bool _editing = false;
+  bool _cancelling = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focus.addListener(_onFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _focus.removeListener(_onFocusChange);
+    _focus.dispose();
+    _controller.dispose();
+    super.dispose();
+  }
+
+  double get _shown => _draft ?? widget.aloud.rate;
+
+  void _onFocusChange() {
+    if (_focus.hasFocus || !_editing) return;
+    if (_cancelling) {
+      _cancelling = false;
+      setState(() => _editing = false);
+      return;
+    }
+    _commit();
+  }
+
+  void _startEditing() {
+    _controller.text = formatRate(_shown);
+    setState(() => _editing = true);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _focus.requestFocus();
+      _controller.selection = TextSelection(baseOffset: 0, extentOffset: _controller.text.length);
+    });
+  }
+
+  Future<void> _commit() async {
+    if (!_editing) return;
+    final parsed = parseRate(_controller.text);
+    setState(() => _editing = false);
+    if (parsed == null) {
+      if (mounted) showToast(context, '请输入 ${formatRate(kRateMin)}–${formatRate(kRateMax)} 之间的倍速');
+      return;
+    }
+    if (parsed > kRateMax) {
+      if (mounted) showToast(context, '已调整到上限 ${formatRate(kRateMax)}');
+    } else if (parsed < kRateMin) {
+      if (mounted) showToast(context, '已调整到下限 ${formatRate(kRateMin)}');
+    }
+    await widget.aloud.setRate(parsed);
+  }
+
+  void _cancel() {
+    _cancelling = true;
+    _focus.unfocus();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final c = context.c;
     return ListenableBuilder(
-      listenable: aloud,
+      listenable: widget.aloud,
       builder: (context, _) {
-        final active = aloud.isSource(sourceKey);
-        final playing = active && aloud.playing;
+        final active = widget.aloud.isSource(widget.sourceKey);
+        final playing = active && widget.aloud.playing;
+        final shown = normalizeRate(_shown);
         return Container(
           decoration: BoxDecoration(color: c.paper, border: Border(top: BorderSide(color: c.line))),
           child: SafeArea(
             top: false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpace.s4, vertical: AppSpace.s2),
-              child: Row(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton.filled(
-                    iconSize: 28,
-                    style: IconButton.styleFrom(backgroundColor: c.blue, minimumSize: const Size(52, 52)),
-                    tooltip: playing ? '暂停' : '播放',
-                    onPressed: aloud.toggle,
-                    icon: Icon(
-                      playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  ),
-                  const SizedBox(width: AppSpace.s3),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(playing ? '正在朗读' : '已暂停', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: c.ink)),
-                        Text(
-                          '第 ${aloud.currentPara + 1} / ${aloud.paragraphCount} 段',
-                          style: TextStyle(fontSize: 12, color: c.muted, fontFeatures: const [FontFeature.tabularFigures()]),
-                        ),
-                      ],
-                    ),
-                  ),
-                  for (final r in ReadingAloud.rates)
-                    Padding(
-                      padding: const EdgeInsets.only(left: AppSpace.s2),
-                      // 触控目标 44×44pt：不再用 VisualDensity.compact 压缩高度。
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
-                        child: ChoiceChip(
-                          label: Text('${r}x'),
-                          selected: aloud.rate == r,
-                          showCheckmark: false,
-                          selectedColor: c.blueSoft,
-                          side: BorderSide(color: aloud.rate == r ? c.blue : c.line),
-                          labelStyle: TextStyle(
-                              fontSize: AppType.min,
-                              color: aloud.rate == r ? c.blue : c.inkSoft,
-                              fontWeight: FontWeight.w600),
-                          onSelected: (_) => aloud.setRate(r),
+                  Row(
+                    children: [
+                      IconButton.filled(
+                        iconSize: 28,
+                        style: IconButton.styleFrom(backgroundColor: c.blue, minimumSize: const Size(52, 52)),
+                        tooltip: playing ? '暂停' : '播放',
+                        onPressed: widget.aloud.toggle,
+                        icon: Icon(
+                          playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                          color: Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
-                    ),
+                      const SizedBox(width: AppSpace.s3),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(playing ? '正在朗读' : '已暂停',
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: c.ink)),
+                            Text(
+                              '第 ${widget.aloud.currentPara + 1} / ${widget.aloud.paragraphCount} 段',
+                              style: TextStyle(fontSize: AppType.min, color: c.muted,
+                                  fontFeatures: const [FontFeature.tabularFigures()]),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (_editing) _rateInput(c) else _rateBadge(c, shown),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpace.s2),
+                  Divider(height: 1, thickness: 1, color: c.lineSoft),
+                  const SizedBox(height: AppSpace.s2),
+                  Row(
+                    children: [
+                      Text(formatRate(kRateMin), style: _tick(c)),
+                      Expanded(
+                        child: SliderTheme(
+                          data: SliderTheme.of(context).copyWith(
+                            activeTrackColor: c.blue,
+                            inactiveTrackColor: c.line,
+                            thumbColor: c.blue,
+                            overlayColor: c.blue.withValues(alpha: 0.12),
+                            trackHeight: 3,
+                            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 9),
+                          ),
+                          child: Slider(
+                            value: shown,
+                            min: kRateMin,
+                            max: kRateMax,
+                            divisions: kRateDivisions,
+                            onChanged: (v) => setState(() => _draft = normalizeRate(v)),
+                            onChangeEnd: (v) async {
+                              setState(() => _draft = null);
+                              await widget.aloud.setRate(normalizeRate(v));
+                            },
+                          ),
+                        ),
+                      ),
+                      Text(formatRate(kRateMax), style: _tick(c)),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -281,4 +374,66 @@ class ListeningBar extends StatelessWidget {
       },
     );
   }
+
+  TextStyle _tick(Cet6Colors c) => TextStyle(
+        fontSize: AppType.min,
+        color: c.muted,
+        fontFeatures: const [FontFeature.tabularFigures()],
+      );
+
+  Widget _rateBadge(Cet6Colors c, double shown) => Tooltip(
+        message: '点击输入倍速',
+        child: GestureDetector(
+          onTap: _startEditing,
+          child: Container(
+            constraints: const BoxConstraints(minWidth: 64, minHeight: 44),
+            padding: const EdgeInsets.symmetric(horizontal: AppSpace.s3),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: c.blueSoft,
+              borderRadius: BorderRadius.circular(999),
+              border: Border.all(color: c.blue.withValues(alpha: 0.45)),
+            ),
+            child: Text(
+              '${formatRate(shown)}x',
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: c.blue,
+                  fontFeatures: const [FontFeature.tabularFigures()]),
+            ),
+          ),
+        ),
+      );
+
+  Widget _rateInput(Cet6Colors c) => SizedBox(
+        width: 76,
+        height: 44,
+        child: Focus(
+          onKeyEvent: (_, event) {
+            if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.escape) {
+              _cancel();
+              return KeyEventResult.handled;
+            }
+            return KeyEventResult.ignored;
+          },
+          child: TextField(
+            controller: _controller,
+            focusNode: _focus,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            textInputAction: TextInputAction.done,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 14, fontFamily: 'monospace', color: c.ink),
+            decoration: InputDecoration(
+              isDense: true,
+              filled: true,
+              fillColor: c.blueSoft,
+              contentPadding: const EdgeInsets.symmetric(horizontal: AppSpace.s2, vertical: AppSpace.s2),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(AppRadius.md), borderSide: BorderSide(color: c.blue)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(AppRadius.md),
+                  borderSide: BorderSide(color: c.blue, width: 1.5)),
+            ),
+            onSubmitted: (_) => _commit(),
+          ),
+        ),
+      );
 }

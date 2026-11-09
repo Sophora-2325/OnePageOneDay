@@ -48,7 +48,7 @@ class Countdown extends ChangeNotifier {
 }
 
 /// 计时器按「档 + 训练日 + 板块」保存在内存中，切换分段不会重置。
-/// key 必须带档：五档各自有同号训练日，不带档会互相串计时进度。
+/// key 必须带档：各档各自有同号训练日，不带档会互相串计时进度。
 /// 用方法生成 key 而不是让调用方拼字符串，编译器能保证每处都带 goal。
 class CountdownHub {
   final Map<String, Countdown> _items = {};

@@ -2,7 +2,8 @@ import '../../domain/training_scope.dart';
 import '../spec/validate_day.dart';
 import '../storage/records.dart';
 
-/// v2：每条记录显式带 goal，五档进度各自独立；仍接受 1.0 的 v1 备份（整体归入六级）。
+/// v2：每条记录显式带 goal，各档进度各自独立；仍接受 1.0 的 v1 备份（整体归入六级）。
+/// 已下线的历史档位记录仍按原档解码，不并入六级。
 const backupSchema = 'cet6.backup.v2';
 const legacyBackupSchema = 'cet6.backup.v1';
 

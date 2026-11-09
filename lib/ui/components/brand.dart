@@ -25,12 +25,22 @@ class AibiGreeting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.c;
-    return Row(children: [
-      const AibiAvatar(size: 36),
-      const SizedBox(width: AppSpace.s3),
-      Expanded(
-        child: Text('今天，和$mascotName练一页英语。', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: c.ink)),
+    // 头像与文字整体居中：Expanded 会撑满整行，外层 Center 对它无效。
+    return Center(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const AibiAvatar(size: 36),
+          const SizedBox(width: AppSpace.s3),
+          Flexible(
+            child: Text(
+              '今天，和$mascotName练一页英语。',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: c.ink),
+            ),
+          ),
+        ],
       ),
-    ]);
+    );
   }
 }

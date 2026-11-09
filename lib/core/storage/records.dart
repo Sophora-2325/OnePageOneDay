@@ -7,7 +7,15 @@ import '../../domain/training_scope.dart';
 /// v3：每条学习记录都带 [goal]（备考目标）。备份文件里是显式字符串；
 /// 数据库里通过 encodeScopedDay 编进 day 整数，兼容 1.0 的旧数据。
 
-GoalId _goalOf(Map<String, dynamic> j) => goalIdFromKey(j['goal'] as String?) ?? GoalId.cet6;
+/// 备份记录解码要认得已下线的历史档位，否则导入老备份时会把这些记录
+/// 错误地并进六级、覆盖同号数据。可选档位判断另用 goalIdFromKey。
+GoalId _goalOf(Map<String, dynamic> j) {
+  final key = j['goal'] as String?;
+  for (final g in GoalId.values) {
+    if (g.name == key) return g;
+  }
+  return GoalId.cet6;
+}
 
 String attemptKey(GoalId goal, int day, String kind, String readingId) =>
     '${goal.name}|$day|$kind|$readingId';

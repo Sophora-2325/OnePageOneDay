@@ -80,8 +80,6 @@ flutter:
     - assets/days/
     - assets/days/cet4/
     - assets/days/kaoyan/
-    - assets/days/tem4/
-    - assets/days/tem8/
     - assets/brand/aibi_256.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
