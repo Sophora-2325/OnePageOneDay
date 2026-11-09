@@ -60,19 +60,14 @@ class _TodayBody extends ConsumerWidget {
     final rid = ref.watch(readingTabProvider);
     final hub = ref.watch(countdownHubProvider);
     final day = data.day;
-    // v1.3：计时条合并「阅读 A · 未做 / 已答 / 已提交」，与下方 A/B Chip 不再重复状态。
+    // 四步状态栏统一为「板块 · 时间」两段式；笔记不限时，用 ∞ 占位保持等高。
+    // 阅读的「未做 / 已答 / 已提交」不再塞进 label：判分由 ScoreBanner 与四步对勾表达。
     return StoreBuilder(builder: (context, store) {
-      final attempt = step == 0 ? store.peekAttempt(day, 'reading', rid) : null;
-      final status = attempt == null
-          ? '未做'
-          : attempt.submitted
-              ? '已提交 ${attempt.score ?? 0}/${attempt.total ?? data.reading(rid).questions.length}'
-              : '已答 ${attempt.answers.length}/${data.reading(rid).questions.length}';
       final timer = switch (step) {
         0 => TimerBar(
             key: ValueKey('t-r-$rid'),
             countdown: hub.get(store.goal, day, 'reading|$rid', const Duration(minutes: 9)),
-            label: '${data.reading(rid).label} · $status',
+            label: data.reading(rid).shortLabel,
           ),
         1 => TimerBar(
             key: const ValueKey('t-t'),
@@ -82,13 +77,13 @@ class _TodayBody extends ConsumerWidget {
             key: const ValueKey('t-w'),
             countdown: hub.get(store.goal, day, 'writing', const Duration(minutes: 30)),
             label: '写作'),
-        _ => null,
+        _ => const TimerBar(key: ValueKey('t-n'), label: '笔记'),
       };
       return Column(
         children: [
-          // 欢迎语提到滚动区外，与计时条一起常驻最高位；笔记步骤 ?timer 自动省略。
+          // 欢迎语与状态栏都在滚动区外、常驻最高位；四步等高，切换不跳动。
           const AibiGreeting(),
-          ?timer,
+          timer,
           Expanded(
             child: IndexedStack(
               index: step,

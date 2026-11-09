@@ -40,7 +40,7 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
     });
 
     return Scaffold(
-      appBar: AppBar(title: Text('复盘 · ${dayLabel(day)}')),
+      appBar: AppBar(title: Text('复盘 · ${dayLabel(day)}'), centerTitle: true),
       body: StoreBuilder(builder: (context, store) {
         final spec = goalOf(viewGoal);
         final allDays = _daysFor(store, viewGoal);
@@ -53,36 +53,9 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
           key: ValueKey('$viewGoal|$day'),
           padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
           children: [
-            PaperCard(
-              padding: const EdgeInsets.all(AppSpace.s3),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Icon(Icons.filter_alt_outlined, size: 16, color: c.muted),
-                    const SizedBox(width: 6),
-                    Text('按备考目标查看', style: Theme.of(context).textTheme.titleSmall),
-                    const Spacer(),
-                    Text('只读', style: TextStyle(fontSize: AppType.min, color: c.muted)),
-                  ]),
-                  const SizedBox(height: AppSpace.s2),
-                  Wrap(
-                    spacing: 6,
-                    runSpacing: 4,
-                    children: [
-                      for (final g in kGoals)
-                        _GoalChip(
-                          label: g.name,
-                          selected: g.id == viewGoal,
-                          onTap: () => setState(() => _filter = g.id == currentGoal ? null : g.id),
-                        ),
-                    ],
-                  ),
-                  const SizedBox(height: AppSpace.s2),
-                  Text('各档作答进度独立保存。这里只切换统计视角，不改变训练档；切换目标请到「我的」。',
-                      style: TextStyle(fontSize: AppType.min, height: 1.5, color: c.muted)),
-                ],
-              ),
+            GoalFilterCard(
+              selected: viewGoal,
+              onSelect: (id) => setState(() => _filter = id == currentGoal ? null : id),
             ),
             if (readOnly) ...[
               const SizedBox(height: AppSpace.s3),
@@ -129,21 +102,11 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
                 ),
               )
             else ...[
-              Row(
-                children: [
-                  Expanded(child: _StatTile(label: '已完成', value: '${doneDays.length}', unit: '天')),
-                  const SizedBox(width: AppSpace.s3),
-                  Expanded(child: _StatTile(label: '连续完成', value: '${completionStreak(allDays, doneDays)}', unit: '天')),
-                  const SizedBox(width: AppSpace.s3),
-                  Expanded(
-                    child: _StatTile(
-                      label: '本档标准',
-                      value: '${spec.rule.minWords}',
-                      unit: '词/篇起',
-                    ),
-                  ),
-                ],
-              ),
+              StatTileRow(tiles: [
+                StatTile(label: '已完成', value: '${doneDays.length}', unit: '天'),
+                StatTile(label: '连续完成', value: '${completionStreak(allDays, doneDays)}', unit: '天'),
+                StatTile(label: '本档标准', value: '${spec.rule.minWords}', unit: '词/篇起'),
+              ]),
               const SizedBox(height: AppSpace.s4),
               PaperCard(
                 padding: const EdgeInsets.all(AppSpace.s4),
@@ -161,8 +124,6 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
                     ),
                     const SizedBox(height: AppSpace.s3),
                     SizedBox(height: 150, child: _ScoreChart(summaries: summaries, current: day)),
-                    const SizedBox(height: AppSpace.s2),
-                    Text(spec.focus, style: TextStyle(fontSize: AppType.min, color: c.muted)),
                   ],
                 ),
               ),
@@ -219,6 +180,50 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
   void _markDone(BuildContext context, AppStore store, int day) {
     store.updateReview(day, (x) => x.done = true, debounce: false);
     showToast(context, '${dayLabel(day)} 已完成。明天从下一天继续。');
+  }
+}
+
+/// 复盘页顶部的档位视角切换卡。只切统计视角、不写全局目标。
+/// 「只读」字样下线后，标题行与三档 Chip 一起居中，卡片左右留白对称。
+class GoalFilterCard extends StatelessWidget {
+  const GoalFilterCard({super.key, required this.selected, required this.onSelect});
+
+  final GoalId selected;
+  final ValueChanged<GoalId> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.c;
+    return PaperCard(
+      padding: const EdgeInsets.all(AppSpace.s3),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.filter_alt_outlined, size: 16, color: c.muted),
+              const SizedBox(width: 6),
+              Text('按备考目标查看', style: Theme.of(context).textTheme.titleSmall),
+            ],
+          ),
+          const SizedBox(height: AppSpace.s2),
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 6,
+            runSpacing: 4,
+            children: [
+              for (final g in kGoals)
+                _GoalChip(
+                  label: g.name,
+                  selected: g.id == selected,
+                  onTap: () => onSelect(g.id),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -295,8 +300,30 @@ class _DoneBanner extends StatelessWidget {
   }
 }
 
-class _StatTile extends StatelessWidget {
-  const _StatTile({required this.label, required this.value, this.unit});
+/// 三张统计卡等高：以内容最多的「本档标准」（数值 + 单位可能折两行）为准，
+/// 取最高卡的自然高度后拉伸其余两张；卡内文字仍顶部对齐，
+/// 三张卡的标签与数值落在同一基线上，字号放大时也会一起长高。
+class StatTileRow extends StatelessWidget {
+  const StatTileRow({super.key, required this.tiles});
+
+  final List<StatTile> tiles;
+
+  @override
+  Widget build(BuildContext context) => IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (var i = 0; i < tiles.length; i++) ...[
+              if (i > 0) const SizedBox(width: AppSpace.s3),
+              Expanded(child: tiles[i]),
+            ],
+          ],
+        ),
+      );
+}
+
+class StatTile extends StatelessWidget {
+  const StatTile({super.key, required this.label, required this.value, this.unit});
 
   final String label;
   final String value;

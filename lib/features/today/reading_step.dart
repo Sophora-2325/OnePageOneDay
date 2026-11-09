@@ -156,7 +156,7 @@ class _ReadingStepState extends ConsumerState<ReadingStep> {
               for (final r in d.readings) ...[
                 Flexible(
                   child: _ReadingChip(
-                    label: r.label,
+                    label: r.shortLabel,
                     selected: r.id == rid,
                     onTap: () => ref.read(readingTabProvider.notifier).select(r.id),
                   ),
@@ -298,8 +298,8 @@ class _ReadingStepState extends ConsumerState<ReadingStep> {
 
 }
 
-/// v1.3：状态已合并到计时条（「阅读 A · 未做 · 04:00」），
-/// A/B Chip 只负责切换，不再重复显示「未做 / 3/5」。
+/// A/B Chip 只负责切换，用短名「文A / 文B」与顶部计时条保持一致；
+/// 作答状态由提交后的 ScoreBanner 与四步对勾表达，不在紧凑控件里重复。
 class _ReadingChip extends StatelessWidget {
   const _ReadingChip({required this.label, required this.selected, required this.onTap});
 

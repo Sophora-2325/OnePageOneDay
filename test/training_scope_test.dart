@@ -16,6 +16,7 @@ import 'package:cet6_app/features/today/translation_step.dart';
 import 'package:cet6_app/features/today/writing_step.dart';
 import 'package:cet6_app/ui/components/brand.dart';
 import 'package:cet6_app/ui/components/day_header.dart';
+import 'package:cet6_app/ui/components/timer_bar.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -43,6 +44,8 @@ void main() {
     // 翻译 / 写作页移除输入区后，两个页面仍要能编译、签名不变。
     expect(TranslationStep.new, isNotNull);
     expect(WritingStep.new, isNotNull);
+    // 计时条改为「可空 countdown = 不限时」后，编译冒烟守住新签名。
+    expect(TimerBar.new, isNotNull);
   });
 
   test('设置往返：从本机设置读出再写回，值不变', () {

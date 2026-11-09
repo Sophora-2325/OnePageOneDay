@@ -91,6 +91,10 @@ class Reading {
 
   String get label => id == 'r1' ? '阅读 A' : '阅读 B';
 
+  /// 紧凑控件（计时条、A/B 切换 Chip）用的短名，与「翻译 / 写作 / 笔记」等宽。
+  /// 完整句式（标注合集、ScoreBanner、判分提示）仍用 [label]。
+  String get shortLabel => id == 'r1' ? '文A' : '文B';
+
   factory Reading.fromJson(Map<String, dynamic> j) => Reading(
         id: j['id'] as String,
         title: j['title'] as String,

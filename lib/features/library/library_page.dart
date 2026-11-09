@@ -20,10 +20,11 @@ class LibraryPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(dayIndexProvider);
     final current = ref.watch(currentDayProvider);
-    final scope = ref.watch(trainingScopeProvider);
+    // 档位切换由 refreshDays 失效题库索引来刷新，页内不再单独持有档位状态。
+    ref.watch(trainingScopeProvider);
     final c = context.c;
     return Scaffold(
-      appBar: AppBar(title: const Text('题库')),
+      appBar: AppBar(title: const Text('题库'), centerTitle: true),
       body: index.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('题库加载失败：$e')),
@@ -32,26 +33,16 @@ class LibraryPage extends ConsumerWidget {
           for (final d in days) {
             byWeek.putIfAbsent(d.week, () => []).add(d);
           }
-          final doneCount = days.where((d) => store.peekReview(d.day)?.done ?? false).length;
-          final generated = days.where((d) => d.generated).length;
           return ListView(
             padding: const EdgeInsets.fromLTRB(AppSpace.page, 0, AppSpace.page, AppSpace.s8),
             children: [
-              Text(
-                '${scope.goalSpec.name} · 预置 ${days.length - generated} 天'
-                '${generated == 0 ? '' : ' · AI 生成 $generated 天'} · 已完成 $doneCount 天 · 全部离线可用',
-                style: TextStyle(fontSize: 13, color: c.muted),
-              ),
-              const SizedBox(height: AppSpace.s1),
-              Text(
-                '阅读 ${scope.goalSpec.rule.minWords}–${scope.goalSpec.rule.maxWords} 词 · ${scope.goalSpec.focus}',
-                style: TextStyle(fontSize: AppType.min, height: 1.5, color: c.muted),
-              ),
               const SizedBox(height: AppSpace.s4),
               for (final week in byWeek.keys.toList()..sort()) ...[
                 Padding(
                   padding: const EdgeInsets.only(bottom: AppSpace.s2),
-                  child: Text('第 $week 周', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: c.blue, letterSpacing: 1)),
+                  child: Center(
+                    child: Text('第 $week 周', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: c.blue, letterSpacing: 1)),
+                  ),
                 ),
                 for (final d in byWeek[week]!)
                   Padding(
