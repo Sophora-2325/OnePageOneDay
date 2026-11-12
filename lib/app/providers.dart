@@ -2,12 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/network/llm_client.dart';
+import '../core/notifications/reminder_service.dart';
 import '../core/spec/day_model.dart';
 import '../core/storage/secure.dart';
 import '../core/spec/day_repository.dart';
 import '../core/storage/app_store.dart';
 import '../domain/countdown.dart';
 import '../domain/grading.dart';
+import '../domain/profile.dart';
 import '../domain/speech_rate.dart';
 import '../domain/training_scope.dart';
 import '../features/reading_mode/reading_aloud.dart';
@@ -97,6 +99,8 @@ Future<void> syncAfterImport(WidgetRef ref) async {
   final aloud = ref.read(readingAloudProvider);
   await notifier.reloadFromStore();
   await aloud.setRate(rateFromSetting(store.setting(kTtsRateKey)));
+  // 备份里带过来的提醒时间 / 开关要立刻反映到系统排程。
+  await ReminderService.apply(ReminderSettings.fromSettings(store.setting));
 }
 
 // ---------------- 模型 API（只在 Keystore） ----------------

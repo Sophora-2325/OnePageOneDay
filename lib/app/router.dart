@@ -3,7 +3,12 @@ import 'package:go_router/go_router.dart';
 
 import '../features/ai/generate_page.dart';
 import '../features/library/library_page.dart';
+import '../features/settings/about_page.dart';
 import '../features/settings/api_config_page.dart';
+import '../features/settings/backup_page.dart';
+import '../features/settings/local_data_page.dart';
+import '../features/settings/profile_page.dart';
+import '../features/settings/reminder_page.dart';
 import '../features/reading_mode/reading_mode_page.dart';
 import '../features/review/review_page.dart';
 import '../features/settings/settings_page.dart';
@@ -39,6 +44,16 @@ final appRouter = GoRouter(
       builder: (_, state) => TutorialPage(fromConfig: state.uri.queryParameters['from'] == 'api'),
     ),
     GoRoute(path: '/generate', parentNavigatorKey: _rootKey, builder: (_, _) => const GeneratePage()),
+    // 「我的」二级页：挂在根 Navigator 上，进入后不显示底部 4 tab。
+    GoRoute(
+      path: '/me/profile',
+      parentNavigatorKey: _rootKey,
+      builder: (_, state) => ProfilePage(focusExamDate: state.uri.queryParameters['exam'] == '1'),
+    ),
+    GoRoute(path: '/me/reminder', parentNavigatorKey: _rootKey, builder: (_, _) => const ReminderPage()),
+    GoRoute(path: '/me/backup', parentNavigatorKey: _rootKey, builder: (_, _) => const BackupPage()),
+    GoRoute(path: '/me/data', parentNavigatorKey: _rootKey, builder: (_, _) => const LocalDataPage()),
+    GoRoute(path: '/me/about', parentNavigatorKey: _rootKey, builder: (_, _) => const AboutPage()),
   ],
 );
 

@@ -6,6 +6,7 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../core/spec/day_model.dart';
 import '../../domain/grading.dart';
+import '../../domain/speech_range.dart';
 import '../../domain/speech_rate.dart';
 import '../../ui/components/buttons.dart';
 import '../../ui/components/misc.dart';
@@ -16,6 +17,7 @@ import '../today/reading_step.dart';
 import 'reading_aloud.dart';
 
 /// 朗读模式：上方「文章 / 听力题」切换，底部常驻朗读控制条；切换时不中断朗读。
+/// 文章页支持「整听 / 精读」：整听点任意词读到结尾，精读用两个按钮框定起止。
 class ReadingModePage extends ConsumerWidget {
   const ReadingModePage({super.key, required this.day, required this.readingId});
 
@@ -43,11 +45,17 @@ class _ReadingModeBody extends ConsumerStatefulWidget {
   ConsumerState<_ReadingModeBody> createState() => _ReadingModeBodyState();
 }
 
-class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleTickerProviderStateMixin {
+class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody>
+    with SingleTickerProviderStateMixin {
   late final TabController _tabs = TabController(length: 2, vsync: this);
   late final ReadingAloud _aloud = ref.read(readingAloudProvider);
-  late final List<GlobalKey> _paraKeys = List.generate(widget.reading.paragraphs.length, (_) => GlobalKey());
+  late final List<GlobalKey> _paraKeys =
+      List.generate(widget.reading.paragraphs.length, (_) => GlobalKey());
   LocateTarget? _locate;
+
+  SpeechMode _mode = SpeechMode.whole;
+  MarkPhase _phase = MarkPhase.idle;
+  SpeechAnchor? _startAnchor;
 
   String get _sourceKey => '${widget.data.day}|${widget.reading.id}';
 
@@ -70,7 +78,10 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final ctx = _paraKeys[i].currentContext;
       if (ctx != null) {
-        Scrollable.ensureVisible(ctx, duration: const Duration(milliseconds: 250), curve: Curves.easeOut, alignment: 0.2);
+        Scrollable.ensureVisible(ctx,
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeOut,
+            alignment: 0.2);
       }
     });
   }
@@ -80,6 +91,94 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
     setState(() => _locate = t);
     _tabs.animateTo(0);
     Future.delayed(const Duration(milliseconds: 260), () => _scrollToPara(t.para));
+  }
+
+  String get _hint {
+    if (_mode == SpeechMode.whole) {
+      return '点任意词，从那里读到结尾；不点直接按播放则从头开始';
+    }
+    switch (_phase) {
+      case MarkPhase.awaitStart:
+        return '请点文章中的任意词，作为范围起点';
+      case MarkPhase.awaitEnd:
+        return '请点文章中的任意词，作为范围终点';
+      case MarkPhase.done:
+        return '范围已定，点播放可重听；「清除范围」重新框选';
+      case MarkPhase.idle:
+        return '点「开始」后点起点，再点「结束」后点终点，第二次点完自动开读';
+    }
+  }
+
+  void _setMode(SpeechMode mode) {
+    if (mode == _mode) return;
+    setState(() {
+      _mode = mode;
+      _phase = MarkPhase.idle;
+      _startAnchor = null;
+    });
+    _aloud.clearRange();
+    showToast(context,
+        mode == SpeechMode.whole ? '整听：点词即读到结尾' : '精读：先点「开始」');
+  }
+
+  void _onStart() {
+    setState(() {
+      _phase = MarkPhase.awaitStart;
+      _startAnchor = null;
+    });
+    _aloud.clearRange();
+    showToast(context, '请点文章中的起点词');
+  }
+
+  void _onEnd() {
+    if (_startAnchor == null) return;
+    setState(() => _phase = MarkPhase.awaitEnd);
+    showToast(context, '请点文章中的终点词');
+  }
+
+  void _onClearRange() {
+    setState(() {
+      _phase = MarkPhase.idle;
+      _startAnchor = null;
+    });
+    _aloud.clearRange();
+  }
+
+  void _tapAt(int para, int offset) {
+    final text = widget.reading.paragraphs[para];
+    if (_mode == SpeechMode.whole) {
+      final anchor = SpeechAnchor(para, snapToWordStart(text, offset));
+      setState(() {
+        _phase = MarkPhase.idle;
+        _startAnchor = null;
+      });
+      _aloud.playFromAnchor(anchor);
+      return;
+    }
+    if (_phase == MarkPhase.awaitStart) {
+      setState(() {
+        _startAnchor = SpeechAnchor(para, snapToWordStart(text, offset));
+        _phase = MarkPhase.awaitEnd;
+      });
+      showToast(context, '起点已设，请点「结束」再点终点');
+      return;
+    }
+    if (_phase == MarkPhase.awaitEnd && _startAnchor != null) {
+      final start = _startAnchor!;
+      final end = SpeechAnchor(para, snapToWordEnd(text, offset));
+      setState(() {
+        _phase = MarkPhase.done;
+        _startAnchor = null;
+      });
+      _aloud.playRange(SpeechRange(start, end));
+      showToast(context, '范围已定，自动开始朗读');
+      return;
+    }
+    showToast(
+        context,
+        _phase == MarkPhase.idle
+            ? '精读：请先点底部「开始」'
+            : '范围已定；点「清除范围」可重新框选');
   }
 
   @override
@@ -103,8 +202,19 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
 
       return Scaffold(
         appBar: AppBar(
-          leading: IconButton(icon: const Icon(Icons.close), tooltip: '退出朗读模式', onPressed: () => Navigator.pop(context)),
+          leading: IconButton(
+              icon: const Icon(Icons.close),
+              tooltip: '退出朗读模式',
+              onPressed: () => Navigator.pop(context)),
           title: Text('朗读模式 · ${r.label}'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: AppSpace.s3),
+              child: Center(
+                child: _ModeSegmented(mode: _mode, onChanged: _setMode),
+              ),
+            ),
+          ],
           bottom: TabBar(
             controller: _tabs,
             labelColor: c.blue,
@@ -112,7 +222,10 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
             indicatorColor: c.blue,
             tabs: [
               const Tab(text: '文章'),
-              Tab(text: submitted ? '听力题 ${attempt!.score}/${attempt.total}' : '听力题 ${answers.length}/${qs.length}'),
+              Tab(
+                  text: submitted
+                      ? '听力题 ${attempt!.score}/${attempt.total}'
+                      : '听力题 ${answers.length}/${qs.length}'),
             ],
           ),
         ),
@@ -122,13 +235,15 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
             ListenableBuilder(
               listenable: _aloud,
               builder: (context, _) => ListView(
-                padding: const EdgeInsets.fromLTRB(AppSpace.page, AppSpace.s4, AppSpace.page, AppSpace.s8),
+                padding: const EdgeInsets.fromLTRB(
+                    AppSpace.page, AppSpace.s4, AppSpace.page, AppSpace.s8),
                 children: [
                   if (_aloud.error != null) ...[
                     PaperCard(
                       color: c.redSoft,
                       padding: const EdgeInsets.all(AppSpace.s3),
-                      child: Text(_aloud.error!, style: TextStyle(color: c.red, fontSize: 14)),
+                      child: Text(_aloud.error!,
+                          style: TextStyle(color: c.red, fontSize: 14)),
                     ),
                     const SizedBox(height: AppSpace.s3),
                   ],
@@ -138,18 +253,31 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
                       children: [
                         const Eyebrow('LISTEN & READ'),
                         const SizedBox(height: AppSpace.s2),
-                        Text(r.title, style: TextStyle(fontFamily: readingFont, fontSize: 22, height: 1.3, color: c.ink)),
+                        Text(r.title,
+                            style: TextStyle(
+                                fontFamily: readingFont,
+                                fontSize: 22,
+                                height: 1.3,
+                                color: c.ink)),
                         const SizedBox(height: AppSpace.s1),
-                        Text('点段落从这里开始朗读', style: TextStyle(fontSize: 12, color: c.muted)),
+                        Text(_hint,
+                            style: TextStyle(fontSize: 12, color: c.muted)),
                         const SizedBox(height: AppSpace.s3),
                         for (var i = 0; i < r.paragraphs.length; i++)
                           PassageBlock(
                             key: _paraKeys[i],
                             paraIndex: i,
                             text: r.paragraphs[i],
-                            speaking: _aloud.isSource(_sourceKey) && _aloud.currentPara == i && _aloud.playing,
-                            locateRange: _locate != null && _locate!.para == i ? (start: _locate!.start, end: _locate!.end) : null,
-                            onTap: () => _aloud.play(from: i),
+                            speaking: _aloud.isSource(_sourceKey) &&
+                                _aloud.currentPara == i &&
+                                _aloud.playing &&
+                                !_aloud.hasRange,
+                            locateRange: _locate != null && _locate!.para == i
+                                ? (start: _locate!.start, end: _locate!.end)
+                                : null,
+                            speechRange:
+                                _aloud.isSource(_sourceKey) ? _aloud.range : null,
+                            onTapAt: (offset) => _tapAt(i, offset),
                           ),
                       ],
                     ),
@@ -158,9 +286,11 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
               ),
             ),
             ListView(
-              padding: const EdgeInsets.fromLTRB(AppSpace.page, AppSpace.s4, AppSpace.page, AppSpace.s8),
+              padding: const EdgeInsets.fromLTRB(
+                  AppSpace.page, AppSpace.s4, AppSpace.page, AppSpace.s8),
               children: [
-                Text('先听 / 读文章，再做 4 道听读题；与阅读题分开保存和判分。', style: TextStyle(fontSize: 13, color: c.muted)),
+                Text('先听 / 读文章，再做 4 道听读题；与阅读题分开保存和判分。',
+                    style: TextStyle(fontSize: 13, color: c.muted)),
                 const SizedBox(height: AppSpace.s3),
                 if (submitted) ...[
                   ScoreBanner(
@@ -181,19 +311,23 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
                     question: qs[i],
                     selected: answers[qs[i].id],
                     submitted: submitted,
-                    onSelect: (l) => store.answer(d.day, 'listening', r.id, qs[i].id, l),
+                    onSelect: (l) =>
+                        store.answer(d.day, 'listening', r.id, qs[i].id, l),
                     onLocate: () => _locateQuestion(qs[i]),
                   ),
                   const SizedBox(height: AppSpace.s3),
                 ],
                 if (!submitted)
                   PrimaryButton(
-                    label: allAnswered(qs, answers) ? '提交听力题' : '提交听力题（已答 ${answers.length}/${qs.length}）',
+                    label: allAnswered(qs, answers)
+                        ? '提交听力题'
+                        : '提交听力题（已答 ${answers.length}/${qs.length}）',
                     icon: Icons.fact_check_outlined,
                     onPressed: allAnswered(qs, answers)
                         ? () {
                             final g = grade(qs, answers);
-                            store.submit(d.day, 'listening', r.id, score: g.correct, total: g.total);
+                            store.submit(d.day, 'listening', r.id,
+                                score: g.correct, total: g.total);
                             showToast(context, '听读 ${g.correct}/${g.total}');
                           }
                         : null,
@@ -202,18 +336,88 @@ class _ReadingModeBodyState extends ConsumerState<_ReadingModeBody> with SingleT
             ),
           ],
         ),
-        bottomNavigationBar: ListeningBar(aloud: _aloud, sourceKey: _sourceKey),
+        bottomNavigationBar: ListeningBar(
+          aloud: _aloud,
+          sourceKey: _sourceKey,
+          mode: _mode,
+          markPhase: _phase,
+          onStart: _onStart,
+          onEnd: _onEnd,
+          onClearRange: _onClearRange,
+        ),
       );
     });
   }
 }
 
-/// 常驻底部的朗读控制条：播放 / 暂停、当前段、倍速值（点击就地输入）、速度滑块。
+/// AppBar 右侧的紧凑模式开关：整听 / 精读，默认整听、不持久化。
+class _ModeSegmented extends StatelessWidget {
+  const _ModeSegmented({required this.mode, required this.onChanged});
+
+  final SpeechMode mode;
+  final ValueChanged<SpeechMode> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.c;
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+        border: Border.all(color: c.blue),
+        borderRadius: BorderRadius.circular(999),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (final m in SpeechMode.values)
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => onChanged(m),
+              child: Container(
+                width: 48,
+                height: 40,
+                alignment: Alignment.center,
+                color: mode == m ? c.blue : Colors.transparent,
+                child: Text(
+                  m == SpeechMode.whole ? '整听' : '精读',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: mode == m
+                        ? Theme.of(context).colorScheme.onPrimary
+                        : c.blue,
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+/// 常驻底部的朗读控制条：播放 / 暂停、当前段、倍速值（点击就地输入）、速度滑块；
+/// 精读模式额外一行「开始 / 结束 / 清除范围」。
 class ListeningBar extends StatefulWidget {
-  const ListeningBar({super.key, required this.aloud, required this.sourceKey});
+  const ListeningBar({
+    super.key,
+    required this.aloud,
+    required this.sourceKey,
+    this.mode = SpeechMode.whole,
+    this.markPhase = MarkPhase.idle,
+    this.onStart,
+    this.onEnd,
+    this.onClearRange,
+  });
 
   final ReadingAloud aloud;
   final String sourceKey;
+  final SpeechMode mode;
+  final MarkPhase markPhase;
+  final VoidCallback? onStart;
+  final VoidCallback? onEnd;
+  final VoidCallback? onClearRange;
 
   @override
   State<ListeningBar> createState() => _ListeningBarState();
@@ -260,7 +464,8 @@ class _ListeningBarState extends State<ListeningBar> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       _focus.requestFocus();
-      _controller.selection = TextSelection(baseOffset: 0, extentOffset: _controller.text.length);
+      _controller.selection =
+          TextSelection(baseOffset: 0, extentOffset: _controller.text.length);
     });
   }
 
@@ -269,7 +474,9 @@ class _ListeningBarState extends State<ListeningBar> {
     final parsed = parseRate(_controller.text);
     setState(() => _editing = false);
     if (parsed == null) {
-      if (mounted) showToast(context, '请输入 ${formatRate(kRateMin)}–${formatRate(kRateMax)} 之间的倍速');
+      if (mounted) {
+        showToast(context, '请输入 ${formatRate(kRateMin)}–${formatRate(kRateMax)} 之间的倍速');
+      }
       return;
     }
     if (parsed > kRateMax) {
@@ -285,6 +492,55 @@ class _ListeningBarState extends State<ListeningBar> {
     _focus.unfocus();
   }
 
+  String _markState(SpeechRange? range) {
+    switch (widget.markPhase) {
+      case MarkPhase.idle:
+        return '未设范围';
+      case MarkPhase.awaitStart:
+        return '等待起点';
+      case MarkPhase.awaitEnd:
+        return '起点已设 · 待终点';
+      case MarkPhase.done:
+        if (range == null) return '范围已定';
+        final a = range.start.para + 1;
+        final b = range.end.para + 1;
+        return a == b ? '第 $a 段' : '第 $a–$b 段';
+    }
+  }
+
+  Widget _markButton(
+    BuildContext context,
+    Cet6Colors c, {
+    required String label,
+    required bool active,
+    required bool enabled,
+    required VoidCallback? onPressed,
+  }) =>
+      GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: enabled ? onPressed : null,
+        child: Container(
+          constraints: const BoxConstraints(minWidth: 60, minHeight: 44),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpace.s2),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: active ? c.blue : Colors.transparent,
+            border: Border.all(color: enabled ? c.blue : c.line),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: active
+                  ? Theme.of(context).colorScheme.onPrimary
+                  : (enabled ? c.blue : c.muted),
+            ),
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     final c = context.c;
@@ -294,24 +550,76 @@ class _ListeningBarState extends State<ListeningBar> {
         final active = widget.aloud.isSource(widget.sourceKey);
         final playing = active && widget.aloud.playing;
         final shown = normalizeRate(_shown);
+        final range = active ? widget.aloud.range?.ordered : null;
+        final subtitle = range == null
+            ? '第 ${widget.aloud.currentPara + 1} / ${widget.aloud.paragraphCount} 段'
+            : (range.start.para == range.end.para
+                ? '第 ${range.start.para + 1} 段 · 选区朗读'
+                : '第 ${range.start.para + 1}–${range.end.para + 1} 段 · 选区朗读');
         return Container(
-          decoration: BoxDecoration(color: c.paper, border: Border(top: BorderSide(color: c.line))),
+          decoration: BoxDecoration(
+              color: c.paper, border: Border(top: BorderSide(color: c.line))),
           child: SafeArea(
             top: false,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpace.s4, vertical: AppSpace.s2),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpace.s4, vertical: AppSpace.s2),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  if (widget.mode == SpeechMode.fine) ...[
+                    Row(
+                      children: [
+                        _markButton(context, c,
+                            label: '开始',
+                            active: widget.markPhase == MarkPhase.awaitStart,
+                            enabled: true,
+                            onPressed: widget.onStart),
+                        const SizedBox(width: AppSpace.s2),
+                        _markButton(context, c,
+                            label: '结束',
+                            active: widget.markPhase == MarkPhase.awaitEnd,
+                            enabled: widget.markPhase == MarkPhase.awaitStart ||
+                                widget.markPhase == MarkPhase.awaitEnd,
+                            onPressed: widget.onEnd),
+                        const SizedBox(width: AppSpace.s1),
+                        GestureDetector(
+                          behavior: HitTestBehavior.opaque,
+                          onTap: widget.onClearRange,
+                          child: Container(
+                            height: 44,
+                            alignment: Alignment.center,
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: AppSpace.s1),
+                            child: Text('清除范围',
+                                style: TextStyle(fontSize: 12, color: c.muted)),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            _markState(range),
+                            textAlign: TextAlign.right,
+                            maxLines: 2,
+                            style: TextStyle(fontSize: 12, color: c.muted),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpace.s2),
+                  ],
                   Row(
                     children: [
                       IconButton.filled(
                         iconSize: 28,
-                        style: IconButton.styleFrom(backgroundColor: c.blue, minimumSize: const Size(52, 52)),
+                        style: IconButton.styleFrom(
+                            backgroundColor: c.blue,
+                            minimumSize: const Size(52, 52)),
                         tooltip: playing ? '暂停' : '播放',
                         onPressed: widget.aloud.toggle,
                         icon: Icon(
-                          playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                          playing
+                              ? Icons.pause_rounded
+                              : Icons.play_arrow_rounded,
                           color: Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
@@ -322,11 +630,20 @@ class _ListeningBarState extends State<ListeningBar> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(playing ? '正在朗读' : '已暂停',
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: c.ink)),
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: c.ink)),
                             Text(
-                              '第 ${widget.aloud.currentPara + 1} / ${widget.aloud.paragraphCount} 段',
-                              style: TextStyle(fontSize: AppType.min, color: c.muted,
-                                  fontFeatures: const [FontFeature.tabularFigures()]),
+                              subtitle,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: AppType.min,
+                                  color: c.muted,
+                                  fontFeatures: const [
+                                    FontFeature.tabularFigures()
+                                  ]),
                             ),
                           ],
                         ),
@@ -348,14 +665,16 @@ class _ListeningBarState extends State<ListeningBar> {
                             thumbColor: c.blue,
                             overlayColor: c.blue.withValues(alpha: 0.12),
                             trackHeight: 3,
-                            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 9),
+                            thumbShape: const RoundSliderThumbShape(
+                                enabledThumbRadius: 9),
                           ),
                           child: Slider(
                             value: shown,
                             min: kRateMin,
                             max: kRateMax,
                             divisions: kRateDivisions,
-                            onChanged: (v) => setState(() => _draft = normalizeRate(v)),
+                            onChanged: (v) =>
+                                setState(() => _draft = normalizeRate(v)),
                             onChangeEnd: (v) async {
                               setState(() => _draft = null);
                               await widget.aloud.setRate(normalizeRate(v));
@@ -396,7 +715,10 @@ class _ListeningBarState extends State<ListeningBar> {
             ),
             child: Text(
               '${formatRate(shown)}x',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: c.blue,
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: c.blue,
                   fontFeatures: const [FontFeature.tabularFigures()]),
             ),
           ),
@@ -408,7 +730,8 @@ class _ListeningBarState extends State<ListeningBar> {
         height: 44,
         child: Focus(
           onKeyEvent: (_, event) {
-            if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.escape) {
+            if (event is KeyDownEvent &&
+                event.logicalKey == LogicalKeyboardKey.escape) {
               _cancel();
               return KeyEventResult.handled;
             }
@@ -420,14 +743,17 @@ class _ListeningBarState extends State<ListeningBar> {
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             textInputAction: TextInputAction.done,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, fontFamily: 'monospace', color: c.ink),
+            style:
+                TextStyle(fontSize: 14, fontFamily: 'monospace', color: c.ink),
             decoration: InputDecoration(
               isDense: true,
               filled: true,
               fillColor: c.blueSoft,
-              contentPadding: const EdgeInsets.symmetric(horizontal: AppSpace.s2, vertical: AppSpace.s2),
+              contentPadding: const EdgeInsets.symmetric(
+                  horizontal: AppSpace.s2, vertical: AppSpace.s2),
               border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(AppRadius.md), borderSide: BorderSide(color: c.blue)),
+                  borderRadius: BorderRadius.circular(AppRadius.md),
+                  borderSide: BorderSide(color: c.blue)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(AppRadius.md),
                   borderSide: BorderSide(color: c.blue, width: 1.5)),

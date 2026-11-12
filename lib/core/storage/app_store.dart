@@ -330,6 +330,18 @@ class AppStore extends ChangeNotifier {
 
   void setFlag(String key, bool on) => setSetting(key, on ? '1' : '0');
 
+  /// 按前缀删除设置（「清除个人资料」用）。内存与数据库同步删，
+  /// 不碰学习记录，也不碰其他前缀的设置。
+  Future<void> clearSettingsWithPrefix(String prefix) async {
+    final keys = _settings.keys.where((k) => k.startsWith(prefix)).toList();
+    if (keys.isEmpty) return;
+    for (final k in keys) {
+      _settings.remove(k);
+    }
+    notifyListeners();
+    await (_db.delete(_db.settings)..where((t) => t.key.like('$prefix%'))).go();
+  }
+
   // ---------------- 生成题包 ----------------
 
   /// 当前档的题包，键为逻辑训练日；供 DayRepository 使用。

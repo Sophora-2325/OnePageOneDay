@@ -12,7 +12,7 @@
 - API 密钥只存系统密钥库，不进数据库、日志和备份文件。
 - **清缓存 / 卸载 / 换手机会丢数据**——请定期用「我的 → 备份与恢复 → 导出」存一份。
 
-## 当前功能（v1.4.1）
+## 当前功能（v1.4.2）
 
 - **三档备考目标**：四级 / 六级 / 考研，全部可选、各档进度独立，切回来接着练。
 - **档内难度**：加难 / 稳定 / 变易，一次性、延迟生效；只有新题包通过质检并入库才结算，生成失败不消耗调整。
@@ -71,6 +71,22 @@
 
 纯表现层，无数据 / 备份 / 档位隔离改动；回归见 `test/review_header_test.dart`（无「只读」、居中属性、Chip 组左右对称、点选回调）。
 
+## 「我的」页整合与每日提醒（当前增量）
+
+**首屏重组**：身份卡 → 我的训练 → 通用设置。身份卡是本机预设头像（昵称首字，不读相册、不占文件）+ 昵称 / 备考身份 / 每日目标，下方四格数据 `连续完成 / 已完成 / 当前进度 / 距考试`。考试倒计时是**并排的第 4 格**，不是单独一行也不是身份区角标；四格用 `IntrinsicHeight` 拉齐、顶部同基线，四种日期态为 `40天·距考试` / `—·未设考试日` / `今天·考试日` / `已过·更新考试日`。按本地日期差计算，不出现负数；点第 4 格进个人资料并高亮日期字段。
+
+**绿色合规卡整体下线**：原「数据流向」6 行静态说明、`_FlowLine`、身份卡绿标与首屏脚注一并删除，首屏和二级页都不保留，也不新增引导文字。入口改为「本机数据管理」，二级页只留「重置 Day X」「清除个人资料」两项危险操作（各自二次确认）。
+
+**五张二级页**：`/me/profile`、`/me/reminder`、`/me/backup`、`/me/data`、`/me/about` 挂在根 Navigator 上，进入后不显示底部 4 tab；备考目标 / 档内难度仍是 Sheet，模型 API / 教程复用 `/api` `/tutorial`，外观改 Sheet。AppBar 标题居中，与题库 / 复盘一致。
+
+**数据零 schema 变更**：`profile.*`（昵称、头像、身份、考试日期、每日目标）与 `reminder.*`（开关、时、分、准点）都存 `settings` 表；键名避开 `isSensitiveSettingKey` 的 key/token/secret/baseurl，备份 v2 全量导出 settings 自动带上。`clearSettingsWithPrefix('profile.')` 只删本机资料，不动学习记录。今日 / 题库 / 复盘三页未改。
+
+**每日提醒真做**：`flutter_local_notifications 22.3.3`（锁定）+ `timezone` + `flutter_timezone`，`zonedSchedule` + `DateTimeComponents.time` 每日重复，固定 id 幂等重排（App 启动、设置变更、导入备份；开机 / 覆盖安装由 `ScheduledNotificationBootReceiver` 恢复）。默认 `inexactAllowWhileIdle`——Android 14 起 `SCHEDULE_EXACT_ALARM` 对新装应用默认拒绝，用 exact 会静默不响；准点模式才检查 `canScheduleExactNotifications()` 并引导授权，未授权自动降级。Android 13+ 的 `POST_NOTIFICATIONS` 只在开启时申请，被拒不静默失败：回滚开关并给「去系统设置」入口。通知内容不含个人资料，payload 只有 `today`，点击回今日页。Gradle 补 `isCoreLibraryDesugaringEnabled` + `desugar_jdk_libs:2.1.4`，manifest 补权限与两个 receiver，未声明 Play 受限的 `USE_EXACT_ALARM`。
+
+**依赖版本决策**：不要升到 `flutter_local_notifications 23.x`。23.0.0 把插件自身 `compileSdk` 写死为 37，并要求 AGP 9.1.1；Google 从 API 37 起把 SDK 平台目录命名为 `android-37.0 / 37.1 / 37.2`（带小数），而当前 AGP 9.1.0 + Gradle 9.3.1 仍按整数 hash `android-37` 查找，构建会报 `Failed to find target with hash string 'android-37'`。22.3.3 用 `compileSdk 36`（本机已装），且 `initialize` / `zonedSchedule` / `show` / `cancel` 的命名参数签名与 23.x 完全一致，降级无需改业务代码。等到 AGP 支持小数 SDK 目录再考虑升级，不要靠手改系统 SDK 目录绕过（不可移植）。
+
+回归见 `test/profile_test.dart`（键、序列化、四态倒计时、排程时刻）、`test/profile_card_test.dart`（四格等高、点选、深浅主题）、`test/setting_row_test.dart`（触控区与分隔线）、`test/settings_structure_test.dart`（绿盾卡下线、路由与 Android 装配）。
+
 ## 本地运行
 
 ```bash
@@ -93,11 +109,21 @@ python tools/build_android.py --install   # 出包后覆盖安装到已连接真
 
 | 文件 | 适用 |
 |---|---|
-| `yiye-1.4.1-universal.apk` | 未装过旧版的新设备，一个包通用 |
-| `yiye-1.4.1-arm64-v8a.apk` | 绝大多数现代手机；旧版用户用它原位升级 |
-| `yiye-1.4.1-armeabi-v7a.apk` / `yiye-1.4.1-x86_64.apk` | 老设备 / 模拟器 |
+| `yiye-1.4.2-universal.apk` | 未装过旧版的新设备，一个包通用 |
+| `yiye-1.4.2-arm64-v8a.apk` | 绝大多数现代手机；旧版用户用它原位升级 |
+| `yiye-1.4.2-armeabi-v7a.apk` / `yiye-1.4.2-x86_64.apk` | 老设备 / 模拟器 |
 
 `SHA256SUMS.txt` 给每个包校验。release 用 `~/.yiye-keys/yiye-release.jks` 签名，与 1.2.0 同证书，覆盖安装不丢数据。手装请用 `adb install -r <ASCII 路径下的包>`，避免中文路径传参再踩编码坑。真机 1.3.0 截图见 `shots/INDEX.md` §3.1（70~74）。
+
+## 听读交互：整听 / 精读
+
+朗读模式页（`lib/features/reading_mode/`）的「文章」标签支持点词定位：
+
+- **整听**（默认）：点文章里任意词，从该词读到全文结尾；不点任何位置直接按播放则从文章开头读。
+- **精读**：底部多一行「开始 / 结束 / 清除范围」。点「开始」后点文本定起点，点「结束」后点文本定终点，第二次点完自动开读；终点在起点之前会自动交换，跨段不设限制。
+- 触点用 `Listener.onPointerDown/Up` 取坐标，再用 `TextPainter.getPositionForOffset` 换算字符下标；短按判定（位移 <8px、时长 <300ms）保证长按选词 / 标注 / 翻译菜单不被抢走，`snapToWordStart/End` 吸附词边界，不会从半个单词起读。
+- 两种模式共用一套 `SpeechRange(start, end)` 区间模型：`expandRange` 展开成 `List<SpeechChunk>`，由 `ReadingAloud` 逐片交给 `SpeechEngine`（`FlutterTtsEngine` 生产 / `FakeSpeechEngine` 单测）合成。系统 TTS 不支持音频内 seek，所以「从触点开始读」靠切片重合成；变速只重读当前片段，不回到整段开头。
+- 选区高亮优先级：选区蓝 > 题目定位黄 > 标注蓝点线；有选区时不再给整段蓝色底。倍速徽标、Slider、播放 / 暂停保持原样。
 
 ## 测试
 
@@ -112,7 +138,7 @@ NO_PROXY="localhost,127.0.0.1,::1" no_proxy="localhost,127.0.0.1,::1" \
 HTTP_PROXY= HTTPS_PROXY= http_proxy= https_proxy= flutter test
 ```
 
-当前 **156 项全过**（其中 `test/scope_sync_test.dart` 是切档一致性回归：计时器跨档隔离、导入备份后档位同步、备份元数据版本；`test/listening_bar_test.dart` 覆盖倍速就地输入、越界收敛与滑块松手提交；`test/timer_bar_test.dart` 覆盖 `文A/文B` 短名、`∞` 只读态与按钮反馈；`test/review_stat_tiles_test.dart` 覆盖三张统计卡等高、同基线与放大字号不溢出；`test/review_header_test.dart` 覆盖档位卡去「只读」与居中；`test/training_scope_test.dart` 与 `test/preset_packs_test.dart` 守住三档收敛后的历史槽位解码与资源清理）。基线历经 150 → 146（下线两档各少 3 条预置样张测试、补 2 条兼容回归）→ 151（新增 5 条计时条用例）→ 153（新增 2 条统计卡用例）→ 156（新增 3 条档位卡用例）。
+当前 **237 项全过**（其中 `test/scope_sync_test.dart` 是切档一致性回归：计时器跨档隔离、导入备份后档位同步、备份元数据版本；`test/listening_bar_test.dart` 覆盖倍速就地输入、越界收敛与滑块松手提交；`test/timer_bar_test.dart` 覆盖 `文A/文B` 短名、`∞` 只读态与按钮反馈；`test/review_stat_tiles_test.dart` 覆盖三张统计卡等高、同基线与放大字号不溢出；`test/review_header_test.dart` 覆盖档位卡去「只读」与居中；`test/profile_test.dart`、`test/profile_card_test.dart`、`test/setting_row_test.dart`、`test/settings_structure_test.dart` 守住个人资料本机键、倒计时四态、身份卡四格、绿盾卡下线与通知装配；`test/training_scope_test.dart` 与 `test/preset_packs_test.dart` 守住三档收敛后的历史槽位解码与资源清理）。基线历经 150 → 146（下线两档各少 3 条预置样张测试、补 2 条兼容回归）→ 151（新增 5 条计时条用例）→ 153（新增 2 条统计卡用例）→ 156（新增 3 条档位卡用例）→ 182（新增 26 条「我的」整合与每日提醒用例）→ 183（新增 1 条大字号标签不截断回归）→ 185（新增 2 条中文本地化与两行说明用例）→ 237（新增 52 条听读交互用例：`test/speech_range_test.dart` 覆盖跨段展开、倒序交换、词边界吸附与段内选区折算；`test/tap_offset_test.dart` 覆盖 TextPainter 触点换算；`test/reading_aloud_queue_test.dart` 用 FakeSpeechEngine 锁住队列串播、变速重读当前片段、暂停续播与换文章清空；`test/passage_block_test.dart` 覆盖选区染色优先级与长按 / 拖动不误触发；`test/listening_bar_test.dart` 扩到 8 条，覆盖整听 / 精读切换、三态按钮与 360dp 小屏）。
 
 ## 目录要点
 
